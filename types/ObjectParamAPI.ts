@@ -114,13 +114,175 @@ import { RpcStatus } from '../models/RpcStatus';
 import { ObservableProductApi } from "./ObservableAPI";
 import { ProductApiRequestFactory, ProductApiResponseProcessor} from "../apis/ProductApi";
 
-export interface ProductApiProductAddMediaGalleryEntryRequest {
+export interface ProductApiAddMediaGalleryEntryRequest {
     /**
      * 
      * @type ProductAddMediaGalleryEntryRequest
-     * @memberof ProductApiproductAddMediaGalleryEntry
+     * @memberof ProductApiaddMediaGalleryEntry
      */
     body: ProductAddMediaGalleryEntryRequest
+}
+
+export interface ProductApiBulkUpdateV2Request {
+    /**
+     * 
+     * @type ProductBulkUpdateRequestV2
+     * @memberof ProductApibulkUpdateV2
+     */
+    body: ProductBulkUpdateRequestV2
+}
+
+export interface ProductApiCreateAttributeOptionsRequest {
+    /**
+     * 
+     * @type EntitymanagerCreateAttributeOptionsRequest
+     * @memberof ProductApicreateAttributeOptions
+     */
+    body: EntitymanagerCreateAttributeOptionsRequest
+}
+
+export interface ProductApiCreateEntityRequest {
+    /**
+     * 
+     * @type EntitymanagerEntity
+     * @memberof ProductApicreateEntity
+     */
+    body: EntitymanagerEntity
+}
+
+export interface ProductApiCreateOptionsListRequest {
+    /**
+     * 
+     * @type EntitymanagerCreateOptionsListRequest
+     * @memberof ProductApicreateOptionsList
+     */
+    body: EntitymanagerCreateOptionsListRequest
+}
+
+export interface ProductApiGetAttributeOptionRequest {
+    /**
+     * 
+     * @type EntitymanagerGetAttributeOptionRequest
+     * @memberof ProductApigetAttributeOption
+     */
+    body: EntitymanagerGetAttributeOptionRequest
+}
+
+export interface ProductApiGetAttributeOptionsRequest {
+    /**
+     * 
+     * @type EntitymanagerGetAttributeOptionsRequest
+     * @memberof ProductApigetAttributeOptions
+     */
+    body: EntitymanagerGetAttributeOptionsRequest
+}
+
+export interface ProductApiGetEntityRequest {
+    /**
+     * 
+     * @type EntitymanagerEntityRequest
+     * @memberof ProductApigetEntity
+     */
+    body: EntitymanagerEntityRequest
+}
+
+export interface ProductApiGetOptionsListRequest {
+    /**
+     * 
+     * @type EntitymanagerGetOptionsListRequest
+     * @memberof ProductApigetOptionsList
+     */
+    body: EntitymanagerGetOptionsListRequest
+}
+
+export interface ProductApiGetProductRequest {
+    /**
+     * 
+     * @type ProductGetProductRequest
+     * @memberof ProductApigetProduct
+     */
+    body: ProductGetProductRequest
+}
+
+export interface ProductApiGetProductByCodeRequest {
+    /**
+     * 
+     * @type ProductGetProductByCodeRequest
+     * @memberof ProductApigetProductByCode
+     */
+    body: ProductGetProductByCodeRequest
+}
+
+export interface ProductApiGetProductByUrlKeyRequest {
+    /**
+     * 
+     * @type ProductGetProductByUrlKeyRequest
+     * @memberof ProductApigetProductByUrlKey
+     */
+    body: ProductGetProductByUrlKeyRequest
+}
+
+export interface ProductApiListAttributeOptionsRequest {
+    /**
+     * 
+     * @type EntitymanagerListAttributeOptionsRequest
+     * @memberof ProductApilistAttributeOptions
+     */
+    body: EntitymanagerListAttributeOptionsRequest
+}
+
+export interface ProductApiListEntitiesRequest {
+    /**
+     * 
+     * @type EntitymanagerListEntitiesRequest
+     * @memberof ProductApilistEntities
+     */
+    body: EntitymanagerListEntitiesRequest
+}
+
+export interface ProductApiListOptionsListsRequest {
+    /**
+     * 
+     * @type EntitymanagerListOptionsListsRequest
+     * @memberof ProductApilistOptionsLists
+     */
+    body: EntitymanagerListOptionsListsRequest
+}
+
+export interface ProductApiListProductsRequest {
+    /**
+     * 
+     * @type ProductListProductsRequest
+     * @memberof ProductApilistProducts
+     */
+    body: ProductListProductsRequest
+}
+
+export interface ProductApiListProductsByIdsRequest {
+    /**
+     * 
+     * @type ProductListProductsByIdsRequest
+     * @memberof ProductApilistProductsByIds
+     */
+    body: ProductListProductsByIdsRequest
+}
+
+export interface ProductApiListProductsBySkuRequest {
+    /**
+     * 
+     * @type ProductListProductsBySkuRequest
+     * @memberof ProductApilistProductsBySku
+     */
+    body: ProductListProductsBySkuRequest
+}
+
+export interface ProductApiListVariantsBySkuRequest {
+    /**
+     * 
+     * @type ProductListVariantsBySkuRequest
+     * @memberof ProductApilistVariantsBySku
+     */
+    body: ProductListVariantsBySkuRequest
 }
 
 export interface ProductApiProductBulkAddAssetsEntriesRequest {
@@ -177,15 +339,6 @@ export interface ProductApiProductBulkUpdateAssetsEntriesRequest {
     body: ProductBulkUpdateAssetsEntriesRequest
 }
 
-export interface ProductApiProductBulkUpdateV2Request {
-    /**
-     * 
-     * @type ProductBulkUpdateRequestV2
-     * @memberof ProductApiproductBulkUpdateV2
-     */
-    body: ProductBulkUpdateRequestV2
-}
-
 export interface ProductApiProductCreateAttributeGroupRequest {
     /**
      * 
@@ -195,36 +348,9 @@ export interface ProductApiProductCreateAttributeGroupRequest {
     body: EntitymanagerCreateAttributeGroupRequest
 }
 
-export interface ProductApiProductCreateAttributeOptionsRequest {
-    /**
-     * 
-     * @type EntitymanagerCreateAttributeOptionsRequest
-     * @memberof ProductApiproductCreateAttributeOptions
-     */
-    body: EntitymanagerCreateAttributeOptionsRequest
-}
-
-export interface ProductApiProductCreateEntityRequest {
-    /**
-     * 
-     * @type EntitymanagerEntity
-     * @memberof ProductApiproductCreateEntity
-     */
-    body: EntitymanagerEntity
-}
-
-export interface ProductApiProductCreateOptionsListRequest {
-    /**
-     * 
-     * @type EntitymanagerCreateOptionsListRequest
-     * @memberof ProductApiproductCreateOptionsList
-     */
-    body: EntitymanagerCreateOptionsListRequest
-}
-
 export interface ProductApiProductCreateProductRequest {
     /**
-     * 
+     * The CreateProductRequest message is used to create a new product within the system. It contains various fields that allow specifying the details and attributes of the product.
      * @type ProductCreateProductRequest
      * @memberof ProductApiproductCreateProduct
      */
@@ -276,69 +402,6 @@ export interface ProductApiProductGetAttributeGroupRequest {
     body: EntitymanagerGetAttributeGroupRequest
 }
 
-export interface ProductApiProductGetAttributeOptionRequest {
-    /**
-     * 
-     * @type EntitymanagerGetAttributeOptionRequest
-     * @memberof ProductApiproductGetAttributeOption
-     */
-    body: EntitymanagerGetAttributeOptionRequest
-}
-
-export interface ProductApiProductGetAttributeOptionsRequest {
-    /**
-     * 
-     * @type EntitymanagerGetAttributeOptionsRequest
-     * @memberof ProductApiproductGetAttributeOptions
-     */
-    body: EntitymanagerGetAttributeOptionsRequest
-}
-
-export interface ProductApiProductGetEntityRequest {
-    /**
-     * 
-     * @type EntitymanagerEntityRequest
-     * @memberof ProductApiproductGetEntity
-     */
-    body: EntitymanagerEntityRequest
-}
-
-export interface ProductApiProductGetOptionsListRequest {
-    /**
-     * 
-     * @type EntitymanagerGetOptionsListRequest
-     * @memberof ProductApiproductGetOptionsList
-     */
-    body: EntitymanagerGetOptionsListRequest
-}
-
-export interface ProductApiProductGetProductRequest {
-    /**
-     * 
-     * @type ProductGetProductRequest
-     * @memberof ProductApiproductGetProduct
-     */
-    body: ProductGetProductRequest
-}
-
-export interface ProductApiProductGetProductByCodeRequest {
-    /**
-     * 
-     * @type ProductGetProductByCodeRequest
-     * @memberof ProductApiproductGetProductByCode
-     */
-    body: ProductGetProductByCodeRequest
-}
-
-export interface ProductApiProductGetProductByUrlKeyRequest {
-    /**
-     * 
-     * @type ProductGetProductByUrlKeyRequest
-     * @memberof ProductApiproductGetProductByUrlKey
-     */
-    body: ProductGetProductByUrlKeyRequest
-}
-
 export interface ProductApiProductListAttributeGroupsRequest {
     /**
      * 
@@ -346,78 +409,6 @@ export interface ProductApiProductListAttributeGroupsRequest {
      * @memberof ProductApiproductListAttributeGroups
      */
     body: EntitymanagerListAttributeGroupsRequest
-}
-
-export interface ProductApiProductListAttributeOptionsRequest {
-    /**
-     * 
-     * @type EntitymanagerListAttributeOptionsRequest
-     * @memberof ProductApiproductListAttributeOptions
-     */
-    body: EntitymanagerListAttributeOptionsRequest
-}
-
-export interface ProductApiProductListEntitiesRequest {
-    /**
-     * 
-     * @type EntitymanagerListEntitiesRequest
-     * @memberof ProductApiproductListEntities
-     */
-    body: EntitymanagerListEntitiesRequest
-}
-
-export interface ProductApiProductListOptionsListsRequest {
-    /**
-     * 
-     * @type EntitymanagerListOptionsListsRequest
-     * @memberof ProductApiproductListOptionsLists
-     */
-    body: EntitymanagerListOptionsListsRequest
-}
-
-export interface ProductApiProductListProductsRequest {
-    /**
-     * 
-     * @type ProductListProductsRequest
-     * @memberof ProductApiproductListProducts
-     */
-    body: ProductListProductsRequest
-}
-
-export interface ProductApiProductListProductsByIdsRequest {
-    /**
-     * 
-     * @type ProductListProductsByIdsRequest
-     * @memberof ProductApiproductListProductsByIds
-     */
-    body: ProductListProductsByIdsRequest
-}
-
-export interface ProductApiProductListProductsBySkuRequest {
-    /**
-     * 
-     * @type ProductListProductsBySkuRequest
-     * @memberof ProductApiproductListProductsBySku
-     */
-    body: ProductListProductsBySkuRequest
-}
-
-export interface ProductApiProductListVariantsBySkuRequest {
-    /**
-     * 
-     * @type ProductListVariantsBySkuRequest
-     * @memberof ProductApiproductListVariantsBySku
-     */
-    body: ProductListVariantsBySkuRequest
-}
-
-export interface ProductApiProductRemoveMediaGalleryEntryRequest {
-    /**
-     * 
-     * @type ProductRemoveMediaGalleryEntryRequest
-     * @memberof ProductApiproductRemoveMediaGalleryEntry
-     */
-    body: ProductRemoveMediaGalleryEntryRequest
 }
 
 export interface ProductApiProductUpdateAttributeRequest {
@@ -438,33 +429,6 @@ export interface ProductApiProductUpdateAttributeGroupRequest {
     body: EntitymanagerUpdateAttributeGroupRequest
 }
 
-export interface ProductApiProductUpdateAttributeOptionsRequest {
-    /**
-     * 
-     * @type EntitymanagerUpdateAttributeOptionsRequest
-     * @memberof ProductApiproductUpdateAttributeOptions
-     */
-    body: EntitymanagerUpdateAttributeOptionsRequest
-}
-
-export interface ProductApiProductUpdateMediaGalleryEntryRequest {
-    /**
-     * 
-     * @type ProductUpdateMediaGalleryEntryRequest
-     * @memberof ProductApiproductUpdateMediaGalleryEntry
-     */
-    body: ProductUpdateMediaGalleryEntryRequest
-}
-
-export interface ProductApiProductUpdateOptionsListRequest {
-    /**
-     * 
-     * @type EntitymanagerUpdateOptionsListRequest
-     * @memberof ProductApiproductUpdateOptionsList
-     */
-    body: EntitymanagerUpdateOptionsListRequest
-}
-
 export interface ProductApiProductUpdateProductRequest {
     /**
      * 
@@ -483,6 +447,42 @@ export interface ProductApiProductUpdateProductV2Request {
     body: ProductUpdateProductRequestV2
 }
 
+export interface ProductApiRemoveMediaGalleryEntryRequest {
+    /**
+     * 
+     * @type ProductRemoveMediaGalleryEntryRequest
+     * @memberof ProductApiremoveMediaGalleryEntry
+     */
+    body: ProductRemoveMediaGalleryEntryRequest
+}
+
+export interface ProductApiUpdateAttributeOptionsRequest {
+    /**
+     * 
+     * @type EntitymanagerUpdateAttributeOptionsRequest
+     * @memberof ProductApiupdateAttributeOptions
+     */
+    body: EntitymanagerUpdateAttributeOptionsRequest
+}
+
+export interface ProductApiUpdateMediaGalleryEntryRequest {
+    /**
+     * 
+     * @type ProductUpdateMediaGalleryEntryRequest
+     * @memberof ProductApiupdateMediaGalleryEntry
+     */
+    body: ProductUpdateMediaGalleryEntryRequest
+}
+
+export interface ProductApiUpdateOptionsListRequest {
+    /**
+     * 
+     * @type EntitymanagerUpdateOptionsListRequest
+     * @memberof ProductApiupdateOptionsList
+     */
+    body: EntitymanagerUpdateOptionsListRequest
+}
+
 export class ObjectProductApi {
     private api: ObservableProductApi
 
@@ -491,17 +491,337 @@ export class ObjectProductApi {
     }
 
     /**
+     * The AddMediaGalleryEntry endpoint allows users to add a new media entry to the gallery of a specific product. To make a request to this endpoint, users need to provide the necessary information in the specified format. The request includes the tenant_id to specify the relevant tenant, the product_id to identify the target product, and the asset_grn which represents the globally unique identifier for the media asset being added. Additionally, the position field indicates the desired position of the media entry within the gallery, allowing users to control the order in which the media items are displayed. The metadata field, which is a repeated field, provides the option to include additional metadata associated with the media entry.
+     * Add Media Gallery Entry
      * @param param the request object
      */
-    public productAddMediaGalleryEntryWithHttpInfo(param: ProductApiProductAddMediaGalleryEntryRequest, options?: Configuration): Promise<HttpInfo<ProductAddMediaGalleryEntryResponse>> {
-        return this.api.productAddMediaGalleryEntryWithHttpInfo(param.body,  options).toPromise();
+    public addMediaGalleryEntryWithHttpInfo(param: ProductApiAddMediaGalleryEntryRequest, options?: Configuration): Promise<HttpInfo<ProductAddMediaGalleryEntryResponse>> {
+        return this.api.addMediaGalleryEntryWithHttpInfo(param.body,  options).toPromise();
     }
 
     /**
+     * The AddMediaGalleryEntry endpoint allows users to add a new media entry to the gallery of a specific product. To make a request to this endpoint, users need to provide the necessary information in the specified format. The request includes the tenant_id to specify the relevant tenant, the product_id to identify the target product, and the asset_grn which represents the globally unique identifier for the media asset being added. Additionally, the position field indicates the desired position of the media entry within the gallery, allowing users to control the order in which the media items are displayed. The metadata field, which is a repeated field, provides the option to include additional metadata associated with the media entry.
+     * Add Media Gallery Entry
      * @param param the request object
      */
-    public productAddMediaGalleryEntry(param: ProductApiProductAddMediaGalleryEntryRequest, options?: Configuration): Promise<ProductAddMediaGalleryEntryResponse> {
-        return this.api.productAddMediaGalleryEntry(param.body,  options).toPromise();
+    public addMediaGalleryEntry(param: ProductApiAddMediaGalleryEntryRequest, options?: Configuration): Promise<ProductAddMediaGalleryEntryResponse> {
+        return this.api.addMediaGalleryEntry(param.body,  options).toPromise();
+    }
+
+    /**
+     * Version 2 of bulk updates for product attributes with enhanced payload structure and response format.
+     * Bulk Update Products
+     * @param param the request object
+     */
+    public bulkUpdateV2WithHttpInfo(param: ProductApiBulkUpdateV2Request, options?: Configuration): Promise<HttpInfo<ProductBulkUpdateResponse>> {
+        return this.api.bulkUpdateV2WithHttpInfo(param.body,  options).toPromise();
+    }
+
+    /**
+     * Version 2 of bulk updates for product attributes with enhanced payload structure and response format.
+     * Bulk Update Products
+     * @param param the request object
+     */
+    public bulkUpdateV2(param: ProductApiBulkUpdateV2Request, options?: Configuration): Promise<ProductBulkUpdateResponse> {
+        return this.api.bulkUpdateV2(param.body,  options).toPromise();
+    }
+
+    /**
+     * Create attribute options with specified codes, values, and swatches. Returns created options and any associated errors.
+     * Create Attribute Options
+     * @param param the request object
+     */
+    public createAttributeOptionsWithHttpInfo(param: ProductApiCreateAttributeOptionsRequest, options?: Configuration): Promise<HttpInfo<EntitymanagerCreateAttributeOptionsResponse>> {
+        return this.api.createAttributeOptionsWithHttpInfo(param.body,  options).toPromise();
+    }
+
+    /**
+     * Create attribute options with specified codes, values, and swatches. Returns created options and any associated errors.
+     * Create Attribute Options
+     * @param param the request object
+     */
+    public createAttributeOptions(param: ProductApiCreateAttributeOptionsRequest, options?: Configuration): Promise<EntitymanagerCreateAttributeOptionsResponse> {
+        return this.api.createAttributeOptions(param.body,  options).toPromise();
+    }
+
+    /**
+     * The CreateEntity endpoint allows users to define and create a new entity with custom attributes, providing a flexible way to represent and manage different data structures within the system. By making a request to this endpoint, users can create a new entity that serves as an abstraction of a product or any other domain-specific object. This endpoint empowers users to define the specific attributes that compose the entity, such as color, composition, technical details, or any other relevant properties. Utilize the CreateEntity endpoint to dynamically extend and adapt your system\'s data model to accommodate diverse business requirements and efficiently manage various types of entities.
+     * Create Entity
+     * @param param the request object
+     */
+    public createEntityWithHttpInfo(param: ProductApiCreateEntityRequest, options?: Configuration): Promise<HttpInfo<EntitymanagerCreateEntityResponse>> {
+        return this.api.createEntityWithHttpInfo(param.body,  options).toPromise();
+    }
+
+    /**
+     * The CreateEntity endpoint allows users to define and create a new entity with custom attributes, providing a flexible way to represent and manage different data structures within the system. By making a request to this endpoint, users can create a new entity that serves as an abstraction of a product or any other domain-specific object. This endpoint empowers users to define the specific attributes that compose the entity, such as color, composition, technical details, or any other relevant properties. Utilize the CreateEntity endpoint to dynamically extend and adapt your system\'s data model to accommodate diverse business requirements and efficiently manage various types of entities.
+     * Create Entity
+     * @param param the request object
+     */
+    public createEntity(param: ProductApiCreateEntityRequest, options?: Configuration): Promise<EntitymanagerCreateEntityResponse> {
+        return this.api.createEntity(param.body,  options).toPromise();
+    }
+
+    /**
+     * The CreateOptionsList endpoint allows users to create an OptionList, which represents a list of predefined options for assigning to an attribute. By making a request to this endpoint with the provided request format, users can create a new OptionList by specifying the relevant tenant ID and providing the OptionList object containing the predefined options. This functionality facilitates efficient management and assignment of predefined attribute values, ensuring consistency and flexibility within the system.
+     * Create Options List
+     * @param param the request object
+     */
+    public createOptionsListWithHttpInfo(param: ProductApiCreateOptionsListRequest, options?: Configuration): Promise<HttpInfo<EntitymanagerCreateOptionsListResponse>> {
+        return this.api.createOptionsListWithHttpInfo(param.body,  options).toPromise();
+    }
+
+    /**
+     * The CreateOptionsList endpoint allows users to create an OptionList, which represents a list of predefined options for assigning to an attribute. By making a request to this endpoint with the provided request format, users can create a new OptionList by specifying the relevant tenant ID and providing the OptionList object containing the predefined options. This functionality facilitates efficient management and assignment of predefined attribute values, ensuring consistency and flexibility within the system.
+     * Create Options List
+     * @param param the request object
+     */
+    public createOptionsList(param: ProductApiCreateOptionsListRequest, options?: Configuration): Promise<EntitymanagerCreateOptionsListResponse> {
+        return this.api.createOptionsList(param.body,  options).toPromise();
+    }
+
+    /**
+     * Retrieve attribute option details by providing the tenant ID, list code, and option ID. Returns the specified attribute option.
+     * Get Attribute Option
+     * @param param the request object
+     */
+    public getAttributeOptionWithHttpInfo(param: ProductApiGetAttributeOptionRequest, options?: Configuration): Promise<HttpInfo<EntitymanagerGetAttributeOptionResponse>> {
+        return this.api.getAttributeOptionWithHttpInfo(param.body,  options).toPromise();
+    }
+
+    /**
+     * Retrieve attribute option details by providing the tenant ID, list code, and option ID. Returns the specified attribute option.
+     * Get Attribute Option
+     * @param param the request object
+     */
+    public getAttributeOption(param: ProductApiGetAttributeOptionRequest, options?: Configuration): Promise<EntitymanagerGetAttributeOptionResponse> {
+        return this.api.getAttributeOption(param.body,  options).toPromise();
+    }
+
+    /**
+     * Retrieve a list of attribute options based on the provided tenant ID and list code.
+     * Get Attribute Options
+     * @param param the request object
+     */
+    public getAttributeOptionsWithHttpInfo(param: ProductApiGetAttributeOptionsRequest, options?: Configuration): Promise<HttpInfo<EntitymanagerGetAttributeOptionsResponse>> {
+        return this.api.getAttributeOptionsWithHttpInfo(param.body,  options).toPromise();
+    }
+
+    /**
+     * Retrieve a list of attribute options based on the provided tenant ID and list code.
+     * Get Attribute Options
+     * @param param the request object
+     */
+    public getAttributeOptions(param: ProductApiGetAttributeOptionsRequest, options?: Configuration): Promise<EntitymanagerGetAttributeOptionsResponse> {
+        return this.api.getAttributeOptions(param.body,  options).toPromise();
+    }
+
+    /**
+     * Retrieve details of an entity by providing the tenant ID and either entity data or entity ID. Returns information including ID, type, code, label, relationships, and attributes.
+     * Get Entity Details
+     * @param param the request object
+     */
+    public getEntityWithHttpInfo(param: ProductApiGetEntityRequest, options?: Configuration): Promise<HttpInfo<EntitymanagerEntity>> {
+        return this.api.getEntityWithHttpInfo(param.body,  options).toPromise();
+    }
+
+    /**
+     * Retrieve details of an entity by providing the tenant ID and either entity data or entity ID. Returns information including ID, type, code, label, relationships, and attributes.
+     * Get Entity Details
+     * @param param the request object
+     */
+    public getEntity(param: ProductApiGetEntityRequest, options?: Configuration): Promise<EntitymanagerEntity> {
+        return this.api.getEntity(param.body,  options).toPromise();
+    }
+
+    /**
+     * Retrieve option lists.
+     * Get Options List
+     * @param param the request object
+     */
+    public getOptionsListWithHttpInfo(param: ProductApiGetOptionsListRequest, options?: Configuration): Promise<HttpInfo<EntitymanagerGetOptionsListResponse>> {
+        return this.api.getOptionsListWithHttpInfo(param.body,  options).toPromise();
+    }
+
+    /**
+     * Retrieve option lists.
+     * Get Options List
+     * @param param the request object
+     */
+    public getOptionsList(param: ProductApiGetOptionsListRequest, options?: Configuration): Promise<EntitymanagerGetOptionsListResponse> {
+        return this.api.getOptionsList(param.body,  options).toPromise();
+    }
+
+    /**
+     * The GetProduct endpoint enables users to retrieve a product from the system. By sending a request to this endpoint, users can retrieve a product by providing its unique identifier.
+     * Get Product
+     * @param param the request object
+     */
+    public getProductWithHttpInfo(param: ProductApiGetProductRequest, options?: Configuration): Promise<HttpInfo<ProductGetProductResponse>> {
+        return this.api.getProductWithHttpInfo(param.body,  options).toPromise();
+    }
+
+    /**
+     * The GetProduct endpoint enables users to retrieve a product from the system. By sending a request to this endpoint, users can retrieve a product by providing its unique identifier.
+     * Get Product
+     * @param param the request object
+     */
+    public getProduct(param: ProductApiGetProductRequest, options?: Configuration): Promise<ProductGetProductResponse> {
+        return this.api.getProduct(param.body,  options).toPromise();
+    }
+
+    /**
+     * The GetProductByCode endpoint enables users to retrieve a product from the system. By sending a request to this endpoint, users can retrieve a product by providing its unique code.
+     * Get Product By Code
+     * @param param the request object
+     */
+    public getProductByCodeWithHttpInfo(param: ProductApiGetProductByCodeRequest, options?: Configuration): Promise<HttpInfo<ProductGetProductByCodeResponse>> {
+        return this.api.getProductByCodeWithHttpInfo(param.body,  options).toPromise();
+    }
+
+    /**
+     * The GetProductByCode endpoint enables users to retrieve a product from the system. By sending a request to this endpoint, users can retrieve a product by providing its unique code.
+     * Get Product By Code
+     * @param param the request object
+     */
+    public getProductByCode(param: ProductApiGetProductByCodeRequest, options?: Configuration): Promise<ProductGetProductByCodeResponse> {
+        return this.api.getProductByCode(param.body,  options).toPromise();
+    }
+
+    /**
+     * The GetProductByUrlKey endpoint enables users to retrieve a product from the system. By sending a request to this endpoint, users can retrieve a product by providing its unique url key.
+     * Get Product By Url Key
+     * @param param the request object
+     */
+    public getProductByUrlKeyWithHttpInfo(param: ProductApiGetProductByUrlKeyRequest, options?: Configuration): Promise<HttpInfo<ProductGetProductByUrlKeyResponse>> {
+        return this.api.getProductByUrlKeyWithHttpInfo(param.body,  options).toPromise();
+    }
+
+    /**
+     * The GetProductByUrlKey endpoint enables users to retrieve a product from the system. By sending a request to this endpoint, users can retrieve a product by providing its unique url key.
+     * Get Product By Url Key
+     * @param param the request object
+     */
+    public getProductByUrlKey(param: ProductApiGetProductByUrlKeyRequest, options?: Configuration): Promise<ProductGetProductByUrlKeyResponse> {
+        return this.api.getProductByUrlKey(param.body,  options).toPromise();
+    }
+
+    /**
+     * List Attribute Options
+     * @param param the request object
+     */
+    public listAttributeOptionsWithHttpInfo(param: ProductApiListAttributeOptionsRequest, options?: Configuration): Promise<HttpInfo<EntitymanagerListAttributeOptionsResponse>> {
+        return this.api.listAttributeOptionsWithHttpInfo(param.body,  options).toPromise();
+    }
+
+    /**
+     * List Attribute Options
+     * @param param the request object
+     */
+    public listAttributeOptions(param: ProductApiListAttributeOptionsRequest, options?: Configuration): Promise<EntitymanagerListAttributeOptionsResponse> {
+        return this.api.listAttributeOptions(param.body,  options).toPromise();
+    }
+
+    /**
+     * List Entities
+     * @param param the request object
+     */
+    public listEntitiesWithHttpInfo(param: ProductApiListEntitiesRequest, options?: Configuration): Promise<HttpInfo<EntitymanagerListEntitiesResponse>> {
+        return this.api.listEntitiesWithHttpInfo(param.body,  options).toPromise();
+    }
+
+    /**
+     * List Entities
+     * @param param the request object
+     */
+    public listEntities(param: ProductApiListEntitiesRequest, options?: Configuration): Promise<EntitymanagerListEntitiesResponse> {
+        return this.api.listEntities(param.body,  options).toPromise();
+    }
+
+    /**
+     * The ListOptionsLists endpoint allows users to retrieve a list of OptionLists available in the system. By making a request to this endpoint with the provided request format, users can obtain all the OptionLists associated with the specified tenant. This functionality enables users to access and manage the predefined options available for various attributes within the system. Utilizing the ListOptionsLists endpoint provides a convenient way to retrieve and work with OptionLists, facilitating efficient management of attribute options and ensuring consistency in attribute values throughout the system.
+     * List Options Lists
+     * @param param the request object
+     */
+    public listOptionsListsWithHttpInfo(param: ProductApiListOptionsListsRequest, options?: Configuration): Promise<HttpInfo<EntitymanagerListOptionsListsResponse>> {
+        return this.api.listOptionsListsWithHttpInfo(param.body,  options).toPromise();
+    }
+
+    /**
+     * The ListOptionsLists endpoint allows users to retrieve a list of OptionLists available in the system. By making a request to this endpoint with the provided request format, users can obtain all the OptionLists associated with the specified tenant. This functionality enables users to access and manage the predefined options available for various attributes within the system. Utilizing the ListOptionsLists endpoint provides a convenient way to retrieve and work with OptionLists, facilitating efficient management of attribute options and ensuring consistency in attribute values throughout the system.
+     * List Options Lists
+     * @param param the request object
+     */
+    public listOptionsLists(param: ProductApiListOptionsListsRequest, options?: Configuration): Promise<EntitymanagerListOptionsListsResponse> {
+        return this.api.listOptionsLists(param.body,  options).toPromise();
+    }
+
+    /**
+     * The ListProducts endpoint provides users with the ability to retrieve a filtered list of products based on specific criteria. By including filter parameters in the request, users can customize the response to only include products that meet certain conditions, such as price range, category, availability, or any other relevant attributes. This endpoint empowers users to efficiently narrow down the product selection and retrieve tailored results.
+     * List Products
+     * @param param the request object
+     */
+    public listProductsWithHttpInfo(param: ProductApiListProductsRequest, options?: Configuration): Promise<HttpInfo<ProductListProductsResponse>> {
+        return this.api.listProductsWithHttpInfo(param.body,  options).toPromise();
+    }
+
+    /**
+     * The ListProducts endpoint provides users with the ability to retrieve a filtered list of products based on specific criteria. By including filter parameters in the request, users can customize the response to only include products that meet certain conditions, such as price range, category, availability, or any other relevant attributes. This endpoint empowers users to efficiently narrow down the product selection and retrieve tailored results.
+     * List Products
+     * @param param the request object
+     */
+    public listProducts(param: ProductApiListProductsRequest, options?: Configuration): Promise<ProductListProductsResponse> {
+        return this.api.listProducts(param.body,  options).toPromise();
+    }
+
+    /**
+     * The ListProductsByIds endpoint allows users to retrieve a list of products based on provided IDs. By making a request to this endpoint and specifying a set of product IDs, users can retrieve detailed information about the corresponding products. This endpoint facilitates efficient retrieval of specific products, enabling applications to display accurate and targeted product information to users.
+     * List Products By Ids
+     * @param param the request object
+     */
+    public listProductsByIdsWithHttpInfo(param: ProductApiListProductsByIdsRequest, options?: Configuration): Promise<HttpInfo<ProductListProductsByIdsResponse>> {
+        return this.api.listProductsByIdsWithHttpInfo(param.body,  options).toPromise();
+    }
+
+    /**
+     * The ListProductsByIds endpoint allows users to retrieve a list of products based on provided IDs. By making a request to this endpoint and specifying a set of product IDs, users can retrieve detailed information about the corresponding products. This endpoint facilitates efficient retrieval of specific products, enabling applications to display accurate and targeted product information to users.
+     * List Products By Ids
+     * @param param the request object
+     */
+    public listProductsByIds(param: ProductApiListProductsByIdsRequest, options?: Configuration): Promise<ProductListProductsByIdsResponse> {
+        return this.api.listProductsByIds(param.body,  options).toPromise();
+    }
+
+    /**
+     * List Products By Sku
+     * @param param the request object
+     */
+    public listProductsBySkuWithHttpInfo(param: ProductApiListProductsBySkuRequest, options?: Configuration): Promise<HttpInfo<ProductListProductsBySkuResponse>> {
+        return this.api.listProductsBySkuWithHttpInfo(param.body,  options).toPromise();
+    }
+
+    /**
+     * List Products By Sku
+     * @param param the request object
+     */
+    public listProductsBySku(param: ProductApiListProductsBySkuRequest, options?: Configuration): Promise<ProductListProductsBySkuResponse> {
+        return this.api.listProductsBySku(param.body,  options).toPromise();
+    }
+
+    /**
+     * List Product Variants By Sku
+     * @param param the request object
+     */
+    public listVariantsBySkuWithHttpInfo(param: ProductApiListVariantsBySkuRequest, options?: Configuration): Promise<HttpInfo<ProductListVariantsBySkuResponse>> {
+        return this.api.listVariantsBySkuWithHttpInfo(param.body,  options).toPromise();
+    }
+
+    /**
+     * List Product Variants By Sku
+     * @param param the request object
+     */
+    public listVariantsBySku(param: ProductApiListVariantsBySkuRequest, options?: Configuration): Promise<ProductListVariantsBySkuResponse> {
+        return this.api.listVariantsBySku(param.body,  options).toPromise();
     }
 
     /**
@@ -521,6 +841,7 @@ export class ObjectProductApi {
     }
 
     /**
+     * Allow creation of multiple attributes. If any attribute is invalid, an error will be returned with more details, and in the response body, the attributes created will be returned.
      * @param param the request object
      */
     public productBulkCreateAttributeWithHttpInfo(param: ProductApiProductBulkCreateAttributeRequest, options?: Configuration): Promise<HttpInfo<EntitymanagerBulkCreateAttributeResponse>> {
@@ -528,6 +849,7 @@ export class ObjectProductApi {
     }
 
     /**
+     * Allow creation of multiple attributes. If any attribute is invalid, an error will be returned with more details, and in the response body, the attributes created will be returned.
      * @param param the request object
      */
     public productBulkCreateAttribute(param: ProductApiProductBulkCreateAttributeRequest, options?: Configuration): Promise<EntitymanagerBulkCreateAttributeResponse> {
@@ -593,20 +915,6 @@ export class ObjectProductApi {
     /**
      * @param param the request object
      */
-    public productBulkUpdateV2WithHttpInfo(param: ProductApiProductBulkUpdateV2Request, options?: Configuration): Promise<HttpInfo<ProductBulkUpdateResponseV2>> {
-        return this.api.productBulkUpdateV2WithHttpInfo(param.body,  options).toPromise();
-    }
-
-    /**
-     * @param param the request object
-     */
-    public productBulkUpdateV2(param: ProductApiProductBulkUpdateV2Request, options?: Configuration): Promise<ProductBulkUpdateResponseV2> {
-        return this.api.productBulkUpdateV2(param.body,  options).toPromise();
-    }
-
-    /**
-     * @param param the request object
-     */
     public productCreateAttributeGroupWithHttpInfo(param: ProductApiProductCreateAttributeGroupRequest, options?: Configuration): Promise<HttpInfo<EntitymanagerAttributeGroup>> {
         return this.api.productCreateAttributeGroupWithHttpInfo(param.body,  options).toPromise();
     }
@@ -616,48 +924,6 @@ export class ObjectProductApi {
      */
     public productCreateAttributeGroup(param: ProductApiProductCreateAttributeGroupRequest, options?: Configuration): Promise<EntitymanagerAttributeGroup> {
         return this.api.productCreateAttributeGroup(param.body,  options).toPromise();
-    }
-
-    /**
-     * @param param the request object
-     */
-    public productCreateAttributeOptionsWithHttpInfo(param: ProductApiProductCreateAttributeOptionsRequest, options?: Configuration): Promise<HttpInfo<EntitymanagerCreateAttributeOptionsResponse>> {
-        return this.api.productCreateAttributeOptionsWithHttpInfo(param.body,  options).toPromise();
-    }
-
-    /**
-     * @param param the request object
-     */
-    public productCreateAttributeOptions(param: ProductApiProductCreateAttributeOptionsRequest, options?: Configuration): Promise<EntitymanagerCreateAttributeOptionsResponse> {
-        return this.api.productCreateAttributeOptions(param.body,  options).toPromise();
-    }
-
-    /**
-     * @param param the request object
-     */
-    public productCreateEntityWithHttpInfo(param: ProductApiProductCreateEntityRequest, options?: Configuration): Promise<HttpInfo<EntitymanagerCreateEntityResponse>> {
-        return this.api.productCreateEntityWithHttpInfo(param.body,  options).toPromise();
-    }
-
-    /**
-     * @param param the request object
-     */
-    public productCreateEntity(param: ProductApiProductCreateEntityRequest, options?: Configuration): Promise<EntitymanagerCreateEntityResponse> {
-        return this.api.productCreateEntity(param.body,  options).toPromise();
-    }
-
-    /**
-     * @param param the request object
-     */
-    public productCreateOptionsListWithHttpInfo(param: ProductApiProductCreateOptionsListRequest, options?: Configuration): Promise<HttpInfo<EntitymanagerCreateOptionsListResponse>> {
-        return this.api.productCreateOptionsListWithHttpInfo(param.body,  options).toPromise();
-    }
-
-    /**
-     * @param param the request object
-     */
-    public productCreateOptionsList(param: ProductApiProductCreateOptionsListRequest, options?: Configuration): Promise<EntitymanagerCreateOptionsListResponse> {
-        return this.api.productCreateOptionsList(param.body,  options).toPromise();
     }
 
     /**
@@ -745,104 +1011,6 @@ export class ObjectProductApi {
     }
 
     /**
-     * @param param the request object
-     */
-    public productGetAttributeOptionWithHttpInfo(param: ProductApiProductGetAttributeOptionRequest, options?: Configuration): Promise<HttpInfo<EntitymanagerGetAttributeOptionResponse>> {
-        return this.api.productGetAttributeOptionWithHttpInfo(param.body,  options).toPromise();
-    }
-
-    /**
-     * @param param the request object
-     */
-    public productGetAttributeOption(param: ProductApiProductGetAttributeOptionRequest, options?: Configuration): Promise<EntitymanagerGetAttributeOptionResponse> {
-        return this.api.productGetAttributeOption(param.body,  options).toPromise();
-    }
-
-    /**
-     * @param param the request object
-     */
-    public productGetAttributeOptionsWithHttpInfo(param: ProductApiProductGetAttributeOptionsRequest, options?: Configuration): Promise<HttpInfo<EntitymanagerGetAttributeOptionsResponse>> {
-        return this.api.productGetAttributeOptionsWithHttpInfo(param.body,  options).toPromise();
-    }
-
-    /**
-     * @param param the request object
-     */
-    public productGetAttributeOptions(param: ProductApiProductGetAttributeOptionsRequest, options?: Configuration): Promise<EntitymanagerGetAttributeOptionsResponse> {
-        return this.api.productGetAttributeOptions(param.body,  options).toPromise();
-    }
-
-    /**
-     * @param param the request object
-     */
-    public productGetEntityWithHttpInfo(param: ProductApiProductGetEntityRequest, options?: Configuration): Promise<HttpInfo<EntitymanagerEntity>> {
-        return this.api.productGetEntityWithHttpInfo(param.body,  options).toPromise();
-    }
-
-    /**
-     * @param param the request object
-     */
-    public productGetEntity(param: ProductApiProductGetEntityRequest, options?: Configuration): Promise<EntitymanagerEntity> {
-        return this.api.productGetEntity(param.body,  options).toPromise();
-    }
-
-    /**
-     * @param param the request object
-     */
-    public productGetOptionsListWithHttpInfo(param: ProductApiProductGetOptionsListRequest, options?: Configuration): Promise<HttpInfo<EntitymanagerGetOptionsListResponse>> {
-        return this.api.productGetOptionsListWithHttpInfo(param.body,  options).toPromise();
-    }
-
-    /**
-     * @param param the request object
-     */
-    public productGetOptionsList(param: ProductApiProductGetOptionsListRequest, options?: Configuration): Promise<EntitymanagerGetOptionsListResponse> {
-        return this.api.productGetOptionsList(param.body,  options).toPromise();
-    }
-
-    /**
-     * @param param the request object
-     */
-    public productGetProductWithHttpInfo(param: ProductApiProductGetProductRequest, options?: Configuration): Promise<HttpInfo<ProductGetProductResponse>> {
-        return this.api.productGetProductWithHttpInfo(param.body,  options).toPromise();
-    }
-
-    /**
-     * @param param the request object
-     */
-    public productGetProduct(param: ProductApiProductGetProductRequest, options?: Configuration): Promise<ProductGetProductResponse> {
-        return this.api.productGetProduct(param.body,  options).toPromise();
-    }
-
-    /**
-     * @param param the request object
-     */
-    public productGetProductByCodeWithHttpInfo(param: ProductApiProductGetProductByCodeRequest, options?: Configuration): Promise<HttpInfo<ProductGetProductByCodeResponse>> {
-        return this.api.productGetProductByCodeWithHttpInfo(param.body,  options).toPromise();
-    }
-
-    /**
-     * @param param the request object
-     */
-    public productGetProductByCode(param: ProductApiProductGetProductByCodeRequest, options?: Configuration): Promise<ProductGetProductByCodeResponse> {
-        return this.api.productGetProductByCode(param.body,  options).toPromise();
-    }
-
-    /**
-     * @param param the request object
-     */
-    public productGetProductByUrlKeyWithHttpInfo(param: ProductApiProductGetProductByUrlKeyRequest, options?: Configuration): Promise<HttpInfo<ProductGetProductByUrlKeyResponse>> {
-        return this.api.productGetProductByUrlKeyWithHttpInfo(param.body,  options).toPromise();
-    }
-
-    /**
-     * @param param the request object
-     */
-    public productGetProductByUrlKey(param: ProductApiProductGetProductByUrlKeyRequest, options?: Configuration): Promise<ProductGetProductByUrlKeyResponse> {
-        return this.api.productGetProductByUrlKey(param.body,  options).toPromise();
-    }
-
-    /**
      * Attribute Groups endpoints
      * @param param the request object
      */
@@ -856,118 +1024,6 @@ export class ObjectProductApi {
      */
     public productListAttributeGroups(param: ProductApiProductListAttributeGroupsRequest, options?: Configuration): Promise<EntitymanagerListAttributeGroupsResponse> {
         return this.api.productListAttributeGroups(param.body,  options).toPromise();
-    }
-
-    /**
-     * @param param the request object
-     */
-    public productListAttributeOptionsWithHttpInfo(param: ProductApiProductListAttributeOptionsRequest, options?: Configuration): Promise<HttpInfo<EntitymanagerListAttributeOptionsResponse>> {
-        return this.api.productListAttributeOptionsWithHttpInfo(param.body,  options).toPromise();
-    }
-
-    /**
-     * @param param the request object
-     */
-    public productListAttributeOptions(param: ProductApiProductListAttributeOptionsRequest, options?: Configuration): Promise<EntitymanagerListAttributeOptionsResponse> {
-        return this.api.productListAttributeOptions(param.body,  options).toPromise();
-    }
-
-    /**
-     * @param param the request object
-     */
-    public productListEntitiesWithHttpInfo(param: ProductApiProductListEntitiesRequest, options?: Configuration): Promise<HttpInfo<EntitymanagerListEntitiesResponse>> {
-        return this.api.productListEntitiesWithHttpInfo(param.body,  options).toPromise();
-    }
-
-    /**
-     * @param param the request object
-     */
-    public productListEntities(param: ProductApiProductListEntitiesRequest, options?: Configuration): Promise<EntitymanagerListEntitiesResponse> {
-        return this.api.productListEntities(param.body,  options).toPromise();
-    }
-
-    /**
-     * @param param the request object
-     */
-    public productListOptionsListsWithHttpInfo(param: ProductApiProductListOptionsListsRequest, options?: Configuration): Promise<HttpInfo<EntitymanagerListOptionsListsResponse>> {
-        return this.api.productListOptionsListsWithHttpInfo(param.body,  options).toPromise();
-    }
-
-    /**
-     * @param param the request object
-     */
-    public productListOptionsLists(param: ProductApiProductListOptionsListsRequest, options?: Configuration): Promise<EntitymanagerListOptionsListsResponse> {
-        return this.api.productListOptionsLists(param.body,  options).toPromise();
-    }
-
-    /**
-     * @param param the request object
-     */
-    public productListProductsWithHttpInfo(param: ProductApiProductListProductsRequest, options?: Configuration): Promise<HttpInfo<ProductListProductsResponse>> {
-        return this.api.productListProductsWithHttpInfo(param.body,  options).toPromise();
-    }
-
-    /**
-     * @param param the request object
-     */
-    public productListProducts(param: ProductApiProductListProductsRequest, options?: Configuration): Promise<ProductListProductsResponse> {
-        return this.api.productListProducts(param.body,  options).toPromise();
-    }
-
-    /**
-     * @param param the request object
-     */
-    public productListProductsByIdsWithHttpInfo(param: ProductApiProductListProductsByIdsRequest, options?: Configuration): Promise<HttpInfo<ProductListProductsByIdsResponse>> {
-        return this.api.productListProductsByIdsWithHttpInfo(param.body,  options).toPromise();
-    }
-
-    /**
-     * @param param the request object
-     */
-    public productListProductsByIds(param: ProductApiProductListProductsByIdsRequest, options?: Configuration): Promise<ProductListProductsByIdsResponse> {
-        return this.api.productListProductsByIds(param.body,  options).toPromise();
-    }
-
-    /**
-     * @param param the request object
-     */
-    public productListProductsBySkuWithHttpInfo(param: ProductApiProductListProductsBySkuRequest, options?: Configuration): Promise<HttpInfo<ProductListProductsBySkuResponse>> {
-        return this.api.productListProductsBySkuWithHttpInfo(param.body,  options).toPromise();
-    }
-
-    /**
-     * @param param the request object
-     */
-    public productListProductsBySku(param: ProductApiProductListProductsBySkuRequest, options?: Configuration): Promise<ProductListProductsBySkuResponse> {
-        return this.api.productListProductsBySku(param.body,  options).toPromise();
-    }
-
-    /**
-     * @param param the request object
-     */
-    public productListVariantsBySkuWithHttpInfo(param: ProductApiProductListVariantsBySkuRequest, options?: Configuration): Promise<HttpInfo<ProductListVariantsBySkuResponse>> {
-        return this.api.productListVariantsBySkuWithHttpInfo(param.body,  options).toPromise();
-    }
-
-    /**
-     * @param param the request object
-     */
-    public productListVariantsBySku(param: ProductApiProductListVariantsBySkuRequest, options?: Configuration): Promise<ProductListVariantsBySkuResponse> {
-        return this.api.productListVariantsBySku(param.body,  options).toPromise();
-    }
-
-    /**
-     * @param param the request object
-     */
-    public productRemoveMediaGalleryEntryWithHttpInfo(param: ProductApiProductRemoveMediaGalleryEntryRequest, options?: Configuration): Promise<HttpInfo<any>> {
-        return this.api.productRemoveMediaGalleryEntryWithHttpInfo(param.body,  options).toPromise();
-    }
-
-    /**
-     * @param param the request object
-     */
-    public productRemoveMediaGalleryEntry(param: ProductApiProductRemoveMediaGalleryEntryRequest, options?: Configuration): Promise<any> {
-        return this.api.productRemoveMediaGalleryEntry(param.body,  options).toPromise();
     }
 
     /**
@@ -999,50 +1055,6 @@ export class ObjectProductApi {
     }
 
     /**
-     * rpc GetAttributeOptionByCode (product.entitymanager.GetAttributeOptionByCodeRequest) returns (product.entitymanager.GetAttributeOptionByCodeResponse) {}
-     * @param param the request object
-     */
-    public productUpdateAttributeOptionsWithHttpInfo(param: ProductApiProductUpdateAttributeOptionsRequest, options?: Configuration): Promise<HttpInfo<EntitymanagerUpdateAttributeOptionsResponse>> {
-        return this.api.productUpdateAttributeOptionsWithHttpInfo(param.body,  options).toPromise();
-    }
-
-    /**
-     * rpc GetAttributeOptionByCode (product.entitymanager.GetAttributeOptionByCodeRequest) returns (product.entitymanager.GetAttributeOptionByCodeResponse) {}
-     * @param param the request object
-     */
-    public productUpdateAttributeOptions(param: ProductApiProductUpdateAttributeOptionsRequest, options?: Configuration): Promise<EntitymanagerUpdateAttributeOptionsResponse> {
-        return this.api.productUpdateAttributeOptions(param.body,  options).toPromise();
-    }
-
-    /**
-     * @param param the request object
-     */
-    public productUpdateMediaGalleryEntryWithHttpInfo(param: ProductApiProductUpdateMediaGalleryEntryRequest, options?: Configuration): Promise<HttpInfo<any>> {
-        return this.api.productUpdateMediaGalleryEntryWithHttpInfo(param.body,  options).toPromise();
-    }
-
-    /**
-     * @param param the request object
-     */
-    public productUpdateMediaGalleryEntry(param: ProductApiProductUpdateMediaGalleryEntryRequest, options?: Configuration): Promise<any> {
-        return this.api.productUpdateMediaGalleryEntry(param.body,  options).toPromise();
-    }
-
-    /**
-     * @param param the request object
-     */
-    public productUpdateOptionsListWithHttpInfo(param: ProductApiProductUpdateOptionsListRequest, options?: Configuration): Promise<HttpInfo<EntitymanagerUpdateOptionsListResponse>> {
-        return this.api.productUpdateOptionsListWithHttpInfo(param.body,  options).toPromise();
-    }
-
-    /**
-     * @param param the request object
-     */
-    public productUpdateOptionsList(param: ProductApiProductUpdateOptionsListRequest, options?: Configuration): Promise<EntitymanagerUpdateOptionsListResponse> {
-        return this.api.productUpdateOptionsList(param.body,  options).toPromise();
-    }
-
-    /**
      * @param param the request object
      */
     public productUpdateProductWithHttpInfo(param: ProductApiProductUpdateProductRequest, options?: Configuration): Promise<HttpInfo<ProductUpdateProductResponse>> {
@@ -1068,6 +1080,74 @@ export class ObjectProductApi {
      */
     public productUpdateProductV2(param: ProductApiProductUpdateProductV2Request, options?: Configuration): Promise<any> {
         return this.api.productUpdateProductV2(param.body,  options).toPromise();
+    }
+
+    /**
+     * The RemoveMediaGalleryEntry endpoint allows users to remove a specific media entry from a product\'s gallery. By making a request to this endpoint and providing the tenant ID, product ID, and the unique identifier of the media entry, users can easily manage and update the visual content of a product\'s gallery. 
+     * Remove Media Gallery Entry
+     * @param param the request object
+     */
+    public removeMediaGalleryEntryWithHttpInfo(param: ProductApiRemoveMediaGalleryEntryRequest, options?: Configuration): Promise<HttpInfo<any>> {
+        return this.api.removeMediaGalleryEntryWithHttpInfo(param.body,  options).toPromise();
+    }
+
+    /**
+     * The RemoveMediaGalleryEntry endpoint allows users to remove a specific media entry from a product\'s gallery. By making a request to this endpoint and providing the tenant ID, product ID, and the unique identifier of the media entry, users can easily manage and update the visual content of a product\'s gallery. 
+     * Remove Media Gallery Entry
+     * @param param the request object
+     */
+    public removeMediaGalleryEntry(param: ProductApiRemoveMediaGalleryEntryRequest, options?: Configuration): Promise<any> {
+        return this.api.removeMediaGalleryEntry(param.body,  options).toPromise();
+    }
+
+    /**
+     * Update Attribute Options
+     * @param param the request object
+     */
+    public updateAttributeOptionsWithHttpInfo(param: ProductApiUpdateAttributeOptionsRequest, options?: Configuration): Promise<HttpInfo<EntitymanagerUpdateAttributeOptionsResponse>> {
+        return this.api.updateAttributeOptionsWithHttpInfo(param.body,  options).toPromise();
+    }
+
+    /**
+     * Update Attribute Options
+     * @param param the request object
+     */
+    public updateAttributeOptions(param: ProductApiUpdateAttributeOptionsRequest, options?: Configuration): Promise<EntitymanagerUpdateAttributeOptionsResponse> {
+        return this.api.updateAttributeOptions(param.body,  options).toPromise();
+    }
+
+    /**
+     * The UpdateMediaGalleryEntry endpoint allows users to modify and update a specific media entry within a product\'s gallery. By sending a request to this endpoint and providing the necessary information, users can efficiently update the media asset, position, and metadata associated with the entry.
+     * Update Media Gallery Entry
+     * @param param the request object
+     */
+    public updateMediaGalleryEntryWithHttpInfo(param: ProductApiUpdateMediaGalleryEntryRequest, options?: Configuration): Promise<HttpInfo<any>> {
+        return this.api.updateMediaGalleryEntryWithHttpInfo(param.body,  options).toPromise();
+    }
+
+    /**
+     * The UpdateMediaGalleryEntry endpoint allows users to modify and update a specific media entry within a product\'s gallery. By sending a request to this endpoint and providing the necessary information, users can efficiently update the media asset, position, and metadata associated with the entry.
+     * Update Media Gallery Entry
+     * @param param the request object
+     */
+    public updateMediaGalleryEntry(param: ProductApiUpdateMediaGalleryEntryRequest, options?: Configuration): Promise<any> {
+        return this.api.updateMediaGalleryEntry(param.body,  options).toPromise();
+    }
+
+    /**
+     * Update Options List
+     * @param param the request object
+     */
+    public updateOptionsListWithHttpInfo(param: ProductApiUpdateOptionsListRequest, options?: Configuration): Promise<HttpInfo<EntitymanagerUpdateOptionsListResponse>> {
+        return this.api.updateOptionsListWithHttpInfo(param.body,  options).toPromise();
+    }
+
+    /**
+     * Update Options List
+     * @param param the request object
+     */
+    public updateOptionsList(param: ProductApiUpdateOptionsListRequest, options?: Configuration): Promise<EntitymanagerUpdateOptionsListResponse> {
+        return this.api.updateOptionsList(param.body,  options).toPromise();
     }
 
 }
