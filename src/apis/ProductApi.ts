@@ -2,7 +2,7 @@
 /* eslint-disable */
 /**
  * Product Service
- * API for managing products
+ * Introducing our revolutionary Product Management Service! Designed to streamline your product inventory and elevate customer experiences, our cutting-edge protobuf service is a game-changer in the world of efficient product management.  With our service, you can effortlessly create new products, allowing you to quickly bring your ideas to life and expand your catalog. Retrieve product information in a snap, providing accurate and personalized details to your customers based on their specific needs and preferences.  Stay ahead of the competition by easily updating product information, ensuring your catalog is always up-to-date and optimized. Seamlessly remove products from your inventory when needed, maintaining a clean and relevant product selection.  Enhance the visual appeal of your products with our advanced media gallery functionalities. Effortlessly add and update captivating images and videos to showcase your products in the best possible light, engaging your customers and driving conversions.  Personalization is key in today\'s market, and our service enables you to offer unique options to your customers. Easily create and manage lists of customizable options for your products, providing flexibility and tailoring to individual preferences.  Attributes play a vital role in defining products, and our service empowers you to effectively manage them. From bulk attribute creation to listing and retrieving attribute options, our service ensures your product information is rich and comprehensive.  Our service extends its capabilities to entity management, allowing you to effortlessly handle different entities and create customized options lists associated with them. This provides further flexibility and customization options for your product offerings.  When it comes to bulk updates, our service has you covered. Effortlessly update multiple products simultaneously, saving you time and streamlining your operations.  Finding specific products and variants is a breeze with our service. Quickly locate products based on their unique stock keeping unit (SKU) values, ensuring efficient inventory management and smooth order fulfillment.  Experience a new level of efficiency and productivity with our Product Management Service. Unlock the full potential of streamlined product management and empower your business to thrive in today\'s competitive market. Try our service today and elevate your product management to new heights!
  *
  * The version of the OpenAPI document: v1
  * Contact: info@gemini-commerce.com
@@ -60,7 +60,6 @@ import type {
   ProductBulkUpdateRequest,
   ProductBulkUpdateRequestV2,
   ProductBulkUpdateResponse,
-  ProductBulkUpdateResponseV2,
   ProductCreateProductRequest,
   ProductCreateProductRequestV2,
   ProductCreateProductResponse,
@@ -180,8 +179,6 @@ import {
     ProductBulkUpdateRequestV2ToJSON,
     ProductBulkUpdateResponseFromJSON,
     ProductBulkUpdateResponseToJSON,
-    ProductBulkUpdateResponseV2FromJSON,
-    ProductBulkUpdateResponseV2ToJSON,
     ProductCreateProductRequestFromJSON,
     ProductCreateProductRequestToJSON,
     ProductCreateProductRequestV2FromJSON,
@@ -238,8 +235,80 @@ import {
     RpcStatusToJSON,
 } from '../models/index';
 
-export interface ProductAddMediaGalleryEntryOperationRequest {
+export interface AddMediaGalleryEntryRequest {
     body: ProductAddMediaGalleryEntryRequest;
+}
+
+export interface BulkUpdateV2Request {
+    body: ProductBulkUpdateRequestV2;
+}
+
+export interface CreateAttributeOptionsRequest {
+    body: EntitymanagerCreateAttributeOptionsRequest;
+}
+
+export interface CreateEntityRequest {
+    body: EntitymanagerEntity;
+}
+
+export interface CreateOptionsListRequest {
+    body: EntitymanagerCreateOptionsListRequest;
+}
+
+export interface GetAttributeOptionRequest {
+    body: EntitymanagerGetAttributeOptionRequest;
+}
+
+export interface GetAttributeOptionsRequest {
+    body: EntitymanagerGetAttributeOptionsRequest;
+}
+
+export interface GetEntityRequest {
+    body: EntitymanagerEntityRequest;
+}
+
+export interface GetOptionsListRequest {
+    body: EntitymanagerGetOptionsListRequest;
+}
+
+export interface GetProductRequest {
+    body: ProductGetProductRequest;
+}
+
+export interface GetProductByCodeRequest {
+    body: ProductGetProductByCodeRequest;
+}
+
+export interface GetProductByUrlKeyRequest {
+    body: ProductGetProductByUrlKeyRequest;
+}
+
+export interface ListAttributeOptionsRequest {
+    body: EntitymanagerListAttributeOptionsRequest;
+}
+
+export interface ListEntitiesRequest {
+    body: EntitymanagerListEntitiesRequest;
+}
+
+export interface ListOptionsListsRequest {
+    body: EntitymanagerListOptionsListsRequest;
+}
+
+export interface ListProductsRequest {
+    body: ProductListProductsRequest;
+}
+
+export interface ListProductsByIdsRequest {
+    body: ProductListProductsByIdsRequest;
+}
+
+export interface ListProductsBySkuRequest {
+    body: ProductListProductsBySkuRequest;
+}
+
+export interface ListVariantsBySkuRequest {
+    body: ProductListVariantsBySkuRequest;
 }
 
 export interface ProductBulkAddAssetsEntriesOperationRequest {
@@ -266,24 +335,8 @@ export interface ProductBulkUpdateAssetsEntriesOperationRequest {
     body: ProductBulkUpdateAssetsEntriesRequest;
 }
 
-export interface ProductBulkUpdateV2Request {
-    body: ProductBulkUpdateRequestV2;
-}
-
 export interface ProductCreateAttributeGroupRequest {
     body: EntitymanagerCreateAttributeGroupRequest;
-}
-
-export interface ProductCreateAttributeOptionsRequest {
-    body: EntitymanagerCreateAttributeOptionsRequest;
-}
-
-export interface ProductCreateEntityRequest {
-    body: EntitymanagerEntity;
-}
-
-export interface ProductCreateOptionsListRequest {
-    body: EntitymanagerCreateOptionsListRequest;
 }
 
 export interface ProductCreateProductOperationRequest {
@@ -310,68 +363,8 @@ export interface ProductGetAttributeGroupRequest {
     body: EntitymanagerGetAttributeGroupRequest;
 }
 
-export interface ProductGetAttributeOptionRequest {
-    body: EntitymanagerGetAttributeOptionRequest;
-}
-
-export interface ProductGetAttributeOptionsRequest {
-    body: EntitymanagerGetAttributeOptionsRequest;
-}
-
-export interface ProductGetEntityRequest {
-    body: EntitymanagerEntityRequest;
-}
-
-export interface ProductGetOptionsListRequest {
-    body: EntitymanagerGetOptionsListRequest;
-}
-
-export interface ProductGetProductOperationRequest {
-    body: ProductGetProductRequest;
-}
-
-export interface ProductGetProductByCodeOperationRequest {
-    body: ProductGetProductByCodeRequest;
-}
-
-export interface ProductGetProductByUrlKeyOperationRequest {
-    body: ProductGetProductByUrlKeyRequest;
-}
-
 export interface ProductListAttributeGroupsRequest {
     body: EntitymanagerListAttributeGroupsRequest;
-}
-
-export interface ProductListAttributeOptionsRequest {
-    body: EntitymanagerListAttributeOptionsRequest;
-}
-
-export interface ProductListEntitiesRequest {
-    body: EntitymanagerListEntitiesRequest;
-}
-
-export interface ProductListOptionsListsRequest {
-    body: EntitymanagerListOptionsListsRequest;
-}
-
-export interface ProductListProductsOperationRequest {
-    body: ProductListProductsRequest;
-}
-
-export interface ProductListProductsByIdsOperationRequest {
-    body: ProductListProductsByIdsRequest;
-}
-
-export interface ProductListProductsBySkuOperationRequest {
-    body: ProductListProductsBySkuRequest;
-}
-
-export interface ProductListVariantsBySkuOperationRequest {
-    body: ProductListVariantsBySkuRequest;
-}
-
-export interface ProductRemoveMediaGalleryEntryOperationRequest {
-    body: ProductRemoveMediaGalleryEntryRequest;
 }
 
 export interface ProductUpdateAttributeRequest {
@@ -382,18 +375,6 @@ export interface ProductUpdateAttributeGroupRequest {
     body: EntitymanagerUpdateAttributeGroupRequest;
 }
 
-export interface ProductUpdateAttributeOptionsRequest {
-    body: EntitymanagerUpdateAttributeOptionsRequest;
-}
-
-export interface ProductUpdateMediaGalleryEntryOperationRequest {
-    body: ProductUpdateMediaGalleryEntryRequest;
-}
-
-export interface ProductUpdateOptionsListRequest {
-    body: EntitymanagerUpdateOptionsListRequest;
-}
-
 export interface ProductUpdateProductOperationRequest {
     body: ProductUpdateProductRequest;
 }
@@ -402,16 +383,34 @@ export interface ProductUpdateProductV2Request {
     body: ProductUpdateProductRequestV2;
 }
 
+export interface RemoveMediaGalleryEntryRequest {
+    body: ProductRemoveMediaGalleryEntryRequest;
+}
+
+export interface UpdateAttributeOptionsRequest {
+    body: EntitymanagerUpdateAttributeOptionsRequest;
+}
+
+export interface UpdateMediaGalleryEntryRequest {
+    body: ProductUpdateMediaGalleryEntryRequest;
+}
+
+export interface UpdateOptionsListRequest {
+    body: EntitymanagerUpdateOptionsListRequest;
+}
+
 /**
  * 
  */
 export class ProductApi extends runtime.BaseAPI {
 
     /**
+     * The AddMediaGalleryEntry endpoint allows users to add a new media entry to the gallery of a specific product. To make a request to this endpoint, users need to provide the necessary information in the specified format. The request includes the tenant_id to specify the relevant tenant, the product_id to identify the target product, and the asset_grn which represents the globally unique identifier for the media asset being added. Additionally, the position field indicates the desired position of the media entry within the gallery, allowing users to control the order in which the media items are displayed. The metadata field, which is a repeated field, provides the option to include additional metadata associated with the media entry.
+     * Add Media Gallery Entry
      */
-    async productAddMediaGalleryEntryRaw(requestParameters: ProductAddMediaGalleryEntryOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<ProductAddMediaGalleryEntryResponse>> {
+    async addMediaGalleryEntryRaw(requestParameters: AddMediaGalleryEntryRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<ProductAddMediaGalleryEntryResponse>> {
         if (requestParameters.body === null || requestParameters.body === undefined) {
-            throw new runtime.RequiredError('body','Required parameter requestParameters.body was null or undefined when calling productAddMediaGalleryEntry.');
+            throw new runtime.RequiredError('body','Required parameter requestParameters.body was null or undefined when calling addMediaGalleryEntry.');
         }
 
         const queryParameters: any = {};
@@ -419,6 +418,10 @@ export class ProductApi extends runtime.BaseAPI {
         const headerParameters: runtime.HTTPHeaders = {};
 
         headerParameters['Content-Type'] = 'application/json';
+
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["Authorization"] = this.configuration.apiKey("Authorization"); // Authorization authentication
+        }
 
         const response = await this.request({
             path: `/product.Product/AddMediaGalleryEntry`,
@@ -432,9 +435,705 @@ export class ProductApi extends runtime.BaseAPI {
     }
 
     /**
+     * The AddMediaGalleryEntry endpoint allows users to add a new media entry to the gallery of a specific product. To make a request to this endpoint, users need to provide the necessary information in the specified format. The request includes the tenant_id to specify the relevant tenant, the product_id to identify the target product, and the asset_grn which represents the globally unique identifier for the media asset being added. Additionally, the position field indicates the desired position of the media entry within the gallery, allowing users to control the order in which the media items are displayed. The metadata field, which is a repeated field, provides the option to include additional metadata associated with the media entry.
+     * Add Media Gallery Entry
      */
-    async productAddMediaGalleryEntry(requestParameters: ProductAddMediaGalleryEntryOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<ProductAddMediaGalleryEntryResponse> {
-        const response = await this.productAddMediaGalleryEntryRaw(requestParameters, initOverrides);
+    async addMediaGalleryEntry(requestParameters: AddMediaGalleryEntryRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<ProductAddMediaGalleryEntryResponse> {
+        const response = await this.addMediaGalleryEntryRaw(requestParameters, initOverrides);
+        return await response.value();
+    }
+
+    /**
+     * Version 2 of bulk updates for product attributes with enhanced payload structure and response format.
+     * Bulk Update Products
+     */
+    async bulkUpdateV2Raw(requestParameters: BulkUpdateV2Request, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<ProductBulkUpdateResponse>> {
+        if (requestParameters.body === null || requestParameters.body === undefined) {
+            throw new runtime.RequiredError('body','Required parameter requestParameters.body was null or undefined when calling bulkUpdateV2.');
+        }
+
+        const queryParameters: any = {};
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        headerParameters['Content-Type'] = 'application/json';
+
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["Authorization"] = this.configuration.apiKey("Authorization"); // Authorization authentication
+        }
+
+        const response = await this.request({
+            path: `/product.Product/BulkUpdateV2`,
+            method: 'POST',
+            headers: headerParameters,
+            query: queryParameters,
+            body: ProductBulkUpdateRequestV2ToJSON(requestParameters.body),
+        }, initOverrides);
+
+        return new runtime.JSONApiResponse(response, (jsonValue) => ProductBulkUpdateResponseFromJSON(jsonValue));
+    }
+
+    /**
+     * Version 2 of bulk updates for product attributes with enhanced payload structure and response format.
+     * Bulk Update Products
+     */
+    async bulkUpdateV2(requestParameters: BulkUpdateV2Request, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<ProductBulkUpdateResponse> {
+        const response = await this.bulkUpdateV2Raw(requestParameters, initOverrides);
+        return await response.value();
+    }
+
+    /**
+     * Create attribute options with specified codes, values, and swatches. Returns created options and any associated errors.
+     * Create Attribute Options
+     */
+    async createAttributeOptionsRaw(requestParameters: CreateAttributeOptionsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<EntitymanagerCreateAttributeOptionsResponse>> {
+        if (requestParameters.body === null || requestParameters.body === undefined) {
+            throw new runtime.RequiredError('body','Required parameter requestParameters.body was null or undefined when calling createAttributeOptions.');
+        }
+
+        const queryParameters: any = {};
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        headerParameters['Content-Type'] = 'application/json';
+
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["Authorization"] = this.configuration.apiKey("Authorization"); // Authorization authentication
+        }
+
+        const response = await this.request({
+            path: `/product.Product/CreateAttributeOptions`,
+            method: 'POST',
+            headers: headerParameters,
+            query: queryParameters,
+            body: EntitymanagerCreateAttributeOptionsRequestToJSON(requestParameters.body),
+        }, initOverrides);
+
+        return new runtime.JSONApiResponse(response, (jsonValue) => EntitymanagerCreateAttributeOptionsResponseFromJSON(jsonValue));
+    }
+
+    /**
+     * Create attribute options with specified codes, values, and swatches. Returns created options and any associated errors.
+     * Create Attribute Options
+     */
+    async createAttributeOptions(requestParameters: CreateAttributeOptionsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<EntitymanagerCreateAttributeOptionsResponse> {
+        const response = await this.createAttributeOptionsRaw(requestParameters, initOverrides);
+        return await response.value();
+    }
+
+    /**
+     * The CreateEntity endpoint allows users to define and create a new entity with custom attributes, providing a flexible way to represent and manage different data structures within the system. By making a request to this endpoint, users can create a new entity that serves as an abstraction of a product or any other domain-specific object. This endpoint empowers users to define the specific attributes that compose the entity, such as color, composition, technical details, or any other relevant properties. Utilize the CreateEntity endpoint to dynamically extend and adapt your system\'s data model to accommodate diverse business requirements and efficiently manage various types of entities.
+     * Create Entity
+     */
+    async createEntityRaw(requestParameters: CreateEntityRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<EntitymanagerCreateEntityResponse>> {
+        if (requestParameters.body === null || requestParameters.body === undefined) {
+            throw new runtime.RequiredError('body','Required parameter requestParameters.body was null or undefined when calling createEntity.');
+        }
+
+        const queryParameters: any = {};
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        headerParameters['Content-Type'] = 'application/json';
+
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["Authorization"] = this.configuration.apiKey("Authorization"); // Authorization authentication
+        }
+
+        const response = await this.request({
+            path: `/product.Product/CreateEntity`,
+            method: 'POST',
+            headers: headerParameters,
+            query: queryParameters,
+            body: EntitymanagerEntityToJSON(requestParameters.body),
+        }, initOverrides);
+
+        return new runtime.JSONApiResponse(response, (jsonValue) => EntitymanagerCreateEntityResponseFromJSON(jsonValue));
+    }
+
+    /**
+     * The CreateEntity endpoint allows users to define and create a new entity with custom attributes, providing a flexible way to represent and manage different data structures within the system. By making a request to this endpoint, users can create a new entity that serves as an abstraction of a product or any other domain-specific object. This endpoint empowers users to define the specific attributes that compose the entity, such as color, composition, technical details, or any other relevant properties. Utilize the CreateEntity endpoint to dynamically extend and adapt your system\'s data model to accommodate diverse business requirements and efficiently manage various types of entities.
+     * Create Entity
+     */
+    async createEntity(requestParameters: CreateEntityRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<EntitymanagerCreateEntityResponse> {
+        const response = await this.createEntityRaw(requestParameters, initOverrides);
+        return await response.value();
+    }
+
+    /**
+     * The CreateOptionsList endpoint allows users to create an OptionList, which represents a list of predefined options for assigning to an attribute. By making a request to this endpoint with the provided request format, users can create a new OptionList by specifying the relevant tenant ID and providing the OptionList object containing the predefined options. This functionality facilitates efficient management and assignment of predefined attribute values, ensuring consistency and flexibility within the system.
+     * Create Options List
+     */
+    async createOptionsListRaw(requestParameters: CreateOptionsListRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<EntitymanagerCreateOptionsListResponse>> {
+        if (requestParameters.body === null || requestParameters.body === undefined) {
+            throw new runtime.RequiredError('body','Required parameter requestParameters.body was null or undefined when calling createOptionsList.');
+        }
+
+        const queryParameters: any = {};
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        headerParameters['Content-Type'] = 'application/json';
+
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["Authorization"] = this.configuration.apiKey("Authorization"); // Authorization authentication
+        }
+
+        const response = await this.request({
+            path: `/product.Product/CreateOptionsList`,
+            method: 'POST',
+            headers: headerParameters,
+            query: queryParameters,
+            body: EntitymanagerCreateOptionsListRequestToJSON(requestParameters.body),
+        }, initOverrides);
+
+        return new runtime.JSONApiResponse(response, (jsonValue) => EntitymanagerCreateOptionsListResponseFromJSON(jsonValue));
+    }
+
+    /**
+     * The CreateOptionsList endpoint allows users to create an OptionList, which represents a list of predefined options for assigning to an attribute. By making a request to this endpoint with the provided request format, users can create a new OptionList by specifying the relevant tenant ID and providing the OptionList object containing the predefined options. This functionality facilitates efficient management and assignment of predefined attribute values, ensuring consistency and flexibility within the system.
+     * Create Options List
+     */
+    async createOptionsList(requestParameters: CreateOptionsListRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<EntitymanagerCreateOptionsListResponse> {
+        const response = await this.createOptionsListRaw(requestParameters, initOverrides);
+        return await response.value();
+    }
+
+    /**
+     * Retrieve attribute option details by providing the tenant ID, list code, and option ID. Returns the specified attribute option.
+     * Get Attribute Option
+     */
+    async getAttributeOptionRaw(requestParameters: GetAttributeOptionRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<EntitymanagerGetAttributeOptionResponse>> {
+        if (requestParameters.body === null || requestParameters.body === undefined) {
+            throw new runtime.RequiredError('body','Required parameter requestParameters.body was null or undefined when calling getAttributeOption.');
+        }
+
+        const queryParameters: any = {};
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        headerParameters['Content-Type'] = 'application/json';
+
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["Authorization"] = this.configuration.apiKey("Authorization"); // Authorization authentication
+        }
+
+        const response = await this.request({
+            path: `/product.Product/GetAttributeOption`,
+            method: 'POST',
+            headers: headerParameters,
+            query: queryParameters,
+            body: EntitymanagerGetAttributeOptionRequestToJSON(requestParameters.body),
+        }, initOverrides);
+
+        return new runtime.JSONApiResponse(response, (jsonValue) => EntitymanagerGetAttributeOptionResponseFromJSON(jsonValue));
+    }
+
+    /**
+     * Retrieve attribute option details by providing the tenant ID, list code, and option ID. Returns the specified attribute option.
+     * Get Attribute Option
+     */
+    async getAttributeOption(requestParameters: GetAttributeOptionRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<EntitymanagerGetAttributeOptionResponse> {
+        const response = await this.getAttributeOptionRaw(requestParameters, initOverrides);
+        return await response.value();
+    }
+
+    /**
+     * Retrieve a list of attribute options based on the provided tenant ID and list code.
+     * Get Attribute Options
+     */
+    async getAttributeOptionsRaw(requestParameters: GetAttributeOptionsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<EntitymanagerGetAttributeOptionsResponse>> {
+        if (requestParameters.body === null || requestParameters.body === undefined) {
+            throw new runtime.RequiredError('body','Required parameter requestParameters.body was null or undefined when calling getAttributeOptions.');
+        }
+
+        const queryParameters: any = {};
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        headerParameters['Content-Type'] = 'application/json';
+
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["Authorization"] = this.configuration.apiKey("Authorization"); // Authorization authentication
+        }
+
+        const response = await this.request({
+            path: `/product.Product/GetAttributeOptions`,
+            method: 'POST',
+            headers: headerParameters,
+            query: queryParameters,
+            body: EntitymanagerGetAttributeOptionsRequestToJSON(requestParameters.body),
+        }, initOverrides);
+
+        return new runtime.JSONApiResponse(response, (jsonValue) => EntitymanagerGetAttributeOptionsResponseFromJSON(jsonValue));
+    }
+
+    /**
+     * Retrieve a list of attribute options based on the provided tenant ID and list code.
+     * Get Attribute Options
+     */
+    async getAttributeOptions(requestParameters: GetAttributeOptionsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<EntitymanagerGetAttributeOptionsResponse> {
+        const response = await this.getAttributeOptionsRaw(requestParameters, initOverrides);
+        return await response.value();
+    }
+
+    /**
+     * Retrieve details of an entity by providing the tenant ID and either entity data or entity ID. Returns information including ID, type, code, label, relationships, and attributes.
+     * Get Entity Details
+     */
+    async getEntityRaw(requestParameters: GetEntityRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<EntitymanagerEntity>> {
+        if (requestParameters.body === null || requestParameters.body === undefined) {
+            throw new runtime.RequiredError('body','Required parameter requestParameters.body was null or undefined when calling getEntity.');
+        }
+
+        const queryParameters: any = {};
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        headerParameters['Content-Type'] = 'application/json';
+
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["Authorization"] = this.configuration.apiKey("Authorization"); // Authorization authentication
+        }
+
+        const response = await this.request({
+            path: `/product.Product/GetEntity`,
+            method: 'POST',
+            headers: headerParameters,
+            query: queryParameters,
+            body: EntitymanagerEntityRequestToJSON(requestParameters.body),
+        }, initOverrides);
+
+        return new runtime.JSONApiResponse(response, (jsonValue) => EntitymanagerEntityFromJSON(jsonValue));
+    }
+
+    /**
+     * Retrieve details of an entity by providing the tenant ID and either entity data or entity ID. Returns information including ID, type, code, label, relationships, and attributes.
+     * Get Entity Details
+     */
+    async getEntity(requestParameters: GetEntityRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<EntitymanagerEntity> {
+        const response = await this.getEntityRaw(requestParameters, initOverrides);
+        return await response.value();
+    }
+
+    /**
+     * Retrieve option lists.
+     * Get Options List
+     */
+    async getOptionsListRaw(requestParameters: GetOptionsListRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<EntitymanagerGetOptionsListResponse>> {
+        if (requestParameters.body === null || requestParameters.body === undefined) {
+            throw new runtime.RequiredError('body','Required parameter requestParameters.body was null or undefined when calling getOptionsList.');
+        }
+
+        const queryParameters: any = {};
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        headerParameters['Content-Type'] = 'application/json';
+
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["Authorization"] = this.configuration.apiKey("Authorization"); // Authorization authentication
+        }
+
+        const response = await this.request({
+            path: `/product.Product/GetOptionsList`,
+            method: 'POST',
+            headers: headerParameters,
+            query: queryParameters,
+            body: EntitymanagerGetOptionsListRequestToJSON(requestParameters.body),
+        }, initOverrides);
+
+        return new runtime.JSONApiResponse(response, (jsonValue) => EntitymanagerGetOptionsListResponseFromJSON(jsonValue));
+    }
+
+    /**
+     * Retrieve option lists.
+     * Get Options List
+     */
+    async getOptionsList(requestParameters: GetOptionsListRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<EntitymanagerGetOptionsListResponse> {
+        const response = await this.getOptionsListRaw(requestParameters, initOverrides);
+        return await response.value();
+    }
+
+    /**
+     * The GetProduct endpoint enables users to retrieve a product from the system. By sending a request to this endpoint, users can retrieve a product by providing its unique identifier.
+     * Get Product
+     */
+    async getProductRaw(requestParameters: GetProductRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<ProductGetProductResponse>> {
+        if (requestParameters.body === null || requestParameters.body === undefined) {
+            throw new runtime.RequiredError('body','Required parameter requestParameters.body was null or undefined when calling getProduct.');
+        }
+
+        const queryParameters: any = {};
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        headerParameters['Content-Type'] = 'application/json';
+
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["Authorization"] = this.configuration.apiKey("Authorization"); // Authorization authentication
+        }
+
+        const response = await this.request({
+            path: `/product.Product/GetProduct`,
+            method: 'POST',
+            headers: headerParameters,
+            query: queryParameters,
+            body: ProductGetProductRequestToJSON(requestParameters.body),
+        }, initOverrides);
+
+        return new runtime.JSONApiResponse(response, (jsonValue) => ProductGetProductResponseFromJSON(jsonValue));
+    }
+
+    /**
+     * The GetProduct endpoint enables users to retrieve a product from the system. By sending a request to this endpoint, users can retrieve a product by providing its unique identifier.
+     * Get Product
+     */
+    async getProduct(requestParameters: GetProductRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<ProductGetProductResponse> {
+        const response = await this.getProductRaw(requestParameters, initOverrides);
+        return await response.value();
+    }
+
+    /**
+     * The GetProductByCode endpoint enables users to retrieve a product from the system. By sending a request to this endpoint, users can retrieve a product by providing its unique code.
+     * Get Product By Code
+     */
+    async getProductByCodeRaw(requestParameters: GetProductByCodeRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<ProductGetProductByCodeResponse>> {
+        if (requestParameters.body === null || requestParameters.body === undefined) {
+            throw new runtime.RequiredError('body','Required parameter requestParameters.body was null or undefined when calling getProductByCode.');
+        }
+
+        const queryParameters: any = {};
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        headerParameters['Content-Type'] = 'application/json';
+
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["Authorization"] = this.configuration.apiKey("Authorization"); // Authorization authentication
+        }
+
+        const response = await this.request({
+            path: `/product.Product/GetProductByCode`,
+            method: 'POST',
+            headers: headerParameters,
+            query: queryParameters,
+            body: ProductGetProductByCodeRequestToJSON(requestParameters.body),
+        }, initOverrides);
+
+        return new runtime.JSONApiResponse(response, (jsonValue) => ProductGetProductByCodeResponseFromJSON(jsonValue));
+    }
+
+    /**
+     * The GetProductByCode endpoint enables users to retrieve a product from the system. By sending a request to this endpoint, users can retrieve a product by providing its unique code.
+     * Get Product By Code
+     */
+    async getProductByCode(requestParameters: GetProductByCodeRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<ProductGetProductByCodeResponse> {
+        const response = await this.getProductByCodeRaw(requestParameters, initOverrides);
+        return await response.value();
+    }
+
+    /**
+     * The GetProductByUrlKey endpoint enables users to retrieve a product from the system. By sending a request to this endpoint, users can retrieve a product by providing its unique url key.
+     * Get Product By Url Key
+     */
+    async getProductByUrlKeyRaw(requestParameters: GetProductByUrlKeyRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<ProductGetProductByUrlKeyResponse>> {
+        if (requestParameters.body === null || requestParameters.body === undefined) {
+            throw new runtime.RequiredError('body','Required parameter requestParameters.body was null or undefined when calling getProductByUrlKey.');
+        }
+
+        const queryParameters: any = {};
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        headerParameters['Content-Type'] = 'application/json';
+
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["Authorization"] = this.configuration.apiKey("Authorization"); // Authorization authentication
+        }
+
+        const response = await this.request({
+            path: `/product.Product/GetProductByUrlKey`,
+            method: 'POST',
+            headers: headerParameters,
+            query: queryParameters,
+            body: ProductGetProductByUrlKeyRequestToJSON(requestParameters.body),
+        }, initOverrides);
+
+        return new runtime.JSONApiResponse(response, (jsonValue) => ProductGetProductByUrlKeyResponseFromJSON(jsonValue));
+    }
+
+    /**
+     * The GetProductByUrlKey endpoint enables users to retrieve a product from the system. By sending a request to this endpoint, users can retrieve a product by providing its unique url key.
+     * Get Product By Url Key
+     */
+    async getProductByUrlKey(requestParameters: GetProductByUrlKeyRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<ProductGetProductByUrlKeyResponse> {
+        const response = await this.getProductByUrlKeyRaw(requestParameters, initOverrides);
+        return await response.value();
+    }
+
+    /**
+     * List Attribute Options
+     */
+    async listAttributeOptionsRaw(requestParameters: ListAttributeOptionsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<EntitymanagerListAttributeOptionsResponse>> {
+        if (requestParameters.body === null || requestParameters.body === undefined) {
+            throw new runtime.RequiredError('body','Required parameter requestParameters.body was null or undefined when calling listAttributeOptions.');
+        }
+
+        const queryParameters: any = {};
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        headerParameters['Content-Type'] = 'application/json';
+
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["Authorization"] = this.configuration.apiKey("Authorization"); // Authorization authentication
+        }
+
+        const response = await this.request({
+            path: `/product.Product/ListAttributeOptions`,
+            method: 'POST',
+            headers: headerParameters,
+            query: queryParameters,
+            body: EntitymanagerListAttributeOptionsRequestToJSON(requestParameters.body),
+        }, initOverrides);
+
+        return new runtime.JSONApiResponse(response, (jsonValue) => EntitymanagerListAttributeOptionsResponseFromJSON(jsonValue));
+    }
+
+    /**
+     * List Attribute Options
+     */
+    async listAttributeOptions(requestParameters: ListAttributeOptionsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<EntitymanagerListAttributeOptionsResponse> {
+        const response = await this.listAttributeOptionsRaw(requestParameters, initOverrides);
+        return await response.value();
+    }
+
+    /**
+     * List Entities
+     */
+    async listEntitiesRaw(requestParameters: ListEntitiesRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<EntitymanagerListEntitiesResponse>> {
+        if (requestParameters.body === null || requestParameters.body === undefined) {
+            throw new runtime.RequiredError('body','Required parameter requestParameters.body was null or undefined when calling listEntities.');
+        }
+
+        const queryParameters: any = {};
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        headerParameters['Content-Type'] = 'application/json';
+
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["Authorization"] = this.configuration.apiKey("Authorization"); // Authorization authentication
+        }
+
+        const response = await this.request({
+            path: `/product.Product/ListEntities`,
+            method: 'POST',
+            headers: headerParameters,
+            query: queryParameters,
+            body: EntitymanagerListEntitiesRequestToJSON(requestParameters.body),
+        }, initOverrides);
+
+        return new runtime.JSONApiResponse(response, (jsonValue) => EntitymanagerListEntitiesResponseFromJSON(jsonValue));
+    }
+
+    /**
+     * List Entities
+     */
+    async listEntities(requestParameters: ListEntitiesRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<EntitymanagerListEntitiesResponse> {
+        const response = await this.listEntitiesRaw(requestParameters, initOverrides);
+        return await response.value();
+    }
+
+    /**
+     * The ListOptionsLists endpoint allows users to retrieve a list of OptionLists available in the system. By making a request to this endpoint with the provided request format, users can obtain all the OptionLists associated with the specified tenant. This functionality enables users to access and manage the predefined options available for various attributes within the system. Utilizing the ListOptionsLists endpoint provides a convenient way to retrieve and work with OptionLists, facilitating efficient management of attribute options and ensuring consistency in attribute values throughout the system.
+     * List Options Lists
+     */
+    async listOptionsListsRaw(requestParameters: ListOptionsListsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<EntitymanagerListOptionsListsResponse>> {
+        if (requestParameters.body === null || requestParameters.body === undefined) {
+            throw new runtime.RequiredError('body','Required parameter requestParameters.body was null or undefined when calling listOptionsLists.');
+        }
+
+        const queryParameters: any = {};
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        headerParameters['Content-Type'] = 'application/json';
+
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["Authorization"] = this.configuration.apiKey("Authorization"); // Authorization authentication
+        }
+
+        const response = await this.request({
+            path: `/product.Product/ListOptionsLists`,
+            method: 'POST',
+            headers: headerParameters,
+            query: queryParameters,
+            body: EntitymanagerListOptionsListsRequestToJSON(requestParameters.body),
+        }, initOverrides);
+
+        return new runtime.JSONApiResponse(response, (jsonValue) => EntitymanagerListOptionsListsResponseFromJSON(jsonValue));
+    }
+
+    /**
+     * The ListOptionsLists endpoint allows users to retrieve a list of OptionLists available in the system. By making a request to this endpoint with the provided request format, users can obtain all the OptionLists associated with the specified tenant. This functionality enables users to access and manage the predefined options available for various attributes within the system. Utilizing the ListOptionsLists endpoint provides a convenient way to retrieve and work with OptionLists, facilitating efficient management of attribute options and ensuring consistency in attribute values throughout the system.
+     * List Options Lists
+     */
+    async listOptionsLists(requestParameters: ListOptionsListsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<EntitymanagerListOptionsListsResponse> {
+        const response = await this.listOptionsListsRaw(requestParameters, initOverrides);
+        return await response.value();
+    }
+
+    /**
+     * The ListProducts endpoint provides users with the ability to retrieve a filtered list of products based on specific criteria. By including filter parameters in the request, users can customize the response to only include products that meet certain conditions, such as price range, category, availability, or any other relevant attributes. This endpoint empowers users to efficiently narrow down the product selection and retrieve tailored results.
+     * List Products
+     */
+    async listProductsRaw(requestParameters: ListProductsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<ProductListProductsResponse>> {
+        if (requestParameters.body === null || requestParameters.body === undefined) {
+            throw new runtime.RequiredError('body','Required parameter requestParameters.body was null or undefined when calling listProducts.');
+        }
+
+        const queryParameters: any = {};
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        headerParameters['Content-Type'] = 'application/json';
+
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["Authorization"] = this.configuration.apiKey("Authorization"); // Authorization authentication
+        }
+
+        const response = await this.request({
+            path: `/product.Product/ListProducts`,
+            method: 'POST',
+            headers: headerParameters,
+            query: queryParameters,
+            body: ProductListProductsRequestToJSON(requestParameters.body),
+        }, initOverrides);
+
+        return new runtime.JSONApiResponse(response, (jsonValue) => ProductListProductsResponseFromJSON(jsonValue));
+    }
+
+    /**
+     * The ListProducts endpoint provides users with the ability to retrieve a filtered list of products based on specific criteria. By including filter parameters in the request, users can customize the response to only include products that meet certain conditions, such as price range, category, availability, or any other relevant attributes. This endpoint empowers users to efficiently narrow down the product selection and retrieve tailored results.
+     * List Products
+     */
+    async listProducts(requestParameters: ListProductsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<ProductListProductsResponse> {
+        const response = await this.listProductsRaw(requestParameters, initOverrides);
+        return await response.value();
+    }
+
+    /**
+     * The ListProductsByIds endpoint allows users to retrieve a list of products based on provided IDs. By making a request to this endpoint and specifying a set of product IDs, users can retrieve detailed information about the corresponding products. This endpoint facilitates efficient retrieval of specific products, enabling applications to display accurate and targeted product information to users.
+     * List Products By Ids
+     */
+    async listProductsByIdsRaw(requestParameters: ListProductsByIdsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<ProductListProductsByIdsResponse>> {
+        if (requestParameters.body === null || requestParameters.body === undefined) {
+            throw new runtime.RequiredError('body','Required parameter requestParameters.body was null or undefined when calling listProductsByIds.');
+        }
+
+        const queryParameters: any = {};
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        headerParameters['Content-Type'] = 'application/json';
+
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["Authorization"] = this.configuration.apiKey("Authorization"); // Authorization authentication
+        }
+
+        const response = await this.request({
+            path: `/product.Product/ListProductsByIds`,
+            method: 'POST',
+            headers: headerParameters,
+            query: queryParameters,
+            body: ProductListProductsByIdsRequestToJSON(requestParameters.body),
+        }, initOverrides);
+
+        return new runtime.JSONApiResponse(response, (jsonValue) => ProductListProductsByIdsResponseFromJSON(jsonValue));
+    }
+
+    /**
+     * The ListProductsByIds endpoint allows users to retrieve a list of products based on provided IDs. By making a request to this endpoint and specifying a set of product IDs, users can retrieve detailed information about the corresponding products. This endpoint facilitates efficient retrieval of specific products, enabling applications to display accurate and targeted product information to users.
+     * List Products By Ids
+     */
+    async listProductsByIds(requestParameters: ListProductsByIdsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<ProductListProductsByIdsResponse> {
+        const response = await this.listProductsByIdsRaw(requestParameters, initOverrides);
+        return await response.value();
+    }
+
+    /**
+     * List Products By Sku
+     */
+    async listProductsBySkuRaw(requestParameters: ListProductsBySkuRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<ProductListProductsBySkuResponse>> {
+        if (requestParameters.body === null || requestParameters.body === undefined) {
+            throw new runtime.RequiredError('body','Required parameter requestParameters.body was null or undefined when calling listProductsBySku.');
+        }
+
+        const queryParameters: any = {};
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        headerParameters['Content-Type'] = 'application/json';
+
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["Authorization"] = this.configuration.apiKey("Authorization"); // Authorization authentication
+        }
+
+        const response = await this.request({
+            path: `/product.Product/ListProductsBySku`,
+            method: 'POST',
+            headers: headerParameters,
+            query: queryParameters,
+            body: ProductListProductsBySkuRequestToJSON(requestParameters.body),
+        }, initOverrides);
+
+        return new runtime.JSONApiResponse(response, (jsonValue) => ProductListProductsBySkuResponseFromJSON(jsonValue));
+    }
+
+    /**
+     * List Products By Sku
+     */
+    async listProductsBySku(requestParameters: ListProductsBySkuRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<ProductListProductsBySkuResponse> {
+        const response = await this.listProductsBySkuRaw(requestParameters, initOverrides);
+        return await response.value();
+    }
+
+    /**
+     * List Product Variants By Sku
+     */
+    async listVariantsBySkuRaw(requestParameters: ListVariantsBySkuRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<ProductListVariantsBySkuResponse>> {
+        if (requestParameters.body === null || requestParameters.body === undefined) {
+            throw new runtime.RequiredError('body','Required parameter requestParameters.body was null or undefined when calling listVariantsBySku.');
+        }
+
+        const queryParameters: any = {};
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        headerParameters['Content-Type'] = 'application/json';
+
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["Authorization"] = this.configuration.apiKey("Authorization"); // Authorization authentication
+        }
+
+        const response = await this.request({
+            path: `/product.Product/ListVariantsBySku`,
+            method: 'POST',
+            headers: headerParameters,
+            query: queryParameters,
+            body: ProductListVariantsBySkuRequestToJSON(requestParameters.body),
+        }, initOverrides);
+
+        return new runtime.JSONApiResponse(response, (jsonValue) => ProductListVariantsBySkuResponseFromJSON(jsonValue));
+    }
+
+    /**
+     * List Product Variants By Sku
+     */
+    async listVariantsBySku(requestParameters: ListVariantsBySkuRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<ProductListVariantsBySkuResponse> {
+        const response = await this.listVariantsBySkuRaw(requestParameters, initOverrides);
         return await response.value();
     }
 
@@ -451,6 +1150,10 @@ export class ProductApi extends runtime.BaseAPI {
         const headerParameters: runtime.HTTPHeaders = {};
 
         headerParameters['Content-Type'] = 'application/json';
+
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["Authorization"] = this.configuration.apiKey("Authorization"); // Authorization authentication
+        }
 
         const response = await this.request({
             path: `/product.Product/BulkAddAssetsEntries`,
@@ -472,6 +1175,7 @@ export class ProductApi extends runtime.BaseAPI {
     }
 
     /**
+     * Allow creation of multiple attributes. If any attribute is invalid, an error will be returned with more details, and in the response body, the attributes created will be returned.
      */
     async productBulkCreateAttributeRaw(requestParameters: ProductBulkCreateAttributeRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<EntitymanagerBulkCreateAttributeResponse>> {
         if (requestParameters.body === null || requestParameters.body === undefined) {
@@ -483,6 +1187,10 @@ export class ProductApi extends runtime.BaseAPI {
         const headerParameters: runtime.HTTPHeaders = {};
 
         headerParameters['Content-Type'] = 'application/json';
+
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["Authorization"] = this.configuration.apiKey("Authorization"); // Authorization authentication
+        }
 
         const response = await this.request({
             path: `/product.Product/BulkCreateAttribute`,
@@ -496,6 +1204,7 @@ export class ProductApi extends runtime.BaseAPI {
     }
 
     /**
+     * Allow creation of multiple attributes. If any attribute is invalid, an error will be returned with more details, and in the response body, the attributes created will be returned.
      */
     async productBulkCreateAttribute(requestParameters: ProductBulkCreateAttributeRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<EntitymanagerBulkCreateAttributeResponse> {
         const response = await this.productBulkCreateAttributeRaw(requestParameters, initOverrides);
@@ -514,6 +1223,10 @@ export class ProductApi extends runtime.BaseAPI {
         const headerParameters: runtime.HTTPHeaders = {};
 
         headerParameters['Content-Type'] = 'application/json';
+
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["Authorization"] = this.configuration.apiKey("Authorization"); // Authorization authentication
+        }
 
         const response = await this.request({
             path: `/product.Product/BulkDeleteProducts`,
@@ -545,6 +1258,10 @@ export class ProductApi extends runtime.BaseAPI {
         const headerParameters: runtime.HTTPHeaders = {};
 
         headerParameters['Content-Type'] = 'application/json';
+
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["Authorization"] = this.configuration.apiKey("Authorization"); // Authorization authentication
+        }
 
         const response = await this.request({
             path: `/product.Product/BulkRemoveAssetsEntries`,
@@ -578,6 +1295,10 @@ export class ProductApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["Authorization"] = this.configuration.apiKey("Authorization"); // Authorization authentication
+        }
+
         const response = await this.request({
             path: `/product.Product/BulkUpdate`,
             method: 'POST',
@@ -610,6 +1331,10 @@ export class ProductApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["Authorization"] = this.configuration.apiKey("Authorization"); // Authorization authentication
+        }
+
         const response = await this.request({
             path: `/product.Product/BulkUpdateAssetsEntries`,
             method: 'POST',
@@ -630,37 +1355,6 @@ export class ProductApi extends runtime.BaseAPI {
 
     /**
      */
-    async productBulkUpdateV2Raw(requestParameters: ProductBulkUpdateV2Request, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<ProductBulkUpdateResponseV2>> {
-        if (requestParameters.body === null || requestParameters.body === undefined) {
-            throw new runtime.RequiredError('body','Required parameter requestParameters.body was null or undefined when calling productBulkUpdateV2.');
-        }
-
-        const queryParameters: any = {};
-
-        const headerParameters: runtime.HTTPHeaders = {};
-
-        headerParameters['Content-Type'] = 'application/json';
-
-        const response = await this.request({
-            path: `/product.Product/BulkUpdateV2`,
-            method: 'POST',
-            headers: headerParameters,
-            query: queryParameters,
-            body: ProductBulkUpdateRequestV2ToJSON(requestParameters.body),
-        }, initOverrides);
-
-        return new runtime.JSONApiResponse(response, (jsonValue) => ProductBulkUpdateResponseV2FromJSON(jsonValue));
-    }
-
-    /**
-     */
-    async productBulkUpdateV2(requestParameters: ProductBulkUpdateV2Request, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<ProductBulkUpdateResponseV2> {
-        const response = await this.productBulkUpdateV2Raw(requestParameters, initOverrides);
-        return await response.value();
-    }
-
-    /**
-     */
     async productCreateAttributeGroupRaw(requestParameters: ProductCreateAttributeGroupRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<EntitymanagerAttributeGroup>> {
         if (requestParameters.body === null || requestParameters.body === undefined) {
             throw new runtime.RequiredError('body','Required parameter requestParameters.body was null or undefined when calling productCreateAttributeGroup.');
@@ -671,6 +1365,10 @@ export class ProductApi extends runtime.BaseAPI {
         const headerParameters: runtime.HTTPHeaders = {};
 
         headerParameters['Content-Type'] = 'application/json';
+
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["Authorization"] = this.configuration.apiKey("Authorization"); // Authorization authentication
+        }
 
         const response = await this.request({
             path: `/product.Product/CreateAttributeGroup`,
@@ -691,99 +1389,6 @@ export class ProductApi extends runtime.BaseAPI {
     }
 
     /**
-     */
-    async productCreateAttributeOptionsRaw(requestParameters: ProductCreateAttributeOptionsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<EntitymanagerCreateAttributeOptionsResponse>> {
-        if (requestParameters.body === null || requestParameters.body === undefined) {
-            throw new runtime.RequiredError('body','Required parameter requestParameters.body was null or undefined when calling productCreateAttributeOptions.');
-        }
-
-        const queryParameters: any = {};
-
-        const headerParameters: runtime.HTTPHeaders = {};
-
-        headerParameters['Content-Type'] = 'application/json';
-
-        const response = await this.request({
-            path: `/product.Product/CreateAttributeOptions`,
-            method: 'POST',
-            headers: headerParameters,
-            query: queryParameters,
-            body: EntitymanagerCreateAttributeOptionsRequestToJSON(requestParameters.body),
-        }, initOverrides);
-
-        return new runtime.JSONApiResponse(response, (jsonValue) => EntitymanagerCreateAttributeOptionsResponseFromJSON(jsonValue));
-    }
-
-    /**
-     */
-    async productCreateAttributeOptions(requestParameters: ProductCreateAttributeOptionsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<EntitymanagerCreateAttributeOptionsResponse> {
-        const response = await this.productCreateAttributeOptionsRaw(requestParameters, initOverrides);
-        return await response.value();
-    }
-
-    /**
-     */
-    async productCreateEntityRaw(requestParameters: ProductCreateEntityRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<EntitymanagerCreateEntityResponse>> {
-        if (requestParameters.body === null || requestParameters.body === undefined) {
-            throw new runtime.RequiredError('body','Required parameter requestParameters.body was null or undefined when calling productCreateEntity.');
-        }
-
-        const queryParameters: any = {};
-
-        const headerParameters: runtime.HTTPHeaders = {};
-
-        headerParameters['Content-Type'] = 'application/json';
-
-        const response = await this.request({
-            path: `/product.Product/CreateEntity`,
-            method: 'POST',
-            headers: headerParameters,
-            query: queryParameters,
-            body: EntitymanagerEntityToJSON(requestParameters.body),
-        }, initOverrides);
-
-        return new runtime.JSONApiResponse(response, (jsonValue) => EntitymanagerCreateEntityResponseFromJSON(jsonValue));
-    }
-
-    /**
-     */
-    async productCreateEntity(requestParameters: ProductCreateEntityRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<EntitymanagerCreateEntityResponse> {
-        const response = await this.productCreateEntityRaw(requestParameters, initOverrides);
-        return await response.value();
-    }
-
-    /**
-     */
-    async productCreateOptionsListRaw(requestParameters: ProductCreateOptionsListRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<EntitymanagerCreateOptionsListResponse>> {
-        if (requestParameters.body === null || requestParameters.body === undefined) {
-            throw new runtime.RequiredError('body','Required parameter requestParameters.body was null or undefined when calling productCreateOptionsList.');
-        }
-
-        const queryParameters: any = {};
-
-        const headerParameters: runtime.HTTPHeaders = {};
-
-        headerParameters['Content-Type'] = 'application/json';
-
-        const response = await this.request({
-            path: `/product.Product/CreateOptionsList`,
-            method: 'POST',
-            headers: headerParameters,
-            query: queryParameters,
-            body: EntitymanagerCreateOptionsListRequestToJSON(requestParameters.body),
-        }, initOverrides);
-
-        return new runtime.JSONApiResponse(response, (jsonValue) => EntitymanagerCreateOptionsListResponseFromJSON(jsonValue));
-    }
-
-    /**
-     */
-    async productCreateOptionsList(requestParameters: ProductCreateOptionsListRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<EntitymanagerCreateOptionsListResponse> {
-        const response = await this.productCreateOptionsListRaw(requestParameters, initOverrides);
-        return await response.value();
-    }
-
-    /**
      * @deprecated
      */
     async productCreateProductRaw(requestParameters: ProductCreateProductOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<ProductCreateProductResponse>> {
@@ -796,6 +1401,10 @@ export class ProductApi extends runtime.BaseAPI {
         const headerParameters: runtime.HTTPHeaders = {};
 
         headerParameters['Content-Type'] = 'application/json';
+
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["Authorization"] = this.configuration.apiKey("Authorization"); // Authorization authentication
+        }
 
         const response = await this.request({
             path: `/product.Product/CreateProduct`,
@@ -829,6 +1438,10 @@ export class ProductApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["Authorization"] = this.configuration.apiKey("Authorization"); // Authorization authentication
+        }
+
         const response = await this.request({
             path: `/product.Product/CreateProductV2`,
             method: 'POST',
@@ -860,6 +1473,10 @@ export class ProductApi extends runtime.BaseAPI {
         const headerParameters: runtime.HTTPHeaders = {};
 
         headerParameters['Content-Type'] = 'application/json';
+
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["Authorization"] = this.configuration.apiKey("Authorization"); // Authorization authentication
+        }
 
         const response = await this.request({
             path: `/product.Product/Delete`,
@@ -893,6 +1510,10 @@ export class ProductApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["Authorization"] = this.configuration.apiKey("Authorization"); // Authorization authentication
+        }
+
         const response = await this.request({
             path: `/product.Product/DeleteAttribute`,
             method: 'POST',
@@ -923,6 +1544,10 @@ export class ProductApi extends runtime.BaseAPI {
         const headerParameters: runtime.HTTPHeaders = {};
 
         headerParameters['Content-Type'] = 'application/json';
+
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["Authorization"] = this.configuration.apiKey("Authorization"); // Authorization authentication
+        }
 
         const response = await this.request({
             path: `/product.Product/DeleteProduct`,
@@ -955,6 +1580,10 @@ export class ProductApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["Authorization"] = this.configuration.apiKey("Authorization"); // Authorization authentication
+        }
+
         const response = await this.request({
             path: `/product.Product/GetAttributeGroup`,
             method: 'POST',
@@ -974,223 +1603,6 @@ export class ProductApi extends runtime.BaseAPI {
     }
 
     /**
-     */
-    async productGetAttributeOptionRaw(requestParameters: ProductGetAttributeOptionRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<EntitymanagerGetAttributeOptionResponse>> {
-        if (requestParameters.body === null || requestParameters.body === undefined) {
-            throw new runtime.RequiredError('body','Required parameter requestParameters.body was null or undefined when calling productGetAttributeOption.');
-        }
-
-        const queryParameters: any = {};
-
-        const headerParameters: runtime.HTTPHeaders = {};
-
-        headerParameters['Content-Type'] = 'application/json';
-
-        const response = await this.request({
-            path: `/product.Product/GetAttributeOption`,
-            method: 'POST',
-            headers: headerParameters,
-            query: queryParameters,
-            body: EntitymanagerGetAttributeOptionRequestToJSON(requestParameters.body),
-        }, initOverrides);
-
-        return new runtime.JSONApiResponse(response, (jsonValue) => EntitymanagerGetAttributeOptionResponseFromJSON(jsonValue));
-    }
-
-    /**
-     */
-    async productGetAttributeOption(requestParameters: ProductGetAttributeOptionRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<EntitymanagerGetAttributeOptionResponse> {
-        const response = await this.productGetAttributeOptionRaw(requestParameters, initOverrides);
-        return await response.value();
-    }
-
-    /**
-     */
-    async productGetAttributeOptionsRaw(requestParameters: ProductGetAttributeOptionsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<EntitymanagerGetAttributeOptionsResponse>> {
-        if (requestParameters.body === null || requestParameters.body === undefined) {
-            throw new runtime.RequiredError('body','Required parameter requestParameters.body was null or undefined when calling productGetAttributeOptions.');
-        }
-
-        const queryParameters: any = {};
-
-        const headerParameters: runtime.HTTPHeaders = {};
-
-        headerParameters['Content-Type'] = 'application/json';
-
-        const response = await this.request({
-            path: `/product.Product/GetAttributeOptions`,
-            method: 'POST',
-            headers: headerParameters,
-            query: queryParameters,
-            body: EntitymanagerGetAttributeOptionsRequestToJSON(requestParameters.body),
-        }, initOverrides);
-
-        return new runtime.JSONApiResponse(response, (jsonValue) => EntitymanagerGetAttributeOptionsResponseFromJSON(jsonValue));
-    }
-
-    /**
-     */
-    async productGetAttributeOptions(requestParameters: ProductGetAttributeOptionsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<EntitymanagerGetAttributeOptionsResponse> {
-        const response = await this.productGetAttributeOptionsRaw(requestParameters, initOverrides);
-        return await response.value();
-    }
-
-    /**
-     */
-    async productGetEntityRaw(requestParameters: ProductGetEntityRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<EntitymanagerEntity>> {
-        if (requestParameters.body === null || requestParameters.body === undefined) {
-            throw new runtime.RequiredError('body','Required parameter requestParameters.body was null or undefined when calling productGetEntity.');
-        }
-
-        const queryParameters: any = {};
-
-        const headerParameters: runtime.HTTPHeaders = {};
-
-        headerParameters['Content-Type'] = 'application/json';
-
-        const response = await this.request({
-            path: `/product.Product/GetEntity`,
-            method: 'POST',
-            headers: headerParameters,
-            query: queryParameters,
-            body: EntitymanagerEntityRequestToJSON(requestParameters.body),
-        }, initOverrides);
-
-        return new runtime.JSONApiResponse(response, (jsonValue) => EntitymanagerEntityFromJSON(jsonValue));
-    }
-
-    /**
-     */
-    async productGetEntity(requestParameters: ProductGetEntityRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<EntitymanagerEntity> {
-        const response = await this.productGetEntityRaw(requestParameters, initOverrides);
-        return await response.value();
-    }
-
-    /**
-     */
-    async productGetOptionsListRaw(requestParameters: ProductGetOptionsListRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<EntitymanagerGetOptionsListResponse>> {
-        if (requestParameters.body === null || requestParameters.body === undefined) {
-            throw new runtime.RequiredError('body','Required parameter requestParameters.body was null or undefined when calling productGetOptionsList.');
-        }
-
-        const queryParameters: any = {};
-
-        const headerParameters: runtime.HTTPHeaders = {};
-
-        headerParameters['Content-Type'] = 'application/json';
-
-        const response = await this.request({
-            path: `/product.Product/GetOptionsList`,
-            method: 'POST',
-            headers: headerParameters,
-            query: queryParameters,
-            body: EntitymanagerGetOptionsListRequestToJSON(requestParameters.body),
-        }, initOverrides);
-
-        return new runtime.JSONApiResponse(response, (jsonValue) => EntitymanagerGetOptionsListResponseFromJSON(jsonValue));
-    }
-
-    /**
-     */
-    async productGetOptionsList(requestParameters: ProductGetOptionsListRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<EntitymanagerGetOptionsListResponse> {
-        const response = await this.productGetOptionsListRaw(requestParameters, initOverrides);
-        return await response.value();
-    }
-
-    /**
-     */
-    async productGetProductRaw(requestParameters: ProductGetProductOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<ProductGetProductResponse>> {
-        if (requestParameters.body === null || requestParameters.body === undefined) {
-            throw new runtime.RequiredError('body','Required parameter requestParameters.body was null or undefined when calling productGetProduct.');
-        }
-
-        const queryParameters: any = {};
-
-        const headerParameters: runtime.HTTPHeaders = {};
-
-        headerParameters['Content-Type'] = 'application/json';
-
-        const response = await this.request({
-            path: `/product.Product/GetProduct`,
-            method: 'POST',
-            headers: headerParameters,
-            query: queryParameters,
-            body: ProductGetProductRequestToJSON(requestParameters.body),
-        }, initOverrides);
-
-        return new runtime.JSONApiResponse(response, (jsonValue) => ProductGetProductResponseFromJSON(jsonValue));
-    }
-
-    /**
-     */
-    async productGetProduct(requestParameters: ProductGetProductOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<ProductGetProductResponse> {
-        const response = await this.productGetProductRaw(requestParameters, initOverrides);
-        return await response.value();
-    }
-
-    /**
-     */
-    async productGetProductByCodeRaw(requestParameters: ProductGetProductByCodeOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<ProductGetProductByCodeResponse>> {
-        if (requestParameters.body === null || requestParameters.body === undefined) {
-            throw new runtime.RequiredError('body','Required parameter requestParameters.body was null or undefined when calling productGetProductByCode.');
-        }
-
-        const queryParameters: any = {};
-
-        const headerParameters: runtime.HTTPHeaders = {};
-
-        headerParameters['Content-Type'] = 'application/json';
-
-        const response = await this.request({
-            path: `/product.Product/GetProductByCode`,
-            method: 'POST',
-            headers: headerParameters,
-            query: queryParameters,
-            body: ProductGetProductByCodeRequestToJSON(requestParameters.body),
-        }, initOverrides);
-
-        return new runtime.JSONApiResponse(response, (jsonValue) => ProductGetProductByCodeResponseFromJSON(jsonValue));
-    }
-
-    /**
-     */
-    async productGetProductByCode(requestParameters: ProductGetProductByCodeOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<ProductGetProductByCodeResponse> {
-        const response = await this.productGetProductByCodeRaw(requestParameters, initOverrides);
-        return await response.value();
-    }
-
-    /**
-     */
-    async productGetProductByUrlKeyRaw(requestParameters: ProductGetProductByUrlKeyOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<ProductGetProductByUrlKeyResponse>> {
-        if (requestParameters.body === null || requestParameters.body === undefined) {
-            throw new runtime.RequiredError('body','Required parameter requestParameters.body was null or undefined when calling productGetProductByUrlKey.');
-        }
-
-        const queryParameters: any = {};
-
-        const headerParameters: runtime.HTTPHeaders = {};
-
-        headerParameters['Content-Type'] = 'application/json';
-
-        const response = await this.request({
-            path: `/product.Product/GetProductByUrlKey`,
-            method: 'POST',
-            headers: headerParameters,
-            query: queryParameters,
-            body: ProductGetProductByUrlKeyRequestToJSON(requestParameters.body),
-        }, initOverrides);
-
-        return new runtime.JSONApiResponse(response, (jsonValue) => ProductGetProductByUrlKeyResponseFromJSON(jsonValue));
-    }
-
-    /**
-     */
-    async productGetProductByUrlKey(requestParameters: ProductGetProductByUrlKeyOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<ProductGetProductByUrlKeyResponse> {
-        const response = await this.productGetProductByUrlKeyRaw(requestParameters, initOverrides);
-        return await response.value();
-    }
-
-    /**
      * Attribute Groups endpoints
      */
     async productListAttributeGroupsRaw(requestParameters: ProductListAttributeGroupsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<EntitymanagerListAttributeGroupsResponse>> {
@@ -1203,6 +1615,10 @@ export class ProductApi extends runtime.BaseAPI {
         const headerParameters: runtime.HTTPHeaders = {};
 
         headerParameters['Content-Type'] = 'application/json';
+
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["Authorization"] = this.configuration.apiKey("Authorization"); // Authorization authentication
+        }
 
         const response = await this.request({
             path: `/product.Product/ListAttributeGroups`,
@@ -1225,254 +1641,6 @@ export class ProductApi extends runtime.BaseAPI {
 
     /**
      */
-    async productListAttributeOptionsRaw(requestParameters: ProductListAttributeOptionsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<EntitymanagerListAttributeOptionsResponse>> {
-        if (requestParameters.body === null || requestParameters.body === undefined) {
-            throw new runtime.RequiredError('body','Required parameter requestParameters.body was null or undefined when calling productListAttributeOptions.');
-        }
-
-        const queryParameters: any = {};
-
-        const headerParameters: runtime.HTTPHeaders = {};
-
-        headerParameters['Content-Type'] = 'application/json';
-
-        const response = await this.request({
-            path: `/product.Product/ListAttributeOptions`,
-            method: 'POST',
-            headers: headerParameters,
-            query: queryParameters,
-            body: EntitymanagerListAttributeOptionsRequestToJSON(requestParameters.body),
-        }, initOverrides);
-
-        return new runtime.JSONApiResponse(response, (jsonValue) => EntitymanagerListAttributeOptionsResponseFromJSON(jsonValue));
-    }
-
-    /**
-     */
-    async productListAttributeOptions(requestParameters: ProductListAttributeOptionsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<EntitymanagerListAttributeOptionsResponse> {
-        const response = await this.productListAttributeOptionsRaw(requestParameters, initOverrides);
-        return await response.value();
-    }
-
-    /**
-     */
-    async productListEntitiesRaw(requestParameters: ProductListEntitiesRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<EntitymanagerListEntitiesResponse>> {
-        if (requestParameters.body === null || requestParameters.body === undefined) {
-            throw new runtime.RequiredError('body','Required parameter requestParameters.body was null or undefined when calling productListEntities.');
-        }
-
-        const queryParameters: any = {};
-
-        const headerParameters: runtime.HTTPHeaders = {};
-
-        headerParameters['Content-Type'] = 'application/json';
-
-        const response = await this.request({
-            path: `/product.Product/ListEntities`,
-            method: 'POST',
-            headers: headerParameters,
-            query: queryParameters,
-            body: EntitymanagerListEntitiesRequestToJSON(requestParameters.body),
-        }, initOverrides);
-
-        return new runtime.JSONApiResponse(response, (jsonValue) => EntitymanagerListEntitiesResponseFromJSON(jsonValue));
-    }
-
-    /**
-     */
-    async productListEntities(requestParameters: ProductListEntitiesRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<EntitymanagerListEntitiesResponse> {
-        const response = await this.productListEntitiesRaw(requestParameters, initOverrides);
-        return await response.value();
-    }
-
-    /**
-     */
-    async productListOptionsListsRaw(requestParameters: ProductListOptionsListsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<EntitymanagerListOptionsListsResponse>> {
-        if (requestParameters.body === null || requestParameters.body === undefined) {
-            throw new runtime.RequiredError('body','Required parameter requestParameters.body was null or undefined when calling productListOptionsLists.');
-        }
-
-        const queryParameters: any = {};
-
-        const headerParameters: runtime.HTTPHeaders = {};
-
-        headerParameters['Content-Type'] = 'application/json';
-
-        const response = await this.request({
-            path: `/product.Product/ListOptionsLists`,
-            method: 'POST',
-            headers: headerParameters,
-            query: queryParameters,
-            body: EntitymanagerListOptionsListsRequestToJSON(requestParameters.body),
-        }, initOverrides);
-
-        return new runtime.JSONApiResponse(response, (jsonValue) => EntitymanagerListOptionsListsResponseFromJSON(jsonValue));
-    }
-
-    /**
-     */
-    async productListOptionsLists(requestParameters: ProductListOptionsListsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<EntitymanagerListOptionsListsResponse> {
-        const response = await this.productListOptionsListsRaw(requestParameters, initOverrides);
-        return await response.value();
-    }
-
-    /**
-     */
-    async productListProductsRaw(requestParameters: ProductListProductsOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<ProductListProductsResponse>> {
-        if (requestParameters.body === null || requestParameters.body === undefined) {
-            throw new runtime.RequiredError('body','Required parameter requestParameters.body was null or undefined when calling productListProducts.');
-        }
-
-        const queryParameters: any = {};
-
-        const headerParameters: runtime.HTTPHeaders = {};
-
-        headerParameters['Content-Type'] = 'application/json';
-
-        const response = await this.request({
-            path: `/product.Product/ListProducts`,
-            method: 'POST',
-            headers: headerParameters,
-            query: queryParameters,
-            body: ProductListProductsRequestToJSON(requestParameters.body),
-        }, initOverrides);
-
-        return new runtime.JSONApiResponse(response, (jsonValue) => ProductListProductsResponseFromJSON(jsonValue));
-    }
-
-    /**
-     */
-    async productListProducts(requestParameters: ProductListProductsOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<ProductListProductsResponse> {
-        const response = await this.productListProductsRaw(requestParameters, initOverrides);
-        return await response.value();
-    }
-
-    /**
-     */
-    async productListProductsByIdsRaw(requestParameters: ProductListProductsByIdsOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<ProductListProductsByIdsResponse>> {
-        if (requestParameters.body === null || requestParameters.body === undefined) {
-            throw new runtime.RequiredError('body','Required parameter requestParameters.body was null or undefined when calling productListProductsByIds.');
-        }
-
-        const queryParameters: any = {};
-
-        const headerParameters: runtime.HTTPHeaders = {};
-
-        headerParameters['Content-Type'] = 'application/json';
-
-        const response = await this.request({
-            path: `/product.Product/ListProductsByIds`,
-            method: 'POST',
-            headers: headerParameters,
-            query: queryParameters,
-            body: ProductListProductsByIdsRequestToJSON(requestParameters.body),
-        }, initOverrides);
-
-        return new runtime.JSONApiResponse(response, (jsonValue) => ProductListProductsByIdsResponseFromJSON(jsonValue));
-    }
-
-    /**
-     */
-    async productListProductsByIds(requestParameters: ProductListProductsByIdsOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<ProductListProductsByIdsResponse> {
-        const response = await this.productListProductsByIdsRaw(requestParameters, initOverrides);
-        return await response.value();
-    }
-
-    /**
-     */
-    async productListProductsBySkuRaw(requestParameters: ProductListProductsBySkuOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<ProductListProductsBySkuResponse>> {
-        if (requestParameters.body === null || requestParameters.body === undefined) {
-            throw new runtime.RequiredError('body','Required parameter requestParameters.body was null or undefined when calling productListProductsBySku.');
-        }
-
-        const queryParameters: any = {};
-
-        const headerParameters: runtime.HTTPHeaders = {};
-
-        headerParameters['Content-Type'] = 'application/json';
-
-        const response = await this.request({
-            path: `/product.Product/ListProductsBySku`,
-            method: 'POST',
-            headers: headerParameters,
-            query: queryParameters,
-            body: ProductListProductsBySkuRequestToJSON(requestParameters.body),
-        }, initOverrides);
-
-        return new runtime.JSONApiResponse(response, (jsonValue) => ProductListProductsBySkuResponseFromJSON(jsonValue));
-    }
-
-    /**
-     */
-    async productListProductsBySku(requestParameters: ProductListProductsBySkuOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<ProductListProductsBySkuResponse> {
-        const response = await this.productListProductsBySkuRaw(requestParameters, initOverrides);
-        return await response.value();
-    }
-
-    /**
-     */
-    async productListVariantsBySkuRaw(requestParameters: ProductListVariantsBySkuOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<ProductListVariantsBySkuResponse>> {
-        if (requestParameters.body === null || requestParameters.body === undefined) {
-            throw new runtime.RequiredError('body','Required parameter requestParameters.body was null or undefined when calling productListVariantsBySku.');
-        }
-
-        const queryParameters: any = {};
-
-        const headerParameters: runtime.HTTPHeaders = {};
-
-        headerParameters['Content-Type'] = 'application/json';
-
-        const response = await this.request({
-            path: `/product.Product/ListVariantsBySku`,
-            method: 'POST',
-            headers: headerParameters,
-            query: queryParameters,
-            body: ProductListVariantsBySkuRequestToJSON(requestParameters.body),
-        }, initOverrides);
-
-        return new runtime.JSONApiResponse(response, (jsonValue) => ProductListVariantsBySkuResponseFromJSON(jsonValue));
-    }
-
-    /**
-     */
-    async productListVariantsBySku(requestParameters: ProductListVariantsBySkuOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<ProductListVariantsBySkuResponse> {
-        const response = await this.productListVariantsBySkuRaw(requestParameters, initOverrides);
-        return await response.value();
-    }
-
-    /**
-     */
-    async productRemoveMediaGalleryEntryRaw(requestParameters: ProductRemoveMediaGalleryEntryOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<object>> {
-        if (requestParameters.body === null || requestParameters.body === undefined) {
-            throw new runtime.RequiredError('body','Required parameter requestParameters.body was null or undefined when calling productRemoveMediaGalleryEntry.');
-        }
-
-        const queryParameters: any = {};
-
-        const headerParameters: runtime.HTTPHeaders = {};
-
-        headerParameters['Content-Type'] = 'application/json';
-
-        const response = await this.request({
-            path: `/product.Product/RemoveMediaGalleryEntry`,
-            method: 'POST',
-            headers: headerParameters,
-            query: queryParameters,
-            body: ProductRemoveMediaGalleryEntryRequestToJSON(requestParameters.body),
-        }, initOverrides);
-
-        return new runtime.JSONApiResponse<any>(response);
-    }
-
-    /**
-     */
-    async productRemoveMediaGalleryEntry(requestParameters: ProductRemoveMediaGalleryEntryOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<object> {
-        const response = await this.productRemoveMediaGalleryEntryRaw(requestParameters, initOverrides);
-        return await response.value();
-    }
-
-    /**
-     */
     async productUpdateAttributeRaw(requestParameters: ProductUpdateAttributeRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<EntitymanagerAttribute>> {
         if (requestParameters.body === null || requestParameters.body === undefined) {
             throw new runtime.RequiredError('body','Required parameter requestParameters.body was null or undefined when calling productUpdateAttribute.');
@@ -1483,6 +1651,10 @@ export class ProductApi extends runtime.BaseAPI {
         const headerParameters: runtime.HTTPHeaders = {};
 
         headerParameters['Content-Type'] = 'application/json';
+
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["Authorization"] = this.configuration.apiKey("Authorization"); // Authorization authentication
+        }
 
         const response = await this.request({
             path: `/product.Product/UpdateAttribute`,
@@ -1515,6 +1687,10 @@ export class ProductApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["Authorization"] = this.configuration.apiKey("Authorization"); // Authorization authentication
+        }
+
         const response = await this.request({
             path: `/product.Product/UpdateAttributeGroup`,
             method: 'POST',
@@ -1534,101 +1710,6 @@ export class ProductApi extends runtime.BaseAPI {
     }
 
     /**
-     * rpc GetAttributeOptionByCode (product.entitymanager.GetAttributeOptionByCodeRequest) returns (product.entitymanager.GetAttributeOptionByCodeResponse) {}
-     */
-    async productUpdateAttributeOptionsRaw(requestParameters: ProductUpdateAttributeOptionsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<EntitymanagerUpdateAttributeOptionsResponse>> {
-        if (requestParameters.body === null || requestParameters.body === undefined) {
-            throw new runtime.RequiredError('body','Required parameter requestParameters.body was null or undefined when calling productUpdateAttributeOptions.');
-        }
-
-        const queryParameters: any = {};
-
-        const headerParameters: runtime.HTTPHeaders = {};
-
-        headerParameters['Content-Type'] = 'application/json';
-
-        const response = await this.request({
-            path: `/product.Product/UpdateAttributeOptions`,
-            method: 'POST',
-            headers: headerParameters,
-            query: queryParameters,
-            body: EntitymanagerUpdateAttributeOptionsRequestToJSON(requestParameters.body),
-        }, initOverrides);
-
-        return new runtime.JSONApiResponse(response, (jsonValue) => EntitymanagerUpdateAttributeOptionsResponseFromJSON(jsonValue));
-    }
-
-    /**
-     * rpc GetAttributeOptionByCode (product.entitymanager.GetAttributeOptionByCodeRequest) returns (product.entitymanager.GetAttributeOptionByCodeResponse) {}
-     */
-    async productUpdateAttributeOptions(requestParameters: ProductUpdateAttributeOptionsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<EntitymanagerUpdateAttributeOptionsResponse> {
-        const response = await this.productUpdateAttributeOptionsRaw(requestParameters, initOverrides);
-        return await response.value();
-    }
-
-    /**
-     */
-    async productUpdateMediaGalleryEntryRaw(requestParameters: ProductUpdateMediaGalleryEntryOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<object>> {
-        if (requestParameters.body === null || requestParameters.body === undefined) {
-            throw new runtime.RequiredError('body','Required parameter requestParameters.body was null or undefined when calling productUpdateMediaGalleryEntry.');
-        }
-
-        const queryParameters: any = {};
-
-        const headerParameters: runtime.HTTPHeaders = {};
-
-        headerParameters['Content-Type'] = 'application/json';
-
-        const response = await this.request({
-            path: `/product.Product/UpdateMediaGalleryEntry`,
-            method: 'POST',
-            headers: headerParameters,
-            query: queryParameters,
-            body: ProductUpdateMediaGalleryEntryRequestToJSON(requestParameters.body),
-        }, initOverrides);
-
-        return new runtime.JSONApiResponse<any>(response);
-    }
-
-    /**
-     */
-    async productUpdateMediaGalleryEntry(requestParameters: ProductUpdateMediaGalleryEntryOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<object> {
-        const response = await this.productUpdateMediaGalleryEntryRaw(requestParameters, initOverrides);
-        return await response.value();
-    }
-
-    /**
-     */
-    async productUpdateOptionsListRaw(requestParameters: ProductUpdateOptionsListRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<EntitymanagerUpdateOptionsListResponse>> {
-        if (requestParameters.body === null || requestParameters.body === undefined) {
-            throw new runtime.RequiredError('body','Required parameter requestParameters.body was null or undefined when calling productUpdateOptionsList.');
-        }
-
-        const queryParameters: any = {};
-
-        const headerParameters: runtime.HTTPHeaders = {};
-
-        headerParameters['Content-Type'] = 'application/json';
-
-        const response = await this.request({
-            path: `/product.Product/UpdateOptionsList`,
-            method: 'POST',
-            headers: headerParameters,
-            query: queryParameters,
-            body: EntitymanagerUpdateOptionsListRequestToJSON(requestParameters.body),
-        }, initOverrides);
-
-        return new runtime.JSONApiResponse(response, (jsonValue) => EntitymanagerUpdateOptionsListResponseFromJSON(jsonValue));
-    }
-
-    /**
-     */
-    async productUpdateOptionsList(requestParameters: ProductUpdateOptionsListRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<EntitymanagerUpdateOptionsListResponse> {
-        const response = await this.productUpdateOptionsListRaw(requestParameters, initOverrides);
-        return await response.value();
-    }
-
-    /**
      * @deprecated
      */
     async productUpdateProductRaw(requestParameters: ProductUpdateProductOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<ProductUpdateProductResponse>> {
@@ -1641,6 +1722,10 @@ export class ProductApi extends runtime.BaseAPI {
         const headerParameters: runtime.HTTPHeaders = {};
 
         headerParameters['Content-Type'] = 'application/json';
+
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["Authorization"] = this.configuration.apiKey("Authorization"); // Authorization authentication
+        }
 
         const response = await this.request({
             path: `/product.Product/UpdateProduct`,
@@ -1674,6 +1759,10 @@ export class ProductApi extends runtime.BaseAPI {
 
         headerParameters['Content-Type'] = 'application/json';
 
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["Authorization"] = this.configuration.apiKey("Authorization"); // Authorization authentication
+        }
+
         const response = await this.request({
             path: `/product.Product/UpdateProductV2`,
             method: 'POST',
@@ -1689,6 +1778,158 @@ export class ProductApi extends runtime.BaseAPI {
      */
     async productUpdateProductV2(requestParameters: ProductUpdateProductV2Request, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<object> {
         const response = await this.productUpdateProductV2Raw(requestParameters, initOverrides);
+        return await response.value();
+    }
+
+    /**
+     * The RemoveMediaGalleryEntry endpoint allows users to remove a specific media entry from a product\'s gallery. By making a request to this endpoint and providing the tenant ID, product ID, and the unique identifier of the media entry, users can easily manage and update the visual content of a product\'s gallery. 
+     * Remove Media Gallery Entry
+     */
+    async removeMediaGalleryEntryRaw(requestParameters: RemoveMediaGalleryEntryRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<object>> {
+        if (requestParameters.body === null || requestParameters.body === undefined) {
+            throw new runtime.RequiredError('body','Required parameter requestParameters.body was null or undefined when calling removeMediaGalleryEntry.');
+        }
+
+        const queryParameters: any = {};
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        headerParameters['Content-Type'] = 'application/json';
+
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["Authorization"] = this.configuration.apiKey("Authorization"); // Authorization authentication
+        }
+
+        const response = await this.request({
+            path: `/product.Product/RemoveMediaGalleryEntry`,
+            method: 'POST',
+            headers: headerParameters,
+            query: queryParameters,
+            body: ProductRemoveMediaGalleryEntryRequestToJSON(requestParameters.body),
+        }, initOverrides);
+
+        return new runtime.JSONApiResponse<any>(response);
+    }
+
+    /**
+     * The RemoveMediaGalleryEntry endpoint allows users to remove a specific media entry from a product\'s gallery. By making a request to this endpoint and providing the tenant ID, product ID, and the unique identifier of the media entry, users can easily manage and update the visual content of a product\'s gallery. 
+     * Remove Media Gallery Entry
+     */
+    async removeMediaGalleryEntry(requestParameters: RemoveMediaGalleryEntryRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<object> {
+        const response = await this.removeMediaGalleryEntryRaw(requestParameters, initOverrides);
+        return await response.value();
+    }
+
+    /**
+     * Update Attribute Options
+     */
+    async updateAttributeOptionsRaw(requestParameters: UpdateAttributeOptionsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<EntitymanagerUpdateAttributeOptionsResponse>> {
+        if (requestParameters.body === null || requestParameters.body === undefined) {
+            throw new runtime.RequiredError('body','Required parameter requestParameters.body was null or undefined when calling updateAttributeOptions.');
+        }
+
+        const queryParameters: any = {};
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        headerParameters['Content-Type'] = 'application/json';
+
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["Authorization"] = this.configuration.apiKey("Authorization"); // Authorization authentication
+        }
+
+        const response = await this.request({
+            path: `/product.Product/UpdateAttributeOptions`,
+            method: 'POST',
+            headers: headerParameters,
+            query: queryParameters,
+            body: EntitymanagerUpdateAttributeOptionsRequestToJSON(requestParameters.body),
+        }, initOverrides);
+
+        return new runtime.JSONApiResponse(response, (jsonValue) => EntitymanagerUpdateAttributeOptionsResponseFromJSON(jsonValue));
+    }
+
+    /**
+     * Update Attribute Options
+     */
+    async updateAttributeOptions(requestParameters: UpdateAttributeOptionsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<EntitymanagerUpdateAttributeOptionsResponse> {
+        const response = await this.updateAttributeOptionsRaw(requestParameters, initOverrides);
+        return await response.value();
+    }
+
+    /**
+     * The UpdateMediaGalleryEntry endpoint allows users to modify and update a specific media entry within a product\'s gallery. By sending a request to this endpoint and providing the necessary information, users can efficiently update the media asset, position, and metadata associated with the entry.
+     * Update Media Gallery Entry
+     */
+    async updateMediaGalleryEntryRaw(requestParameters: UpdateMediaGalleryEntryRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<object>> {
+        if (requestParameters.body === null || requestParameters.body === undefined) {
+            throw new runtime.RequiredError('body','Required parameter requestParameters.body was null or undefined when calling updateMediaGalleryEntry.');
+        }
+
+        const queryParameters: any = {};
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        headerParameters['Content-Type'] = 'application/json';
+
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["Authorization"] = this.configuration.apiKey("Authorization"); // Authorization authentication
+        }
+
+        const response = await this.request({
+            path: `/product.Product/UpdateMediaGalleryEntry`,
+            method: 'POST',
+            headers: headerParameters,
+            query: queryParameters,
+            body: ProductUpdateMediaGalleryEntryRequestToJSON(requestParameters.body),
+        }, initOverrides);
+
+        return new runtime.JSONApiResponse<any>(response);
+    }
+
+    /**
+     * The UpdateMediaGalleryEntry endpoint allows users to modify and update a specific media entry within a product\'s gallery. By sending a request to this endpoint and providing the necessary information, users can efficiently update the media asset, position, and metadata associated with the entry.
+     * Update Media Gallery Entry
+     */
+    async updateMediaGalleryEntry(requestParameters: UpdateMediaGalleryEntryRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<object> {
+        const response = await this.updateMediaGalleryEntryRaw(requestParameters, initOverrides);
+        return await response.value();
+    }
+
+    /**
+     * Update Options List
+     */
+    async updateOptionsListRaw(requestParameters: UpdateOptionsListRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<EntitymanagerUpdateOptionsListResponse>> {
+        if (requestParameters.body === null || requestParameters.body === undefined) {
+            throw new runtime.RequiredError('body','Required parameter requestParameters.body was null or undefined when calling updateOptionsList.');
+        }
+
+        const queryParameters: any = {};
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        headerParameters['Content-Type'] = 'application/json';
+
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["Authorization"] = this.configuration.apiKey("Authorization"); // Authorization authentication
+        }
+
+        const response = await this.request({
+            path: `/product.Product/UpdateOptionsList`,
+            method: 'POST',
+            headers: headerParameters,
+            query: queryParameters,
+            body: EntitymanagerUpdateOptionsListRequestToJSON(requestParameters.body),
+        }, initOverrides);
+
+        return new runtime.JSONApiResponse(response, (jsonValue) => EntitymanagerUpdateOptionsListResponseFromJSON(jsonValue));
+    }
+
+    /**
+     * Update Options List
+     */
+    async updateOptionsList(requestParameters: UpdateOptionsListRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<EntitymanagerUpdateOptionsListResponse> {
+        const response = await this.updateOptionsListRaw(requestParameters, initOverrides);
         return await response.value();
     }
 
