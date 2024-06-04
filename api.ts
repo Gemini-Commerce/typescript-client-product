@@ -2,7 +2,7 @@
 /* eslint-disable */
 /**
  * Product Service
- * API for managing products
+ * Introducing our revolutionary Product Management Service! Designed to streamline your product inventory and elevate customer experiences, our cutting-edge protobuf service is a game-changer in the world of efficient product management.  With our service, you can effortlessly create new products, allowing you to quickly bring your ideas to life and expand your catalog. Retrieve product information in a snap, providing accurate and personalized details to your customers based on their specific needs and preferences.  Stay ahead of the competition by easily updating product information, ensuring your catalog is always up-to-date and optimized. Seamlessly remove products from your inventory when needed, maintaining a clean and relevant product selection.  Enhance the visual appeal of your products with our advanced media gallery functionalities. Effortlessly add and update captivating images and videos to showcase your products in the best possible light, engaging your customers and driving conversions.  Personalization is key in today\'s market, and our service enables you to offer unique options to your customers. Easily create and manage lists of customizable options for your products, providing flexibility and tailoring to individual preferences.  Attributes play a vital role in defining products, and our service empowers you to effectively manage them. From bulk attribute creation to listing and retrieving attribute options, our service ensures your product information is rich and comprehensive.  Our service extends its capabilities to entity management, allowing you to effortlessly handle different entities and create customized options lists associated with them. This provides further flexibility and customization options for your product offerings.  When it comes to bulk updates, our service has you covered. Effortlessly update multiple products simultaneously, saving you time and streamlining your operations.  Finding specific products and variants is a breeze with our service. Quickly locate products based on their unique stock keeping unit (SKU) values, ensuring efficient inventory management and smooth order fulfillment.  Experience a new level of efficiency and productivity with our Product Management Service. Unlock the full potential of streamlined product management and empower your business to thrive in today\'s competitive market. Try our service today and elevate your product management to new heights!
  *
  * The version of the OpenAPI document: v1
  * Contact: info@gemini-commerce.com
@@ -1647,55 +1647,55 @@ export interface ProductBulkUpdateResponseV2Response {
     'attributes'?: { [key: string]: ProtobufAny; };
 }
 /**
- * 
+ * The CreateProductRequest message is used to create a new product within the system. It contains various fields that allow specifying the details and attributes of the product.
  * @export
  * @interface ProductCreateProductRequest
  */
 export interface ProductCreateProductRequest {
     /**
-     * 
+     * Represents the ID of the tenant associated with the product.
      * @type {string}
      * @memberof ProductCreateProductRequest
      */
     'tenantId'?: string;
     /**
-     * 
+     * Specifies the type of entity for the product.
      * @type {string}
      * @memberof ProductCreateProductRequest
      */
     'entityType'?: string;
     /**
-     * 
+     * Indicates the code of the entity associated with the product.
      * @type {string}
      * @memberof ProductCreateProductRequest
      */
     'entityCode'?: string;
     /**
-     * 
+     * Represents the unique code or identifier for the product.
      * @type {string}
      * @memberof ProductCreateProductRequest
      */
     'code'?: string;
     /**
-     * 
+     * Specifies whether the product has variants or not.
      * @type {boolean}
      * @memberof ProductCreateProductRequest
      */
     'isConfigurable'?: boolean;
     /**
-     * 
+     * Contains a list of attributes specific to the product variants.
      * @type {Array<string>}
      * @memberof ProductCreateProductRequest
      */
     'variantAttributes'?: Array<string>;
     /**
-     * 
+     * Indicates whether the product is virtual or not.
      * @type {boolean}
      * @memberof ProductCreateProductRequest
      */
     'isVirtual'?: boolean;
     /**
-     * 
+     * Specifies whether the product is a gift card or not.
      * @type {boolean}
      * @memberof ProductCreateProductRequest
      */
@@ -1713,7 +1713,7 @@ export interface ProductCreateProductRequest {
      */
     'urlKey'?: ProductLocalizedText;
     /**
-     * 
+     * Specifies the maximum quantity that can be sold for the product in each order.
      * @type {number}
      * @memberof ProductCreateProductRequest
      */
@@ -1725,13 +1725,13 @@ export interface ProductCreateProductRequest {
      */
     'mediaVariantAttributes'?: Array<string>;
     /**
-     * 
+     * Contains a map of additional attributes associated with the product, where the key is the attribute name and the value is any type of value.
      * @type {{ [key: string]: ProtobufAny; }}
      * @memberof ProductCreateProductRequest
      */
     'attributes'?: { [key: string]: ProtobufAny; };
     /**
-     * 
+     * Represents a map of product variants associated with the product, where the key is the variant ID or code, and the value is a ProductVariant message.
      * @type {{ [key: string]: ProductProductVariant; }}
      * @memberof ProductCreateProductRequest
      */
@@ -1829,31 +1829,31 @@ export interface ProductCreateProductRequestV2 {
     'mediaVariantAttributes'?: Array<string>;
 }
 /**
- * 
+ * The CreateProductResponse message is used to provide a response after creating a product within the system. It includes fields that indicate the success of the product creation and any errors encountered during the process.
  * @export
  * @interface ProductCreateProductResponse
  */
 export interface ProductCreateProductResponse {
     /**
-     * 
+     * Indicates whether the product creation was successful or not.
      * @type {boolean}
      * @memberof ProductCreateProductResponse
      */
     'success'?: boolean;
     /**
-     * 
+     * Represents the ID of the created product.
      * @type {string}
      * @memberof ProductCreateProductResponse
      */
     'id'?: string;
     /**
-     * 
+     * Contains a list of ProductResponseError messages, indicating any errors related to the product creation.
      * @type {Array<ProductProductResponseError>}
      * @memberof ProductCreateProductResponse
      */
     'productErrors'?: Array<ProductProductResponseError>;
     /**
-     * 
+     * Contains a list of AttributeResponseError messages, indicating any errors related to the attributes of the product.
      * @type {Array<ProductAttributeResponseError>}
      * @memberof ProductCreateProductResponse
      */
@@ -2757,14 +2757,15 @@ export interface RpcStatus {
 export const ProductApiAxiosParamCreator = function (configuration?: Configuration) {
     return {
         /**
-         * 
+         * The AddMediaGalleryEntry endpoint allows users to add a new media entry to the gallery of a specific product. To make a request to this endpoint, users need to provide the necessary information in the specified format. The request includes the tenant_id to specify the relevant tenant, the product_id to identify the target product, and the asset_grn which represents the globally unique identifier for the media asset being added. Additionally, the position field indicates the desired position of the media entry within the gallery, allowing users to control the order in which the media items are displayed. The metadata field, which is a repeated field, provides the option to include additional metadata associated with the media entry.
+         * @summary Add Media Gallery Entry
          * @param {ProductAddMediaGalleryEntryRequest} body 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        productAddMediaGalleryEntry: async (body: ProductAddMediaGalleryEntryRequest, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+        addMediaGalleryEntry: async (body: ProductAddMediaGalleryEntryRequest, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'body' is not null or undefined
-            assertParamExists('productAddMediaGalleryEntry', 'body', body)
+            assertParamExists('addMediaGalleryEntry', 'body', body)
             const localVarPath = `/product.Product/AddMediaGalleryEntry`;
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
@@ -2776,6 +2777,711 @@ export const ProductApiAxiosParamCreator = function (configuration?: Configurati
             const localVarRequestOptions = { method: 'POST', ...baseOptions, ...options};
             const localVarHeaderParameter = {} as any;
             const localVarQueryParameter = {} as any;
+
+            // authentication Authorization required
+            await setApiKeyToObject(localVarHeaderParameter, "Authorization", configuration)
+
+
+    
+            localVarHeaderParameter['Content-Type'] = 'application/json';
+
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+            localVarRequestOptions.data = serializeDataIfNeeded(body, localVarRequestOptions, configuration)
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * Version 2 of bulk updates for product attributes with enhanced payload structure and response format.
+         * @summary Bulk Update Products
+         * @param {ProductBulkUpdateRequestV2} body 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        bulkUpdateV2: async (body: ProductBulkUpdateRequestV2, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'body' is not null or undefined
+            assertParamExists('bulkUpdateV2', 'body', body)
+            const localVarPath = `/product.Product/BulkUpdateV2`;
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'POST', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication Authorization required
+            await setApiKeyToObject(localVarHeaderParameter, "Authorization", configuration)
+
+
+    
+            localVarHeaderParameter['Content-Type'] = 'application/json';
+
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+            localVarRequestOptions.data = serializeDataIfNeeded(body, localVarRequestOptions, configuration)
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * Create attribute options with specified codes, values, and swatches. Returns created options and any associated errors.
+         * @summary Create Attribute Options
+         * @param {EntitymanagerCreateAttributeOptionsRequest} body 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        createAttributeOptions: async (body: EntitymanagerCreateAttributeOptionsRequest, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'body' is not null or undefined
+            assertParamExists('createAttributeOptions', 'body', body)
+            const localVarPath = `/product.Product/CreateAttributeOptions`;
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'POST', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication Authorization required
+            await setApiKeyToObject(localVarHeaderParameter, "Authorization", configuration)
+
+
+    
+            localVarHeaderParameter['Content-Type'] = 'application/json';
+
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+            localVarRequestOptions.data = serializeDataIfNeeded(body, localVarRequestOptions, configuration)
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * The CreateEntity endpoint allows users to define and create a new entity with custom attributes, providing a flexible way to represent and manage different data structures within the system. By making a request to this endpoint, users can create a new entity that serves as an abstraction of a product or any other domain-specific object. This endpoint empowers users to define the specific attributes that compose the entity, such as color, composition, technical details, or any other relevant properties. Utilize the CreateEntity endpoint to dynamically extend and adapt your system\'s data model to accommodate diverse business requirements and efficiently manage various types of entities.
+         * @summary Create Entity
+         * @param {EntitymanagerEntity} body 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        createEntity: async (body: EntitymanagerEntity, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'body' is not null or undefined
+            assertParamExists('createEntity', 'body', body)
+            const localVarPath = `/product.Product/CreateEntity`;
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'POST', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication Authorization required
+            await setApiKeyToObject(localVarHeaderParameter, "Authorization", configuration)
+
+
+    
+            localVarHeaderParameter['Content-Type'] = 'application/json';
+
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+            localVarRequestOptions.data = serializeDataIfNeeded(body, localVarRequestOptions, configuration)
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * The CreateOptionsList endpoint allows users to create an OptionList, which represents a list of predefined options for assigning to an attribute. By making a request to this endpoint with the provided request format, users can create a new OptionList by specifying the relevant tenant ID and providing the OptionList object containing the predefined options. This functionality facilitates efficient management and assignment of predefined attribute values, ensuring consistency and flexibility within the system.
+         * @summary Create Options List
+         * @param {EntitymanagerCreateOptionsListRequest} body 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        createOptionsList: async (body: EntitymanagerCreateOptionsListRequest, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'body' is not null or undefined
+            assertParamExists('createOptionsList', 'body', body)
+            const localVarPath = `/product.Product/CreateOptionsList`;
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'POST', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication Authorization required
+            await setApiKeyToObject(localVarHeaderParameter, "Authorization", configuration)
+
+
+    
+            localVarHeaderParameter['Content-Type'] = 'application/json';
+
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+            localVarRequestOptions.data = serializeDataIfNeeded(body, localVarRequestOptions, configuration)
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * Retrieve attribute option details by providing the tenant ID, list code, and option ID. Returns the specified attribute option.
+         * @summary Get Attribute Option
+         * @param {EntitymanagerGetAttributeOptionRequest} body 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        getAttributeOption: async (body: EntitymanagerGetAttributeOptionRequest, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'body' is not null or undefined
+            assertParamExists('getAttributeOption', 'body', body)
+            const localVarPath = `/product.Product/GetAttributeOption`;
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'POST', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication Authorization required
+            await setApiKeyToObject(localVarHeaderParameter, "Authorization", configuration)
+
+
+    
+            localVarHeaderParameter['Content-Type'] = 'application/json';
+
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+            localVarRequestOptions.data = serializeDataIfNeeded(body, localVarRequestOptions, configuration)
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * Retrieve a list of attribute options based on the provided tenant ID and list code.
+         * @summary Get Attribute Options
+         * @param {EntitymanagerGetAttributeOptionsRequest} body 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        getAttributeOptions: async (body: EntitymanagerGetAttributeOptionsRequest, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'body' is not null or undefined
+            assertParamExists('getAttributeOptions', 'body', body)
+            const localVarPath = `/product.Product/GetAttributeOptions`;
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'POST', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication Authorization required
+            await setApiKeyToObject(localVarHeaderParameter, "Authorization", configuration)
+
+
+    
+            localVarHeaderParameter['Content-Type'] = 'application/json';
+
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+            localVarRequestOptions.data = serializeDataIfNeeded(body, localVarRequestOptions, configuration)
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * Retrieve details of an entity by providing the tenant ID and either entity data or entity ID. Returns information including ID, type, code, label, relationships, and attributes.
+         * @summary Get Entity Details
+         * @param {EntitymanagerEntityRequest} body 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        getEntity: async (body: EntitymanagerEntityRequest, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'body' is not null or undefined
+            assertParamExists('getEntity', 'body', body)
+            const localVarPath = `/product.Product/GetEntity`;
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'POST', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication Authorization required
+            await setApiKeyToObject(localVarHeaderParameter, "Authorization", configuration)
+
+
+    
+            localVarHeaderParameter['Content-Type'] = 'application/json';
+
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+            localVarRequestOptions.data = serializeDataIfNeeded(body, localVarRequestOptions, configuration)
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * Retrieve option lists.
+         * @summary Get Options List
+         * @param {EntitymanagerGetOptionsListRequest} body 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        getOptionsList: async (body: EntitymanagerGetOptionsListRequest, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'body' is not null or undefined
+            assertParamExists('getOptionsList', 'body', body)
+            const localVarPath = `/product.Product/GetOptionsList`;
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'POST', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication Authorization required
+            await setApiKeyToObject(localVarHeaderParameter, "Authorization", configuration)
+
+
+    
+            localVarHeaderParameter['Content-Type'] = 'application/json';
+
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+            localVarRequestOptions.data = serializeDataIfNeeded(body, localVarRequestOptions, configuration)
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * The GetProduct endpoint enables users to retrieve a product from the system. By sending a request to this endpoint, users can retrieve a product by providing its unique identifier.
+         * @summary Get Product
+         * @param {ProductGetProductRequest} body 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        getProduct: async (body: ProductGetProductRequest, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'body' is not null or undefined
+            assertParamExists('getProduct', 'body', body)
+            const localVarPath = `/product.Product/GetProduct`;
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'POST', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication Authorization required
+            await setApiKeyToObject(localVarHeaderParameter, "Authorization", configuration)
+
+
+    
+            localVarHeaderParameter['Content-Type'] = 'application/json';
+
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+            localVarRequestOptions.data = serializeDataIfNeeded(body, localVarRequestOptions, configuration)
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * The GetProductByCode endpoint enables users to retrieve a product from the system. By sending a request to this endpoint, users can retrieve a product by providing its unique code.
+         * @summary Get Product By Code
+         * @param {ProductGetProductByCodeRequest} body 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        getProductByCode: async (body: ProductGetProductByCodeRequest, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'body' is not null or undefined
+            assertParamExists('getProductByCode', 'body', body)
+            const localVarPath = `/product.Product/GetProductByCode`;
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'POST', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication Authorization required
+            await setApiKeyToObject(localVarHeaderParameter, "Authorization", configuration)
+
+
+    
+            localVarHeaderParameter['Content-Type'] = 'application/json';
+
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+            localVarRequestOptions.data = serializeDataIfNeeded(body, localVarRequestOptions, configuration)
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * The GetProductByUrlKey endpoint enables users to retrieve a product from the system. By sending a request to this endpoint, users can retrieve a product by providing its unique url key.
+         * @summary Get Product By Url Key
+         * @param {ProductGetProductByUrlKeyRequest} body 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        getProductByUrlKey: async (body: ProductGetProductByUrlKeyRequest, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'body' is not null or undefined
+            assertParamExists('getProductByUrlKey', 'body', body)
+            const localVarPath = `/product.Product/GetProductByUrlKey`;
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'POST', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication Authorization required
+            await setApiKeyToObject(localVarHeaderParameter, "Authorization", configuration)
+
+
+    
+            localVarHeaderParameter['Content-Type'] = 'application/json';
+
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+            localVarRequestOptions.data = serializeDataIfNeeded(body, localVarRequestOptions, configuration)
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * 
+         * @summary List Attribute Options
+         * @param {EntitymanagerListAttributeOptionsRequest} body 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        listAttributeOptions: async (body: EntitymanagerListAttributeOptionsRequest, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'body' is not null or undefined
+            assertParamExists('listAttributeOptions', 'body', body)
+            const localVarPath = `/product.Product/ListAttributeOptions`;
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'POST', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication Authorization required
+            await setApiKeyToObject(localVarHeaderParameter, "Authorization", configuration)
+
+
+    
+            localVarHeaderParameter['Content-Type'] = 'application/json';
+
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+            localVarRequestOptions.data = serializeDataIfNeeded(body, localVarRequestOptions, configuration)
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * 
+         * @summary List Entities
+         * @param {EntitymanagerListEntitiesRequest} body 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        listEntities: async (body: EntitymanagerListEntitiesRequest, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'body' is not null or undefined
+            assertParamExists('listEntities', 'body', body)
+            const localVarPath = `/product.Product/ListEntities`;
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'POST', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication Authorization required
+            await setApiKeyToObject(localVarHeaderParameter, "Authorization", configuration)
+
+
+    
+            localVarHeaderParameter['Content-Type'] = 'application/json';
+
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+            localVarRequestOptions.data = serializeDataIfNeeded(body, localVarRequestOptions, configuration)
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * The ListOptionsLists endpoint allows users to retrieve a list of OptionLists available in the system. By making a request to this endpoint with the provided request format, users can obtain all the OptionLists associated with the specified tenant. This functionality enables users to access and manage the predefined options available for various attributes within the system. Utilizing the ListOptionsLists endpoint provides a convenient way to retrieve and work with OptionLists, facilitating efficient management of attribute options and ensuring consistency in attribute values throughout the system.
+         * @summary List Options Lists
+         * @param {EntitymanagerListOptionsListsRequest} body 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        listOptionsLists: async (body: EntitymanagerListOptionsListsRequest, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'body' is not null or undefined
+            assertParamExists('listOptionsLists', 'body', body)
+            const localVarPath = `/product.Product/ListOptionsLists`;
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'POST', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication Authorization required
+            await setApiKeyToObject(localVarHeaderParameter, "Authorization", configuration)
+
+
+    
+            localVarHeaderParameter['Content-Type'] = 'application/json';
+
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+            localVarRequestOptions.data = serializeDataIfNeeded(body, localVarRequestOptions, configuration)
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * The ListProducts endpoint provides users with the ability to retrieve a filtered list of products based on specific criteria. By including filter parameters in the request, users can customize the response to only include products that meet certain conditions, such as price range, category, availability, or any other relevant attributes. This endpoint empowers users to efficiently narrow down the product selection and retrieve tailored results.
+         * @summary List Products
+         * @param {ProductListProductsRequest} body 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        listProducts: async (body: ProductListProductsRequest, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'body' is not null or undefined
+            assertParamExists('listProducts', 'body', body)
+            const localVarPath = `/product.Product/ListProducts`;
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'POST', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication Authorization required
+            await setApiKeyToObject(localVarHeaderParameter, "Authorization", configuration)
+
+
+    
+            localVarHeaderParameter['Content-Type'] = 'application/json';
+
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+            localVarRequestOptions.data = serializeDataIfNeeded(body, localVarRequestOptions, configuration)
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * The ListProductsByIds endpoint allows users to retrieve a list of products based on provided IDs. By making a request to this endpoint and specifying a set of product IDs, users can retrieve detailed information about the corresponding products. This endpoint facilitates efficient retrieval of specific products, enabling applications to display accurate and targeted product information to users.
+         * @summary List Products By Ids
+         * @param {ProductListProductsByIdsRequest} body 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        listProductsByIds: async (body: ProductListProductsByIdsRequest, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'body' is not null or undefined
+            assertParamExists('listProductsByIds', 'body', body)
+            const localVarPath = `/product.Product/ListProductsByIds`;
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'POST', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication Authorization required
+            await setApiKeyToObject(localVarHeaderParameter, "Authorization", configuration)
+
+
+    
+            localVarHeaderParameter['Content-Type'] = 'application/json';
+
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+            localVarRequestOptions.data = serializeDataIfNeeded(body, localVarRequestOptions, configuration)
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * 
+         * @summary List Products By Sku
+         * @param {ProductListProductsBySkuRequest} body 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        listProductsBySku: async (body: ProductListProductsBySkuRequest, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'body' is not null or undefined
+            assertParamExists('listProductsBySku', 'body', body)
+            const localVarPath = `/product.Product/ListProductsBySku`;
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'POST', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication Authorization required
+            await setApiKeyToObject(localVarHeaderParameter, "Authorization", configuration)
+
+
+    
+            localVarHeaderParameter['Content-Type'] = 'application/json';
+
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+            localVarRequestOptions.data = serializeDataIfNeeded(body, localVarRequestOptions, configuration)
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * 
+         * @summary List Product Variants By Sku
+         * @param {ProductListVariantsBySkuRequest} body 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        listVariantsBySku: async (body: ProductListVariantsBySkuRequest, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'body' is not null or undefined
+            assertParamExists('listVariantsBySku', 'body', body)
+            const localVarPath = `/product.Product/ListVariantsBySku`;
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'POST', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication Authorization required
+            await setApiKeyToObject(localVarHeaderParameter, "Authorization", configuration)
 
 
     
@@ -2813,6 +3519,9 @@ export const ProductApiAxiosParamCreator = function (configuration?: Configurati
             const localVarHeaderParameter = {} as any;
             const localVarQueryParameter = {} as any;
 
+            // authentication Authorization required
+            await setApiKeyToObject(localVarHeaderParameter, "Authorization", configuration)
+
 
     
             localVarHeaderParameter['Content-Type'] = 'application/json';
@@ -2828,7 +3537,7 @@ export const ProductApiAxiosParamCreator = function (configuration?: Configurati
             };
         },
         /**
-         * 
+         * Allow creation of multiple attributes. If any attribute is invalid, an error will be returned with more details, and in the response body, the attributes created will be returned.
          * @param {EntitymanagerBulkCreateAttributeRequest} body 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
@@ -2847,6 +3556,9 @@ export const ProductApiAxiosParamCreator = function (configuration?: Configurati
             const localVarRequestOptions = { method: 'POST', ...baseOptions, ...options};
             const localVarHeaderParameter = {} as any;
             const localVarQueryParameter = {} as any;
+
+            // authentication Authorization required
+            await setApiKeyToObject(localVarHeaderParameter, "Authorization", configuration)
 
 
     
@@ -2883,6 +3595,9 @@ export const ProductApiAxiosParamCreator = function (configuration?: Configurati
             const localVarHeaderParameter = {} as any;
             const localVarQueryParameter = {} as any;
 
+            // authentication Authorization required
+            await setApiKeyToObject(localVarHeaderParameter, "Authorization", configuration)
+
 
     
             localVarHeaderParameter['Content-Type'] = 'application/json';
@@ -2917,6 +3632,9 @@ export const ProductApiAxiosParamCreator = function (configuration?: Configurati
             const localVarRequestOptions = { method: 'POST', ...baseOptions, ...options};
             const localVarHeaderParameter = {} as any;
             const localVarQueryParameter = {} as any;
+
+            // authentication Authorization required
+            await setApiKeyToObject(localVarHeaderParameter, "Authorization", configuration)
 
 
     
@@ -2954,6 +3672,9 @@ export const ProductApiAxiosParamCreator = function (configuration?: Configurati
             const localVarHeaderParameter = {} as any;
             const localVarQueryParameter = {} as any;
 
+            // authentication Authorization required
+            await setApiKeyToObject(localVarHeaderParameter, "Authorization", configuration)
+
 
     
             localVarHeaderParameter['Content-Type'] = 'application/json';
@@ -2989,40 +3710,8 @@ export const ProductApiAxiosParamCreator = function (configuration?: Configurati
             const localVarHeaderParameter = {} as any;
             const localVarQueryParameter = {} as any;
 
-
-    
-            localVarHeaderParameter['Content-Type'] = 'application/json';
-
-            setSearchParams(localVarUrlObj, localVarQueryParameter);
-            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
-            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
-            localVarRequestOptions.data = serializeDataIfNeeded(body, localVarRequestOptions, configuration)
-
-            return {
-                url: toPathString(localVarUrlObj),
-                options: localVarRequestOptions,
-            };
-        },
-        /**
-         * 
-         * @param {ProductBulkUpdateRequestV2} body 
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        productBulkUpdateV2: async (body: ProductBulkUpdateRequestV2, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
-            // verify required parameter 'body' is not null or undefined
-            assertParamExists('productBulkUpdateV2', 'body', body)
-            const localVarPath = `/product.Product/BulkUpdateV2`;
-            // use dummy base URL string because the URL constructor only accepts absolute URLs.
-            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
-            let baseOptions;
-            if (configuration) {
-                baseOptions = configuration.baseOptions;
-            }
-
-            const localVarRequestOptions = { method: 'POST', ...baseOptions, ...options};
-            const localVarHeaderParameter = {} as any;
-            const localVarQueryParameter = {} as any;
+            // authentication Authorization required
+            await setApiKeyToObject(localVarHeaderParameter, "Authorization", configuration)
 
 
     
@@ -3059,40 +3748,8 @@ export const ProductApiAxiosParamCreator = function (configuration?: Configurati
             const localVarHeaderParameter = {} as any;
             const localVarQueryParameter = {} as any;
 
-
-    
-            localVarHeaderParameter['Content-Type'] = 'application/json';
-
-            setSearchParams(localVarUrlObj, localVarQueryParameter);
-            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
-            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
-            localVarRequestOptions.data = serializeDataIfNeeded(body, localVarRequestOptions, configuration)
-
-            return {
-                url: toPathString(localVarUrlObj),
-                options: localVarRequestOptions,
-            };
-        },
-        /**
-         * 
-         * @param {EntitymanagerCreateAttributeOptionsRequest} body 
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        productCreateAttributeOptions: async (body: EntitymanagerCreateAttributeOptionsRequest, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
-            // verify required parameter 'body' is not null or undefined
-            assertParamExists('productCreateAttributeOptions', 'body', body)
-            const localVarPath = `/product.Product/CreateAttributeOptions`;
-            // use dummy base URL string because the URL constructor only accepts absolute URLs.
-            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
-            let baseOptions;
-            if (configuration) {
-                baseOptions = configuration.baseOptions;
-            }
-
-            const localVarRequestOptions = { method: 'POST', ...baseOptions, ...options};
-            const localVarHeaderParameter = {} as any;
-            const localVarQueryParameter = {} as any;
+            // authentication Authorization required
+            await setApiKeyToObject(localVarHeaderParameter, "Authorization", configuration)
 
 
     
@@ -3110,77 +3767,7 @@ export const ProductApiAxiosParamCreator = function (configuration?: Configurati
         },
         /**
          * 
-         * @param {EntitymanagerEntity} body 
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        productCreateEntity: async (body: EntitymanagerEntity, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
-            // verify required parameter 'body' is not null or undefined
-            assertParamExists('productCreateEntity', 'body', body)
-            const localVarPath = `/product.Product/CreateEntity`;
-            // use dummy base URL string because the URL constructor only accepts absolute URLs.
-            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
-            let baseOptions;
-            if (configuration) {
-                baseOptions = configuration.baseOptions;
-            }
-
-            const localVarRequestOptions = { method: 'POST', ...baseOptions, ...options};
-            const localVarHeaderParameter = {} as any;
-            const localVarQueryParameter = {} as any;
-
-
-    
-            localVarHeaderParameter['Content-Type'] = 'application/json';
-
-            setSearchParams(localVarUrlObj, localVarQueryParameter);
-            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
-            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
-            localVarRequestOptions.data = serializeDataIfNeeded(body, localVarRequestOptions, configuration)
-
-            return {
-                url: toPathString(localVarUrlObj),
-                options: localVarRequestOptions,
-            };
-        },
-        /**
-         * 
-         * @param {EntitymanagerCreateOptionsListRequest} body 
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        productCreateOptionsList: async (body: EntitymanagerCreateOptionsListRequest, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
-            // verify required parameter 'body' is not null or undefined
-            assertParamExists('productCreateOptionsList', 'body', body)
-            const localVarPath = `/product.Product/CreateOptionsList`;
-            // use dummy base URL string because the URL constructor only accepts absolute URLs.
-            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
-            let baseOptions;
-            if (configuration) {
-                baseOptions = configuration.baseOptions;
-            }
-
-            const localVarRequestOptions = { method: 'POST', ...baseOptions, ...options};
-            const localVarHeaderParameter = {} as any;
-            const localVarQueryParameter = {} as any;
-
-
-    
-            localVarHeaderParameter['Content-Type'] = 'application/json';
-
-            setSearchParams(localVarUrlObj, localVarQueryParameter);
-            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
-            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
-            localVarRequestOptions.data = serializeDataIfNeeded(body, localVarRequestOptions, configuration)
-
-            return {
-                url: toPathString(localVarUrlObj),
-                options: localVarRequestOptions,
-            };
-        },
-        /**
-         * 
-         * @param {ProductCreateProductRequest} body 
+         * @param {ProductCreateProductRequest} body The CreateProductRequest message is used to create a new product within the system. It contains various fields that allow specifying the details and attributes of the product.
          * @param {*} [options] Override http request option.
          * @deprecated
          * @throws {RequiredError}
@@ -3199,6 +3786,9 @@ export const ProductApiAxiosParamCreator = function (configuration?: Configurati
             const localVarRequestOptions = { method: 'POST', ...baseOptions, ...options};
             const localVarHeaderParameter = {} as any;
             const localVarQueryParameter = {} as any;
+
+            // authentication Authorization required
+            await setApiKeyToObject(localVarHeaderParameter, "Authorization", configuration)
 
 
     
@@ -3234,6 +3824,9 @@ export const ProductApiAxiosParamCreator = function (configuration?: Configurati
             const localVarRequestOptions = { method: 'POST', ...baseOptions, ...options};
             const localVarHeaderParameter = {} as any;
             const localVarQueryParameter = {} as any;
+
+            // authentication Authorization required
+            await setApiKeyToObject(localVarHeaderParameter, "Authorization", configuration)
 
 
     
@@ -3271,6 +3864,9 @@ export const ProductApiAxiosParamCreator = function (configuration?: Configurati
             const localVarHeaderParameter = {} as any;
             const localVarQueryParameter = {} as any;
 
+            // authentication Authorization required
+            await setApiKeyToObject(localVarHeaderParameter, "Authorization", configuration)
+
 
     
             localVarHeaderParameter['Content-Type'] = 'application/json';
@@ -3305,6 +3901,9 @@ export const ProductApiAxiosParamCreator = function (configuration?: Configurati
             const localVarRequestOptions = { method: 'POST', ...baseOptions, ...options};
             const localVarHeaderParameter = {} as any;
             const localVarQueryParameter = {} as any;
+
+            // authentication Authorization required
+            await setApiKeyToObject(localVarHeaderParameter, "Authorization", configuration)
 
 
     
@@ -3341,6 +3940,9 @@ export const ProductApiAxiosParamCreator = function (configuration?: Configurati
             const localVarHeaderParameter = {} as any;
             const localVarQueryParameter = {} as any;
 
+            // authentication Authorization required
+            await setApiKeyToObject(localVarHeaderParameter, "Authorization", configuration)
+
 
     
             localVarHeaderParameter['Content-Type'] = 'application/json';
@@ -3376,250 +3978,8 @@ export const ProductApiAxiosParamCreator = function (configuration?: Configurati
             const localVarHeaderParameter = {} as any;
             const localVarQueryParameter = {} as any;
 
-
-    
-            localVarHeaderParameter['Content-Type'] = 'application/json';
-
-            setSearchParams(localVarUrlObj, localVarQueryParameter);
-            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
-            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
-            localVarRequestOptions.data = serializeDataIfNeeded(body, localVarRequestOptions, configuration)
-
-            return {
-                url: toPathString(localVarUrlObj),
-                options: localVarRequestOptions,
-            };
-        },
-        /**
-         * 
-         * @param {EntitymanagerGetAttributeOptionRequest} body 
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        productGetAttributeOption: async (body: EntitymanagerGetAttributeOptionRequest, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
-            // verify required parameter 'body' is not null or undefined
-            assertParamExists('productGetAttributeOption', 'body', body)
-            const localVarPath = `/product.Product/GetAttributeOption`;
-            // use dummy base URL string because the URL constructor only accepts absolute URLs.
-            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
-            let baseOptions;
-            if (configuration) {
-                baseOptions = configuration.baseOptions;
-            }
-
-            const localVarRequestOptions = { method: 'POST', ...baseOptions, ...options};
-            const localVarHeaderParameter = {} as any;
-            const localVarQueryParameter = {} as any;
-
-
-    
-            localVarHeaderParameter['Content-Type'] = 'application/json';
-
-            setSearchParams(localVarUrlObj, localVarQueryParameter);
-            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
-            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
-            localVarRequestOptions.data = serializeDataIfNeeded(body, localVarRequestOptions, configuration)
-
-            return {
-                url: toPathString(localVarUrlObj),
-                options: localVarRequestOptions,
-            };
-        },
-        /**
-         * 
-         * @param {EntitymanagerGetAttributeOptionsRequest} body 
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        productGetAttributeOptions: async (body: EntitymanagerGetAttributeOptionsRequest, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
-            // verify required parameter 'body' is not null or undefined
-            assertParamExists('productGetAttributeOptions', 'body', body)
-            const localVarPath = `/product.Product/GetAttributeOptions`;
-            // use dummy base URL string because the URL constructor only accepts absolute URLs.
-            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
-            let baseOptions;
-            if (configuration) {
-                baseOptions = configuration.baseOptions;
-            }
-
-            const localVarRequestOptions = { method: 'POST', ...baseOptions, ...options};
-            const localVarHeaderParameter = {} as any;
-            const localVarQueryParameter = {} as any;
-
-
-    
-            localVarHeaderParameter['Content-Type'] = 'application/json';
-
-            setSearchParams(localVarUrlObj, localVarQueryParameter);
-            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
-            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
-            localVarRequestOptions.data = serializeDataIfNeeded(body, localVarRequestOptions, configuration)
-
-            return {
-                url: toPathString(localVarUrlObj),
-                options: localVarRequestOptions,
-            };
-        },
-        /**
-         * 
-         * @param {EntitymanagerEntityRequest} body 
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        productGetEntity: async (body: EntitymanagerEntityRequest, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
-            // verify required parameter 'body' is not null or undefined
-            assertParamExists('productGetEntity', 'body', body)
-            const localVarPath = `/product.Product/GetEntity`;
-            // use dummy base URL string because the URL constructor only accepts absolute URLs.
-            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
-            let baseOptions;
-            if (configuration) {
-                baseOptions = configuration.baseOptions;
-            }
-
-            const localVarRequestOptions = { method: 'POST', ...baseOptions, ...options};
-            const localVarHeaderParameter = {} as any;
-            const localVarQueryParameter = {} as any;
-
-
-    
-            localVarHeaderParameter['Content-Type'] = 'application/json';
-
-            setSearchParams(localVarUrlObj, localVarQueryParameter);
-            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
-            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
-            localVarRequestOptions.data = serializeDataIfNeeded(body, localVarRequestOptions, configuration)
-
-            return {
-                url: toPathString(localVarUrlObj),
-                options: localVarRequestOptions,
-            };
-        },
-        /**
-         * 
-         * @param {EntitymanagerGetOptionsListRequest} body 
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        productGetOptionsList: async (body: EntitymanagerGetOptionsListRequest, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
-            // verify required parameter 'body' is not null or undefined
-            assertParamExists('productGetOptionsList', 'body', body)
-            const localVarPath = `/product.Product/GetOptionsList`;
-            // use dummy base URL string because the URL constructor only accepts absolute URLs.
-            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
-            let baseOptions;
-            if (configuration) {
-                baseOptions = configuration.baseOptions;
-            }
-
-            const localVarRequestOptions = { method: 'POST', ...baseOptions, ...options};
-            const localVarHeaderParameter = {} as any;
-            const localVarQueryParameter = {} as any;
-
-
-    
-            localVarHeaderParameter['Content-Type'] = 'application/json';
-
-            setSearchParams(localVarUrlObj, localVarQueryParameter);
-            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
-            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
-            localVarRequestOptions.data = serializeDataIfNeeded(body, localVarRequestOptions, configuration)
-
-            return {
-                url: toPathString(localVarUrlObj),
-                options: localVarRequestOptions,
-            };
-        },
-        /**
-         * 
-         * @param {ProductGetProductRequest} body 
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        productGetProduct: async (body: ProductGetProductRequest, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
-            // verify required parameter 'body' is not null or undefined
-            assertParamExists('productGetProduct', 'body', body)
-            const localVarPath = `/product.Product/GetProduct`;
-            // use dummy base URL string because the URL constructor only accepts absolute URLs.
-            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
-            let baseOptions;
-            if (configuration) {
-                baseOptions = configuration.baseOptions;
-            }
-
-            const localVarRequestOptions = { method: 'POST', ...baseOptions, ...options};
-            const localVarHeaderParameter = {} as any;
-            const localVarQueryParameter = {} as any;
-
-
-    
-            localVarHeaderParameter['Content-Type'] = 'application/json';
-
-            setSearchParams(localVarUrlObj, localVarQueryParameter);
-            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
-            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
-            localVarRequestOptions.data = serializeDataIfNeeded(body, localVarRequestOptions, configuration)
-
-            return {
-                url: toPathString(localVarUrlObj),
-                options: localVarRequestOptions,
-            };
-        },
-        /**
-         * 
-         * @param {ProductGetProductByCodeRequest} body 
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        productGetProductByCode: async (body: ProductGetProductByCodeRequest, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
-            // verify required parameter 'body' is not null or undefined
-            assertParamExists('productGetProductByCode', 'body', body)
-            const localVarPath = `/product.Product/GetProductByCode`;
-            // use dummy base URL string because the URL constructor only accepts absolute URLs.
-            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
-            let baseOptions;
-            if (configuration) {
-                baseOptions = configuration.baseOptions;
-            }
-
-            const localVarRequestOptions = { method: 'POST', ...baseOptions, ...options};
-            const localVarHeaderParameter = {} as any;
-            const localVarQueryParameter = {} as any;
-
-
-    
-            localVarHeaderParameter['Content-Type'] = 'application/json';
-
-            setSearchParams(localVarUrlObj, localVarQueryParameter);
-            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
-            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
-            localVarRequestOptions.data = serializeDataIfNeeded(body, localVarRequestOptions, configuration)
-
-            return {
-                url: toPathString(localVarUrlObj),
-                options: localVarRequestOptions,
-            };
-        },
-        /**
-         * 
-         * @param {ProductGetProductByUrlKeyRequest} body 
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        productGetProductByUrlKey: async (body: ProductGetProductByUrlKeyRequest, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
-            // verify required parameter 'body' is not null or undefined
-            assertParamExists('productGetProductByUrlKey', 'body', body)
-            const localVarPath = `/product.Product/GetProductByUrlKey`;
-            // use dummy base URL string because the URL constructor only accepts absolute URLs.
-            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
-            let baseOptions;
-            if (configuration) {
-                baseOptions = configuration.baseOptions;
-            }
-
-            const localVarRequestOptions = { method: 'POST', ...baseOptions, ...options};
-            const localVarHeaderParameter = {} as any;
-            const localVarQueryParameter = {} as any;
+            // authentication Authorization required
+            await setApiKeyToObject(localVarHeaderParameter, "Authorization", configuration)
 
 
     
@@ -3657,285 +4017,8 @@ export const ProductApiAxiosParamCreator = function (configuration?: Configurati
             const localVarHeaderParameter = {} as any;
             const localVarQueryParameter = {} as any;
 
-
-    
-            localVarHeaderParameter['Content-Type'] = 'application/json';
-
-            setSearchParams(localVarUrlObj, localVarQueryParameter);
-            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
-            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
-            localVarRequestOptions.data = serializeDataIfNeeded(body, localVarRequestOptions, configuration)
-
-            return {
-                url: toPathString(localVarUrlObj),
-                options: localVarRequestOptions,
-            };
-        },
-        /**
-         * 
-         * @param {EntitymanagerListAttributeOptionsRequest} body 
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        productListAttributeOptions: async (body: EntitymanagerListAttributeOptionsRequest, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
-            // verify required parameter 'body' is not null or undefined
-            assertParamExists('productListAttributeOptions', 'body', body)
-            const localVarPath = `/product.Product/ListAttributeOptions`;
-            // use dummy base URL string because the URL constructor only accepts absolute URLs.
-            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
-            let baseOptions;
-            if (configuration) {
-                baseOptions = configuration.baseOptions;
-            }
-
-            const localVarRequestOptions = { method: 'POST', ...baseOptions, ...options};
-            const localVarHeaderParameter = {} as any;
-            const localVarQueryParameter = {} as any;
-
-
-    
-            localVarHeaderParameter['Content-Type'] = 'application/json';
-
-            setSearchParams(localVarUrlObj, localVarQueryParameter);
-            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
-            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
-            localVarRequestOptions.data = serializeDataIfNeeded(body, localVarRequestOptions, configuration)
-
-            return {
-                url: toPathString(localVarUrlObj),
-                options: localVarRequestOptions,
-            };
-        },
-        /**
-         * 
-         * @param {EntitymanagerListEntitiesRequest} body 
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        productListEntities: async (body: EntitymanagerListEntitiesRequest, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
-            // verify required parameter 'body' is not null or undefined
-            assertParamExists('productListEntities', 'body', body)
-            const localVarPath = `/product.Product/ListEntities`;
-            // use dummy base URL string because the URL constructor only accepts absolute URLs.
-            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
-            let baseOptions;
-            if (configuration) {
-                baseOptions = configuration.baseOptions;
-            }
-
-            const localVarRequestOptions = { method: 'POST', ...baseOptions, ...options};
-            const localVarHeaderParameter = {} as any;
-            const localVarQueryParameter = {} as any;
-
-
-    
-            localVarHeaderParameter['Content-Type'] = 'application/json';
-
-            setSearchParams(localVarUrlObj, localVarQueryParameter);
-            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
-            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
-            localVarRequestOptions.data = serializeDataIfNeeded(body, localVarRequestOptions, configuration)
-
-            return {
-                url: toPathString(localVarUrlObj),
-                options: localVarRequestOptions,
-            };
-        },
-        /**
-         * 
-         * @param {EntitymanagerListOptionsListsRequest} body 
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        productListOptionsLists: async (body: EntitymanagerListOptionsListsRequest, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
-            // verify required parameter 'body' is not null or undefined
-            assertParamExists('productListOptionsLists', 'body', body)
-            const localVarPath = `/product.Product/ListOptionsLists`;
-            // use dummy base URL string because the URL constructor only accepts absolute URLs.
-            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
-            let baseOptions;
-            if (configuration) {
-                baseOptions = configuration.baseOptions;
-            }
-
-            const localVarRequestOptions = { method: 'POST', ...baseOptions, ...options};
-            const localVarHeaderParameter = {} as any;
-            const localVarQueryParameter = {} as any;
-
-
-    
-            localVarHeaderParameter['Content-Type'] = 'application/json';
-
-            setSearchParams(localVarUrlObj, localVarQueryParameter);
-            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
-            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
-            localVarRequestOptions.data = serializeDataIfNeeded(body, localVarRequestOptions, configuration)
-
-            return {
-                url: toPathString(localVarUrlObj),
-                options: localVarRequestOptions,
-            };
-        },
-        /**
-         * 
-         * @param {ProductListProductsRequest} body 
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        productListProducts: async (body: ProductListProductsRequest, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
-            // verify required parameter 'body' is not null or undefined
-            assertParamExists('productListProducts', 'body', body)
-            const localVarPath = `/product.Product/ListProducts`;
-            // use dummy base URL string because the URL constructor only accepts absolute URLs.
-            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
-            let baseOptions;
-            if (configuration) {
-                baseOptions = configuration.baseOptions;
-            }
-
-            const localVarRequestOptions = { method: 'POST', ...baseOptions, ...options};
-            const localVarHeaderParameter = {} as any;
-            const localVarQueryParameter = {} as any;
-
-
-    
-            localVarHeaderParameter['Content-Type'] = 'application/json';
-
-            setSearchParams(localVarUrlObj, localVarQueryParameter);
-            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
-            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
-            localVarRequestOptions.data = serializeDataIfNeeded(body, localVarRequestOptions, configuration)
-
-            return {
-                url: toPathString(localVarUrlObj),
-                options: localVarRequestOptions,
-            };
-        },
-        /**
-         * 
-         * @param {ProductListProductsByIdsRequest} body 
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        productListProductsByIds: async (body: ProductListProductsByIdsRequest, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
-            // verify required parameter 'body' is not null or undefined
-            assertParamExists('productListProductsByIds', 'body', body)
-            const localVarPath = `/product.Product/ListProductsByIds`;
-            // use dummy base URL string because the URL constructor only accepts absolute URLs.
-            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
-            let baseOptions;
-            if (configuration) {
-                baseOptions = configuration.baseOptions;
-            }
-
-            const localVarRequestOptions = { method: 'POST', ...baseOptions, ...options};
-            const localVarHeaderParameter = {} as any;
-            const localVarQueryParameter = {} as any;
-
-
-    
-            localVarHeaderParameter['Content-Type'] = 'application/json';
-
-            setSearchParams(localVarUrlObj, localVarQueryParameter);
-            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
-            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
-            localVarRequestOptions.data = serializeDataIfNeeded(body, localVarRequestOptions, configuration)
-
-            return {
-                url: toPathString(localVarUrlObj),
-                options: localVarRequestOptions,
-            };
-        },
-        /**
-         * 
-         * @param {ProductListProductsBySkuRequest} body 
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        productListProductsBySku: async (body: ProductListProductsBySkuRequest, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
-            // verify required parameter 'body' is not null or undefined
-            assertParamExists('productListProductsBySku', 'body', body)
-            const localVarPath = `/product.Product/ListProductsBySku`;
-            // use dummy base URL string because the URL constructor only accepts absolute URLs.
-            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
-            let baseOptions;
-            if (configuration) {
-                baseOptions = configuration.baseOptions;
-            }
-
-            const localVarRequestOptions = { method: 'POST', ...baseOptions, ...options};
-            const localVarHeaderParameter = {} as any;
-            const localVarQueryParameter = {} as any;
-
-
-    
-            localVarHeaderParameter['Content-Type'] = 'application/json';
-
-            setSearchParams(localVarUrlObj, localVarQueryParameter);
-            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
-            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
-            localVarRequestOptions.data = serializeDataIfNeeded(body, localVarRequestOptions, configuration)
-
-            return {
-                url: toPathString(localVarUrlObj),
-                options: localVarRequestOptions,
-            };
-        },
-        /**
-         * 
-         * @param {ProductListVariantsBySkuRequest} body 
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        productListVariantsBySku: async (body: ProductListVariantsBySkuRequest, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
-            // verify required parameter 'body' is not null or undefined
-            assertParamExists('productListVariantsBySku', 'body', body)
-            const localVarPath = `/product.Product/ListVariantsBySku`;
-            // use dummy base URL string because the URL constructor only accepts absolute URLs.
-            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
-            let baseOptions;
-            if (configuration) {
-                baseOptions = configuration.baseOptions;
-            }
-
-            const localVarRequestOptions = { method: 'POST', ...baseOptions, ...options};
-            const localVarHeaderParameter = {} as any;
-            const localVarQueryParameter = {} as any;
-
-
-    
-            localVarHeaderParameter['Content-Type'] = 'application/json';
-
-            setSearchParams(localVarUrlObj, localVarQueryParameter);
-            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
-            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
-            localVarRequestOptions.data = serializeDataIfNeeded(body, localVarRequestOptions, configuration)
-
-            return {
-                url: toPathString(localVarUrlObj),
-                options: localVarRequestOptions,
-            };
-        },
-        /**
-         * 
-         * @param {ProductRemoveMediaGalleryEntryRequest} body 
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        productRemoveMediaGalleryEntry: async (body: ProductRemoveMediaGalleryEntryRequest, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
-            // verify required parameter 'body' is not null or undefined
-            assertParamExists('productRemoveMediaGalleryEntry', 'body', body)
-            const localVarPath = `/product.Product/RemoveMediaGalleryEntry`;
-            // use dummy base URL string because the URL constructor only accepts absolute URLs.
-            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
-            let baseOptions;
-            if (configuration) {
-                baseOptions = configuration.baseOptions;
-            }
-
-            const localVarRequestOptions = { method: 'POST', ...baseOptions, ...options};
-            const localVarHeaderParameter = {} as any;
-            const localVarQueryParameter = {} as any;
+            // authentication Authorization required
+            await setApiKeyToObject(localVarHeaderParameter, "Authorization", configuration)
 
 
     
@@ -3972,6 +4055,9 @@ export const ProductApiAxiosParamCreator = function (configuration?: Configurati
             const localVarHeaderParameter = {} as any;
             const localVarQueryParameter = {} as any;
 
+            // authentication Authorization required
+            await setApiKeyToObject(localVarHeaderParameter, "Authorization", configuration)
+
 
     
             localVarHeaderParameter['Content-Type'] = 'application/json';
@@ -4007,111 +4093,8 @@ export const ProductApiAxiosParamCreator = function (configuration?: Configurati
             const localVarHeaderParameter = {} as any;
             const localVarQueryParameter = {} as any;
 
-
-    
-            localVarHeaderParameter['Content-Type'] = 'application/json';
-
-            setSearchParams(localVarUrlObj, localVarQueryParameter);
-            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
-            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
-            localVarRequestOptions.data = serializeDataIfNeeded(body, localVarRequestOptions, configuration)
-
-            return {
-                url: toPathString(localVarUrlObj),
-                options: localVarRequestOptions,
-            };
-        },
-        /**
-         * 
-         * @summary rpc GetAttributeOptionByCode (product.entitymanager.GetAttributeOptionByCodeRequest) returns (product.entitymanager.GetAttributeOptionByCodeResponse) {}
-         * @param {EntitymanagerUpdateAttributeOptionsRequest} body 
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        productUpdateAttributeOptions: async (body: EntitymanagerUpdateAttributeOptionsRequest, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
-            // verify required parameter 'body' is not null or undefined
-            assertParamExists('productUpdateAttributeOptions', 'body', body)
-            const localVarPath = `/product.Product/UpdateAttributeOptions`;
-            // use dummy base URL string because the URL constructor only accepts absolute URLs.
-            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
-            let baseOptions;
-            if (configuration) {
-                baseOptions = configuration.baseOptions;
-            }
-
-            const localVarRequestOptions = { method: 'POST', ...baseOptions, ...options};
-            const localVarHeaderParameter = {} as any;
-            const localVarQueryParameter = {} as any;
-
-
-    
-            localVarHeaderParameter['Content-Type'] = 'application/json';
-
-            setSearchParams(localVarUrlObj, localVarQueryParameter);
-            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
-            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
-            localVarRequestOptions.data = serializeDataIfNeeded(body, localVarRequestOptions, configuration)
-
-            return {
-                url: toPathString(localVarUrlObj),
-                options: localVarRequestOptions,
-            };
-        },
-        /**
-         * 
-         * @param {ProductUpdateMediaGalleryEntryRequest} body 
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        productUpdateMediaGalleryEntry: async (body: ProductUpdateMediaGalleryEntryRequest, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
-            // verify required parameter 'body' is not null or undefined
-            assertParamExists('productUpdateMediaGalleryEntry', 'body', body)
-            const localVarPath = `/product.Product/UpdateMediaGalleryEntry`;
-            // use dummy base URL string because the URL constructor only accepts absolute URLs.
-            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
-            let baseOptions;
-            if (configuration) {
-                baseOptions = configuration.baseOptions;
-            }
-
-            const localVarRequestOptions = { method: 'POST', ...baseOptions, ...options};
-            const localVarHeaderParameter = {} as any;
-            const localVarQueryParameter = {} as any;
-
-
-    
-            localVarHeaderParameter['Content-Type'] = 'application/json';
-
-            setSearchParams(localVarUrlObj, localVarQueryParameter);
-            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
-            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
-            localVarRequestOptions.data = serializeDataIfNeeded(body, localVarRequestOptions, configuration)
-
-            return {
-                url: toPathString(localVarUrlObj),
-                options: localVarRequestOptions,
-            };
-        },
-        /**
-         * 
-         * @param {EntitymanagerUpdateOptionsListRequest} body 
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        productUpdateOptionsList: async (body: EntitymanagerUpdateOptionsListRequest, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
-            // verify required parameter 'body' is not null or undefined
-            assertParamExists('productUpdateOptionsList', 'body', body)
-            const localVarPath = `/product.Product/UpdateOptionsList`;
-            // use dummy base URL string because the URL constructor only accepts absolute URLs.
-            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
-            let baseOptions;
-            if (configuration) {
-                baseOptions = configuration.baseOptions;
-            }
-
-            const localVarRequestOptions = { method: 'POST', ...baseOptions, ...options};
-            const localVarHeaderParameter = {} as any;
-            const localVarQueryParameter = {} as any;
+            // authentication Authorization required
+            await setApiKeyToObject(localVarHeaderParameter, "Authorization", configuration)
 
 
     
@@ -4149,6 +4132,9 @@ export const ProductApiAxiosParamCreator = function (configuration?: Configurati
             const localVarHeaderParameter = {} as any;
             const localVarQueryParameter = {} as any;
 
+            // authentication Authorization required
+            await setApiKeyToObject(localVarHeaderParameter, "Authorization", configuration)
+
 
     
             localVarHeaderParameter['Content-Type'] = 'application/json';
@@ -4184,6 +4170,165 @@ export const ProductApiAxiosParamCreator = function (configuration?: Configurati
             const localVarHeaderParameter = {} as any;
             const localVarQueryParameter = {} as any;
 
+            // authentication Authorization required
+            await setApiKeyToObject(localVarHeaderParameter, "Authorization", configuration)
+
+
+    
+            localVarHeaderParameter['Content-Type'] = 'application/json';
+
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+            localVarRequestOptions.data = serializeDataIfNeeded(body, localVarRequestOptions, configuration)
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * The RemoveMediaGalleryEntry endpoint allows users to remove a specific media entry from a product\'s gallery. By making a request to this endpoint and providing the tenant ID, product ID, and the unique identifier of the media entry, users can easily manage and update the visual content of a product\'s gallery. 
+         * @summary Remove Media Gallery Entry
+         * @param {ProductRemoveMediaGalleryEntryRequest} body 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        removeMediaGalleryEntry: async (body: ProductRemoveMediaGalleryEntryRequest, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'body' is not null or undefined
+            assertParamExists('removeMediaGalleryEntry', 'body', body)
+            const localVarPath = `/product.Product/RemoveMediaGalleryEntry`;
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'POST', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication Authorization required
+            await setApiKeyToObject(localVarHeaderParameter, "Authorization", configuration)
+
+
+    
+            localVarHeaderParameter['Content-Type'] = 'application/json';
+
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+            localVarRequestOptions.data = serializeDataIfNeeded(body, localVarRequestOptions, configuration)
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * 
+         * @summary Update Attribute Options
+         * @param {EntitymanagerUpdateAttributeOptionsRequest} body 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        updateAttributeOptions: async (body: EntitymanagerUpdateAttributeOptionsRequest, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'body' is not null or undefined
+            assertParamExists('updateAttributeOptions', 'body', body)
+            const localVarPath = `/product.Product/UpdateAttributeOptions`;
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'POST', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication Authorization required
+            await setApiKeyToObject(localVarHeaderParameter, "Authorization", configuration)
+
+
+    
+            localVarHeaderParameter['Content-Type'] = 'application/json';
+
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+            localVarRequestOptions.data = serializeDataIfNeeded(body, localVarRequestOptions, configuration)
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * The UpdateMediaGalleryEntry endpoint allows users to modify and update a specific media entry within a product\'s gallery. By sending a request to this endpoint and providing the necessary information, users can efficiently update the media asset, position, and metadata associated with the entry.
+         * @summary Update Media Gallery Entry
+         * @param {ProductUpdateMediaGalleryEntryRequest} body 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        updateMediaGalleryEntry: async (body: ProductUpdateMediaGalleryEntryRequest, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'body' is not null or undefined
+            assertParamExists('updateMediaGalleryEntry', 'body', body)
+            const localVarPath = `/product.Product/UpdateMediaGalleryEntry`;
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'POST', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication Authorization required
+            await setApiKeyToObject(localVarHeaderParameter, "Authorization", configuration)
+
+
+    
+            localVarHeaderParameter['Content-Type'] = 'application/json';
+
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+            localVarRequestOptions.data = serializeDataIfNeeded(body, localVarRequestOptions, configuration)
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * 
+         * @summary Update Options List
+         * @param {EntitymanagerUpdateOptionsListRequest} body 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        updateOptionsList: async (body: EntitymanagerUpdateOptionsListRequest, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'body' is not null or undefined
+            assertParamExists('updateOptionsList', 'body', body)
+            const localVarPath = `/product.Product/UpdateOptionsList`;
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'POST', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication Authorization required
+            await setApiKeyToObject(localVarHeaderParameter, "Authorization", configuration)
+
 
     
             localVarHeaderParameter['Content-Type'] = 'application/json';
@@ -4209,15 +4354,250 @@ export const ProductApiFp = function(configuration?: Configuration) {
     const localVarAxiosParamCreator = ProductApiAxiosParamCreator(configuration)
     return {
         /**
-         * 
+         * The AddMediaGalleryEntry endpoint allows users to add a new media entry to the gallery of a specific product. To make a request to this endpoint, users need to provide the necessary information in the specified format. The request includes the tenant_id to specify the relevant tenant, the product_id to identify the target product, and the asset_grn which represents the globally unique identifier for the media asset being added. Additionally, the position field indicates the desired position of the media entry within the gallery, allowing users to control the order in which the media items are displayed. The metadata field, which is a repeated field, provides the option to include additional metadata associated with the media entry.
+         * @summary Add Media Gallery Entry
          * @param {ProductAddMediaGalleryEntryRequest} body 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async productAddMediaGalleryEntry(body: ProductAddMediaGalleryEntryRequest, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ProductAddMediaGalleryEntryResponse>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.productAddMediaGalleryEntry(body, options);
+        async addMediaGalleryEntry(body: ProductAddMediaGalleryEntryRequest, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ProductAddMediaGalleryEntryResponse>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.addMediaGalleryEntry(body, options);
             const index = configuration?.serverIndex ?? 0;
-            const operationBasePath = operationServerMap['ProductApi.productAddMediaGalleryEntry']?.[index]?.url;
+            const operationBasePath = operationServerMap['ProductApi.addMediaGalleryEntry']?.[index]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, operationBasePath || basePath);
+        },
+        /**
+         * Version 2 of bulk updates for product attributes with enhanced payload structure and response format.
+         * @summary Bulk Update Products
+         * @param {ProductBulkUpdateRequestV2} body 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async bulkUpdateV2(body: ProductBulkUpdateRequestV2, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ProductBulkUpdateResponse>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.bulkUpdateV2(body, options);
+            const index = configuration?.serverIndex ?? 0;
+            const operationBasePath = operationServerMap['ProductApi.bulkUpdateV2']?.[index]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, operationBasePath || basePath);
+        },
+        /**
+         * Create attribute options with specified codes, values, and swatches. Returns created options and any associated errors.
+         * @summary Create Attribute Options
+         * @param {EntitymanagerCreateAttributeOptionsRequest} body 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async createAttributeOptions(body: EntitymanagerCreateAttributeOptionsRequest, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<EntitymanagerCreateAttributeOptionsResponse>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.createAttributeOptions(body, options);
+            const index = configuration?.serverIndex ?? 0;
+            const operationBasePath = operationServerMap['ProductApi.createAttributeOptions']?.[index]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, operationBasePath || basePath);
+        },
+        /**
+         * The CreateEntity endpoint allows users to define and create a new entity with custom attributes, providing a flexible way to represent and manage different data structures within the system. By making a request to this endpoint, users can create a new entity that serves as an abstraction of a product or any other domain-specific object. This endpoint empowers users to define the specific attributes that compose the entity, such as color, composition, technical details, or any other relevant properties. Utilize the CreateEntity endpoint to dynamically extend and adapt your system\'s data model to accommodate diverse business requirements and efficiently manage various types of entities.
+         * @summary Create Entity
+         * @param {EntitymanagerEntity} body 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async createEntity(body: EntitymanagerEntity, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<EntitymanagerCreateEntityResponse>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.createEntity(body, options);
+            const index = configuration?.serverIndex ?? 0;
+            const operationBasePath = operationServerMap['ProductApi.createEntity']?.[index]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, operationBasePath || basePath);
+        },
+        /**
+         * The CreateOptionsList endpoint allows users to create an OptionList, which represents a list of predefined options for assigning to an attribute. By making a request to this endpoint with the provided request format, users can create a new OptionList by specifying the relevant tenant ID and providing the OptionList object containing the predefined options. This functionality facilitates efficient management and assignment of predefined attribute values, ensuring consistency and flexibility within the system.
+         * @summary Create Options List
+         * @param {EntitymanagerCreateOptionsListRequest} body 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async createOptionsList(body: EntitymanagerCreateOptionsListRequest, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<EntitymanagerCreateOptionsListResponse>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.createOptionsList(body, options);
+            const index = configuration?.serverIndex ?? 0;
+            const operationBasePath = operationServerMap['ProductApi.createOptionsList']?.[index]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, operationBasePath || basePath);
+        },
+        /**
+         * Retrieve attribute option details by providing the tenant ID, list code, and option ID. Returns the specified attribute option.
+         * @summary Get Attribute Option
+         * @param {EntitymanagerGetAttributeOptionRequest} body 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async getAttributeOption(body: EntitymanagerGetAttributeOptionRequest, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<EntitymanagerGetAttributeOptionResponse>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.getAttributeOption(body, options);
+            const index = configuration?.serverIndex ?? 0;
+            const operationBasePath = operationServerMap['ProductApi.getAttributeOption']?.[index]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, operationBasePath || basePath);
+        },
+        /**
+         * Retrieve a list of attribute options based on the provided tenant ID and list code.
+         * @summary Get Attribute Options
+         * @param {EntitymanagerGetAttributeOptionsRequest} body 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async getAttributeOptions(body: EntitymanagerGetAttributeOptionsRequest, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<EntitymanagerGetAttributeOptionsResponse>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.getAttributeOptions(body, options);
+            const index = configuration?.serverIndex ?? 0;
+            const operationBasePath = operationServerMap['ProductApi.getAttributeOptions']?.[index]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, operationBasePath || basePath);
+        },
+        /**
+         * Retrieve details of an entity by providing the tenant ID and either entity data or entity ID. Returns information including ID, type, code, label, relationships, and attributes.
+         * @summary Get Entity Details
+         * @param {EntitymanagerEntityRequest} body 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async getEntity(body: EntitymanagerEntityRequest, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<EntitymanagerEntity>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.getEntity(body, options);
+            const index = configuration?.serverIndex ?? 0;
+            const operationBasePath = operationServerMap['ProductApi.getEntity']?.[index]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, operationBasePath || basePath);
+        },
+        /**
+         * Retrieve option lists.
+         * @summary Get Options List
+         * @param {EntitymanagerGetOptionsListRequest} body 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async getOptionsList(body: EntitymanagerGetOptionsListRequest, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<EntitymanagerGetOptionsListResponse>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.getOptionsList(body, options);
+            const index = configuration?.serverIndex ?? 0;
+            const operationBasePath = operationServerMap['ProductApi.getOptionsList']?.[index]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, operationBasePath || basePath);
+        },
+        /**
+         * The GetProduct endpoint enables users to retrieve a product from the system. By sending a request to this endpoint, users can retrieve a product by providing its unique identifier.
+         * @summary Get Product
+         * @param {ProductGetProductRequest} body 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async getProduct(body: ProductGetProductRequest, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ProductGetProductResponse>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.getProduct(body, options);
+            const index = configuration?.serverIndex ?? 0;
+            const operationBasePath = operationServerMap['ProductApi.getProduct']?.[index]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, operationBasePath || basePath);
+        },
+        /**
+         * The GetProductByCode endpoint enables users to retrieve a product from the system. By sending a request to this endpoint, users can retrieve a product by providing its unique code.
+         * @summary Get Product By Code
+         * @param {ProductGetProductByCodeRequest} body 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async getProductByCode(body: ProductGetProductByCodeRequest, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ProductGetProductByCodeResponse>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.getProductByCode(body, options);
+            const index = configuration?.serverIndex ?? 0;
+            const operationBasePath = operationServerMap['ProductApi.getProductByCode']?.[index]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, operationBasePath || basePath);
+        },
+        /**
+         * The GetProductByUrlKey endpoint enables users to retrieve a product from the system. By sending a request to this endpoint, users can retrieve a product by providing its unique url key.
+         * @summary Get Product By Url Key
+         * @param {ProductGetProductByUrlKeyRequest} body 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async getProductByUrlKey(body: ProductGetProductByUrlKeyRequest, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ProductGetProductByUrlKeyResponse>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.getProductByUrlKey(body, options);
+            const index = configuration?.serverIndex ?? 0;
+            const operationBasePath = operationServerMap['ProductApi.getProductByUrlKey']?.[index]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, operationBasePath || basePath);
+        },
+        /**
+         * 
+         * @summary List Attribute Options
+         * @param {EntitymanagerListAttributeOptionsRequest} body 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async listAttributeOptions(body: EntitymanagerListAttributeOptionsRequest, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<EntitymanagerListAttributeOptionsResponse>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.listAttributeOptions(body, options);
+            const index = configuration?.serverIndex ?? 0;
+            const operationBasePath = operationServerMap['ProductApi.listAttributeOptions']?.[index]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, operationBasePath || basePath);
+        },
+        /**
+         * 
+         * @summary List Entities
+         * @param {EntitymanagerListEntitiesRequest} body 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async listEntities(body: EntitymanagerListEntitiesRequest, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<EntitymanagerListEntitiesResponse>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.listEntities(body, options);
+            const index = configuration?.serverIndex ?? 0;
+            const operationBasePath = operationServerMap['ProductApi.listEntities']?.[index]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, operationBasePath || basePath);
+        },
+        /**
+         * The ListOptionsLists endpoint allows users to retrieve a list of OptionLists available in the system. By making a request to this endpoint with the provided request format, users can obtain all the OptionLists associated with the specified tenant. This functionality enables users to access and manage the predefined options available for various attributes within the system. Utilizing the ListOptionsLists endpoint provides a convenient way to retrieve and work with OptionLists, facilitating efficient management of attribute options and ensuring consistency in attribute values throughout the system.
+         * @summary List Options Lists
+         * @param {EntitymanagerListOptionsListsRequest} body 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async listOptionsLists(body: EntitymanagerListOptionsListsRequest, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<EntitymanagerListOptionsListsResponse>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.listOptionsLists(body, options);
+            const index = configuration?.serverIndex ?? 0;
+            const operationBasePath = operationServerMap['ProductApi.listOptionsLists']?.[index]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, operationBasePath || basePath);
+        },
+        /**
+         * The ListProducts endpoint provides users with the ability to retrieve a filtered list of products based on specific criteria. By including filter parameters in the request, users can customize the response to only include products that meet certain conditions, such as price range, category, availability, or any other relevant attributes. This endpoint empowers users to efficiently narrow down the product selection and retrieve tailored results.
+         * @summary List Products
+         * @param {ProductListProductsRequest} body 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async listProducts(body: ProductListProductsRequest, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ProductListProductsResponse>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.listProducts(body, options);
+            const index = configuration?.serverIndex ?? 0;
+            const operationBasePath = operationServerMap['ProductApi.listProducts']?.[index]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, operationBasePath || basePath);
+        },
+        /**
+         * The ListProductsByIds endpoint allows users to retrieve a list of products based on provided IDs. By making a request to this endpoint and specifying a set of product IDs, users can retrieve detailed information about the corresponding products. This endpoint facilitates efficient retrieval of specific products, enabling applications to display accurate and targeted product information to users.
+         * @summary List Products By Ids
+         * @param {ProductListProductsByIdsRequest} body 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async listProductsByIds(body: ProductListProductsByIdsRequest, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ProductListProductsByIdsResponse>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.listProductsByIds(body, options);
+            const index = configuration?.serverIndex ?? 0;
+            const operationBasePath = operationServerMap['ProductApi.listProductsByIds']?.[index]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, operationBasePath || basePath);
+        },
+        /**
+         * 
+         * @summary List Products By Sku
+         * @param {ProductListProductsBySkuRequest} body 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async listProductsBySku(body: ProductListProductsBySkuRequest, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ProductListProductsBySkuResponse>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.listProductsBySku(body, options);
+            const index = configuration?.serverIndex ?? 0;
+            const operationBasePath = operationServerMap['ProductApi.listProductsBySku']?.[index]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, operationBasePath || basePath);
+        },
+        /**
+         * 
+         * @summary List Product Variants By Sku
+         * @param {ProductListVariantsBySkuRequest} body 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async listVariantsBySku(body: ProductListVariantsBySkuRequest, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ProductListVariantsBySkuResponse>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.listVariantsBySku(body, options);
+            const index = configuration?.serverIndex ?? 0;
+            const operationBasePath = operationServerMap['ProductApi.listVariantsBySku']?.[index]?.url;
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, operationBasePath || basePath);
         },
         /**
@@ -4234,7 +4614,7 @@ export const ProductApiFp = function(configuration?: Configuration) {
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, operationBasePath || basePath);
         },
         /**
-         * 
+         * Allow creation of multiple attributes. If any attribute is invalid, an error will be returned with more details, and in the response body, the attributes created will be returned.
          * @param {EntitymanagerBulkCreateAttributeRequest} body 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
@@ -4296,18 +4676,6 @@ export const ProductApiFp = function(configuration?: Configuration) {
         },
         /**
          * 
-         * @param {ProductBulkUpdateRequestV2} body 
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        async productBulkUpdateV2(body: ProductBulkUpdateRequestV2, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ProductBulkUpdateResponseV2>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.productBulkUpdateV2(body, options);
-            const index = configuration?.serverIndex ?? 0;
-            const operationBasePath = operationServerMap['ProductApi.productBulkUpdateV2']?.[index]?.url;
-            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, operationBasePath || basePath);
-        },
-        /**
-         * 
          * @param {EntitymanagerCreateAttributeGroupRequest} body 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
@@ -4320,43 +4688,7 @@ export const ProductApiFp = function(configuration?: Configuration) {
         },
         /**
          * 
-         * @param {EntitymanagerCreateAttributeOptionsRequest} body 
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        async productCreateAttributeOptions(body: EntitymanagerCreateAttributeOptionsRequest, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<EntitymanagerCreateAttributeOptionsResponse>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.productCreateAttributeOptions(body, options);
-            const index = configuration?.serverIndex ?? 0;
-            const operationBasePath = operationServerMap['ProductApi.productCreateAttributeOptions']?.[index]?.url;
-            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, operationBasePath || basePath);
-        },
-        /**
-         * 
-         * @param {EntitymanagerEntity} body 
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        async productCreateEntity(body: EntitymanagerEntity, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<EntitymanagerCreateEntityResponse>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.productCreateEntity(body, options);
-            const index = configuration?.serverIndex ?? 0;
-            const operationBasePath = operationServerMap['ProductApi.productCreateEntity']?.[index]?.url;
-            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, operationBasePath || basePath);
-        },
-        /**
-         * 
-         * @param {EntitymanagerCreateOptionsListRequest} body 
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        async productCreateOptionsList(body: EntitymanagerCreateOptionsListRequest, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<EntitymanagerCreateOptionsListResponse>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.productCreateOptionsList(body, options);
-            const index = configuration?.serverIndex ?? 0;
-            const operationBasePath = operationServerMap['ProductApi.productCreateOptionsList']?.[index]?.url;
-            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, operationBasePath || basePath);
-        },
-        /**
-         * 
-         * @param {ProductCreateProductRequest} body 
+         * @param {ProductCreateProductRequest} body The CreateProductRequest message is used to create a new product within the system. It contains various fields that allow specifying the details and attributes of the product.
          * @param {*} [options] Override http request option.
          * @deprecated
          * @throws {RequiredError}
@@ -4430,90 +4762,6 @@ export const ProductApiFp = function(configuration?: Configuration) {
         },
         /**
          * 
-         * @param {EntitymanagerGetAttributeOptionRequest} body 
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        async productGetAttributeOption(body: EntitymanagerGetAttributeOptionRequest, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<EntitymanagerGetAttributeOptionResponse>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.productGetAttributeOption(body, options);
-            const index = configuration?.serverIndex ?? 0;
-            const operationBasePath = operationServerMap['ProductApi.productGetAttributeOption']?.[index]?.url;
-            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, operationBasePath || basePath);
-        },
-        /**
-         * 
-         * @param {EntitymanagerGetAttributeOptionsRequest} body 
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        async productGetAttributeOptions(body: EntitymanagerGetAttributeOptionsRequest, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<EntitymanagerGetAttributeOptionsResponse>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.productGetAttributeOptions(body, options);
-            const index = configuration?.serverIndex ?? 0;
-            const operationBasePath = operationServerMap['ProductApi.productGetAttributeOptions']?.[index]?.url;
-            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, operationBasePath || basePath);
-        },
-        /**
-         * 
-         * @param {EntitymanagerEntityRequest} body 
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        async productGetEntity(body: EntitymanagerEntityRequest, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<EntitymanagerEntity>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.productGetEntity(body, options);
-            const index = configuration?.serverIndex ?? 0;
-            const operationBasePath = operationServerMap['ProductApi.productGetEntity']?.[index]?.url;
-            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, operationBasePath || basePath);
-        },
-        /**
-         * 
-         * @param {EntitymanagerGetOptionsListRequest} body 
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        async productGetOptionsList(body: EntitymanagerGetOptionsListRequest, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<EntitymanagerGetOptionsListResponse>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.productGetOptionsList(body, options);
-            const index = configuration?.serverIndex ?? 0;
-            const operationBasePath = operationServerMap['ProductApi.productGetOptionsList']?.[index]?.url;
-            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, operationBasePath || basePath);
-        },
-        /**
-         * 
-         * @param {ProductGetProductRequest} body 
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        async productGetProduct(body: ProductGetProductRequest, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ProductGetProductResponse>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.productGetProduct(body, options);
-            const index = configuration?.serverIndex ?? 0;
-            const operationBasePath = operationServerMap['ProductApi.productGetProduct']?.[index]?.url;
-            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, operationBasePath || basePath);
-        },
-        /**
-         * 
-         * @param {ProductGetProductByCodeRequest} body 
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        async productGetProductByCode(body: ProductGetProductByCodeRequest, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ProductGetProductByCodeResponse>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.productGetProductByCode(body, options);
-            const index = configuration?.serverIndex ?? 0;
-            const operationBasePath = operationServerMap['ProductApi.productGetProductByCode']?.[index]?.url;
-            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, operationBasePath || basePath);
-        },
-        /**
-         * 
-         * @param {ProductGetProductByUrlKeyRequest} body 
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        async productGetProductByUrlKey(body: ProductGetProductByUrlKeyRequest, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ProductGetProductByUrlKeyResponse>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.productGetProductByUrlKey(body, options);
-            const index = configuration?.serverIndex ?? 0;
-            const operationBasePath = operationServerMap['ProductApi.productGetProductByUrlKey']?.[index]?.url;
-            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, operationBasePath || basePath);
-        },
-        /**
-         * 
          * @summary Attribute Groups endpoints
          * @param {EntitymanagerListAttributeGroupsRequest} body 
          * @param {*} [options] Override http request option.
@@ -4523,102 +4771,6 @@ export const ProductApiFp = function(configuration?: Configuration) {
             const localVarAxiosArgs = await localVarAxiosParamCreator.productListAttributeGroups(body, options);
             const index = configuration?.serverIndex ?? 0;
             const operationBasePath = operationServerMap['ProductApi.productListAttributeGroups']?.[index]?.url;
-            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, operationBasePath || basePath);
-        },
-        /**
-         * 
-         * @param {EntitymanagerListAttributeOptionsRequest} body 
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        async productListAttributeOptions(body: EntitymanagerListAttributeOptionsRequest, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<EntitymanagerListAttributeOptionsResponse>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.productListAttributeOptions(body, options);
-            const index = configuration?.serverIndex ?? 0;
-            const operationBasePath = operationServerMap['ProductApi.productListAttributeOptions']?.[index]?.url;
-            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, operationBasePath || basePath);
-        },
-        /**
-         * 
-         * @param {EntitymanagerListEntitiesRequest} body 
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        async productListEntities(body: EntitymanagerListEntitiesRequest, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<EntitymanagerListEntitiesResponse>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.productListEntities(body, options);
-            const index = configuration?.serverIndex ?? 0;
-            const operationBasePath = operationServerMap['ProductApi.productListEntities']?.[index]?.url;
-            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, operationBasePath || basePath);
-        },
-        /**
-         * 
-         * @param {EntitymanagerListOptionsListsRequest} body 
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        async productListOptionsLists(body: EntitymanagerListOptionsListsRequest, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<EntitymanagerListOptionsListsResponse>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.productListOptionsLists(body, options);
-            const index = configuration?.serverIndex ?? 0;
-            const operationBasePath = operationServerMap['ProductApi.productListOptionsLists']?.[index]?.url;
-            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, operationBasePath || basePath);
-        },
-        /**
-         * 
-         * @param {ProductListProductsRequest} body 
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        async productListProducts(body: ProductListProductsRequest, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ProductListProductsResponse>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.productListProducts(body, options);
-            const index = configuration?.serverIndex ?? 0;
-            const operationBasePath = operationServerMap['ProductApi.productListProducts']?.[index]?.url;
-            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, operationBasePath || basePath);
-        },
-        /**
-         * 
-         * @param {ProductListProductsByIdsRequest} body 
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        async productListProductsByIds(body: ProductListProductsByIdsRequest, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ProductListProductsByIdsResponse>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.productListProductsByIds(body, options);
-            const index = configuration?.serverIndex ?? 0;
-            const operationBasePath = operationServerMap['ProductApi.productListProductsByIds']?.[index]?.url;
-            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, operationBasePath || basePath);
-        },
-        /**
-         * 
-         * @param {ProductListProductsBySkuRequest} body 
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        async productListProductsBySku(body: ProductListProductsBySkuRequest, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ProductListProductsBySkuResponse>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.productListProductsBySku(body, options);
-            const index = configuration?.serverIndex ?? 0;
-            const operationBasePath = operationServerMap['ProductApi.productListProductsBySku']?.[index]?.url;
-            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, operationBasePath || basePath);
-        },
-        /**
-         * 
-         * @param {ProductListVariantsBySkuRequest} body 
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        async productListVariantsBySku(body: ProductListVariantsBySkuRequest, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ProductListVariantsBySkuResponse>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.productListVariantsBySku(body, options);
-            const index = configuration?.serverIndex ?? 0;
-            const operationBasePath = operationServerMap['ProductApi.productListVariantsBySku']?.[index]?.url;
-            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, operationBasePath || basePath);
-        },
-        /**
-         * 
-         * @param {ProductRemoveMediaGalleryEntryRequest} body 
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        async productRemoveMediaGalleryEntry(body: ProductRemoveMediaGalleryEntryRequest, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<object>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.productRemoveMediaGalleryEntry(body, options);
-            const index = configuration?.serverIndex ?? 0;
-            const operationBasePath = operationServerMap['ProductApi.productRemoveMediaGalleryEntry']?.[index]?.url;
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, operationBasePath || basePath);
         },
         /**
@@ -4647,43 +4799,6 @@ export const ProductApiFp = function(configuration?: Configuration) {
         },
         /**
          * 
-         * @summary rpc GetAttributeOptionByCode (product.entitymanager.GetAttributeOptionByCodeRequest) returns (product.entitymanager.GetAttributeOptionByCodeResponse) {}
-         * @param {EntitymanagerUpdateAttributeOptionsRequest} body 
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        async productUpdateAttributeOptions(body: EntitymanagerUpdateAttributeOptionsRequest, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<EntitymanagerUpdateAttributeOptionsResponse>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.productUpdateAttributeOptions(body, options);
-            const index = configuration?.serverIndex ?? 0;
-            const operationBasePath = operationServerMap['ProductApi.productUpdateAttributeOptions']?.[index]?.url;
-            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, operationBasePath || basePath);
-        },
-        /**
-         * 
-         * @param {ProductUpdateMediaGalleryEntryRequest} body 
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        async productUpdateMediaGalleryEntry(body: ProductUpdateMediaGalleryEntryRequest, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<object>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.productUpdateMediaGalleryEntry(body, options);
-            const index = configuration?.serverIndex ?? 0;
-            const operationBasePath = operationServerMap['ProductApi.productUpdateMediaGalleryEntry']?.[index]?.url;
-            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, operationBasePath || basePath);
-        },
-        /**
-         * 
-         * @param {EntitymanagerUpdateOptionsListRequest} body 
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        async productUpdateOptionsList(body: EntitymanagerUpdateOptionsListRequest, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<EntitymanagerUpdateOptionsListResponse>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.productUpdateOptionsList(body, options);
-            const index = configuration?.serverIndex ?? 0;
-            const operationBasePath = operationServerMap['ProductApi.productUpdateOptionsList']?.[index]?.url;
-            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, operationBasePath || basePath);
-        },
-        /**
-         * 
          * @param {ProductUpdateProductRequest} body 
          * @param {*} [options] Override http request option.
          * @deprecated
@@ -4707,6 +4822,58 @@ export const ProductApiFp = function(configuration?: Configuration) {
             const operationBasePath = operationServerMap['ProductApi.productUpdateProductV2']?.[index]?.url;
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, operationBasePath || basePath);
         },
+        /**
+         * The RemoveMediaGalleryEntry endpoint allows users to remove a specific media entry from a product\'s gallery. By making a request to this endpoint and providing the tenant ID, product ID, and the unique identifier of the media entry, users can easily manage and update the visual content of a product\'s gallery. 
+         * @summary Remove Media Gallery Entry
+         * @param {ProductRemoveMediaGalleryEntryRequest} body 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async removeMediaGalleryEntry(body: ProductRemoveMediaGalleryEntryRequest, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<object>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.removeMediaGalleryEntry(body, options);
+            const index = configuration?.serverIndex ?? 0;
+            const operationBasePath = operationServerMap['ProductApi.removeMediaGalleryEntry']?.[index]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, operationBasePath || basePath);
+        },
+        /**
+         * 
+         * @summary Update Attribute Options
+         * @param {EntitymanagerUpdateAttributeOptionsRequest} body 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async updateAttributeOptions(body: EntitymanagerUpdateAttributeOptionsRequest, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<EntitymanagerUpdateAttributeOptionsResponse>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.updateAttributeOptions(body, options);
+            const index = configuration?.serverIndex ?? 0;
+            const operationBasePath = operationServerMap['ProductApi.updateAttributeOptions']?.[index]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, operationBasePath || basePath);
+        },
+        /**
+         * The UpdateMediaGalleryEntry endpoint allows users to modify and update a specific media entry within a product\'s gallery. By sending a request to this endpoint and providing the necessary information, users can efficiently update the media asset, position, and metadata associated with the entry.
+         * @summary Update Media Gallery Entry
+         * @param {ProductUpdateMediaGalleryEntryRequest} body 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async updateMediaGalleryEntry(body: ProductUpdateMediaGalleryEntryRequest, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<object>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.updateMediaGalleryEntry(body, options);
+            const index = configuration?.serverIndex ?? 0;
+            const operationBasePath = operationServerMap['ProductApi.updateMediaGalleryEntry']?.[index]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, operationBasePath || basePath);
+        },
+        /**
+         * 
+         * @summary Update Options List
+         * @param {EntitymanagerUpdateOptionsListRequest} body 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async updateOptionsList(body: EntitymanagerUpdateOptionsListRequest, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<EntitymanagerUpdateOptionsListResponse>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.updateOptionsList(body, options);
+            const index = configuration?.serverIndex ?? 0;
+            const operationBasePath = operationServerMap['ProductApi.updateOptionsList']?.[index]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, operationBasePath || basePath);
+        },
     }
 };
 
@@ -4718,13 +4885,194 @@ export const ProductApiFactory = function (configuration?: Configuration, basePa
     const localVarFp = ProductApiFp(configuration)
     return {
         /**
-         * 
+         * The AddMediaGalleryEntry endpoint allows users to add a new media entry to the gallery of a specific product. To make a request to this endpoint, users need to provide the necessary information in the specified format. The request includes the tenant_id to specify the relevant tenant, the product_id to identify the target product, and the asset_grn which represents the globally unique identifier for the media asset being added. Additionally, the position field indicates the desired position of the media entry within the gallery, allowing users to control the order in which the media items are displayed. The metadata field, which is a repeated field, provides the option to include additional metadata associated with the media entry.
+         * @summary Add Media Gallery Entry
          * @param {ProductAddMediaGalleryEntryRequest} body 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        productAddMediaGalleryEntry(body: ProductAddMediaGalleryEntryRequest, options?: any): AxiosPromise<ProductAddMediaGalleryEntryResponse> {
-            return localVarFp.productAddMediaGalleryEntry(body, options).then((request) => request(axios, basePath));
+        addMediaGalleryEntry(body: ProductAddMediaGalleryEntryRequest, options?: any): AxiosPromise<ProductAddMediaGalleryEntryResponse> {
+            return localVarFp.addMediaGalleryEntry(body, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * Version 2 of bulk updates for product attributes with enhanced payload structure and response format.
+         * @summary Bulk Update Products
+         * @param {ProductBulkUpdateRequestV2} body 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        bulkUpdateV2(body: ProductBulkUpdateRequestV2, options?: any): AxiosPromise<ProductBulkUpdateResponse> {
+            return localVarFp.bulkUpdateV2(body, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * Create attribute options with specified codes, values, and swatches. Returns created options and any associated errors.
+         * @summary Create Attribute Options
+         * @param {EntitymanagerCreateAttributeOptionsRequest} body 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        createAttributeOptions(body: EntitymanagerCreateAttributeOptionsRequest, options?: any): AxiosPromise<EntitymanagerCreateAttributeOptionsResponse> {
+            return localVarFp.createAttributeOptions(body, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * The CreateEntity endpoint allows users to define and create a new entity with custom attributes, providing a flexible way to represent and manage different data structures within the system. By making a request to this endpoint, users can create a new entity that serves as an abstraction of a product or any other domain-specific object. This endpoint empowers users to define the specific attributes that compose the entity, such as color, composition, technical details, or any other relevant properties. Utilize the CreateEntity endpoint to dynamically extend and adapt your system\'s data model to accommodate diverse business requirements and efficiently manage various types of entities.
+         * @summary Create Entity
+         * @param {EntitymanagerEntity} body 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        createEntity(body: EntitymanagerEntity, options?: any): AxiosPromise<EntitymanagerCreateEntityResponse> {
+            return localVarFp.createEntity(body, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * The CreateOptionsList endpoint allows users to create an OptionList, which represents a list of predefined options for assigning to an attribute. By making a request to this endpoint with the provided request format, users can create a new OptionList by specifying the relevant tenant ID and providing the OptionList object containing the predefined options. This functionality facilitates efficient management and assignment of predefined attribute values, ensuring consistency and flexibility within the system.
+         * @summary Create Options List
+         * @param {EntitymanagerCreateOptionsListRequest} body 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        createOptionsList(body: EntitymanagerCreateOptionsListRequest, options?: any): AxiosPromise<EntitymanagerCreateOptionsListResponse> {
+            return localVarFp.createOptionsList(body, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * Retrieve attribute option details by providing the tenant ID, list code, and option ID. Returns the specified attribute option.
+         * @summary Get Attribute Option
+         * @param {EntitymanagerGetAttributeOptionRequest} body 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        getAttributeOption(body: EntitymanagerGetAttributeOptionRequest, options?: any): AxiosPromise<EntitymanagerGetAttributeOptionResponse> {
+            return localVarFp.getAttributeOption(body, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * Retrieve a list of attribute options based on the provided tenant ID and list code.
+         * @summary Get Attribute Options
+         * @param {EntitymanagerGetAttributeOptionsRequest} body 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        getAttributeOptions(body: EntitymanagerGetAttributeOptionsRequest, options?: any): AxiosPromise<EntitymanagerGetAttributeOptionsResponse> {
+            return localVarFp.getAttributeOptions(body, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * Retrieve details of an entity by providing the tenant ID and either entity data or entity ID. Returns information including ID, type, code, label, relationships, and attributes.
+         * @summary Get Entity Details
+         * @param {EntitymanagerEntityRequest} body 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        getEntity(body: EntitymanagerEntityRequest, options?: any): AxiosPromise<EntitymanagerEntity> {
+            return localVarFp.getEntity(body, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * Retrieve option lists.
+         * @summary Get Options List
+         * @param {EntitymanagerGetOptionsListRequest} body 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        getOptionsList(body: EntitymanagerGetOptionsListRequest, options?: any): AxiosPromise<EntitymanagerGetOptionsListResponse> {
+            return localVarFp.getOptionsList(body, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * The GetProduct endpoint enables users to retrieve a product from the system. By sending a request to this endpoint, users can retrieve a product by providing its unique identifier.
+         * @summary Get Product
+         * @param {ProductGetProductRequest} body 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        getProduct(body: ProductGetProductRequest, options?: any): AxiosPromise<ProductGetProductResponse> {
+            return localVarFp.getProduct(body, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * The GetProductByCode endpoint enables users to retrieve a product from the system. By sending a request to this endpoint, users can retrieve a product by providing its unique code.
+         * @summary Get Product By Code
+         * @param {ProductGetProductByCodeRequest} body 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        getProductByCode(body: ProductGetProductByCodeRequest, options?: any): AxiosPromise<ProductGetProductByCodeResponse> {
+            return localVarFp.getProductByCode(body, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * The GetProductByUrlKey endpoint enables users to retrieve a product from the system. By sending a request to this endpoint, users can retrieve a product by providing its unique url key.
+         * @summary Get Product By Url Key
+         * @param {ProductGetProductByUrlKeyRequest} body 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        getProductByUrlKey(body: ProductGetProductByUrlKeyRequest, options?: any): AxiosPromise<ProductGetProductByUrlKeyResponse> {
+            return localVarFp.getProductByUrlKey(body, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * 
+         * @summary List Attribute Options
+         * @param {EntitymanagerListAttributeOptionsRequest} body 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        listAttributeOptions(body: EntitymanagerListAttributeOptionsRequest, options?: any): AxiosPromise<EntitymanagerListAttributeOptionsResponse> {
+            return localVarFp.listAttributeOptions(body, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * 
+         * @summary List Entities
+         * @param {EntitymanagerListEntitiesRequest} body 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        listEntities(body: EntitymanagerListEntitiesRequest, options?: any): AxiosPromise<EntitymanagerListEntitiesResponse> {
+            return localVarFp.listEntities(body, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * The ListOptionsLists endpoint allows users to retrieve a list of OptionLists available in the system. By making a request to this endpoint with the provided request format, users can obtain all the OptionLists associated with the specified tenant. This functionality enables users to access and manage the predefined options available for various attributes within the system. Utilizing the ListOptionsLists endpoint provides a convenient way to retrieve and work with OptionLists, facilitating efficient management of attribute options and ensuring consistency in attribute values throughout the system.
+         * @summary List Options Lists
+         * @param {EntitymanagerListOptionsListsRequest} body 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        listOptionsLists(body: EntitymanagerListOptionsListsRequest, options?: any): AxiosPromise<EntitymanagerListOptionsListsResponse> {
+            return localVarFp.listOptionsLists(body, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * The ListProducts endpoint provides users with the ability to retrieve a filtered list of products based on specific criteria. By including filter parameters in the request, users can customize the response to only include products that meet certain conditions, such as price range, category, availability, or any other relevant attributes. This endpoint empowers users to efficiently narrow down the product selection and retrieve tailored results.
+         * @summary List Products
+         * @param {ProductListProductsRequest} body 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        listProducts(body: ProductListProductsRequest, options?: any): AxiosPromise<ProductListProductsResponse> {
+            return localVarFp.listProducts(body, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * The ListProductsByIds endpoint allows users to retrieve a list of products based on provided IDs. By making a request to this endpoint and specifying a set of product IDs, users can retrieve detailed information about the corresponding products. This endpoint facilitates efficient retrieval of specific products, enabling applications to display accurate and targeted product information to users.
+         * @summary List Products By Ids
+         * @param {ProductListProductsByIdsRequest} body 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        listProductsByIds(body: ProductListProductsByIdsRequest, options?: any): AxiosPromise<ProductListProductsByIdsResponse> {
+            return localVarFp.listProductsByIds(body, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * 
+         * @summary List Products By Sku
+         * @param {ProductListProductsBySkuRequest} body 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        listProductsBySku(body: ProductListProductsBySkuRequest, options?: any): AxiosPromise<ProductListProductsBySkuResponse> {
+            return localVarFp.listProductsBySku(body, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * 
+         * @summary List Product Variants By Sku
+         * @param {ProductListVariantsBySkuRequest} body 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        listVariantsBySku(body: ProductListVariantsBySkuRequest, options?: any): AxiosPromise<ProductListVariantsBySkuResponse> {
+            return localVarFp.listVariantsBySku(body, options).then((request) => request(axios, basePath));
         },
         /**
          * 
@@ -4737,7 +5085,7 @@ export const ProductApiFactory = function (configuration?: Configuration, basePa
             return localVarFp.productBulkAddAssetsEntries(body, options).then((request) => request(axios, basePath));
         },
         /**
-         * 
+         * Allow creation of multiple attributes. If any attribute is invalid, an error will be returned with more details, and in the response body, the attributes created will be returned.
          * @param {EntitymanagerBulkCreateAttributeRequest} body 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
@@ -4784,15 +5132,6 @@ export const ProductApiFactory = function (configuration?: Configuration, basePa
         },
         /**
          * 
-         * @param {ProductBulkUpdateRequestV2} body 
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        productBulkUpdateV2(body: ProductBulkUpdateRequestV2, options?: any): AxiosPromise<ProductBulkUpdateResponseV2> {
-            return localVarFp.productBulkUpdateV2(body, options).then((request) => request(axios, basePath));
-        },
-        /**
-         * 
          * @param {EntitymanagerCreateAttributeGroupRequest} body 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
@@ -4802,34 +5141,7 @@ export const ProductApiFactory = function (configuration?: Configuration, basePa
         },
         /**
          * 
-         * @param {EntitymanagerCreateAttributeOptionsRequest} body 
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        productCreateAttributeOptions(body: EntitymanagerCreateAttributeOptionsRequest, options?: any): AxiosPromise<EntitymanagerCreateAttributeOptionsResponse> {
-            return localVarFp.productCreateAttributeOptions(body, options).then((request) => request(axios, basePath));
-        },
-        /**
-         * 
-         * @param {EntitymanagerEntity} body 
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        productCreateEntity(body: EntitymanagerEntity, options?: any): AxiosPromise<EntitymanagerCreateEntityResponse> {
-            return localVarFp.productCreateEntity(body, options).then((request) => request(axios, basePath));
-        },
-        /**
-         * 
-         * @param {EntitymanagerCreateOptionsListRequest} body 
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        productCreateOptionsList(body: EntitymanagerCreateOptionsListRequest, options?: any): AxiosPromise<EntitymanagerCreateOptionsListResponse> {
-            return localVarFp.productCreateOptionsList(body, options).then((request) => request(axios, basePath));
-        },
-        /**
-         * 
-         * @param {ProductCreateProductRequest} body 
+         * @param {ProductCreateProductRequest} body The CreateProductRequest message is used to create a new product within the system. It contains various fields that allow specifying the details and attributes of the product.
          * @param {*} [options] Override http request option.
          * @deprecated
          * @throws {RequiredError}
@@ -4885,69 +5197,6 @@ export const ProductApiFactory = function (configuration?: Configuration, basePa
         },
         /**
          * 
-         * @param {EntitymanagerGetAttributeOptionRequest} body 
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        productGetAttributeOption(body: EntitymanagerGetAttributeOptionRequest, options?: any): AxiosPromise<EntitymanagerGetAttributeOptionResponse> {
-            return localVarFp.productGetAttributeOption(body, options).then((request) => request(axios, basePath));
-        },
-        /**
-         * 
-         * @param {EntitymanagerGetAttributeOptionsRequest} body 
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        productGetAttributeOptions(body: EntitymanagerGetAttributeOptionsRequest, options?: any): AxiosPromise<EntitymanagerGetAttributeOptionsResponse> {
-            return localVarFp.productGetAttributeOptions(body, options).then((request) => request(axios, basePath));
-        },
-        /**
-         * 
-         * @param {EntitymanagerEntityRequest} body 
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        productGetEntity(body: EntitymanagerEntityRequest, options?: any): AxiosPromise<EntitymanagerEntity> {
-            return localVarFp.productGetEntity(body, options).then((request) => request(axios, basePath));
-        },
-        /**
-         * 
-         * @param {EntitymanagerGetOptionsListRequest} body 
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        productGetOptionsList(body: EntitymanagerGetOptionsListRequest, options?: any): AxiosPromise<EntitymanagerGetOptionsListResponse> {
-            return localVarFp.productGetOptionsList(body, options).then((request) => request(axios, basePath));
-        },
-        /**
-         * 
-         * @param {ProductGetProductRequest} body 
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        productGetProduct(body: ProductGetProductRequest, options?: any): AxiosPromise<ProductGetProductResponse> {
-            return localVarFp.productGetProduct(body, options).then((request) => request(axios, basePath));
-        },
-        /**
-         * 
-         * @param {ProductGetProductByCodeRequest} body 
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        productGetProductByCode(body: ProductGetProductByCodeRequest, options?: any): AxiosPromise<ProductGetProductByCodeResponse> {
-            return localVarFp.productGetProductByCode(body, options).then((request) => request(axios, basePath));
-        },
-        /**
-         * 
-         * @param {ProductGetProductByUrlKeyRequest} body 
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        productGetProductByUrlKey(body: ProductGetProductByUrlKeyRequest, options?: any): AxiosPromise<ProductGetProductByUrlKeyResponse> {
-            return localVarFp.productGetProductByUrlKey(body, options).then((request) => request(axios, basePath));
-        },
-        /**
-         * 
          * @summary Attribute Groups endpoints
          * @param {EntitymanagerListAttributeGroupsRequest} body 
          * @param {*} [options] Override http request option.
@@ -4955,78 +5204,6 @@ export const ProductApiFactory = function (configuration?: Configuration, basePa
          */
         productListAttributeGroups(body: EntitymanagerListAttributeGroupsRequest, options?: any): AxiosPromise<EntitymanagerListAttributeGroupsResponse> {
             return localVarFp.productListAttributeGroups(body, options).then((request) => request(axios, basePath));
-        },
-        /**
-         * 
-         * @param {EntitymanagerListAttributeOptionsRequest} body 
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        productListAttributeOptions(body: EntitymanagerListAttributeOptionsRequest, options?: any): AxiosPromise<EntitymanagerListAttributeOptionsResponse> {
-            return localVarFp.productListAttributeOptions(body, options).then((request) => request(axios, basePath));
-        },
-        /**
-         * 
-         * @param {EntitymanagerListEntitiesRequest} body 
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        productListEntities(body: EntitymanagerListEntitiesRequest, options?: any): AxiosPromise<EntitymanagerListEntitiesResponse> {
-            return localVarFp.productListEntities(body, options).then((request) => request(axios, basePath));
-        },
-        /**
-         * 
-         * @param {EntitymanagerListOptionsListsRequest} body 
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        productListOptionsLists(body: EntitymanagerListOptionsListsRequest, options?: any): AxiosPromise<EntitymanagerListOptionsListsResponse> {
-            return localVarFp.productListOptionsLists(body, options).then((request) => request(axios, basePath));
-        },
-        /**
-         * 
-         * @param {ProductListProductsRequest} body 
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        productListProducts(body: ProductListProductsRequest, options?: any): AxiosPromise<ProductListProductsResponse> {
-            return localVarFp.productListProducts(body, options).then((request) => request(axios, basePath));
-        },
-        /**
-         * 
-         * @param {ProductListProductsByIdsRequest} body 
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        productListProductsByIds(body: ProductListProductsByIdsRequest, options?: any): AxiosPromise<ProductListProductsByIdsResponse> {
-            return localVarFp.productListProductsByIds(body, options).then((request) => request(axios, basePath));
-        },
-        /**
-         * 
-         * @param {ProductListProductsBySkuRequest} body 
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        productListProductsBySku(body: ProductListProductsBySkuRequest, options?: any): AxiosPromise<ProductListProductsBySkuResponse> {
-            return localVarFp.productListProductsBySku(body, options).then((request) => request(axios, basePath));
-        },
-        /**
-         * 
-         * @param {ProductListVariantsBySkuRequest} body 
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        productListVariantsBySku(body: ProductListVariantsBySkuRequest, options?: any): AxiosPromise<ProductListVariantsBySkuResponse> {
-            return localVarFp.productListVariantsBySku(body, options).then((request) => request(axios, basePath));
-        },
-        /**
-         * 
-         * @param {ProductRemoveMediaGalleryEntryRequest} body 
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        productRemoveMediaGalleryEntry(body: ProductRemoveMediaGalleryEntryRequest, options?: any): AxiosPromise<object> {
-            return localVarFp.productRemoveMediaGalleryEntry(body, options).then((request) => request(axios, basePath));
         },
         /**
          * 
@@ -5048,34 +5225,6 @@ export const ProductApiFactory = function (configuration?: Configuration, basePa
         },
         /**
          * 
-         * @summary rpc GetAttributeOptionByCode (product.entitymanager.GetAttributeOptionByCodeRequest) returns (product.entitymanager.GetAttributeOptionByCodeResponse) {}
-         * @param {EntitymanagerUpdateAttributeOptionsRequest} body 
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        productUpdateAttributeOptions(body: EntitymanagerUpdateAttributeOptionsRequest, options?: any): AxiosPromise<EntitymanagerUpdateAttributeOptionsResponse> {
-            return localVarFp.productUpdateAttributeOptions(body, options).then((request) => request(axios, basePath));
-        },
-        /**
-         * 
-         * @param {ProductUpdateMediaGalleryEntryRequest} body 
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        productUpdateMediaGalleryEntry(body: ProductUpdateMediaGalleryEntryRequest, options?: any): AxiosPromise<object> {
-            return localVarFp.productUpdateMediaGalleryEntry(body, options).then((request) => request(axios, basePath));
-        },
-        /**
-         * 
-         * @param {EntitymanagerUpdateOptionsListRequest} body 
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        productUpdateOptionsList(body: EntitymanagerUpdateOptionsListRequest, options?: any): AxiosPromise<EntitymanagerUpdateOptionsListResponse> {
-            return localVarFp.productUpdateOptionsList(body, options).then((request) => request(axios, basePath));
-        },
-        /**
-         * 
          * @param {ProductUpdateProductRequest} body 
          * @param {*} [options] Override http request option.
          * @deprecated
@@ -5093,6 +5242,46 @@ export const ProductApiFactory = function (configuration?: Configuration, basePa
         productUpdateProductV2(body: ProductUpdateProductRequestV2, options?: any): AxiosPromise<object> {
             return localVarFp.productUpdateProductV2(body, options).then((request) => request(axios, basePath));
         },
+        /**
+         * The RemoveMediaGalleryEntry endpoint allows users to remove a specific media entry from a product\'s gallery. By making a request to this endpoint and providing the tenant ID, product ID, and the unique identifier of the media entry, users can easily manage and update the visual content of a product\'s gallery. 
+         * @summary Remove Media Gallery Entry
+         * @param {ProductRemoveMediaGalleryEntryRequest} body 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        removeMediaGalleryEntry(body: ProductRemoveMediaGalleryEntryRequest, options?: any): AxiosPromise<object> {
+            return localVarFp.removeMediaGalleryEntry(body, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * 
+         * @summary Update Attribute Options
+         * @param {EntitymanagerUpdateAttributeOptionsRequest} body 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        updateAttributeOptions(body: EntitymanagerUpdateAttributeOptionsRequest, options?: any): AxiosPromise<EntitymanagerUpdateAttributeOptionsResponse> {
+            return localVarFp.updateAttributeOptions(body, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * The UpdateMediaGalleryEntry endpoint allows users to modify and update a specific media entry within a product\'s gallery. By sending a request to this endpoint and providing the necessary information, users can efficiently update the media asset, position, and metadata associated with the entry.
+         * @summary Update Media Gallery Entry
+         * @param {ProductUpdateMediaGalleryEntryRequest} body 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        updateMediaGalleryEntry(body: ProductUpdateMediaGalleryEntryRequest, options?: any): AxiosPromise<object> {
+            return localVarFp.updateMediaGalleryEntry(body, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * 
+         * @summary Update Options List
+         * @param {EntitymanagerUpdateOptionsListRequest} body 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        updateOptionsList(body: EntitymanagerUpdateOptionsListRequest, options?: any): AxiosPromise<EntitymanagerUpdateOptionsListResponse> {
+            return localVarFp.updateOptionsList(body, options).then((request) => request(axios, basePath));
+        },
     };
 };
 
@@ -5104,14 +5293,231 @@ export const ProductApiFactory = function (configuration?: Configuration, basePa
  */
 export class ProductApi extends BaseAPI {
     /**
-     * 
+     * The AddMediaGalleryEntry endpoint allows users to add a new media entry to the gallery of a specific product. To make a request to this endpoint, users need to provide the necessary information in the specified format. The request includes the tenant_id to specify the relevant tenant, the product_id to identify the target product, and the asset_grn which represents the globally unique identifier for the media asset being added. Additionally, the position field indicates the desired position of the media entry within the gallery, allowing users to control the order in which the media items are displayed. The metadata field, which is a repeated field, provides the option to include additional metadata associated with the media entry.
+     * @summary Add Media Gallery Entry
      * @param {ProductAddMediaGalleryEntryRequest} body 
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof ProductApi
      */
-    public productAddMediaGalleryEntry(body: ProductAddMediaGalleryEntryRequest, options?: RawAxiosRequestConfig) {
-        return ProductApiFp(this.configuration).productAddMediaGalleryEntry(body, options).then((request) => request(this.axios, this.basePath));
+    public addMediaGalleryEntry(body: ProductAddMediaGalleryEntryRequest, options?: RawAxiosRequestConfig) {
+        return ProductApiFp(this.configuration).addMediaGalleryEntry(body, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * Version 2 of bulk updates for product attributes with enhanced payload structure and response format.
+     * @summary Bulk Update Products
+     * @param {ProductBulkUpdateRequestV2} body 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof ProductApi
+     */
+    public bulkUpdateV2(body: ProductBulkUpdateRequestV2, options?: RawAxiosRequestConfig) {
+        return ProductApiFp(this.configuration).bulkUpdateV2(body, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * Create attribute options with specified codes, values, and swatches. Returns created options and any associated errors.
+     * @summary Create Attribute Options
+     * @param {EntitymanagerCreateAttributeOptionsRequest} body 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof ProductApi
+     */
+    public createAttributeOptions(body: EntitymanagerCreateAttributeOptionsRequest, options?: RawAxiosRequestConfig) {
+        return ProductApiFp(this.configuration).createAttributeOptions(body, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * The CreateEntity endpoint allows users to define and create a new entity with custom attributes, providing a flexible way to represent and manage different data structures within the system. By making a request to this endpoint, users can create a new entity that serves as an abstraction of a product or any other domain-specific object. This endpoint empowers users to define the specific attributes that compose the entity, such as color, composition, technical details, or any other relevant properties. Utilize the CreateEntity endpoint to dynamically extend and adapt your system\'s data model to accommodate diverse business requirements and efficiently manage various types of entities.
+     * @summary Create Entity
+     * @param {EntitymanagerEntity} body 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof ProductApi
+     */
+    public createEntity(body: EntitymanagerEntity, options?: RawAxiosRequestConfig) {
+        return ProductApiFp(this.configuration).createEntity(body, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * The CreateOptionsList endpoint allows users to create an OptionList, which represents a list of predefined options for assigning to an attribute. By making a request to this endpoint with the provided request format, users can create a new OptionList by specifying the relevant tenant ID and providing the OptionList object containing the predefined options. This functionality facilitates efficient management and assignment of predefined attribute values, ensuring consistency and flexibility within the system.
+     * @summary Create Options List
+     * @param {EntitymanagerCreateOptionsListRequest} body 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof ProductApi
+     */
+    public createOptionsList(body: EntitymanagerCreateOptionsListRequest, options?: RawAxiosRequestConfig) {
+        return ProductApiFp(this.configuration).createOptionsList(body, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * Retrieve attribute option details by providing the tenant ID, list code, and option ID. Returns the specified attribute option.
+     * @summary Get Attribute Option
+     * @param {EntitymanagerGetAttributeOptionRequest} body 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof ProductApi
+     */
+    public getAttributeOption(body: EntitymanagerGetAttributeOptionRequest, options?: RawAxiosRequestConfig) {
+        return ProductApiFp(this.configuration).getAttributeOption(body, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * Retrieve a list of attribute options based on the provided tenant ID and list code.
+     * @summary Get Attribute Options
+     * @param {EntitymanagerGetAttributeOptionsRequest} body 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof ProductApi
+     */
+    public getAttributeOptions(body: EntitymanagerGetAttributeOptionsRequest, options?: RawAxiosRequestConfig) {
+        return ProductApiFp(this.configuration).getAttributeOptions(body, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * Retrieve details of an entity by providing the tenant ID and either entity data or entity ID. Returns information including ID, type, code, label, relationships, and attributes.
+     * @summary Get Entity Details
+     * @param {EntitymanagerEntityRequest} body 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof ProductApi
+     */
+    public getEntity(body: EntitymanagerEntityRequest, options?: RawAxiosRequestConfig) {
+        return ProductApiFp(this.configuration).getEntity(body, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * Retrieve option lists.
+     * @summary Get Options List
+     * @param {EntitymanagerGetOptionsListRequest} body 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof ProductApi
+     */
+    public getOptionsList(body: EntitymanagerGetOptionsListRequest, options?: RawAxiosRequestConfig) {
+        return ProductApiFp(this.configuration).getOptionsList(body, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * The GetProduct endpoint enables users to retrieve a product from the system. By sending a request to this endpoint, users can retrieve a product by providing its unique identifier.
+     * @summary Get Product
+     * @param {ProductGetProductRequest} body 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof ProductApi
+     */
+    public getProduct(body: ProductGetProductRequest, options?: RawAxiosRequestConfig) {
+        return ProductApiFp(this.configuration).getProduct(body, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * The GetProductByCode endpoint enables users to retrieve a product from the system. By sending a request to this endpoint, users can retrieve a product by providing its unique code.
+     * @summary Get Product By Code
+     * @param {ProductGetProductByCodeRequest} body 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof ProductApi
+     */
+    public getProductByCode(body: ProductGetProductByCodeRequest, options?: RawAxiosRequestConfig) {
+        return ProductApiFp(this.configuration).getProductByCode(body, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * The GetProductByUrlKey endpoint enables users to retrieve a product from the system. By sending a request to this endpoint, users can retrieve a product by providing its unique url key.
+     * @summary Get Product By Url Key
+     * @param {ProductGetProductByUrlKeyRequest} body 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof ProductApi
+     */
+    public getProductByUrlKey(body: ProductGetProductByUrlKeyRequest, options?: RawAxiosRequestConfig) {
+        return ProductApiFp(this.configuration).getProductByUrlKey(body, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * 
+     * @summary List Attribute Options
+     * @param {EntitymanagerListAttributeOptionsRequest} body 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof ProductApi
+     */
+    public listAttributeOptions(body: EntitymanagerListAttributeOptionsRequest, options?: RawAxiosRequestConfig) {
+        return ProductApiFp(this.configuration).listAttributeOptions(body, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * 
+     * @summary List Entities
+     * @param {EntitymanagerListEntitiesRequest} body 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof ProductApi
+     */
+    public listEntities(body: EntitymanagerListEntitiesRequest, options?: RawAxiosRequestConfig) {
+        return ProductApiFp(this.configuration).listEntities(body, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * The ListOptionsLists endpoint allows users to retrieve a list of OptionLists available in the system. By making a request to this endpoint with the provided request format, users can obtain all the OptionLists associated with the specified tenant. This functionality enables users to access and manage the predefined options available for various attributes within the system. Utilizing the ListOptionsLists endpoint provides a convenient way to retrieve and work with OptionLists, facilitating efficient management of attribute options and ensuring consistency in attribute values throughout the system.
+     * @summary List Options Lists
+     * @param {EntitymanagerListOptionsListsRequest} body 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof ProductApi
+     */
+    public listOptionsLists(body: EntitymanagerListOptionsListsRequest, options?: RawAxiosRequestConfig) {
+        return ProductApiFp(this.configuration).listOptionsLists(body, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * The ListProducts endpoint provides users with the ability to retrieve a filtered list of products based on specific criteria. By including filter parameters in the request, users can customize the response to only include products that meet certain conditions, such as price range, category, availability, or any other relevant attributes. This endpoint empowers users to efficiently narrow down the product selection and retrieve tailored results.
+     * @summary List Products
+     * @param {ProductListProductsRequest} body 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof ProductApi
+     */
+    public listProducts(body: ProductListProductsRequest, options?: RawAxiosRequestConfig) {
+        return ProductApiFp(this.configuration).listProducts(body, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * The ListProductsByIds endpoint allows users to retrieve a list of products based on provided IDs. By making a request to this endpoint and specifying a set of product IDs, users can retrieve detailed information about the corresponding products. This endpoint facilitates efficient retrieval of specific products, enabling applications to display accurate and targeted product information to users.
+     * @summary List Products By Ids
+     * @param {ProductListProductsByIdsRequest} body 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof ProductApi
+     */
+    public listProductsByIds(body: ProductListProductsByIdsRequest, options?: RawAxiosRequestConfig) {
+        return ProductApiFp(this.configuration).listProductsByIds(body, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * 
+     * @summary List Products By Sku
+     * @param {ProductListProductsBySkuRequest} body 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof ProductApi
+     */
+    public listProductsBySku(body: ProductListProductsBySkuRequest, options?: RawAxiosRequestConfig) {
+        return ProductApiFp(this.configuration).listProductsBySku(body, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * 
+     * @summary List Product Variants By Sku
+     * @param {ProductListVariantsBySkuRequest} body 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof ProductApi
+     */
+    public listVariantsBySku(body: ProductListVariantsBySkuRequest, options?: RawAxiosRequestConfig) {
+        return ProductApiFp(this.configuration).listVariantsBySku(body, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
@@ -5127,7 +5533,7 @@ export class ProductApi extends BaseAPI {
     }
 
     /**
-     * 
+     * Allow creation of multiple attributes. If any attribute is invalid, an error will be returned with more details, and in the response body, the attributes created will be returned.
      * @param {EntitymanagerBulkCreateAttributeRequest} body 
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
@@ -5184,17 +5590,6 @@ export class ProductApi extends BaseAPI {
 
     /**
      * 
-     * @param {ProductBulkUpdateRequestV2} body 
-     * @param {*} [options] Override http request option.
-     * @throws {RequiredError}
-     * @memberof ProductApi
-     */
-    public productBulkUpdateV2(body: ProductBulkUpdateRequestV2, options?: RawAxiosRequestConfig) {
-        return ProductApiFp(this.configuration).productBulkUpdateV2(body, options).then((request) => request(this.axios, this.basePath));
-    }
-
-    /**
-     * 
      * @param {EntitymanagerCreateAttributeGroupRequest} body 
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
@@ -5206,40 +5601,7 @@ export class ProductApi extends BaseAPI {
 
     /**
      * 
-     * @param {EntitymanagerCreateAttributeOptionsRequest} body 
-     * @param {*} [options] Override http request option.
-     * @throws {RequiredError}
-     * @memberof ProductApi
-     */
-    public productCreateAttributeOptions(body: EntitymanagerCreateAttributeOptionsRequest, options?: RawAxiosRequestConfig) {
-        return ProductApiFp(this.configuration).productCreateAttributeOptions(body, options).then((request) => request(this.axios, this.basePath));
-    }
-
-    /**
-     * 
-     * @param {EntitymanagerEntity} body 
-     * @param {*} [options] Override http request option.
-     * @throws {RequiredError}
-     * @memberof ProductApi
-     */
-    public productCreateEntity(body: EntitymanagerEntity, options?: RawAxiosRequestConfig) {
-        return ProductApiFp(this.configuration).productCreateEntity(body, options).then((request) => request(this.axios, this.basePath));
-    }
-
-    /**
-     * 
-     * @param {EntitymanagerCreateOptionsListRequest} body 
-     * @param {*} [options] Override http request option.
-     * @throws {RequiredError}
-     * @memberof ProductApi
-     */
-    public productCreateOptionsList(body: EntitymanagerCreateOptionsListRequest, options?: RawAxiosRequestConfig) {
-        return ProductApiFp(this.configuration).productCreateOptionsList(body, options).then((request) => request(this.axios, this.basePath));
-    }
-
-    /**
-     * 
-     * @param {ProductCreateProductRequest} body 
+     * @param {ProductCreateProductRequest} body The CreateProductRequest message is used to create a new product within the system. It contains various fields that allow specifying the details and attributes of the product.
      * @param {*} [options] Override http request option.
      * @deprecated
      * @throws {RequiredError}
@@ -5307,83 +5669,6 @@ export class ProductApi extends BaseAPI {
 
     /**
      * 
-     * @param {EntitymanagerGetAttributeOptionRequest} body 
-     * @param {*} [options] Override http request option.
-     * @throws {RequiredError}
-     * @memberof ProductApi
-     */
-    public productGetAttributeOption(body: EntitymanagerGetAttributeOptionRequest, options?: RawAxiosRequestConfig) {
-        return ProductApiFp(this.configuration).productGetAttributeOption(body, options).then((request) => request(this.axios, this.basePath));
-    }
-
-    /**
-     * 
-     * @param {EntitymanagerGetAttributeOptionsRequest} body 
-     * @param {*} [options] Override http request option.
-     * @throws {RequiredError}
-     * @memberof ProductApi
-     */
-    public productGetAttributeOptions(body: EntitymanagerGetAttributeOptionsRequest, options?: RawAxiosRequestConfig) {
-        return ProductApiFp(this.configuration).productGetAttributeOptions(body, options).then((request) => request(this.axios, this.basePath));
-    }
-
-    /**
-     * 
-     * @param {EntitymanagerEntityRequest} body 
-     * @param {*} [options] Override http request option.
-     * @throws {RequiredError}
-     * @memberof ProductApi
-     */
-    public productGetEntity(body: EntitymanagerEntityRequest, options?: RawAxiosRequestConfig) {
-        return ProductApiFp(this.configuration).productGetEntity(body, options).then((request) => request(this.axios, this.basePath));
-    }
-
-    /**
-     * 
-     * @param {EntitymanagerGetOptionsListRequest} body 
-     * @param {*} [options] Override http request option.
-     * @throws {RequiredError}
-     * @memberof ProductApi
-     */
-    public productGetOptionsList(body: EntitymanagerGetOptionsListRequest, options?: RawAxiosRequestConfig) {
-        return ProductApiFp(this.configuration).productGetOptionsList(body, options).then((request) => request(this.axios, this.basePath));
-    }
-
-    /**
-     * 
-     * @param {ProductGetProductRequest} body 
-     * @param {*} [options] Override http request option.
-     * @throws {RequiredError}
-     * @memberof ProductApi
-     */
-    public productGetProduct(body: ProductGetProductRequest, options?: RawAxiosRequestConfig) {
-        return ProductApiFp(this.configuration).productGetProduct(body, options).then((request) => request(this.axios, this.basePath));
-    }
-
-    /**
-     * 
-     * @param {ProductGetProductByCodeRequest} body 
-     * @param {*} [options] Override http request option.
-     * @throws {RequiredError}
-     * @memberof ProductApi
-     */
-    public productGetProductByCode(body: ProductGetProductByCodeRequest, options?: RawAxiosRequestConfig) {
-        return ProductApiFp(this.configuration).productGetProductByCode(body, options).then((request) => request(this.axios, this.basePath));
-    }
-
-    /**
-     * 
-     * @param {ProductGetProductByUrlKeyRequest} body 
-     * @param {*} [options] Override http request option.
-     * @throws {RequiredError}
-     * @memberof ProductApi
-     */
-    public productGetProductByUrlKey(body: ProductGetProductByUrlKeyRequest, options?: RawAxiosRequestConfig) {
-        return ProductApiFp(this.configuration).productGetProductByUrlKey(body, options).then((request) => request(this.axios, this.basePath));
-    }
-
-    /**
-     * 
      * @summary Attribute Groups endpoints
      * @param {EntitymanagerListAttributeGroupsRequest} body 
      * @param {*} [options] Override http request option.
@@ -5392,94 +5677,6 @@ export class ProductApi extends BaseAPI {
      */
     public productListAttributeGroups(body: EntitymanagerListAttributeGroupsRequest, options?: RawAxiosRequestConfig) {
         return ProductApiFp(this.configuration).productListAttributeGroups(body, options).then((request) => request(this.axios, this.basePath));
-    }
-
-    /**
-     * 
-     * @param {EntitymanagerListAttributeOptionsRequest} body 
-     * @param {*} [options] Override http request option.
-     * @throws {RequiredError}
-     * @memberof ProductApi
-     */
-    public productListAttributeOptions(body: EntitymanagerListAttributeOptionsRequest, options?: RawAxiosRequestConfig) {
-        return ProductApiFp(this.configuration).productListAttributeOptions(body, options).then((request) => request(this.axios, this.basePath));
-    }
-
-    /**
-     * 
-     * @param {EntitymanagerListEntitiesRequest} body 
-     * @param {*} [options] Override http request option.
-     * @throws {RequiredError}
-     * @memberof ProductApi
-     */
-    public productListEntities(body: EntitymanagerListEntitiesRequest, options?: RawAxiosRequestConfig) {
-        return ProductApiFp(this.configuration).productListEntities(body, options).then((request) => request(this.axios, this.basePath));
-    }
-
-    /**
-     * 
-     * @param {EntitymanagerListOptionsListsRequest} body 
-     * @param {*} [options] Override http request option.
-     * @throws {RequiredError}
-     * @memberof ProductApi
-     */
-    public productListOptionsLists(body: EntitymanagerListOptionsListsRequest, options?: RawAxiosRequestConfig) {
-        return ProductApiFp(this.configuration).productListOptionsLists(body, options).then((request) => request(this.axios, this.basePath));
-    }
-
-    /**
-     * 
-     * @param {ProductListProductsRequest} body 
-     * @param {*} [options] Override http request option.
-     * @throws {RequiredError}
-     * @memberof ProductApi
-     */
-    public productListProducts(body: ProductListProductsRequest, options?: RawAxiosRequestConfig) {
-        return ProductApiFp(this.configuration).productListProducts(body, options).then((request) => request(this.axios, this.basePath));
-    }
-
-    /**
-     * 
-     * @param {ProductListProductsByIdsRequest} body 
-     * @param {*} [options] Override http request option.
-     * @throws {RequiredError}
-     * @memberof ProductApi
-     */
-    public productListProductsByIds(body: ProductListProductsByIdsRequest, options?: RawAxiosRequestConfig) {
-        return ProductApiFp(this.configuration).productListProductsByIds(body, options).then((request) => request(this.axios, this.basePath));
-    }
-
-    /**
-     * 
-     * @param {ProductListProductsBySkuRequest} body 
-     * @param {*} [options] Override http request option.
-     * @throws {RequiredError}
-     * @memberof ProductApi
-     */
-    public productListProductsBySku(body: ProductListProductsBySkuRequest, options?: RawAxiosRequestConfig) {
-        return ProductApiFp(this.configuration).productListProductsBySku(body, options).then((request) => request(this.axios, this.basePath));
-    }
-
-    /**
-     * 
-     * @param {ProductListVariantsBySkuRequest} body 
-     * @param {*} [options] Override http request option.
-     * @throws {RequiredError}
-     * @memberof ProductApi
-     */
-    public productListVariantsBySku(body: ProductListVariantsBySkuRequest, options?: RawAxiosRequestConfig) {
-        return ProductApiFp(this.configuration).productListVariantsBySku(body, options).then((request) => request(this.axios, this.basePath));
-    }
-
-    /**
-     * 
-     * @param {ProductRemoveMediaGalleryEntryRequest} body 
-     * @param {*} [options] Override http request option.
-     * @throws {RequiredError}
-     * @memberof ProductApi
-     */
-    public productRemoveMediaGalleryEntry(body: ProductRemoveMediaGalleryEntryRequest, options?: RawAxiosRequestConfig) {
-        return ProductApiFp(this.configuration).productRemoveMediaGalleryEntry(body, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
@@ -5506,40 +5703,6 @@ export class ProductApi extends BaseAPI {
 
     /**
      * 
-     * @summary rpc GetAttributeOptionByCode (product.entitymanager.GetAttributeOptionByCodeRequest) returns (product.entitymanager.GetAttributeOptionByCodeResponse) {}
-     * @param {EntitymanagerUpdateAttributeOptionsRequest} body 
-     * @param {*} [options] Override http request option.
-     * @throws {RequiredError}
-     * @memberof ProductApi
-     */
-    public productUpdateAttributeOptions(body: EntitymanagerUpdateAttributeOptionsRequest, options?: RawAxiosRequestConfig) {
-        return ProductApiFp(this.configuration).productUpdateAttributeOptions(body, options).then((request) => request(this.axios, this.basePath));
-    }
-
-    /**
-     * 
-     * @param {ProductUpdateMediaGalleryEntryRequest} body 
-     * @param {*} [options] Override http request option.
-     * @throws {RequiredError}
-     * @memberof ProductApi
-     */
-    public productUpdateMediaGalleryEntry(body: ProductUpdateMediaGalleryEntryRequest, options?: RawAxiosRequestConfig) {
-        return ProductApiFp(this.configuration).productUpdateMediaGalleryEntry(body, options).then((request) => request(this.axios, this.basePath));
-    }
-
-    /**
-     * 
-     * @param {EntitymanagerUpdateOptionsListRequest} body 
-     * @param {*} [options] Override http request option.
-     * @throws {RequiredError}
-     * @memberof ProductApi
-     */
-    public productUpdateOptionsList(body: EntitymanagerUpdateOptionsListRequest, options?: RawAxiosRequestConfig) {
-        return ProductApiFp(this.configuration).productUpdateOptionsList(body, options).then((request) => request(this.axios, this.basePath));
-    }
-
-    /**
-     * 
      * @param {ProductUpdateProductRequest} body 
      * @param {*} [options] Override http request option.
      * @deprecated
@@ -5559,6 +5722,54 @@ export class ProductApi extends BaseAPI {
      */
     public productUpdateProductV2(body: ProductUpdateProductRequestV2, options?: RawAxiosRequestConfig) {
         return ProductApiFp(this.configuration).productUpdateProductV2(body, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * The RemoveMediaGalleryEntry endpoint allows users to remove a specific media entry from a product\'s gallery. By making a request to this endpoint and providing the tenant ID, product ID, and the unique identifier of the media entry, users can easily manage and update the visual content of a product\'s gallery. 
+     * @summary Remove Media Gallery Entry
+     * @param {ProductRemoveMediaGalleryEntryRequest} body 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof ProductApi
+     */
+    public removeMediaGalleryEntry(body: ProductRemoveMediaGalleryEntryRequest, options?: RawAxiosRequestConfig) {
+        return ProductApiFp(this.configuration).removeMediaGalleryEntry(body, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * 
+     * @summary Update Attribute Options
+     * @param {EntitymanagerUpdateAttributeOptionsRequest} body 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof ProductApi
+     */
+    public updateAttributeOptions(body: EntitymanagerUpdateAttributeOptionsRequest, options?: RawAxiosRequestConfig) {
+        return ProductApiFp(this.configuration).updateAttributeOptions(body, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * The UpdateMediaGalleryEntry endpoint allows users to modify and update a specific media entry within a product\'s gallery. By sending a request to this endpoint and providing the necessary information, users can efficiently update the media asset, position, and metadata associated with the entry.
+     * @summary Update Media Gallery Entry
+     * @param {ProductUpdateMediaGalleryEntryRequest} body 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof ProductApi
+     */
+    public updateMediaGalleryEntry(body: ProductUpdateMediaGalleryEntryRequest, options?: RawAxiosRequestConfig) {
+        return ProductApiFp(this.configuration).updateMediaGalleryEntry(body, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * 
+     * @summary Update Options List
+     * @param {EntitymanagerUpdateOptionsListRequest} body 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof ProductApi
+     */
+    public updateOptionsList(body: EntitymanagerUpdateOptionsListRequest, options?: RawAxiosRequestConfig) {
+        return ProductApiFp(this.configuration).updateOptionsList(body, options).then((request) => request(this.axios, this.basePath));
     }
 }
 
