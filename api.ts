@@ -26,6 +26,25 @@ import { BASE_PATH, COLLECTION_FORMATS, BaseAPI, RequiredError, operationServerM
 /**
  * 
  * @export
+ * @interface AttributeInReviewString
+ */
+export interface AttributeInReviewString {
+    /**
+     * 
+     * @type {string}
+     * @memberof AttributeInReviewString
+     */
+    'value'?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof AttributeInReviewString
+     */
+    'locale'?: string;
+}
+/**
+ * 
+ * @export
  * @interface BulkUpdateAssetsEntriesRequestUpdateEntity
  */
 export interface BulkUpdateAssetsEntriesRequestUpdateEntity {
@@ -47,6 +66,31 @@ export interface BulkUpdateAssetsEntriesRequestUpdateEntity {
      * @memberof BulkUpdateAssetsEntriesRequestUpdateEntity
      */
     'payloadMask'?: string;
+}
+/**
+ * 
+ * @export
+ * @interface EntitymanagerAiContext
+ */
+export interface EntitymanagerAiContext {
+    /**
+     * 
+     * @type {string}
+     * @memberof EntitymanagerAiContext
+     */
+    'minLength'?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof EntitymanagerAiContext
+     */
+    'maxLength'?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof EntitymanagerAiContext
+     */
+    'description'?: string;
 }
 /**
  * 
@@ -138,6 +182,12 @@ export interface EntitymanagerAttribute {
      * @memberof EntitymanagerAttribute
      */
     'renderAs'?: EntitymanagerRenderAs;
+    /**
+     * 
+     * @type {EntitymanagerAiContext}
+     * @memberof EntitymanagerAttribute
+     */
+    'aiContext'?: EntitymanagerAiContext;
 }
 
 
@@ -1115,6 +1165,12 @@ export interface EntitymanagerUpdateAttributeRequestPayload {
      * @memberof EntitymanagerUpdateAttributeRequestPayload
      */
     'renderAs'?: EntitymanagerRenderAs;
+    /**
+     * 
+     * @type {EntitymanagerAiContext}
+     * @memberof EntitymanagerUpdateAttributeRequestPayload
+     */
+    'aiContext'?: EntitymanagerAiContext;
 }
 
 
@@ -1150,6 +1206,63 @@ export interface EntitymanagerUpdateOptionsListResponse {
      */
     'optionList'?: EntitymanagerOptionsList;
 }
+/**
+ * 
+ * @export
+ * @interface GetEnhanceProductDataWithAIStatusResponseJob
+ */
+export interface GetEnhanceProductDataWithAIStatusResponseJob {
+    /**
+     * 
+     * @type {string}
+     * @memberof GetEnhanceProductDataWithAIStatusResponseJob
+     */
+    'parentId'?: string;
+    /**
+     * 
+     * @type {ProductAttributeInReviewJobType}
+     * @memberof GetEnhanceProductDataWithAIStatusResponseJob
+     */
+    'jobType'?: ProductAttributeInReviewJobType;
+    /**
+     * 
+     * @type {ProductAttributeInReviewJobStatus}
+     * @memberof GetEnhanceProductDataWithAIStatusResponseJob
+     */
+    'jobStatus'?: ProductAttributeInReviewJobStatus;
+    /**
+     * 
+     * @type {string}
+     * @memberof GetEnhanceProductDataWithAIStatusResponseJob
+     */
+    'id'?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof GetEnhanceProductDataWithAIStatusResponseJob
+     */
+    'startedAt'?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof GetEnhanceProductDataWithAIStatusResponseJob
+     */
+    'executedAt'?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof GetEnhanceProductDataWithAIStatusResponseJob
+     */
+    'finishedAt'?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof GetEnhanceProductDataWithAIStatusResponseJob
+     */
+    'productId'?: string;
+}
+
+
 /**
  * 
  * @export
@@ -1346,6 +1459,153 @@ export interface ProductAssetsEntryMetadata {
 /**
  * 
  * @export
+ * @interface ProductAttributeInReview
+ */
+export interface ProductAttributeInReview {
+    /**
+     * 
+     * @type {string}
+     * @memberof ProductAttributeInReview
+     */
+    'code'?: string;
+    /**
+     * 
+     * @type {AttributeInReviewString}
+     * @memberof ProductAttributeInReview
+     */
+    'string'?: AttributeInReviewString;
+    /**
+     * 
+     * @type {number}
+     * @memberof ProductAttributeInReview
+     */
+    'int32'?: number;
+    /**
+     * 
+     * @type {string}
+     * @memberof ProductAttributeInReview
+     */
+    'int64'?: string;
+    /**
+     * 
+     * @type {number}
+     * @memberof ProductAttributeInReview
+     */
+    'float32'?: number;
+    /**
+     * 
+     * @type {number}
+     * @memberof ProductAttributeInReview
+     */
+    'float64'?: number;
+    /**
+     * 
+     * @type {boolean}
+     * @memberof ProductAttributeInReview
+     */
+    'boolean'?: boolean;
+    /**
+     * 
+     * @type {ProductAttributeInReviewSource}
+     * @memberof ProductAttributeInReview
+     */
+    'source'?: ProductAttributeInReviewSource;
+    /**
+     * 
+     * @type {string}
+     * @memberof ProductAttributeInReview
+     */
+    'createdAt'?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof ProductAttributeInReview
+     */
+    'jobId'?: string;
+    /**
+     * 
+     * @type {ProductAttributeInReviewJobType}
+     * @memberof ProductAttributeInReview
+     */
+    'jobType'?: ProductAttributeInReviewJobType;
+    /**
+     * 
+     * @type {ProductAttributeInReviewError}
+     * @memberof ProductAttributeInReview
+     */
+    'error'?: ProductAttributeInReviewError;
+}
+
+
+/**
+ * 
+ * @export
+ * @interface ProductAttributeInReviewError
+ */
+export interface ProductAttributeInReviewError {
+    /**
+     * 
+     * @type {string}
+     * @memberof ProductAttributeInReviewError
+     */
+    'code'?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof ProductAttributeInReviewError
+     */
+    'reason'?: string;
+}
+/**
+ * 
+ * @export
+ * @enum {string}
+ */
+
+export const ProductAttributeInReviewJobStatus = {
+    Unknown: 'ATTRIBUTE_IN_REVIEW_STATUS_UNKNOWN',
+    Running: 'ATTRIBUTE_IN_REVIEW_STATUS_RUNNING',
+    Completed: 'ATTRIBUTE_IN_REVIEW_STATUS_COMPLETED',
+    Failed: 'ATTRIBUTE_IN_REVIEW_STATUS_FAILED',
+    Canceled: 'ATTRIBUTE_IN_REVIEW_STATUS_CANCELED',
+    Terminated: 'ATTRIBUTE_IN_REVIEW_STATUS_TERMINATED'
+} as const;
+
+export type ProductAttributeInReviewJobStatus = typeof ProductAttributeInReviewJobStatus[keyof typeof ProductAttributeInReviewJobStatus];
+
+
+/**
+ * 
+ * @export
+ * @enum {string}
+ */
+
+export const ProductAttributeInReviewJobType = {
+    Unknown: 'ATTRIBUTE_IN_REVIEW_JOB_TYPE_UNKNOWN',
+    Enrichment: 'ATTRIBUTE_IN_REVIEW_JOB_TYPE_ENRICHMENT',
+    Translation: 'ATTRIBUTE_IN_REVIEW_JOB_TYPE_TRANSLATION'
+} as const;
+
+export type ProductAttributeInReviewJobType = typeof ProductAttributeInReviewJobType[keyof typeof ProductAttributeInReviewJobType];
+
+
+/**
+ * 
+ * @export
+ * @enum {string}
+ */
+
+export const ProductAttributeInReviewSource = {
+    Unknown: 'ATTRIBUTE_IN_REVIEW_SOURCE_UNKNOWN',
+    Ai: 'ATTRIBUTE_IN_REVIEW_SOURCE_AI'
+} as const;
+
+export type ProductAttributeInReviewSource = typeof ProductAttributeInReviewSource[keyof typeof ProductAttributeInReviewSource];
+
+
+/**
+ * 
+ * @export
  * @interface ProductAttributeResponseError
  */
 export interface ProductAttributeResponseError {
@@ -1368,6 +1628,54 @@ export interface ProductAttributeResponseError {
      */
     'attributeCode'?: string;
 }
+/**
+ * 
+ * @export
+ * @interface ProductAttributeToEnrich
+ */
+export interface ProductAttributeToEnrich {
+    /**
+     * 
+     * @type {string}
+     * @memberof ProductAttributeToEnrich
+     */
+    'code'?: string;
+    /**
+     * 
+     * @type {ProductAttributeToEnrichType}
+     * @memberof ProductAttributeToEnrich
+     */
+    'type'?: ProductAttributeToEnrichType;
+    /**
+     * 
+     * @type {boolean}
+     * @memberof ProductAttributeToEnrich
+     */
+    'canCreateValue'?: boolean;
+}
+
+
+/**
+ * 
+ * @export
+ * @enum {string}
+ */
+
+export const ProductAttributeToEnrichType = {
+    Unknown: 'ATTRIBUTE_TO_ENRICH_TYPE_UNKNOWN',
+    Text: 'ATTRIBUTE_TO_ENRICH_TYPE_TEXT',
+    Number: 'ATTRIBUTE_TO_ENRICH_TYPE_NUMBER',
+    Boolean: 'ATTRIBUTE_TO_ENRICH_TYPE_BOOLEAN',
+    Datetime: 'ATTRIBUTE_TO_ENRICH_TYPE_DATETIME',
+    External: 'ATTRIBUTE_TO_ENRICH_TYPE_EXTERNAL',
+    Embed: 'ATTRIBUTE_TO_ENRICH_TYPE_EMBED',
+    Float32: 'ATTRIBUTE_TO_ENRICH_TYPE_FLOAT32',
+    LocalizedText: 'ATTRIBUTE_TO_ENRICH_TYPE_LOCALIZED_TEXT'
+} as const;
+
+export type ProductAttributeToEnrichType = typeof ProductAttributeToEnrichType[keyof typeof ProductAttributeToEnrichType];
+
+
 /**
  * 
  * @export
@@ -1424,6 +1732,43 @@ export interface ProductBulkDeleteProductsRequest {
      * @memberof ProductBulkDeleteProductsRequest
      */
     'ids'?: Array<string>;
+}
+/**
+ * 
+ * @export
+ * @interface ProductBulkEnhanceProductDataWithAIRequest
+ */
+export interface ProductBulkEnhanceProductDataWithAIRequest {
+    /**
+     * 
+     * @type {string}
+     * @memberof ProductBulkEnhanceProductDataWithAIRequest
+     */
+    'tenantId'?: string;
+    /**
+     * 
+     * @type {ProductEnrichAction}
+     * @memberof ProductBulkEnhanceProductDataWithAIRequest
+     */
+    'enrich'?: ProductEnrichAction;
+    /**
+     * 
+     * @type {ProductTranslateAction}
+     * @memberof ProductBulkEnhanceProductDataWithAIRequest
+     */
+    'translate'?: ProductTranslateAction;
+    /**
+     * 
+     * @type {Array<string>}
+     * @memberof ProductBulkEnhanceProductDataWithAIRequest
+     */
+    'productIds'?: Array<string>;
+    /**
+     * 
+     * @type {boolean}
+     * @memberof ProductBulkEnhanceProductDataWithAIRequest
+     */
+    'skipReview'?: boolean;
 }
 /**
  * 
@@ -1875,6 +2220,87 @@ export interface ProductCreateProductResponseV2 {
 /**
  * 
  * @export
+ * @interface ProductCreateProductWithAIRequest
+ */
+export interface ProductCreateProductWithAIRequest {
+    /**
+     * 
+     * @type {string}
+     * @memberof ProductCreateProductWithAIRequest
+     */
+    'tenantId'?: string;
+    /**
+     * 
+     * @type {ProductCreateProductRequestV2}
+     * @memberof ProductCreateProductWithAIRequest
+     */
+    'product'?: ProductCreateProductRequestV2;
+    /**
+     * 
+     * @type {string}
+     * @memberof ProductCreateProductWithAIRequest
+     */
+    'locale'?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof ProductCreateProductWithAIRequest
+     */
+    'productBrand'?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof ProductCreateProductWithAIRequest
+     */
+    'productCode'?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof ProductCreateProductWithAIRequest
+     */
+    'productName'?: string;
+    /**
+     * 
+     * @type {boolean}
+     * @memberof ProductCreateProductWithAIRequest
+     */
+    'skipReview'?: boolean;
+    /**
+     * 
+     * @type {Array<ProductAttributeToEnrich>}
+     * @memberof ProductCreateProductWithAIRequest
+     */
+    'attributesToEnrich'?: Array<ProductAttributeToEnrich>;
+}
+/**
+ * 
+ * @export
+ * @interface ProductCreateProductWithAIResponse
+ */
+export interface ProductCreateProductWithAIResponse {
+    /**
+     * 
+     * @type {string}
+     * @memberof ProductCreateProductWithAIResponse
+     */
+    'id'?: string;
+}
+/**
+ * 
+ * @export
+ * @interface ProductDataInReview
+ */
+export interface ProductDataInReview {
+    /**
+     * 
+     * @type {Array<ProductAttributeInReview>}
+     * @memberof ProductDataInReview
+     */
+    'attributes'?: Array<ProductAttributeInReview>;
+}
+/**
+ * 
+ * @export
  * @interface ProductDeleteProductRequest
  */
 export interface ProductDeleteProductRequest {
@@ -1920,6 +2346,27 @@ export interface ProductDeleteResponse {
 /**
  * 
  * @export
+ * @interface ProductEnrichAction
+ */
+export interface ProductEnrichAction {
+    /**
+     * 
+     * @type {Array<ProductAttributeToEnrich>}
+     * @memberof ProductEnrichAction
+     */
+    'attributesToEnrich'?: Array<ProductAttributeToEnrich>;
+    /**
+     * 
+     * @type {ProductLanguageCode}
+     * @memberof ProductEnrichAction
+     */
+    'generationLanguage'?: ProductLanguageCode;
+}
+
+
+/**
+ * 
+ * @export
  * @interface ProductFieldMask
  */
 export interface ProductFieldMask {
@@ -1929,6 +2376,32 @@ export interface ProductFieldMask {
      * @memberof ProductFieldMask
      */
     'paths'?: Array<string>;
+}
+/**
+ * 
+ * @export
+ * @interface ProductGetEnhanceProductDataWithAIStatusRequest
+ */
+export interface ProductGetEnhanceProductDataWithAIStatusRequest {
+    /**
+     * 
+     * @type {string}
+     * @memberof ProductGetEnhanceProductDataWithAIStatusRequest
+     */
+    'tenantId'?: string;
+}
+/**
+ * 
+ * @export
+ * @interface ProductGetEnhanceProductDataWithAIStatusResponse
+ */
+export interface ProductGetEnhanceProductDataWithAIStatusResponse {
+    /**
+     * 
+     * @type {Array<GetEnhanceProductDataWithAIStatusResponseJob>}
+     * @memberof ProductGetEnhanceProductDataWithAIStatusResponse
+     */
+    'jobs'?: Array<GetEnhanceProductDataWithAIStatusResponseJob>;
 }
 /**
  * 
@@ -2003,6 +2476,38 @@ export interface ProductGetProductByUrlKeyResponse {
 /**
  * 
  * @export
+ * @interface ProductGetProductDataInReviewRequest
+ */
+export interface ProductGetProductDataInReviewRequest {
+    /**
+     * 
+     * @type {string}
+     * @memberof ProductGetProductDataInReviewRequest
+     */
+    'tenantId'?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof ProductGetProductDataInReviewRequest
+     */
+    'id'?: string;
+}
+/**
+ * 
+ * @export
+ * @interface ProductGetProductDataInReviewResponse
+ */
+export interface ProductGetProductDataInReviewResponse {
+    /**
+     * 
+     * @type {ProductDataInReview}
+     * @memberof ProductGetProductDataInReviewResponse
+     */
+    'dataInReview'?: ProductDataInReview;
+}
+/**
+ * 
+ * @export
  * @interface ProductGetProductRequest
  */
 export interface ProductGetProductRequest {
@@ -2032,6 +2537,203 @@ export interface ProductGetProductResponse {
      */
     'product'?: ProductProductEntity;
 }
+/**
+ * 
+ * @export
+ * @enum {string}
+ */
+
+export const ProductLanguageCode = {
+    Unknown: 'LANGUAGE_CODE_UNKNOWN',
+    Aa: 'LANGUAGE_CODE_AA',
+    Ab: 'LANGUAGE_CODE_AB',
+    Ae: 'LANGUAGE_CODE_AE',
+    Af: 'LANGUAGE_CODE_AF',
+    Ak: 'LANGUAGE_CODE_AK',
+    Am: 'LANGUAGE_CODE_AM',
+    An: 'LANGUAGE_CODE_AN',
+    Ar: 'LANGUAGE_CODE_AR',
+    As: 'LANGUAGE_CODE_AS',
+    Av: 'LANGUAGE_CODE_AV',
+    Ay: 'LANGUAGE_CODE_AY',
+    Az: 'LANGUAGE_CODE_AZ',
+    Ba: 'LANGUAGE_CODE_BA',
+    Be: 'LANGUAGE_CODE_BE',
+    Bg: 'LANGUAGE_CODE_BG',
+    Bh: 'LANGUAGE_CODE_BH',
+    Bm: 'LANGUAGE_CODE_BM',
+    Bi: 'LANGUAGE_CODE_BI',
+    Bn: 'LANGUAGE_CODE_BN',
+    Bo: 'LANGUAGE_CODE_BO',
+    Br: 'LANGUAGE_CODE_BR',
+    Bs: 'LANGUAGE_CODE_BS',
+    Ca: 'LANGUAGE_CODE_CA',
+    Ce: 'LANGUAGE_CODE_CE',
+    Ch: 'LANGUAGE_CODE_CH',
+    Co: 'LANGUAGE_CODE_CO',
+    Cr: 'LANGUAGE_CODE_CR',
+    Cs: 'LANGUAGE_CODE_CS',
+    Cu: 'LANGUAGE_CODE_CU',
+    Cv: 'LANGUAGE_CODE_CV',
+    Cy: 'LANGUAGE_CODE_CY',
+    Da: 'LANGUAGE_CODE_DA',
+    De: 'LANGUAGE_CODE_DE',
+    Dv: 'LANGUAGE_CODE_DV',
+    Dz: 'LANGUAGE_CODE_DZ',
+    Ee: 'LANGUAGE_CODE_EE',
+    El: 'LANGUAGE_CODE_EL',
+    En: 'LANGUAGE_CODE_EN',
+    Eo: 'LANGUAGE_CODE_EO',
+    Es: 'LANGUAGE_CODE_ES',
+    Et: 'LANGUAGE_CODE_ET',
+    Eu: 'LANGUAGE_CODE_EU',
+    Fa: 'LANGUAGE_CODE_FA',
+    Ff: 'LANGUAGE_CODE_FF',
+    Fi: 'LANGUAGE_CODE_FI',
+    Fj: 'LANGUAGE_CODE_FJ',
+    Fo: 'LANGUAGE_CODE_FO',
+    Fr: 'LANGUAGE_CODE_FR',
+    Fy: 'LANGUAGE_CODE_FY',
+    Ga: 'LANGUAGE_CODE_GA',
+    Gd: 'LANGUAGE_CODE_GD',
+    Gl: 'LANGUAGE_CODE_GL',
+    Gn: 'LANGUAGE_CODE_GN',
+    Gu: 'LANGUAGE_CODE_GU',
+    Gv: 'LANGUAGE_CODE_GV',
+    Ha: 'LANGUAGE_CODE_HA',
+    He: 'LANGUAGE_CODE_HE',
+    Hi: 'LANGUAGE_CODE_HI',
+    Ho: 'LANGUAGE_CODE_HO',
+    Hr: 'LANGUAGE_CODE_HR',
+    Ht: 'LANGUAGE_CODE_HT',
+    Hu: 'LANGUAGE_CODE_HU',
+    Hy: 'LANGUAGE_CODE_HY',
+    Hz: 'LANGUAGE_CODE_HZ',
+    Ia: 'LANGUAGE_CODE_IA',
+    Id: 'LANGUAGE_CODE_ID',
+    Ie: 'LANGUAGE_CODE_IE',
+    Ig: 'LANGUAGE_CODE_IG',
+    Ii: 'LANGUAGE_CODE_II',
+    Ik: 'LANGUAGE_CODE_IK',
+    Io: 'LANGUAGE_CODE_IO',
+    Is: 'LANGUAGE_CODE_IS',
+    It: 'LANGUAGE_CODE_IT',
+    Iu: 'LANGUAGE_CODE_IU',
+    Ja: 'LANGUAGE_CODE_JA',
+    Jv: 'LANGUAGE_CODE_JV',
+    Ka: 'LANGUAGE_CODE_KA',
+    Kg: 'LANGUAGE_CODE_KG',
+    Ki: 'LANGUAGE_CODE_KI',
+    Kj: 'LANGUAGE_CODE_KJ',
+    Kk: 'LANGUAGE_CODE_KK',
+    Kl: 'LANGUAGE_CODE_KL',
+    Km: 'LANGUAGE_CODE_KM',
+    Kn: 'LANGUAGE_CODE_KN',
+    Ko: 'LANGUAGE_CODE_KO',
+    Kr: 'LANGUAGE_CODE_KR',
+    Ks: 'LANGUAGE_CODE_KS',
+    Ku: 'LANGUAGE_CODE_KU',
+    Kv: 'LANGUAGE_CODE_KV',
+    Kw: 'LANGUAGE_CODE_KW',
+    Ky: 'LANGUAGE_CODE_KY',
+    La: 'LANGUAGE_CODE_LA',
+    Lb: 'LANGUAGE_CODE_LB',
+    Lg: 'LANGUAGE_CODE_LG',
+    Li: 'LANGUAGE_CODE_LI',
+    Ln: 'LANGUAGE_CODE_LN',
+    Lo: 'LANGUAGE_CODE_LO',
+    Lt: 'LANGUAGE_CODE_LT',
+    Lu: 'LANGUAGE_CODE_LU',
+    Lv: 'LANGUAGE_CODE_LV',
+    Mg: 'LANGUAGE_CODE_MG',
+    Mh: 'LANGUAGE_CODE_MH',
+    Mi: 'LANGUAGE_CODE_MI',
+    Mk: 'LANGUAGE_CODE_MK',
+    Ml: 'LANGUAGE_CODE_ML',
+    Mn: 'LANGUAGE_CODE_MN',
+    Mr: 'LANGUAGE_CODE_MR',
+    Ms: 'LANGUAGE_CODE_MS',
+    Mt: 'LANGUAGE_CODE_MT',
+    My: 'LANGUAGE_CODE_MY',
+    Na: 'LANGUAGE_CODE_NA',
+    Nb: 'LANGUAGE_CODE_NB',
+    Nd: 'LANGUAGE_CODE_ND',
+    Ne: 'LANGUAGE_CODE_NE',
+    Ng: 'LANGUAGE_CODE_NG',
+    Nl: 'LANGUAGE_CODE_NL',
+    Nn: 'LANGUAGE_CODE_NN',
+    No: 'LANGUAGE_CODE_NO',
+    Nr: 'LANGUAGE_CODE_NR',
+    Nv: 'LANGUAGE_CODE_NV',
+    Ny: 'LANGUAGE_CODE_NY',
+    Oc: 'LANGUAGE_CODE_OC',
+    Oj: 'LANGUAGE_CODE_OJ',
+    Om: 'LANGUAGE_CODE_OM',
+    Or: 'LANGUAGE_CODE_OR',
+    Os: 'LANGUAGE_CODE_OS',
+    Pa: 'LANGUAGE_CODE_PA',
+    Pi: 'LANGUAGE_CODE_PI',
+    Pl: 'LANGUAGE_CODE_PL',
+    Ps: 'LANGUAGE_CODE_PS',
+    Pt: 'LANGUAGE_CODE_PT',
+    Qu: 'LANGUAGE_CODE_QU',
+    Rm: 'LANGUAGE_CODE_RM',
+    Rn: 'LANGUAGE_CODE_RN',
+    Ro: 'LANGUAGE_CODE_RO',
+    Ru: 'LANGUAGE_CODE_RU',
+    Rw: 'LANGUAGE_CODE_RW',
+    Sa: 'LANGUAGE_CODE_SA',
+    Sc: 'LANGUAGE_CODE_SC',
+    Sd: 'LANGUAGE_CODE_SD',
+    Se: 'LANGUAGE_CODE_SE',
+    Sg: 'LANGUAGE_CODE_SG',
+    Si: 'LANGUAGE_CODE_SI',
+    Sk: 'LANGUAGE_CODE_SK',
+    Sl: 'LANGUAGE_CODE_SL',
+    Sm: 'LANGUAGE_CODE_SM',
+    Sn: 'LANGUAGE_CODE_SN',
+    So: 'LANGUAGE_CODE_SO',
+    Sq: 'LANGUAGE_CODE_SQ',
+    Sr: 'LANGUAGE_CODE_SR',
+    Ss: 'LANGUAGE_CODE_SS',
+    St: 'LANGUAGE_CODE_ST',
+    Su: 'LANGUAGE_CODE_SU',
+    Sv: 'LANGUAGE_CODE_SV',
+    Sw: 'LANGUAGE_CODE_SW',
+    Ta: 'LANGUAGE_CODE_TA',
+    Te: 'LANGUAGE_CODE_TE',
+    Tg: 'LANGUAGE_CODE_TG',
+    Th: 'LANGUAGE_CODE_TH',
+    Ti: 'LANGUAGE_CODE_TI',
+    Tk: 'LANGUAGE_CODE_TK',
+    Tl: 'LANGUAGE_CODE_TL',
+    Tn: 'LANGUAGE_CODE_TN',
+    To: 'LANGUAGE_CODE_TO',
+    Tr: 'LANGUAGE_CODE_TR',
+    Ts: 'LANGUAGE_CODE_TS',
+    Tt: 'LANGUAGE_CODE_TT',
+    Tw: 'LANGUAGE_CODE_TW',
+    Ty: 'LANGUAGE_CODE_TY',
+    Ug: 'LANGUAGE_CODE_UG',
+    Uk: 'LANGUAGE_CODE_UK',
+    Ur: 'LANGUAGE_CODE_UR',
+    Uz: 'LANGUAGE_CODE_UZ',
+    Ve: 'LANGUAGE_CODE_VE',
+    Vi: 'LANGUAGE_CODE_VI',
+    Vo: 'LANGUAGE_CODE_VO',
+    Wa: 'LANGUAGE_CODE_WA',
+    Wo: 'LANGUAGE_CODE_WO',
+    Xh: 'LANGUAGE_CODE_XH',
+    Yi: 'LANGUAGE_CODE_YI',
+    Yo: 'LANGUAGE_CODE_YO',
+    Za: 'LANGUAGE_CODE_ZA',
+    Zh: 'LANGUAGE_CODE_ZH',
+    Zu: 'LANGUAGE_CODE_ZU'
+} as const;
+
+export type ProductLanguageCode = typeof ProductLanguageCode[keyof typeof ProductLanguageCode];
+
+
 /**
  * 
  * @export
@@ -2389,6 +3091,12 @@ export interface ProductProductEntity {
     'assets'?: ProductAssets;
     /**
      * 
+     * @type {boolean}
+     * @memberof ProductProductEntity
+     */
+    'inReview'?: boolean;
+    /**
+     * 
      * @type {string}
      * @memberof ProductProductEntity
      */
@@ -2478,6 +3186,39 @@ export interface ProductRemoveMediaGalleryEntryRequest {
 /**
  * 
  * @export
+ * @interface ProductTranslateAction
+ */
+export interface ProductTranslateAction {
+    /**
+     * 
+     * @type {object}
+     * @memberof ProductTranslateAction
+     */
+    'all'?: object;
+    /**
+     * 
+     * @type {TranslateActionAttributeCodesToTranslate}
+     * @memberof ProductTranslateAction
+     */
+    'attributeCodes'?: TranslateActionAttributeCodesToTranslate;
+    /**
+     * 
+     * @type {ProductLanguageCode}
+     * @memberof ProductTranslateAction
+     */
+    'sourceLanguage'?: ProductLanguageCode;
+    /**
+     * 
+     * @type {ProductLanguageCode}
+     * @memberof ProductTranslateAction
+     */
+    'targetLanguage'?: ProductLanguageCode;
+}
+
+
+/**
+ * 
+ * @export
  * @interface ProductUpdateAssetEntryPayload
  */
 export interface ProductUpdateAssetEntryPayload {
@@ -2505,6 +3246,37 @@ export interface ProductUpdateAssetEntryPayload {
      * @memberof ProductUpdateAssetEntryPayload
      */
     'metadata'?: Array<ProductAssetsEntryMetadata>;
+}
+/**
+ * 
+ * @export
+ * @interface ProductUpdateDataToBeReviewedRequest
+ */
+export interface ProductUpdateDataToBeReviewedRequest {
+    /**
+     * 
+     * @type {string}
+     * @memberof ProductUpdateDataToBeReviewedRequest
+     */
+    'tenantId'?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof ProductUpdateDataToBeReviewedRequest
+     */
+    'productId'?: string;
+    /**
+     * 
+     * @type {ProductDataInReview}
+     * @memberof ProductUpdateDataToBeReviewedRequest
+     */
+    'payload'?: ProductDataInReview;
+    /**
+     * 
+     * @type {string}
+     * @memberof ProductUpdateDataToBeReviewedRequest
+     */
+    'payloadMask'?: string;
 }
 /**
  * 
@@ -2609,6 +3381,12 @@ export interface ProductUpdateProductRequest {
      * @memberof ProductUpdateProductRequest
      */
     'variants'?: { [key: string]: ProductProductVariant; };
+    /**
+     * 
+     * @type {boolean}
+     * @memberof ProductUpdateProductRequest
+     */
+    'inReview'?: boolean;
 }
 /**
  * 
@@ -2670,6 +3448,12 @@ export interface ProductUpdateProductRequestV2 {
      * @memberof ProductUpdateProductRequestV2
      */
     'mediaVariantAttributes'?: Array<string>;
+    /**
+     * 
+     * @type {boolean}
+     * @memberof ProductUpdateProductRequestV2
+     */
+    'inReview'?: boolean;
 }
 /**
  * 
@@ -2695,6 +3479,56 @@ export interface ProductUpdateProductResponse {
      * @memberof ProductUpdateProductResponse
      */
     'attributeErrors'?: Array<ProductAttributeResponseError>;
+}
+/**
+ * 
+ * @export
+ * @interface ProductUpdateProductWithAIRequest
+ */
+export interface ProductUpdateProductWithAIRequest {
+    /**
+     * 
+     * @type {string}
+     * @memberof ProductUpdateProductWithAIRequest
+     */
+    'tenantId'?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof ProductUpdateProductWithAIRequest
+     */
+    'id'?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof ProductUpdateProductWithAIRequest
+     */
+    'locale'?: string;
+    /**
+     * 
+     * @type {boolean}
+     * @memberof ProductUpdateProductWithAIRequest
+     */
+    'skipReview'?: boolean;
+    /**
+     * 
+     * @type {Array<ProductAttributeToEnrich>}
+     * @memberof ProductUpdateProductWithAIRequest
+     */
+    'attributesToEnrich'?: Array<ProductAttributeToEnrich>;
+}
+/**
+ * 
+ * @export
+ * @interface ProductUpdateProductWithAIResponse
+ */
+export interface ProductUpdateProductWithAIResponse {
+    /**
+     * 
+     * @type {string}
+     * @memberof ProductUpdateProductWithAIResponse
+     */
+    'id'?: string;
 }
 /**
  * 
@@ -2749,6 +3583,19 @@ export interface RpcStatus {
      */
     'details'?: Array<ProtobufAny>;
 }
+/**
+ * 
+ * @export
+ * @interface TranslateActionAttributeCodesToTranslate
+ */
+export interface TranslateActionAttributeCodesToTranslate {
+    /**
+     * 
+     * @type {Array<string>}
+     * @memberof TranslateActionAttributeCodesToTranslate
+     */
+    'codes'?: Array<string>;
+}
 
 /**
  * ProductApi - axios parameter creator
@@ -2757,7 +3604,7 @@ export interface RpcStatus {
 export const ProductApiAxiosParamCreator = function (configuration?: Configuration) {
     return {
         /**
-         * The AddMediaGalleryEntry endpoint allows users to add a new media entry to the gallery of a specific product. To make a request to this endpoint, users need to provide the necessary information in the specified format. The request includes the tenant_id to specify the relevant tenant, the product_id to identify the target product, and the asset_grn which represents the globally unique identifier for the media asset being added. Additionally, the position field indicates the desired position of the media entry within the gallery, allowing users to control the order in which the media items are displayed. The metadata field, which is a repeated field, provides the option to include additional metadata associated with the media entry.
+         * The AddMediaGalleryEntry endpoint allows users to add a new media entry to the gallery of a specific product. To make a request to this endpoint, users need to provide the necessary information in the specified format. The request includes the tenant_id to specify the relevant tenant, the product_id to identify the target product, and the asset_grn which represents the globally unique identifier for the media asset being added. Additionally, the position field indicates the desired position of the media entry within the gallery, allowing users to control the order in which the media items are displayed. The metadata field, which is a repeated field, provides the option to include additional metadata associated with the media entry. This operation is asynchronous and may complete after the response.
          * @summary Add Media Gallery Entry
          * @param {ProductAddMediaGalleryEntryRequest} body 
          * @param {*} [options] Override http request option.
@@ -2796,7 +3643,202 @@ export const ProductApiAxiosParamCreator = function (configuration?: Configurati
             };
         },
         /**
-         * Version 2 of bulk updates for product attributes with enhanced payload structure and response format.
+         * The BulkAddAssetsEntries endpoint allows users to add assets. This operation is asynchronous and may complete after the response.
+         * @summary Bulk Add Assets Entries
+         * @param {ProductBulkAddAssetsEntriesRequest} body 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        bulkAddAssetsEntries: async (body: ProductBulkAddAssetsEntriesRequest, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'body' is not null or undefined
+            assertParamExists('bulkAddAssetsEntries', 'body', body)
+            const localVarPath = `/product.Product/BulkAddAssetsEntries`;
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'POST', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication Authorization required
+            await setApiKeyToObject(localVarHeaderParameter, "Authorization", configuration)
+
+
+    
+            localVarHeaderParameter['Content-Type'] = 'application/json';
+
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+            localVarRequestOptions.data = serializeDataIfNeeded(body, localVarRequestOptions, configuration)
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * This operation is asynchronous and may complete after the response.
+         * @summary Bulk Delete Products
+         * @param {ProductBulkDeleteProductsRequest} body 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        bulkDeleteProducts: async (body: ProductBulkDeleteProductsRequest, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'body' is not null or undefined
+            assertParamExists('bulkDeleteProducts', 'body', body)
+            const localVarPath = `/product.Product/BulkDeleteProducts`;
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'POST', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication Authorization required
+            await setApiKeyToObject(localVarHeaderParameter, "Authorization", configuration)
+
+
+    
+            localVarHeaderParameter['Content-Type'] = 'application/json';
+
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+            localVarRequestOptions.data = serializeDataIfNeeded(body, localVarRequestOptions, configuration)
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * The BulkEnhanceProductDataWithAI endpoint allows users to enhance product data using artificial intelligence (AI) capabilities. By making a request to this endpoint and providing the necessary input data, users can leverage AI algorithms to enrich and optimize product information. This operation is asynchronous and may complete after the response.
+         * @summary Bulk Enhance Product Data With AI
+         * @param {ProductBulkEnhanceProductDataWithAIRequest} body 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        bulkEnhanceProductDataWithAI: async (body: ProductBulkEnhanceProductDataWithAIRequest, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'body' is not null or undefined
+            assertParamExists('bulkEnhanceProductDataWithAI', 'body', body)
+            const localVarPath = `/product.Product/BulkEnhanceProductDataWithAI`;
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'POST', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication Authorization required
+            await setApiKeyToObject(localVarHeaderParameter, "Authorization", configuration)
+
+
+    
+            localVarHeaderParameter['Content-Type'] = 'application/json';
+
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+            localVarRequestOptions.data = serializeDataIfNeeded(body, localVarRequestOptions, configuration)
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * The BulkRemoveAssetsEntries endpoint allows users to remove assets. This operation is asynchronous and may complete after the response.
+         * @summary Bulk Remove Assets Entries
+         * @param {ProductBulkRemoveAssetsEntriesRequest} body 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        bulkRemoveAssetsEntries: async (body: ProductBulkRemoveAssetsEntriesRequest, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'body' is not null or undefined
+            assertParamExists('bulkRemoveAssetsEntries', 'body', body)
+            const localVarPath = `/product.Product/BulkRemoveAssetsEntries`;
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'POST', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication Authorization required
+            await setApiKeyToObject(localVarHeaderParameter, "Authorization", configuration)
+
+
+    
+            localVarHeaderParameter['Content-Type'] = 'application/json';
+
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+            localVarRequestOptions.data = serializeDataIfNeeded(body, localVarRequestOptions, configuration)
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * The BulkUpdateAssetsEntries endpoint allows users to update assets. This operation is asynchronous and may complete after the response.
+         * @summary Bulk Update Assets Entries
+         * @param {ProductBulkUpdateAssetsEntriesRequest} body 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        bulkUpdateAssetsEntries: async (body: ProductBulkUpdateAssetsEntriesRequest, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'body' is not null or undefined
+            assertParamExists('bulkUpdateAssetsEntries', 'body', body)
+            const localVarPath = `/product.Product/BulkUpdateAssetsEntries`;
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'POST', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication Authorization required
+            await setApiKeyToObject(localVarHeaderParameter, "Authorization", configuration)
+
+
+    
+            localVarHeaderParameter['Content-Type'] = 'application/json';
+
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+            localVarRequestOptions.data = serializeDataIfNeeded(body, localVarRequestOptions, configuration)
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * Version 2 of bulk updates for product attributes with enhanced payload structure and response format. This operation is asynchronous and may complete after the response.
          * @summary Bulk Update Products
          * @param {ProductBulkUpdateRequestV2} body 
          * @param {*} [options] Override http request option.
@@ -2923,6 +3965,45 @@ export const ProductApiAxiosParamCreator = function (configuration?: Configurati
             // verify required parameter 'body' is not null or undefined
             assertParamExists('createOptionsList', 'body', body)
             const localVarPath = `/product.Product/CreateOptionsList`;
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'POST', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication Authorization required
+            await setApiKeyToObject(localVarHeaderParameter, "Authorization", configuration)
+
+
+    
+            localVarHeaderParameter['Content-Type'] = 'application/json';
+
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+            localVarRequestOptions.data = serializeDataIfNeeded(body, localVarRequestOptions, configuration)
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * The CreateProductWithAI endpoint allows users to create a new product within the system using artificial intelligence (AI) capabilities. By sending a request to this endpoint and providing the necessary input data, users can leverage AI algorithms to enhance and optimize the product creation process.
+         * @summary Create Product With AI
+         * @param {ProductCreateProductWithAIRequest} body 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        createProductWithAI: async (body: ProductCreateProductWithAIRequest, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'body' is not null or undefined
+            assertParamExists('createProductWithAI', 'body', body)
+            const localVarPath = `/product.Product/CreateProductWithAI`;
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
             let baseOptions;
@@ -3225,6 +4306,45 @@ export const ProductApiAxiosParamCreator = function (configuration?: Configurati
             };
         },
         /**
+         * The GetProductDataInReview endpoint allows users to retrieve product data that is currently under review. By making a request to this endpoint, users can access detailed information about the product data that is pending approval or review by authorized personnel. This functionality provides transparency and visibility into the product data review process, enabling users to track the status and progress of product data submissions.
+         * @summary Get Product Data In Review
+         * @param {ProductGetProductDataInReviewRequest} body 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        getProductDataInReview: async (body: ProductGetProductDataInReviewRequest, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'body' is not null or undefined
+            assertParamExists('getProductDataInReview', 'body', body)
+            const localVarPath = `/product.Product/GetProductDataInReview`;
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'POST', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication Authorization required
+            await setApiKeyToObject(localVarHeaderParameter, "Authorization", configuration)
+
+
+    
+            localVarHeaderParameter['Content-Type'] = 'application/json';
+
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+            localVarRequestOptions.data = serializeDataIfNeeded(body, localVarRequestOptions, configuration)
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
          * 
          * @summary List Attribute Options
          * @param {EntitymanagerListAttributeOptionsRequest} body 
@@ -3498,45 +4618,6 @@ export const ProductApiAxiosParamCreator = function (configuration?: Configurati
             };
         },
         /**
-         * 
-         * @summary Assets endpoints
-         * @param {ProductBulkAddAssetsEntriesRequest} body 
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        productBulkAddAssetsEntries: async (body: ProductBulkAddAssetsEntriesRequest, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
-            // verify required parameter 'body' is not null or undefined
-            assertParamExists('productBulkAddAssetsEntries', 'body', body)
-            const localVarPath = `/product.Product/BulkAddAssetsEntries`;
-            // use dummy base URL string because the URL constructor only accepts absolute URLs.
-            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
-            let baseOptions;
-            if (configuration) {
-                baseOptions = configuration.baseOptions;
-            }
-
-            const localVarRequestOptions = { method: 'POST', ...baseOptions, ...options};
-            const localVarHeaderParameter = {} as any;
-            const localVarQueryParameter = {} as any;
-
-            // authentication Authorization required
-            await setApiKeyToObject(localVarHeaderParameter, "Authorization", configuration)
-
-
-    
-            localVarHeaderParameter['Content-Type'] = 'application/json';
-
-            setSearchParams(localVarUrlObj, localVarQueryParameter);
-            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
-            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
-            localVarRequestOptions.data = serializeDataIfNeeded(body, localVarRequestOptions, configuration)
-
-            return {
-                url: toPathString(localVarUrlObj),
-                options: localVarRequestOptions,
-            };
-        },
-        /**
          * Allow creation of multiple attributes. If any attribute is invalid, an error will be returned with more details, and in the response body, the attributes created will be returned.
          * @param {EntitymanagerBulkCreateAttributeRequest} body 
          * @param {*} [options] Override http request option.
@@ -3575,83 +4656,7 @@ export const ProductApiAxiosParamCreator = function (configuration?: Configurati
             };
         },
         /**
-         * 
-         * @param {ProductBulkDeleteProductsRequest} body 
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        productBulkDeleteProducts: async (body: ProductBulkDeleteProductsRequest, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
-            // verify required parameter 'body' is not null or undefined
-            assertParamExists('productBulkDeleteProducts', 'body', body)
-            const localVarPath = `/product.Product/BulkDeleteProducts`;
-            // use dummy base URL string because the URL constructor only accepts absolute URLs.
-            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
-            let baseOptions;
-            if (configuration) {
-                baseOptions = configuration.baseOptions;
-            }
-
-            const localVarRequestOptions = { method: 'POST', ...baseOptions, ...options};
-            const localVarHeaderParameter = {} as any;
-            const localVarQueryParameter = {} as any;
-
-            // authentication Authorization required
-            await setApiKeyToObject(localVarHeaderParameter, "Authorization", configuration)
-
-
-    
-            localVarHeaderParameter['Content-Type'] = 'application/json';
-
-            setSearchParams(localVarUrlObj, localVarQueryParameter);
-            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
-            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
-            localVarRequestOptions.data = serializeDataIfNeeded(body, localVarRequestOptions, configuration)
-
-            return {
-                url: toPathString(localVarUrlObj),
-                options: localVarRequestOptions,
-            };
-        },
-        /**
-         * 
-         * @param {ProductBulkRemoveAssetsEntriesRequest} body 
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        productBulkRemoveAssetsEntries: async (body: ProductBulkRemoveAssetsEntriesRequest, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
-            // verify required parameter 'body' is not null or undefined
-            assertParamExists('productBulkRemoveAssetsEntries', 'body', body)
-            const localVarPath = `/product.Product/BulkRemoveAssetsEntries`;
-            // use dummy base URL string because the URL constructor only accepts absolute URLs.
-            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
-            let baseOptions;
-            if (configuration) {
-                baseOptions = configuration.baseOptions;
-            }
-
-            const localVarRequestOptions = { method: 'POST', ...baseOptions, ...options};
-            const localVarHeaderParameter = {} as any;
-            const localVarQueryParameter = {} as any;
-
-            // authentication Authorization required
-            await setApiKeyToObject(localVarHeaderParameter, "Authorization", configuration)
-
-
-    
-            localVarHeaderParameter['Content-Type'] = 'application/json';
-
-            setSearchParams(localVarUrlObj, localVarQueryParameter);
-            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
-            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
-            localVarRequestOptions.data = serializeDataIfNeeded(body, localVarRequestOptions, configuration)
-
-            return {
-                url: toPathString(localVarUrlObj),
-                options: localVarRequestOptions,
-            };
-        },
-        /**
-         * 
+         * This operation is asynchronous and may complete after the response.
          * @param {ProductBulkUpdateRequest} body 
          * @param {*} [options] Override http request option.
          * @deprecated
@@ -3661,44 +4666,6 @@ export const ProductApiAxiosParamCreator = function (configuration?: Configurati
             // verify required parameter 'body' is not null or undefined
             assertParamExists('productBulkUpdate', 'body', body)
             const localVarPath = `/product.Product/BulkUpdate`;
-            // use dummy base URL string because the URL constructor only accepts absolute URLs.
-            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
-            let baseOptions;
-            if (configuration) {
-                baseOptions = configuration.baseOptions;
-            }
-
-            const localVarRequestOptions = { method: 'POST', ...baseOptions, ...options};
-            const localVarHeaderParameter = {} as any;
-            const localVarQueryParameter = {} as any;
-
-            // authentication Authorization required
-            await setApiKeyToObject(localVarHeaderParameter, "Authorization", configuration)
-
-
-    
-            localVarHeaderParameter['Content-Type'] = 'application/json';
-
-            setSearchParams(localVarUrlObj, localVarQueryParameter);
-            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
-            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
-            localVarRequestOptions.data = serializeDataIfNeeded(body, localVarRequestOptions, configuration)
-
-            return {
-                url: toPathString(localVarUrlObj),
-                options: localVarRequestOptions,
-            };
-        },
-        /**
-         * 
-         * @param {ProductBulkUpdateAssetsEntriesRequest} body 
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        productBulkUpdateAssetsEntries: async (body: ProductBulkUpdateAssetsEntriesRequest, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
-            // verify required parameter 'body' is not null or undefined
-            assertParamExists('productBulkUpdateAssetsEntries', 'body', body)
-            const localVarPath = `/product.Product/BulkUpdateAssetsEntries`;
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
             let baseOptions;
@@ -3997,7 +4964,6 @@ export const ProductApiAxiosParamCreator = function (configuration?: Configurati
         },
         /**
          * 
-         * @summary Attribute Groups endpoints
          * @param {EntitymanagerListAttributeGroupsRequest} body 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
@@ -4188,7 +5154,7 @@ export const ProductApiAxiosParamCreator = function (configuration?: Configurati
             };
         },
         /**
-         * The RemoveMediaGalleryEntry endpoint allows users to remove a specific media entry from a product\'s gallery. By making a request to this endpoint and providing the tenant ID, product ID, and the unique identifier of the media entry, users can easily manage and update the visual content of a product\'s gallery. 
+         * The RemoveMediaGalleryEntry endpoint allows users to remove a specific media entry from a product\'s gallery. By making a request to this endpoint and providing the tenant ID, product ID, and the unique identifier of the media entry, users can easily manage and update the visual content of a product\'s gallery. This operation is asynchronous and may complete after the response.
          * @summary Remove Media Gallery Entry
          * @param {ProductRemoveMediaGalleryEntryRequest} body 
          * @param {*} [options] Override http request option.
@@ -4266,7 +5232,85 @@ export const ProductApiAxiosParamCreator = function (configuration?: Configurati
             };
         },
         /**
-         * The UpdateMediaGalleryEntry endpoint allows users to modify and update a specific media entry within a product\'s gallery. By sending a request to this endpoint and providing the necessary information, users can efficiently update the media asset, position, and metadata associated with the entry.
+         * The GetEnhanceProductDataWithAIStatus endpoint allows users to retrieve the status of a product data enhancement process using artificial intelligence (AI) capabilities. By making a request to this endpoint and providing the necessary input data, users can check the progress and completion status of the AI-driven product data enhancement operation. This functionality provides visibility and transparency into the AI processing of product data, enabling users to monitor and track the status of the enhancement process.
+         * @summary Get Enhance Product Data With AI Status
+         * @param {ProductGetEnhanceProductDataWithAIStatusRequest} body 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        updateDataToBeReviewed: async (body: ProductGetEnhanceProductDataWithAIStatusRequest, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'body' is not null or undefined
+            assertParamExists('updateDataToBeReviewed', 'body', body)
+            const localVarPath = `/product.Product/GetEnhanceProductDataWithAIStatus`;
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'POST', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication Authorization required
+            await setApiKeyToObject(localVarHeaderParameter, "Authorization", configuration)
+
+
+    
+            localVarHeaderParameter['Content-Type'] = 'application/json';
+
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+            localVarRequestOptions.data = serializeDataIfNeeded(body, localVarRequestOptions, configuration)
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * The UpdateDataToBeReviewed endpoint allows users to update product data that is pending review. By sending a request to this endpoint and providing the necessary input data, users can modify and enhance the product information that is currently under review. This functionality enables users to make changes to product data submissions and ensure that the information is accurate and up-to-date before final approval.
+         * @summary Update Data To Be Reviewed
+         * @param {ProductUpdateDataToBeReviewedRequest} body 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        updateDataToBeReviewed_1: async (body: ProductUpdateDataToBeReviewedRequest, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'body' is not null or undefined
+            assertParamExists('updateDataToBeReviewed_1', 'body', body)
+            const localVarPath = `/product.Product/UpdateDataToBeReviewed`;
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'POST', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication Authorization required
+            await setApiKeyToObject(localVarHeaderParameter, "Authorization", configuration)
+
+
+    
+            localVarHeaderParameter['Content-Type'] = 'application/json';
+
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+            localVarRequestOptions.data = serializeDataIfNeeded(body, localVarRequestOptions, configuration)
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * The UpdateMediaGalleryEntry endpoint allows users to modify and update a specific media entry within a product\'s gallery. By sending a request to this endpoint and providing the necessary information, users can efficiently update the media asset, position, and metadata associated with the entry. This operation is asynchronous and may complete after the response.
          * @summary Update Media Gallery Entry
          * @param {ProductUpdateMediaGalleryEntryRequest} body 
          * @param {*} [options] Override http request option.
@@ -4343,6 +5387,45 @@ export const ProductApiAxiosParamCreator = function (configuration?: Configurati
                 options: localVarRequestOptions,
             };
         },
+        /**
+         * The UpdateProductWithAI endpoint allows users to update an existing product within the system using artificial intelligence (AI) capabilities. By sending a request to this endpoint and providing the necessary input data, users can leverage AI algorithms to enhance and optimize the product update process.
+         * @summary Update Product With AI
+         * @param {ProductUpdateProductWithAIRequest} body 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        updateProductWithAI: async (body: ProductUpdateProductWithAIRequest, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'body' is not null or undefined
+            assertParamExists('updateProductWithAI', 'body', body)
+            const localVarPath = `/product.Product/UpdateProductWithAI`;
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'POST', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication Authorization required
+            await setApiKeyToObject(localVarHeaderParameter, "Authorization", configuration)
+
+
+    
+            localVarHeaderParameter['Content-Type'] = 'application/json';
+
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+            localVarRequestOptions.data = serializeDataIfNeeded(body, localVarRequestOptions, configuration)
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
     }
 };
 
@@ -4354,7 +5437,7 @@ export const ProductApiFp = function(configuration?: Configuration) {
     const localVarAxiosParamCreator = ProductApiAxiosParamCreator(configuration)
     return {
         /**
-         * The AddMediaGalleryEntry endpoint allows users to add a new media entry to the gallery of a specific product. To make a request to this endpoint, users need to provide the necessary information in the specified format. The request includes the tenant_id to specify the relevant tenant, the product_id to identify the target product, and the asset_grn which represents the globally unique identifier for the media asset being added. Additionally, the position field indicates the desired position of the media entry within the gallery, allowing users to control the order in which the media items are displayed. The metadata field, which is a repeated field, provides the option to include additional metadata associated with the media entry.
+         * The AddMediaGalleryEntry endpoint allows users to add a new media entry to the gallery of a specific product. To make a request to this endpoint, users need to provide the necessary information in the specified format. The request includes the tenant_id to specify the relevant tenant, the product_id to identify the target product, and the asset_grn which represents the globally unique identifier for the media asset being added. Additionally, the position field indicates the desired position of the media entry within the gallery, allowing users to control the order in which the media items are displayed. The metadata field, which is a repeated field, provides the option to include additional metadata associated with the media entry. This operation is asynchronous and may complete after the response.
          * @summary Add Media Gallery Entry
          * @param {ProductAddMediaGalleryEntryRequest} body 
          * @param {*} [options] Override http request option.
@@ -4367,7 +5450,72 @@ export const ProductApiFp = function(configuration?: Configuration) {
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, operationBasePath || basePath);
         },
         /**
-         * Version 2 of bulk updates for product attributes with enhanced payload structure and response format.
+         * The BulkAddAssetsEntries endpoint allows users to add assets. This operation is asynchronous and may complete after the response.
+         * @summary Bulk Add Assets Entries
+         * @param {ProductBulkAddAssetsEntriesRequest} body 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async bulkAddAssetsEntries(body: ProductBulkAddAssetsEntriesRequest, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ProductBulkAddAssetsEntriesResponse>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.bulkAddAssetsEntries(body, options);
+            const index = configuration?.serverIndex ?? 0;
+            const operationBasePath = operationServerMap['ProductApi.bulkAddAssetsEntries']?.[index]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, operationBasePath || basePath);
+        },
+        /**
+         * This operation is asynchronous and may complete after the response.
+         * @summary Bulk Delete Products
+         * @param {ProductBulkDeleteProductsRequest} body 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async bulkDeleteProducts(body: ProductBulkDeleteProductsRequest, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<object>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.bulkDeleteProducts(body, options);
+            const index = configuration?.serverIndex ?? 0;
+            const operationBasePath = operationServerMap['ProductApi.bulkDeleteProducts']?.[index]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, operationBasePath || basePath);
+        },
+        /**
+         * The BulkEnhanceProductDataWithAI endpoint allows users to enhance product data using artificial intelligence (AI) capabilities. By making a request to this endpoint and providing the necessary input data, users can leverage AI algorithms to enrich and optimize product information. This operation is asynchronous and may complete after the response.
+         * @summary Bulk Enhance Product Data With AI
+         * @param {ProductBulkEnhanceProductDataWithAIRequest} body 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async bulkEnhanceProductDataWithAI(body: ProductBulkEnhanceProductDataWithAIRequest, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<object>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.bulkEnhanceProductDataWithAI(body, options);
+            const index = configuration?.serverIndex ?? 0;
+            const operationBasePath = operationServerMap['ProductApi.bulkEnhanceProductDataWithAI']?.[index]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, operationBasePath || basePath);
+        },
+        /**
+         * The BulkRemoveAssetsEntries endpoint allows users to remove assets. This operation is asynchronous and may complete after the response.
+         * @summary Bulk Remove Assets Entries
+         * @param {ProductBulkRemoveAssetsEntriesRequest} body 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async bulkRemoveAssetsEntries(body: ProductBulkRemoveAssetsEntriesRequest, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<object>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.bulkRemoveAssetsEntries(body, options);
+            const index = configuration?.serverIndex ?? 0;
+            const operationBasePath = operationServerMap['ProductApi.bulkRemoveAssetsEntries']?.[index]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, operationBasePath || basePath);
+        },
+        /**
+         * The BulkUpdateAssetsEntries endpoint allows users to update assets. This operation is asynchronous and may complete after the response.
+         * @summary Bulk Update Assets Entries
+         * @param {ProductBulkUpdateAssetsEntriesRequest} body 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async bulkUpdateAssetsEntries(body: ProductBulkUpdateAssetsEntriesRequest, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ProductBulkUpdateAssetsEntriesResponse>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.bulkUpdateAssetsEntries(body, options);
+            const index = configuration?.serverIndex ?? 0;
+            const operationBasePath = operationServerMap['ProductApi.bulkUpdateAssetsEntries']?.[index]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, operationBasePath || basePath);
+        },
+        /**
+         * Version 2 of bulk updates for product attributes with enhanced payload structure and response format. This operation is asynchronous and may complete after the response.
          * @summary Bulk Update Products
          * @param {ProductBulkUpdateRequestV2} body 
          * @param {*} [options] Override http request option.
@@ -4416,6 +5564,19 @@ export const ProductApiFp = function(configuration?: Configuration) {
             const localVarAxiosArgs = await localVarAxiosParamCreator.createOptionsList(body, options);
             const index = configuration?.serverIndex ?? 0;
             const operationBasePath = operationServerMap['ProductApi.createOptionsList']?.[index]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, operationBasePath || basePath);
+        },
+        /**
+         * The CreateProductWithAI endpoint allows users to create a new product within the system using artificial intelligence (AI) capabilities. By sending a request to this endpoint and providing the necessary input data, users can leverage AI algorithms to enhance and optimize the product creation process.
+         * @summary Create Product With AI
+         * @param {ProductCreateProductWithAIRequest} body 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async createProductWithAI(body: ProductCreateProductWithAIRequest, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ProductCreateProductWithAIResponse>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.createProductWithAI(body, options);
+            const index = configuration?.serverIndex ?? 0;
+            const operationBasePath = operationServerMap['ProductApi.createProductWithAI']?.[index]?.url;
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, operationBasePath || basePath);
         },
         /**
@@ -4510,6 +5671,19 @@ export const ProductApiFp = function(configuration?: Configuration) {
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, operationBasePath || basePath);
         },
         /**
+         * The GetProductDataInReview endpoint allows users to retrieve product data that is currently under review. By making a request to this endpoint, users can access detailed information about the product data that is pending approval or review by authorized personnel. This functionality provides transparency and visibility into the product data review process, enabling users to track the status and progress of product data submissions.
+         * @summary Get Product Data In Review
+         * @param {ProductGetProductDataInReviewRequest} body 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async getProductDataInReview(body: ProductGetProductDataInReviewRequest, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ProductGetProductDataInReviewResponse>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.getProductDataInReview(body, options);
+            const index = configuration?.serverIndex ?? 0;
+            const operationBasePath = operationServerMap['ProductApi.getProductDataInReview']?.[index]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, operationBasePath || basePath);
+        },
+        /**
          * 
          * @summary List Attribute Options
          * @param {EntitymanagerListAttributeOptionsRequest} body 
@@ -4601,19 +5775,6 @@ export const ProductApiFp = function(configuration?: Configuration) {
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, operationBasePath || basePath);
         },
         /**
-         * 
-         * @summary Assets endpoints
-         * @param {ProductBulkAddAssetsEntriesRequest} body 
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        async productBulkAddAssetsEntries(body: ProductBulkAddAssetsEntriesRequest, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ProductBulkAddAssetsEntriesResponse>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.productBulkAddAssetsEntries(body, options);
-            const index = configuration?.serverIndex ?? 0;
-            const operationBasePath = operationServerMap['ProductApi.productBulkAddAssetsEntries']?.[index]?.url;
-            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, operationBasePath || basePath);
-        },
-        /**
          * Allow creation of multiple attributes. If any attribute is invalid, an error will be returned with more details, and in the response body, the attributes created will be returned.
          * @param {EntitymanagerBulkCreateAttributeRequest} body 
          * @param {*} [options] Override http request option.
@@ -4626,31 +5787,7 @@ export const ProductApiFp = function(configuration?: Configuration) {
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, operationBasePath || basePath);
         },
         /**
-         * 
-         * @param {ProductBulkDeleteProductsRequest} body 
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        async productBulkDeleteProducts(body: ProductBulkDeleteProductsRequest, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<object>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.productBulkDeleteProducts(body, options);
-            const index = configuration?.serverIndex ?? 0;
-            const operationBasePath = operationServerMap['ProductApi.productBulkDeleteProducts']?.[index]?.url;
-            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, operationBasePath || basePath);
-        },
-        /**
-         * 
-         * @param {ProductBulkRemoveAssetsEntriesRequest} body 
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        async productBulkRemoveAssetsEntries(body: ProductBulkRemoveAssetsEntriesRequest, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<object>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.productBulkRemoveAssetsEntries(body, options);
-            const index = configuration?.serverIndex ?? 0;
-            const operationBasePath = operationServerMap['ProductApi.productBulkRemoveAssetsEntries']?.[index]?.url;
-            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, operationBasePath || basePath);
-        },
-        /**
-         * 
+         * This operation is asynchronous and may complete after the response.
          * @param {ProductBulkUpdateRequest} body 
          * @param {*} [options] Override http request option.
          * @deprecated
@@ -4660,18 +5797,6 @@ export const ProductApiFp = function(configuration?: Configuration) {
             const localVarAxiosArgs = await localVarAxiosParamCreator.productBulkUpdate(body, options);
             const index = configuration?.serverIndex ?? 0;
             const operationBasePath = operationServerMap['ProductApi.productBulkUpdate']?.[index]?.url;
-            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, operationBasePath || basePath);
-        },
-        /**
-         * 
-         * @param {ProductBulkUpdateAssetsEntriesRequest} body 
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        async productBulkUpdateAssetsEntries(body: ProductBulkUpdateAssetsEntriesRequest, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ProductBulkUpdateAssetsEntriesResponse>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.productBulkUpdateAssetsEntries(body, options);
-            const index = configuration?.serverIndex ?? 0;
-            const operationBasePath = operationServerMap['ProductApi.productBulkUpdateAssetsEntries']?.[index]?.url;
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, operationBasePath || basePath);
         },
         /**
@@ -4762,7 +5887,6 @@ export const ProductApiFp = function(configuration?: Configuration) {
         },
         /**
          * 
-         * @summary Attribute Groups endpoints
          * @param {EntitymanagerListAttributeGroupsRequest} body 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
@@ -4823,7 +5947,7 @@ export const ProductApiFp = function(configuration?: Configuration) {
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, operationBasePath || basePath);
         },
         /**
-         * The RemoveMediaGalleryEntry endpoint allows users to remove a specific media entry from a product\'s gallery. By making a request to this endpoint and providing the tenant ID, product ID, and the unique identifier of the media entry, users can easily manage and update the visual content of a product\'s gallery. 
+         * The RemoveMediaGalleryEntry endpoint allows users to remove a specific media entry from a product\'s gallery. By making a request to this endpoint and providing the tenant ID, product ID, and the unique identifier of the media entry, users can easily manage and update the visual content of a product\'s gallery. This operation is asynchronous and may complete after the response.
          * @summary Remove Media Gallery Entry
          * @param {ProductRemoveMediaGalleryEntryRequest} body 
          * @param {*} [options] Override http request option.
@@ -4849,7 +5973,33 @@ export const ProductApiFp = function(configuration?: Configuration) {
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, operationBasePath || basePath);
         },
         /**
-         * The UpdateMediaGalleryEntry endpoint allows users to modify and update a specific media entry within a product\'s gallery. By sending a request to this endpoint and providing the necessary information, users can efficiently update the media asset, position, and metadata associated with the entry.
+         * The GetEnhanceProductDataWithAIStatus endpoint allows users to retrieve the status of a product data enhancement process using artificial intelligence (AI) capabilities. By making a request to this endpoint and providing the necessary input data, users can check the progress and completion status of the AI-driven product data enhancement operation. This functionality provides visibility and transparency into the AI processing of product data, enabling users to monitor and track the status of the enhancement process.
+         * @summary Get Enhance Product Data With AI Status
+         * @param {ProductGetEnhanceProductDataWithAIStatusRequest} body 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async updateDataToBeReviewed(body: ProductGetEnhanceProductDataWithAIStatusRequest, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ProductGetEnhanceProductDataWithAIStatusResponse>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.updateDataToBeReviewed(body, options);
+            const index = configuration?.serverIndex ?? 0;
+            const operationBasePath = operationServerMap['ProductApi.updateDataToBeReviewed']?.[index]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, operationBasePath || basePath);
+        },
+        /**
+         * The UpdateDataToBeReviewed endpoint allows users to update product data that is pending review. By sending a request to this endpoint and providing the necessary input data, users can modify and enhance the product information that is currently under review. This functionality enables users to make changes to product data submissions and ensure that the information is accurate and up-to-date before final approval.
+         * @summary Update Data To Be Reviewed
+         * @param {ProductUpdateDataToBeReviewedRequest} body 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async updateDataToBeReviewed_1(body: ProductUpdateDataToBeReviewedRequest, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<object>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.updateDataToBeReviewed_1(body, options);
+            const index = configuration?.serverIndex ?? 0;
+            const operationBasePath = operationServerMap['ProductApi.updateDataToBeReviewed_1']?.[index]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, operationBasePath || basePath);
+        },
+        /**
+         * The UpdateMediaGalleryEntry endpoint allows users to modify and update a specific media entry within a product\'s gallery. By sending a request to this endpoint and providing the necessary information, users can efficiently update the media asset, position, and metadata associated with the entry. This operation is asynchronous and may complete after the response.
          * @summary Update Media Gallery Entry
          * @param {ProductUpdateMediaGalleryEntryRequest} body 
          * @param {*} [options] Override http request option.
@@ -4874,6 +6024,19 @@ export const ProductApiFp = function(configuration?: Configuration) {
             const operationBasePath = operationServerMap['ProductApi.updateOptionsList']?.[index]?.url;
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, operationBasePath || basePath);
         },
+        /**
+         * The UpdateProductWithAI endpoint allows users to update an existing product within the system using artificial intelligence (AI) capabilities. By sending a request to this endpoint and providing the necessary input data, users can leverage AI algorithms to enhance and optimize the product update process.
+         * @summary Update Product With AI
+         * @param {ProductUpdateProductWithAIRequest} body 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async updateProductWithAI(body: ProductUpdateProductWithAIRequest, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ProductUpdateProductWithAIResponse>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.updateProductWithAI(body, options);
+            const index = configuration?.serverIndex ?? 0;
+            const operationBasePath = operationServerMap['ProductApi.updateProductWithAI']?.[index]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, operationBasePath || basePath);
+        },
     }
 };
 
@@ -4885,7 +6048,7 @@ export const ProductApiFactory = function (configuration?: Configuration, basePa
     const localVarFp = ProductApiFp(configuration)
     return {
         /**
-         * The AddMediaGalleryEntry endpoint allows users to add a new media entry to the gallery of a specific product. To make a request to this endpoint, users need to provide the necessary information in the specified format. The request includes the tenant_id to specify the relevant tenant, the product_id to identify the target product, and the asset_grn which represents the globally unique identifier for the media asset being added. Additionally, the position field indicates the desired position of the media entry within the gallery, allowing users to control the order in which the media items are displayed. The metadata field, which is a repeated field, provides the option to include additional metadata associated with the media entry.
+         * The AddMediaGalleryEntry endpoint allows users to add a new media entry to the gallery of a specific product. To make a request to this endpoint, users need to provide the necessary information in the specified format. The request includes the tenant_id to specify the relevant tenant, the product_id to identify the target product, and the asset_grn which represents the globally unique identifier for the media asset being added. Additionally, the position field indicates the desired position of the media entry within the gallery, allowing users to control the order in which the media items are displayed. The metadata field, which is a repeated field, provides the option to include additional metadata associated with the media entry. This operation is asynchronous and may complete after the response.
          * @summary Add Media Gallery Entry
          * @param {ProductAddMediaGalleryEntryRequest} body 
          * @param {*} [options] Override http request option.
@@ -4895,7 +6058,57 @@ export const ProductApiFactory = function (configuration?: Configuration, basePa
             return localVarFp.addMediaGalleryEntry(body, options).then((request) => request(axios, basePath));
         },
         /**
-         * Version 2 of bulk updates for product attributes with enhanced payload structure and response format.
+         * The BulkAddAssetsEntries endpoint allows users to add assets. This operation is asynchronous and may complete after the response.
+         * @summary Bulk Add Assets Entries
+         * @param {ProductBulkAddAssetsEntriesRequest} body 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        bulkAddAssetsEntries(body: ProductBulkAddAssetsEntriesRequest, options?: any): AxiosPromise<ProductBulkAddAssetsEntriesResponse> {
+            return localVarFp.bulkAddAssetsEntries(body, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * This operation is asynchronous and may complete after the response.
+         * @summary Bulk Delete Products
+         * @param {ProductBulkDeleteProductsRequest} body 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        bulkDeleteProducts(body: ProductBulkDeleteProductsRequest, options?: any): AxiosPromise<object> {
+            return localVarFp.bulkDeleteProducts(body, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * The BulkEnhanceProductDataWithAI endpoint allows users to enhance product data using artificial intelligence (AI) capabilities. By making a request to this endpoint and providing the necessary input data, users can leverage AI algorithms to enrich and optimize product information. This operation is asynchronous and may complete after the response.
+         * @summary Bulk Enhance Product Data With AI
+         * @param {ProductBulkEnhanceProductDataWithAIRequest} body 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        bulkEnhanceProductDataWithAI(body: ProductBulkEnhanceProductDataWithAIRequest, options?: any): AxiosPromise<object> {
+            return localVarFp.bulkEnhanceProductDataWithAI(body, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * The BulkRemoveAssetsEntries endpoint allows users to remove assets. This operation is asynchronous and may complete after the response.
+         * @summary Bulk Remove Assets Entries
+         * @param {ProductBulkRemoveAssetsEntriesRequest} body 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        bulkRemoveAssetsEntries(body: ProductBulkRemoveAssetsEntriesRequest, options?: any): AxiosPromise<object> {
+            return localVarFp.bulkRemoveAssetsEntries(body, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * The BulkUpdateAssetsEntries endpoint allows users to update assets. This operation is asynchronous and may complete after the response.
+         * @summary Bulk Update Assets Entries
+         * @param {ProductBulkUpdateAssetsEntriesRequest} body 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        bulkUpdateAssetsEntries(body: ProductBulkUpdateAssetsEntriesRequest, options?: any): AxiosPromise<ProductBulkUpdateAssetsEntriesResponse> {
+            return localVarFp.bulkUpdateAssetsEntries(body, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * Version 2 of bulk updates for product attributes with enhanced payload structure and response format. This operation is asynchronous and may complete after the response.
          * @summary Bulk Update Products
          * @param {ProductBulkUpdateRequestV2} body 
          * @param {*} [options] Override http request option.
@@ -4933,6 +6146,16 @@ export const ProductApiFactory = function (configuration?: Configuration, basePa
          */
         createOptionsList(body: EntitymanagerCreateOptionsListRequest, options?: any): AxiosPromise<EntitymanagerCreateOptionsListResponse> {
             return localVarFp.createOptionsList(body, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * The CreateProductWithAI endpoint allows users to create a new product within the system using artificial intelligence (AI) capabilities. By sending a request to this endpoint and providing the necessary input data, users can leverage AI algorithms to enhance and optimize the product creation process.
+         * @summary Create Product With AI
+         * @param {ProductCreateProductWithAIRequest} body 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        createProductWithAI(body: ProductCreateProductWithAIRequest, options?: any): AxiosPromise<ProductCreateProductWithAIResponse> {
+            return localVarFp.createProductWithAI(body, options).then((request) => request(axios, basePath));
         },
         /**
          * Retrieve attribute option details by providing the tenant ID, list code, and option ID. Returns the specified attribute option.
@@ -5005,6 +6228,16 @@ export const ProductApiFactory = function (configuration?: Configuration, basePa
             return localVarFp.getProductByUrlKey(body, options).then((request) => request(axios, basePath));
         },
         /**
+         * The GetProductDataInReview endpoint allows users to retrieve product data that is currently under review. By making a request to this endpoint, users can access detailed information about the product data that is pending approval or review by authorized personnel. This functionality provides transparency and visibility into the product data review process, enabling users to track the status and progress of product data submissions.
+         * @summary Get Product Data In Review
+         * @param {ProductGetProductDataInReviewRequest} body 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        getProductDataInReview(body: ProductGetProductDataInReviewRequest, options?: any): AxiosPromise<ProductGetProductDataInReviewResponse> {
+            return localVarFp.getProductDataInReview(body, options).then((request) => request(axios, basePath));
+        },
+        /**
          * 
          * @summary List Attribute Options
          * @param {EntitymanagerListAttributeOptionsRequest} body 
@@ -5075,16 +6308,6 @@ export const ProductApiFactory = function (configuration?: Configuration, basePa
             return localVarFp.listVariantsBySku(body, options).then((request) => request(axios, basePath));
         },
         /**
-         * 
-         * @summary Assets endpoints
-         * @param {ProductBulkAddAssetsEntriesRequest} body 
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        productBulkAddAssetsEntries(body: ProductBulkAddAssetsEntriesRequest, options?: any): AxiosPromise<ProductBulkAddAssetsEntriesResponse> {
-            return localVarFp.productBulkAddAssetsEntries(body, options).then((request) => request(axios, basePath));
-        },
-        /**
          * Allow creation of multiple attributes. If any attribute is invalid, an error will be returned with more details, and in the response body, the attributes created will be returned.
          * @param {EntitymanagerBulkCreateAttributeRequest} body 
          * @param {*} [options] Override http request option.
@@ -5094,25 +6317,7 @@ export const ProductApiFactory = function (configuration?: Configuration, basePa
             return localVarFp.productBulkCreateAttribute(body, options).then((request) => request(axios, basePath));
         },
         /**
-         * 
-         * @param {ProductBulkDeleteProductsRequest} body 
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        productBulkDeleteProducts(body: ProductBulkDeleteProductsRequest, options?: any): AxiosPromise<object> {
-            return localVarFp.productBulkDeleteProducts(body, options).then((request) => request(axios, basePath));
-        },
-        /**
-         * 
-         * @param {ProductBulkRemoveAssetsEntriesRequest} body 
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        productBulkRemoveAssetsEntries(body: ProductBulkRemoveAssetsEntriesRequest, options?: any): AxiosPromise<object> {
-            return localVarFp.productBulkRemoveAssetsEntries(body, options).then((request) => request(axios, basePath));
-        },
-        /**
-         * 
+         * This operation is asynchronous and may complete after the response.
          * @param {ProductBulkUpdateRequest} body 
          * @param {*} [options] Override http request option.
          * @deprecated
@@ -5120,15 +6325,6 @@ export const ProductApiFactory = function (configuration?: Configuration, basePa
          */
         productBulkUpdate(body: ProductBulkUpdateRequest, options?: any): AxiosPromise<ProductBulkUpdateResponse> {
             return localVarFp.productBulkUpdate(body, options).then((request) => request(axios, basePath));
-        },
-        /**
-         * 
-         * @param {ProductBulkUpdateAssetsEntriesRequest} body 
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        productBulkUpdateAssetsEntries(body: ProductBulkUpdateAssetsEntriesRequest, options?: any): AxiosPromise<ProductBulkUpdateAssetsEntriesResponse> {
-            return localVarFp.productBulkUpdateAssetsEntries(body, options).then((request) => request(axios, basePath));
         },
         /**
          * 
@@ -5197,7 +6393,6 @@ export const ProductApiFactory = function (configuration?: Configuration, basePa
         },
         /**
          * 
-         * @summary Attribute Groups endpoints
          * @param {EntitymanagerListAttributeGroupsRequest} body 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
@@ -5243,7 +6438,7 @@ export const ProductApiFactory = function (configuration?: Configuration, basePa
             return localVarFp.productUpdateProductV2(body, options).then((request) => request(axios, basePath));
         },
         /**
-         * The RemoveMediaGalleryEntry endpoint allows users to remove a specific media entry from a product\'s gallery. By making a request to this endpoint and providing the tenant ID, product ID, and the unique identifier of the media entry, users can easily manage and update the visual content of a product\'s gallery. 
+         * The RemoveMediaGalleryEntry endpoint allows users to remove a specific media entry from a product\'s gallery. By making a request to this endpoint and providing the tenant ID, product ID, and the unique identifier of the media entry, users can easily manage and update the visual content of a product\'s gallery. This operation is asynchronous and may complete after the response.
          * @summary Remove Media Gallery Entry
          * @param {ProductRemoveMediaGalleryEntryRequest} body 
          * @param {*} [options] Override http request option.
@@ -5263,7 +6458,27 @@ export const ProductApiFactory = function (configuration?: Configuration, basePa
             return localVarFp.updateAttributeOptions(body, options).then((request) => request(axios, basePath));
         },
         /**
-         * The UpdateMediaGalleryEntry endpoint allows users to modify and update a specific media entry within a product\'s gallery. By sending a request to this endpoint and providing the necessary information, users can efficiently update the media asset, position, and metadata associated with the entry.
+         * The GetEnhanceProductDataWithAIStatus endpoint allows users to retrieve the status of a product data enhancement process using artificial intelligence (AI) capabilities. By making a request to this endpoint and providing the necessary input data, users can check the progress and completion status of the AI-driven product data enhancement operation. This functionality provides visibility and transparency into the AI processing of product data, enabling users to monitor and track the status of the enhancement process.
+         * @summary Get Enhance Product Data With AI Status
+         * @param {ProductGetEnhanceProductDataWithAIStatusRequest} body 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        updateDataToBeReviewed(body: ProductGetEnhanceProductDataWithAIStatusRequest, options?: any): AxiosPromise<ProductGetEnhanceProductDataWithAIStatusResponse> {
+            return localVarFp.updateDataToBeReviewed(body, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * The UpdateDataToBeReviewed endpoint allows users to update product data that is pending review. By sending a request to this endpoint and providing the necessary input data, users can modify and enhance the product information that is currently under review. This functionality enables users to make changes to product data submissions and ensure that the information is accurate and up-to-date before final approval.
+         * @summary Update Data To Be Reviewed
+         * @param {ProductUpdateDataToBeReviewedRequest} body 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        updateDataToBeReviewed_1(body: ProductUpdateDataToBeReviewedRequest, options?: any): AxiosPromise<object> {
+            return localVarFp.updateDataToBeReviewed_1(body, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * The UpdateMediaGalleryEntry endpoint allows users to modify and update a specific media entry within a product\'s gallery. By sending a request to this endpoint and providing the necessary information, users can efficiently update the media asset, position, and metadata associated with the entry. This operation is asynchronous and may complete after the response.
          * @summary Update Media Gallery Entry
          * @param {ProductUpdateMediaGalleryEntryRequest} body 
          * @param {*} [options] Override http request option.
@@ -5282,6 +6497,16 @@ export const ProductApiFactory = function (configuration?: Configuration, basePa
         updateOptionsList(body: EntitymanagerUpdateOptionsListRequest, options?: any): AxiosPromise<EntitymanagerUpdateOptionsListResponse> {
             return localVarFp.updateOptionsList(body, options).then((request) => request(axios, basePath));
         },
+        /**
+         * The UpdateProductWithAI endpoint allows users to update an existing product within the system using artificial intelligence (AI) capabilities. By sending a request to this endpoint and providing the necessary input data, users can leverage AI algorithms to enhance and optimize the product update process.
+         * @summary Update Product With AI
+         * @param {ProductUpdateProductWithAIRequest} body 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        updateProductWithAI(body: ProductUpdateProductWithAIRequest, options?: any): AxiosPromise<ProductUpdateProductWithAIResponse> {
+            return localVarFp.updateProductWithAI(body, options).then((request) => request(axios, basePath));
+        },
     };
 };
 
@@ -5293,7 +6518,7 @@ export const ProductApiFactory = function (configuration?: Configuration, basePa
  */
 export class ProductApi extends BaseAPI {
     /**
-     * The AddMediaGalleryEntry endpoint allows users to add a new media entry to the gallery of a specific product. To make a request to this endpoint, users need to provide the necessary information in the specified format. The request includes the tenant_id to specify the relevant tenant, the product_id to identify the target product, and the asset_grn which represents the globally unique identifier for the media asset being added. Additionally, the position field indicates the desired position of the media entry within the gallery, allowing users to control the order in which the media items are displayed. The metadata field, which is a repeated field, provides the option to include additional metadata associated with the media entry.
+     * The AddMediaGalleryEntry endpoint allows users to add a new media entry to the gallery of a specific product. To make a request to this endpoint, users need to provide the necessary information in the specified format. The request includes the tenant_id to specify the relevant tenant, the product_id to identify the target product, and the asset_grn which represents the globally unique identifier for the media asset being added. Additionally, the position field indicates the desired position of the media entry within the gallery, allowing users to control the order in which the media items are displayed. The metadata field, which is a repeated field, provides the option to include additional metadata associated with the media entry. This operation is asynchronous and may complete after the response.
      * @summary Add Media Gallery Entry
      * @param {ProductAddMediaGalleryEntryRequest} body 
      * @param {*} [options] Override http request option.
@@ -5305,7 +6530,67 @@ export class ProductApi extends BaseAPI {
     }
 
     /**
-     * Version 2 of bulk updates for product attributes with enhanced payload structure and response format.
+     * The BulkAddAssetsEntries endpoint allows users to add assets. This operation is asynchronous and may complete after the response.
+     * @summary Bulk Add Assets Entries
+     * @param {ProductBulkAddAssetsEntriesRequest} body 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof ProductApi
+     */
+    public bulkAddAssetsEntries(body: ProductBulkAddAssetsEntriesRequest, options?: RawAxiosRequestConfig) {
+        return ProductApiFp(this.configuration).bulkAddAssetsEntries(body, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * This operation is asynchronous and may complete after the response.
+     * @summary Bulk Delete Products
+     * @param {ProductBulkDeleteProductsRequest} body 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof ProductApi
+     */
+    public bulkDeleteProducts(body: ProductBulkDeleteProductsRequest, options?: RawAxiosRequestConfig) {
+        return ProductApiFp(this.configuration).bulkDeleteProducts(body, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * The BulkEnhanceProductDataWithAI endpoint allows users to enhance product data using artificial intelligence (AI) capabilities. By making a request to this endpoint and providing the necessary input data, users can leverage AI algorithms to enrich and optimize product information. This operation is asynchronous and may complete after the response.
+     * @summary Bulk Enhance Product Data With AI
+     * @param {ProductBulkEnhanceProductDataWithAIRequest} body 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof ProductApi
+     */
+    public bulkEnhanceProductDataWithAI(body: ProductBulkEnhanceProductDataWithAIRequest, options?: RawAxiosRequestConfig) {
+        return ProductApiFp(this.configuration).bulkEnhanceProductDataWithAI(body, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * The BulkRemoveAssetsEntries endpoint allows users to remove assets. This operation is asynchronous and may complete after the response.
+     * @summary Bulk Remove Assets Entries
+     * @param {ProductBulkRemoveAssetsEntriesRequest} body 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof ProductApi
+     */
+    public bulkRemoveAssetsEntries(body: ProductBulkRemoveAssetsEntriesRequest, options?: RawAxiosRequestConfig) {
+        return ProductApiFp(this.configuration).bulkRemoveAssetsEntries(body, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * The BulkUpdateAssetsEntries endpoint allows users to update assets. This operation is asynchronous and may complete after the response.
+     * @summary Bulk Update Assets Entries
+     * @param {ProductBulkUpdateAssetsEntriesRequest} body 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof ProductApi
+     */
+    public bulkUpdateAssetsEntries(body: ProductBulkUpdateAssetsEntriesRequest, options?: RawAxiosRequestConfig) {
+        return ProductApiFp(this.configuration).bulkUpdateAssetsEntries(body, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * Version 2 of bulk updates for product attributes with enhanced payload structure and response format. This operation is asynchronous and may complete after the response.
      * @summary Bulk Update Products
      * @param {ProductBulkUpdateRequestV2} body 
      * @param {*} [options] Override http request option.
@@ -5350,6 +6635,18 @@ export class ProductApi extends BaseAPI {
      */
     public createOptionsList(body: EntitymanagerCreateOptionsListRequest, options?: RawAxiosRequestConfig) {
         return ProductApiFp(this.configuration).createOptionsList(body, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * The CreateProductWithAI endpoint allows users to create a new product within the system using artificial intelligence (AI) capabilities. By sending a request to this endpoint and providing the necessary input data, users can leverage AI algorithms to enhance and optimize the product creation process.
+     * @summary Create Product With AI
+     * @param {ProductCreateProductWithAIRequest} body 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof ProductApi
+     */
+    public createProductWithAI(body: ProductCreateProductWithAIRequest, options?: RawAxiosRequestConfig) {
+        return ProductApiFp(this.configuration).createProductWithAI(body, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
@@ -5437,6 +6734,18 @@ export class ProductApi extends BaseAPI {
     }
 
     /**
+     * The GetProductDataInReview endpoint allows users to retrieve product data that is currently under review. By making a request to this endpoint, users can access detailed information about the product data that is pending approval or review by authorized personnel. This functionality provides transparency and visibility into the product data review process, enabling users to track the status and progress of product data submissions.
+     * @summary Get Product Data In Review
+     * @param {ProductGetProductDataInReviewRequest} body 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof ProductApi
+     */
+    public getProductDataInReview(body: ProductGetProductDataInReviewRequest, options?: RawAxiosRequestConfig) {
+        return ProductApiFp(this.configuration).getProductDataInReview(body, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
      * 
      * @summary List Attribute Options
      * @param {EntitymanagerListAttributeOptionsRequest} body 
@@ -5521,18 +6830,6 @@ export class ProductApi extends BaseAPI {
     }
 
     /**
-     * 
-     * @summary Assets endpoints
-     * @param {ProductBulkAddAssetsEntriesRequest} body 
-     * @param {*} [options] Override http request option.
-     * @throws {RequiredError}
-     * @memberof ProductApi
-     */
-    public productBulkAddAssetsEntries(body: ProductBulkAddAssetsEntriesRequest, options?: RawAxiosRequestConfig) {
-        return ProductApiFp(this.configuration).productBulkAddAssetsEntries(body, options).then((request) => request(this.axios, this.basePath));
-    }
-
-    /**
      * Allow creation of multiple attributes. If any attribute is invalid, an error will be returned with more details, and in the response body, the attributes created will be returned.
      * @param {EntitymanagerBulkCreateAttributeRequest} body 
      * @param {*} [options] Override http request option.
@@ -5544,29 +6841,7 @@ export class ProductApi extends BaseAPI {
     }
 
     /**
-     * 
-     * @param {ProductBulkDeleteProductsRequest} body 
-     * @param {*} [options] Override http request option.
-     * @throws {RequiredError}
-     * @memberof ProductApi
-     */
-    public productBulkDeleteProducts(body: ProductBulkDeleteProductsRequest, options?: RawAxiosRequestConfig) {
-        return ProductApiFp(this.configuration).productBulkDeleteProducts(body, options).then((request) => request(this.axios, this.basePath));
-    }
-
-    /**
-     * 
-     * @param {ProductBulkRemoveAssetsEntriesRequest} body 
-     * @param {*} [options] Override http request option.
-     * @throws {RequiredError}
-     * @memberof ProductApi
-     */
-    public productBulkRemoveAssetsEntries(body: ProductBulkRemoveAssetsEntriesRequest, options?: RawAxiosRequestConfig) {
-        return ProductApiFp(this.configuration).productBulkRemoveAssetsEntries(body, options).then((request) => request(this.axios, this.basePath));
-    }
-
-    /**
-     * 
+     * This operation is asynchronous and may complete after the response.
      * @param {ProductBulkUpdateRequest} body 
      * @param {*} [options] Override http request option.
      * @deprecated
@@ -5575,17 +6850,6 @@ export class ProductApi extends BaseAPI {
      */
     public productBulkUpdate(body: ProductBulkUpdateRequest, options?: RawAxiosRequestConfig) {
         return ProductApiFp(this.configuration).productBulkUpdate(body, options).then((request) => request(this.axios, this.basePath));
-    }
-
-    /**
-     * 
-     * @param {ProductBulkUpdateAssetsEntriesRequest} body 
-     * @param {*} [options] Override http request option.
-     * @throws {RequiredError}
-     * @memberof ProductApi
-     */
-    public productBulkUpdateAssetsEntries(body: ProductBulkUpdateAssetsEntriesRequest, options?: RawAxiosRequestConfig) {
-        return ProductApiFp(this.configuration).productBulkUpdateAssetsEntries(body, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
@@ -5669,7 +6933,6 @@ export class ProductApi extends BaseAPI {
 
     /**
      * 
-     * @summary Attribute Groups endpoints
      * @param {EntitymanagerListAttributeGroupsRequest} body 
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
@@ -5725,7 +6988,7 @@ export class ProductApi extends BaseAPI {
     }
 
     /**
-     * The RemoveMediaGalleryEntry endpoint allows users to remove a specific media entry from a product\'s gallery. By making a request to this endpoint and providing the tenant ID, product ID, and the unique identifier of the media entry, users can easily manage and update the visual content of a product\'s gallery. 
+     * The RemoveMediaGalleryEntry endpoint allows users to remove a specific media entry from a product\'s gallery. By making a request to this endpoint and providing the tenant ID, product ID, and the unique identifier of the media entry, users can easily manage and update the visual content of a product\'s gallery. This operation is asynchronous and may complete after the response.
      * @summary Remove Media Gallery Entry
      * @param {ProductRemoveMediaGalleryEntryRequest} body 
      * @param {*} [options] Override http request option.
@@ -5749,7 +7012,31 @@ export class ProductApi extends BaseAPI {
     }
 
     /**
-     * The UpdateMediaGalleryEntry endpoint allows users to modify and update a specific media entry within a product\'s gallery. By sending a request to this endpoint and providing the necessary information, users can efficiently update the media asset, position, and metadata associated with the entry.
+     * The GetEnhanceProductDataWithAIStatus endpoint allows users to retrieve the status of a product data enhancement process using artificial intelligence (AI) capabilities. By making a request to this endpoint and providing the necessary input data, users can check the progress and completion status of the AI-driven product data enhancement operation. This functionality provides visibility and transparency into the AI processing of product data, enabling users to monitor and track the status of the enhancement process.
+     * @summary Get Enhance Product Data With AI Status
+     * @param {ProductGetEnhanceProductDataWithAIStatusRequest} body 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof ProductApi
+     */
+    public updateDataToBeReviewed(body: ProductGetEnhanceProductDataWithAIStatusRequest, options?: RawAxiosRequestConfig) {
+        return ProductApiFp(this.configuration).updateDataToBeReviewed(body, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * The UpdateDataToBeReviewed endpoint allows users to update product data that is pending review. By sending a request to this endpoint and providing the necessary input data, users can modify and enhance the product information that is currently under review. This functionality enables users to make changes to product data submissions and ensure that the information is accurate and up-to-date before final approval.
+     * @summary Update Data To Be Reviewed
+     * @param {ProductUpdateDataToBeReviewedRequest} body 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof ProductApi
+     */
+    public updateDataToBeReviewed_1(body: ProductUpdateDataToBeReviewedRequest, options?: RawAxiosRequestConfig) {
+        return ProductApiFp(this.configuration).updateDataToBeReviewed_1(body, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * The UpdateMediaGalleryEntry endpoint allows users to modify and update a specific media entry within a product\'s gallery. By sending a request to this endpoint and providing the necessary information, users can efficiently update the media asset, position, and metadata associated with the entry. This operation is asynchronous and may complete after the response.
      * @summary Update Media Gallery Entry
      * @param {ProductUpdateMediaGalleryEntryRequest} body 
      * @param {*} [options] Override http request option.
@@ -5770,6 +7057,18 @@ export class ProductApi extends BaseAPI {
      */
     public updateOptionsList(body: EntitymanagerUpdateOptionsListRequest, options?: RawAxiosRequestConfig) {
         return ProductApiFp(this.configuration).updateOptionsList(body, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * The UpdateProductWithAI endpoint allows users to update an existing product within the system using artificial intelligence (AI) capabilities. By sending a request to this endpoint and providing the necessary input data, users can leverage AI algorithms to enhance and optimize the product update process.
+     * @summary Update Product With AI
+     * @param {ProductUpdateProductWithAIRequest} body 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof ProductApi
+     */
+    public updateProductWithAI(body: ProductUpdateProductWithAIRequest, options?: RawAxiosRequestConfig) {
+        return ProductApiFp(this.configuration).updateProductWithAI(body, options).then((request) => request(this.axios, this.basePath));
     }
 }
 
