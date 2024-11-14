@@ -5445,9 +5445,9 @@ export const ProductApiFp = function(configuration?: Configuration) {
          */
         async addMediaGalleryEntry(body: ProductAddMediaGalleryEntryRequest, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ProductAddMediaGalleryEntryResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.addMediaGalleryEntry(body, options);
-            const index = configuration?.serverIndex ?? 0;
-            const operationBasePath = operationServerMap['ProductApi.addMediaGalleryEntry']?.[index]?.url;
-            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, operationBasePath || basePath);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['ProductApi.addMediaGalleryEntry']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
          * The BulkAddAssetsEntries endpoint allows users to add assets. This operation is asynchronous and may complete after the response.
@@ -5458,9 +5458,9 @@ export const ProductApiFp = function(configuration?: Configuration) {
          */
         async bulkAddAssetsEntries(body: ProductBulkAddAssetsEntriesRequest, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ProductBulkAddAssetsEntriesResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.bulkAddAssetsEntries(body, options);
-            const index = configuration?.serverIndex ?? 0;
-            const operationBasePath = operationServerMap['ProductApi.bulkAddAssetsEntries']?.[index]?.url;
-            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, operationBasePath || basePath);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['ProductApi.bulkAddAssetsEntries']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
          * This operation is asynchronous and may complete after the response.
@@ -5471,9 +5471,9 @@ export const ProductApiFp = function(configuration?: Configuration) {
          */
         async bulkDeleteProducts(body: ProductBulkDeleteProductsRequest, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<object>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.bulkDeleteProducts(body, options);
-            const index = configuration?.serverIndex ?? 0;
-            const operationBasePath = operationServerMap['ProductApi.bulkDeleteProducts']?.[index]?.url;
-            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, operationBasePath || basePath);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['ProductApi.bulkDeleteProducts']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
          * The BulkEnhanceProductDataWithAI endpoint allows users to enhance product data using artificial intelligence (AI) capabilities. By making a request to this endpoint and providing the necessary input data, users can leverage AI algorithms to enrich and optimize product information. This operation is asynchronous and may complete after the response.
@@ -5484,9 +5484,9 @@ export const ProductApiFp = function(configuration?: Configuration) {
          */
         async bulkEnhanceProductDataWithAI(body: ProductBulkEnhanceProductDataWithAIRequest, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<object>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.bulkEnhanceProductDataWithAI(body, options);
-            const index = configuration?.serverIndex ?? 0;
-            const operationBasePath = operationServerMap['ProductApi.bulkEnhanceProductDataWithAI']?.[index]?.url;
-            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, operationBasePath || basePath);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['ProductApi.bulkEnhanceProductDataWithAI']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
          * The BulkRemoveAssetsEntries endpoint allows users to remove assets. This operation is asynchronous and may complete after the response.
@@ -5497,9 +5497,9 @@ export const ProductApiFp = function(configuration?: Configuration) {
          */
         async bulkRemoveAssetsEntries(body: ProductBulkRemoveAssetsEntriesRequest, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<object>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.bulkRemoveAssetsEntries(body, options);
-            const index = configuration?.serverIndex ?? 0;
-            const operationBasePath = operationServerMap['ProductApi.bulkRemoveAssetsEntries']?.[index]?.url;
-            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, operationBasePath || basePath);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['ProductApi.bulkRemoveAssetsEntries']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
          * The BulkUpdateAssetsEntries endpoint allows users to update assets. This operation is asynchronous and may complete after the response.
@@ -5510,9 +5510,9 @@ export const ProductApiFp = function(configuration?: Configuration) {
          */
         async bulkUpdateAssetsEntries(body: ProductBulkUpdateAssetsEntriesRequest, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ProductBulkUpdateAssetsEntriesResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.bulkUpdateAssetsEntries(body, options);
-            const index = configuration?.serverIndex ?? 0;
-            const operationBasePath = operationServerMap['ProductApi.bulkUpdateAssetsEntries']?.[index]?.url;
-            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, operationBasePath || basePath);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['ProductApi.bulkUpdateAssetsEntries']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
          * Version 2 of bulk updates for product attributes with enhanced payload structure and response format. This operation is asynchronous and may complete after the response.
@@ -5523,9 +5523,9 @@ export const ProductApiFp = function(configuration?: Configuration) {
          */
         async bulkUpdateV2(body: ProductBulkUpdateRequestV2, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ProductBulkUpdateResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.bulkUpdateV2(body, options);
-            const index = configuration?.serverIndex ?? 0;
-            const operationBasePath = operationServerMap['ProductApi.bulkUpdateV2']?.[index]?.url;
-            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, operationBasePath || basePath);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['ProductApi.bulkUpdateV2']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
          * Create attribute options with specified codes, values, and swatches. Returns created options and any associated errors.
@@ -5536,9 +5536,9 @@ export const ProductApiFp = function(configuration?: Configuration) {
          */
         async createAttributeOptions(body: EntitymanagerCreateAttributeOptionsRequest, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<EntitymanagerCreateAttributeOptionsResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.createAttributeOptions(body, options);
-            const index = configuration?.serverIndex ?? 0;
-            const operationBasePath = operationServerMap['ProductApi.createAttributeOptions']?.[index]?.url;
-            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, operationBasePath || basePath);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['ProductApi.createAttributeOptions']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
          * The CreateEntity endpoint allows users to define and create a new entity with custom attributes, providing a flexible way to represent and manage different data structures within the system. By making a request to this endpoint, users can create a new entity that serves as an abstraction of a product or any other domain-specific object. This endpoint empowers users to define the specific attributes that compose the entity, such as color, composition, technical details, or any other relevant properties. Utilize the CreateEntity endpoint to dynamically extend and adapt your system\'s data model to accommodate diverse business requirements and efficiently manage various types of entities.
@@ -5549,9 +5549,9 @@ export const ProductApiFp = function(configuration?: Configuration) {
          */
         async createEntity(body: EntitymanagerEntity, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<EntitymanagerCreateEntityResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.createEntity(body, options);
-            const index = configuration?.serverIndex ?? 0;
-            const operationBasePath = operationServerMap['ProductApi.createEntity']?.[index]?.url;
-            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, operationBasePath || basePath);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['ProductApi.createEntity']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
          * The CreateOptionsList endpoint allows users to create an OptionList, which represents a list of predefined options for assigning to an attribute. By making a request to this endpoint with the provided request format, users can create a new OptionList by specifying the relevant tenant ID and providing the OptionList object containing the predefined options. This functionality facilitates efficient management and assignment of predefined attribute values, ensuring consistency and flexibility within the system.
@@ -5562,9 +5562,9 @@ export const ProductApiFp = function(configuration?: Configuration) {
          */
         async createOptionsList(body: EntitymanagerCreateOptionsListRequest, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<EntitymanagerCreateOptionsListResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.createOptionsList(body, options);
-            const index = configuration?.serverIndex ?? 0;
-            const operationBasePath = operationServerMap['ProductApi.createOptionsList']?.[index]?.url;
-            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, operationBasePath || basePath);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['ProductApi.createOptionsList']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
          * The CreateProductWithAI endpoint allows users to create a new product within the system using artificial intelligence (AI) capabilities. By sending a request to this endpoint and providing the necessary input data, users can leverage AI algorithms to enhance and optimize the product creation process.
@@ -5575,9 +5575,9 @@ export const ProductApiFp = function(configuration?: Configuration) {
          */
         async createProductWithAI(body: ProductCreateProductWithAIRequest, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ProductCreateProductWithAIResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.createProductWithAI(body, options);
-            const index = configuration?.serverIndex ?? 0;
-            const operationBasePath = operationServerMap['ProductApi.createProductWithAI']?.[index]?.url;
-            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, operationBasePath || basePath);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['ProductApi.createProductWithAI']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
          * Retrieve attribute option details by providing the tenant ID, list code, and option ID. Returns the specified attribute option.
@@ -5588,9 +5588,9 @@ export const ProductApiFp = function(configuration?: Configuration) {
          */
         async getAttributeOption(body: EntitymanagerGetAttributeOptionRequest, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<EntitymanagerGetAttributeOptionResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.getAttributeOption(body, options);
-            const index = configuration?.serverIndex ?? 0;
-            const operationBasePath = operationServerMap['ProductApi.getAttributeOption']?.[index]?.url;
-            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, operationBasePath || basePath);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['ProductApi.getAttributeOption']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
          * Retrieve a list of attribute options based on the provided tenant ID and list code.
@@ -5601,9 +5601,9 @@ export const ProductApiFp = function(configuration?: Configuration) {
          */
         async getAttributeOptions(body: EntitymanagerGetAttributeOptionsRequest, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<EntitymanagerGetAttributeOptionsResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.getAttributeOptions(body, options);
-            const index = configuration?.serverIndex ?? 0;
-            const operationBasePath = operationServerMap['ProductApi.getAttributeOptions']?.[index]?.url;
-            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, operationBasePath || basePath);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['ProductApi.getAttributeOptions']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
          * Retrieve details of an entity by providing the tenant ID and either entity data or entity ID. Returns information including ID, type, code, label, relationships, and attributes.
@@ -5614,9 +5614,9 @@ export const ProductApiFp = function(configuration?: Configuration) {
          */
         async getEntity(body: EntitymanagerEntityRequest, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<EntitymanagerEntity>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.getEntity(body, options);
-            const index = configuration?.serverIndex ?? 0;
-            const operationBasePath = operationServerMap['ProductApi.getEntity']?.[index]?.url;
-            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, operationBasePath || basePath);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['ProductApi.getEntity']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
          * Retrieve option lists.
@@ -5627,9 +5627,9 @@ export const ProductApiFp = function(configuration?: Configuration) {
          */
         async getOptionsList(body: EntitymanagerGetOptionsListRequest, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<EntitymanagerGetOptionsListResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.getOptionsList(body, options);
-            const index = configuration?.serverIndex ?? 0;
-            const operationBasePath = operationServerMap['ProductApi.getOptionsList']?.[index]?.url;
-            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, operationBasePath || basePath);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['ProductApi.getOptionsList']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
          * The GetProduct endpoint enables users to retrieve a product from the system. By sending a request to this endpoint, users can retrieve a product by providing its unique identifier.
@@ -5640,9 +5640,9 @@ export const ProductApiFp = function(configuration?: Configuration) {
          */
         async getProduct(body: ProductGetProductRequest, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ProductGetProductResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.getProduct(body, options);
-            const index = configuration?.serverIndex ?? 0;
-            const operationBasePath = operationServerMap['ProductApi.getProduct']?.[index]?.url;
-            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, operationBasePath || basePath);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['ProductApi.getProduct']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
          * The GetProductByCode endpoint enables users to retrieve a product from the system. By sending a request to this endpoint, users can retrieve a product by providing its unique code.
@@ -5653,9 +5653,9 @@ export const ProductApiFp = function(configuration?: Configuration) {
          */
         async getProductByCode(body: ProductGetProductByCodeRequest, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ProductGetProductByCodeResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.getProductByCode(body, options);
-            const index = configuration?.serverIndex ?? 0;
-            const operationBasePath = operationServerMap['ProductApi.getProductByCode']?.[index]?.url;
-            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, operationBasePath || basePath);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['ProductApi.getProductByCode']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
          * The GetProductByUrlKey endpoint enables users to retrieve a product from the system. By sending a request to this endpoint, users can retrieve a product by providing its unique url key.
@@ -5666,9 +5666,9 @@ export const ProductApiFp = function(configuration?: Configuration) {
          */
         async getProductByUrlKey(body: ProductGetProductByUrlKeyRequest, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ProductGetProductByUrlKeyResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.getProductByUrlKey(body, options);
-            const index = configuration?.serverIndex ?? 0;
-            const operationBasePath = operationServerMap['ProductApi.getProductByUrlKey']?.[index]?.url;
-            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, operationBasePath || basePath);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['ProductApi.getProductByUrlKey']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
          * The GetProductDataInReview endpoint allows users to retrieve product data that is currently under review. By making a request to this endpoint, users can access detailed information about the product data that is pending approval or review by authorized personnel. This functionality provides transparency and visibility into the product data review process, enabling users to track the status and progress of product data submissions.
@@ -5679,9 +5679,9 @@ export const ProductApiFp = function(configuration?: Configuration) {
          */
         async getProductDataInReview(body: ProductGetProductDataInReviewRequest, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ProductGetProductDataInReviewResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.getProductDataInReview(body, options);
-            const index = configuration?.serverIndex ?? 0;
-            const operationBasePath = operationServerMap['ProductApi.getProductDataInReview']?.[index]?.url;
-            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, operationBasePath || basePath);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['ProductApi.getProductDataInReview']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
          * 
@@ -5692,9 +5692,9 @@ export const ProductApiFp = function(configuration?: Configuration) {
          */
         async listAttributeOptions(body: EntitymanagerListAttributeOptionsRequest, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<EntitymanagerListAttributeOptionsResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.listAttributeOptions(body, options);
-            const index = configuration?.serverIndex ?? 0;
-            const operationBasePath = operationServerMap['ProductApi.listAttributeOptions']?.[index]?.url;
-            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, operationBasePath || basePath);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['ProductApi.listAttributeOptions']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
          * 
@@ -5705,9 +5705,9 @@ export const ProductApiFp = function(configuration?: Configuration) {
          */
         async listEntities(body: EntitymanagerListEntitiesRequest, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<EntitymanagerListEntitiesResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.listEntities(body, options);
-            const index = configuration?.serverIndex ?? 0;
-            const operationBasePath = operationServerMap['ProductApi.listEntities']?.[index]?.url;
-            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, operationBasePath || basePath);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['ProductApi.listEntities']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
          * The ListOptionsLists endpoint allows users to retrieve a list of OptionLists available in the system. By making a request to this endpoint with the provided request format, users can obtain all the OptionLists associated with the specified tenant. This functionality enables users to access and manage the predefined options available for various attributes within the system. Utilizing the ListOptionsLists endpoint provides a convenient way to retrieve and work with OptionLists, facilitating efficient management of attribute options and ensuring consistency in attribute values throughout the system.
@@ -5718,9 +5718,9 @@ export const ProductApiFp = function(configuration?: Configuration) {
          */
         async listOptionsLists(body: EntitymanagerListOptionsListsRequest, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<EntitymanagerListOptionsListsResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.listOptionsLists(body, options);
-            const index = configuration?.serverIndex ?? 0;
-            const operationBasePath = operationServerMap['ProductApi.listOptionsLists']?.[index]?.url;
-            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, operationBasePath || basePath);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['ProductApi.listOptionsLists']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
          * The ListProducts endpoint provides users with the ability to retrieve a filtered list of products based on specific criteria. By including filter parameters in the request, users can customize the response to only include products that meet certain conditions, such as price range, category, availability, or any other relevant attributes. This endpoint empowers users to efficiently narrow down the product selection and retrieve tailored results.
@@ -5731,9 +5731,9 @@ export const ProductApiFp = function(configuration?: Configuration) {
          */
         async listProducts(body: ProductListProductsRequest, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ProductListProductsResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.listProducts(body, options);
-            const index = configuration?.serverIndex ?? 0;
-            const operationBasePath = operationServerMap['ProductApi.listProducts']?.[index]?.url;
-            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, operationBasePath || basePath);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['ProductApi.listProducts']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
          * The ListProductsByIds endpoint allows users to retrieve a list of products based on provided IDs. By making a request to this endpoint and specifying a set of product IDs, users can retrieve detailed information about the corresponding products. This endpoint facilitates efficient retrieval of specific products, enabling applications to display accurate and targeted product information to users.
@@ -5744,9 +5744,9 @@ export const ProductApiFp = function(configuration?: Configuration) {
          */
         async listProductsByIds(body: ProductListProductsByIdsRequest, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ProductListProductsByIdsResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.listProductsByIds(body, options);
-            const index = configuration?.serverIndex ?? 0;
-            const operationBasePath = operationServerMap['ProductApi.listProductsByIds']?.[index]?.url;
-            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, operationBasePath || basePath);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['ProductApi.listProductsByIds']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
          * 
@@ -5757,9 +5757,9 @@ export const ProductApiFp = function(configuration?: Configuration) {
          */
         async listProductsBySku(body: ProductListProductsBySkuRequest, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ProductListProductsBySkuResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.listProductsBySku(body, options);
-            const index = configuration?.serverIndex ?? 0;
-            const operationBasePath = operationServerMap['ProductApi.listProductsBySku']?.[index]?.url;
-            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, operationBasePath || basePath);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['ProductApi.listProductsBySku']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
          * 
@@ -5770,9 +5770,9 @@ export const ProductApiFp = function(configuration?: Configuration) {
          */
         async listVariantsBySku(body: ProductListVariantsBySkuRequest, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ProductListVariantsBySkuResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.listVariantsBySku(body, options);
-            const index = configuration?.serverIndex ?? 0;
-            const operationBasePath = operationServerMap['ProductApi.listVariantsBySku']?.[index]?.url;
-            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, operationBasePath || basePath);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['ProductApi.listVariantsBySku']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
          * Allow creation of multiple attributes. If any attribute is invalid, an error will be returned with more details, and in the response body, the attributes created will be returned.
@@ -5782,9 +5782,9 @@ export const ProductApiFp = function(configuration?: Configuration) {
          */
         async productBulkCreateAttribute(body: EntitymanagerBulkCreateAttributeRequest, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<EntitymanagerBulkCreateAttributeResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.productBulkCreateAttribute(body, options);
-            const index = configuration?.serverIndex ?? 0;
-            const operationBasePath = operationServerMap['ProductApi.productBulkCreateAttribute']?.[index]?.url;
-            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, operationBasePath || basePath);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['ProductApi.productBulkCreateAttribute']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
          * This operation is asynchronous and may complete after the response.
@@ -5795,9 +5795,9 @@ export const ProductApiFp = function(configuration?: Configuration) {
          */
         async productBulkUpdate(body: ProductBulkUpdateRequest, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ProductBulkUpdateResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.productBulkUpdate(body, options);
-            const index = configuration?.serverIndex ?? 0;
-            const operationBasePath = operationServerMap['ProductApi.productBulkUpdate']?.[index]?.url;
-            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, operationBasePath || basePath);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['ProductApi.productBulkUpdate']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
          * 
@@ -5807,9 +5807,9 @@ export const ProductApiFp = function(configuration?: Configuration) {
          */
         async productCreateAttributeGroup(body: EntitymanagerCreateAttributeGroupRequest, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<EntitymanagerAttributeGroup>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.productCreateAttributeGroup(body, options);
-            const index = configuration?.serverIndex ?? 0;
-            const operationBasePath = operationServerMap['ProductApi.productCreateAttributeGroup']?.[index]?.url;
-            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, operationBasePath || basePath);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['ProductApi.productCreateAttributeGroup']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
          * 
@@ -5820,9 +5820,9 @@ export const ProductApiFp = function(configuration?: Configuration) {
          */
         async productCreateProduct(body: ProductCreateProductRequest, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ProductCreateProductResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.productCreateProduct(body, options);
-            const index = configuration?.serverIndex ?? 0;
-            const operationBasePath = operationServerMap['ProductApi.productCreateProduct']?.[index]?.url;
-            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, operationBasePath || basePath);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['ProductApi.productCreateProduct']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
          * 
@@ -5832,9 +5832,9 @@ export const ProductApiFp = function(configuration?: Configuration) {
          */
         async productCreateProductV2(body: ProductCreateProductRequestV2, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ProductCreateProductResponseV2>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.productCreateProductV2(body, options);
-            const index = configuration?.serverIndex ?? 0;
-            const operationBasePath = operationServerMap['ProductApi.productCreateProductV2']?.[index]?.url;
-            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, operationBasePath || basePath);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['ProductApi.productCreateProductV2']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
          * 
@@ -5845,9 +5845,9 @@ export const ProductApiFp = function(configuration?: Configuration) {
          */
         async productDelete(body: ProductDeleteRequest, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ProductDeleteResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.productDelete(body, options);
-            const index = configuration?.serverIndex ?? 0;
-            const operationBasePath = operationServerMap['ProductApi.productDelete']?.[index]?.url;
-            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, operationBasePath || basePath);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['ProductApi.productDelete']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
          * 
@@ -5857,9 +5857,9 @@ export const ProductApiFp = function(configuration?: Configuration) {
          */
         async productDeleteAttribute(body: EntitymanagerDeleteAttributeRequest, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<object>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.productDeleteAttribute(body, options);
-            const index = configuration?.serverIndex ?? 0;
-            const operationBasePath = operationServerMap['ProductApi.productDeleteAttribute']?.[index]?.url;
-            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, operationBasePath || basePath);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['ProductApi.productDeleteAttribute']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
          * 
@@ -5869,9 +5869,9 @@ export const ProductApiFp = function(configuration?: Configuration) {
          */
         async productDeleteProduct(body: ProductDeleteProductRequest, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<object>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.productDeleteProduct(body, options);
-            const index = configuration?.serverIndex ?? 0;
-            const operationBasePath = operationServerMap['ProductApi.productDeleteProduct']?.[index]?.url;
-            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, operationBasePath || basePath);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['ProductApi.productDeleteProduct']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
          * 
@@ -5881,9 +5881,9 @@ export const ProductApiFp = function(configuration?: Configuration) {
          */
         async productGetAttributeGroup(body: EntitymanagerGetAttributeGroupRequest, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<EntitymanagerAttributeGroup>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.productGetAttributeGroup(body, options);
-            const index = configuration?.serverIndex ?? 0;
-            const operationBasePath = operationServerMap['ProductApi.productGetAttributeGroup']?.[index]?.url;
-            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, operationBasePath || basePath);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['ProductApi.productGetAttributeGroup']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
          * 
@@ -5893,9 +5893,9 @@ export const ProductApiFp = function(configuration?: Configuration) {
          */
         async productListAttributeGroups(body: EntitymanagerListAttributeGroupsRequest, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<EntitymanagerListAttributeGroupsResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.productListAttributeGroups(body, options);
-            const index = configuration?.serverIndex ?? 0;
-            const operationBasePath = operationServerMap['ProductApi.productListAttributeGroups']?.[index]?.url;
-            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, operationBasePath || basePath);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['ProductApi.productListAttributeGroups']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
          * 
@@ -5905,9 +5905,9 @@ export const ProductApiFp = function(configuration?: Configuration) {
          */
         async productUpdateAttribute(body: EntitymanagerUpdateAttributeRequest, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<EntitymanagerAttribute>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.productUpdateAttribute(body, options);
-            const index = configuration?.serverIndex ?? 0;
-            const operationBasePath = operationServerMap['ProductApi.productUpdateAttribute']?.[index]?.url;
-            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, operationBasePath || basePath);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['ProductApi.productUpdateAttribute']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
          * 
@@ -5917,9 +5917,9 @@ export const ProductApiFp = function(configuration?: Configuration) {
          */
         async productUpdateAttributeGroup(body: EntitymanagerUpdateAttributeGroupRequest, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<EntitymanagerAttributeGroup>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.productUpdateAttributeGroup(body, options);
-            const index = configuration?.serverIndex ?? 0;
-            const operationBasePath = operationServerMap['ProductApi.productUpdateAttributeGroup']?.[index]?.url;
-            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, operationBasePath || basePath);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['ProductApi.productUpdateAttributeGroup']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
          * 
@@ -5930,9 +5930,9 @@ export const ProductApiFp = function(configuration?: Configuration) {
          */
         async productUpdateProduct(body: ProductUpdateProductRequest, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ProductUpdateProductResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.productUpdateProduct(body, options);
-            const index = configuration?.serverIndex ?? 0;
-            const operationBasePath = operationServerMap['ProductApi.productUpdateProduct']?.[index]?.url;
-            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, operationBasePath || basePath);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['ProductApi.productUpdateProduct']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
          * 
@@ -5942,9 +5942,9 @@ export const ProductApiFp = function(configuration?: Configuration) {
          */
         async productUpdateProductV2(body: ProductUpdateProductRequestV2, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<object>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.productUpdateProductV2(body, options);
-            const index = configuration?.serverIndex ?? 0;
-            const operationBasePath = operationServerMap['ProductApi.productUpdateProductV2']?.[index]?.url;
-            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, operationBasePath || basePath);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['ProductApi.productUpdateProductV2']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
          * The RemoveMediaGalleryEntry endpoint allows users to remove a specific media entry from a product\'s gallery. By making a request to this endpoint and providing the tenant ID, product ID, and the unique identifier of the media entry, users can easily manage and update the visual content of a product\'s gallery. This operation is asynchronous and may complete after the response.
@@ -5955,9 +5955,9 @@ export const ProductApiFp = function(configuration?: Configuration) {
          */
         async removeMediaGalleryEntry(body: ProductRemoveMediaGalleryEntryRequest, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<object>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.removeMediaGalleryEntry(body, options);
-            const index = configuration?.serverIndex ?? 0;
-            const operationBasePath = operationServerMap['ProductApi.removeMediaGalleryEntry']?.[index]?.url;
-            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, operationBasePath || basePath);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['ProductApi.removeMediaGalleryEntry']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
          * 
@@ -5968,9 +5968,9 @@ export const ProductApiFp = function(configuration?: Configuration) {
          */
         async updateAttributeOptions(body: EntitymanagerUpdateAttributeOptionsRequest, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<EntitymanagerUpdateAttributeOptionsResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.updateAttributeOptions(body, options);
-            const index = configuration?.serverIndex ?? 0;
-            const operationBasePath = operationServerMap['ProductApi.updateAttributeOptions']?.[index]?.url;
-            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, operationBasePath || basePath);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['ProductApi.updateAttributeOptions']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
          * The GetEnhanceProductDataWithAIStatus endpoint allows users to retrieve the status of a product data enhancement process using artificial intelligence (AI) capabilities. By making a request to this endpoint and providing the necessary input data, users can check the progress and completion status of the AI-driven product data enhancement operation. This functionality provides visibility and transparency into the AI processing of product data, enabling users to monitor and track the status of the enhancement process.
@@ -5981,9 +5981,9 @@ export const ProductApiFp = function(configuration?: Configuration) {
          */
         async updateDataToBeReviewed(body: ProductGetEnhanceProductDataWithAIStatusRequest, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ProductGetEnhanceProductDataWithAIStatusResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.updateDataToBeReviewed(body, options);
-            const index = configuration?.serverIndex ?? 0;
-            const operationBasePath = operationServerMap['ProductApi.updateDataToBeReviewed']?.[index]?.url;
-            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, operationBasePath || basePath);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['ProductApi.updateDataToBeReviewed']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
          * The UpdateDataToBeReviewed endpoint allows users to update product data that is pending review. By sending a request to this endpoint and providing the necessary input data, users can modify and enhance the product information that is currently under review. This functionality enables users to make changes to product data submissions and ensure that the information is accurate and up-to-date before final approval.
@@ -5994,9 +5994,9 @@ export const ProductApiFp = function(configuration?: Configuration) {
          */
         async updateDataToBeReviewed_1(body: ProductUpdateDataToBeReviewedRequest, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<object>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.updateDataToBeReviewed_1(body, options);
-            const index = configuration?.serverIndex ?? 0;
-            const operationBasePath = operationServerMap['ProductApi.updateDataToBeReviewed_1']?.[index]?.url;
-            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, operationBasePath || basePath);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['ProductApi.updateDataToBeReviewed_1']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
          * The UpdateMediaGalleryEntry endpoint allows users to modify and update a specific media entry within a product\'s gallery. By sending a request to this endpoint and providing the necessary information, users can efficiently update the media asset, position, and metadata associated with the entry. This operation is asynchronous and may complete after the response.
@@ -6007,9 +6007,9 @@ export const ProductApiFp = function(configuration?: Configuration) {
          */
         async updateMediaGalleryEntry(body: ProductUpdateMediaGalleryEntryRequest, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<object>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.updateMediaGalleryEntry(body, options);
-            const index = configuration?.serverIndex ?? 0;
-            const operationBasePath = operationServerMap['ProductApi.updateMediaGalleryEntry']?.[index]?.url;
-            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, operationBasePath || basePath);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['ProductApi.updateMediaGalleryEntry']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
          * 
@@ -6020,9 +6020,9 @@ export const ProductApiFp = function(configuration?: Configuration) {
          */
         async updateOptionsList(body: EntitymanagerUpdateOptionsListRequest, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<EntitymanagerUpdateOptionsListResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.updateOptionsList(body, options);
-            const index = configuration?.serverIndex ?? 0;
-            const operationBasePath = operationServerMap['ProductApi.updateOptionsList']?.[index]?.url;
-            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, operationBasePath || basePath);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['ProductApi.updateOptionsList']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
          * The UpdateProductWithAI endpoint allows users to update an existing product within the system using artificial intelligence (AI) capabilities. By sending a request to this endpoint and providing the necessary input data, users can leverage AI algorithms to enhance and optimize the product update process.
@@ -6033,9 +6033,9 @@ export const ProductApiFp = function(configuration?: Configuration) {
          */
         async updateProductWithAI(body: ProductUpdateProductWithAIRequest, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ProductUpdateProductWithAIResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.updateProductWithAI(body, options);
-            const index = configuration?.serverIndex ?? 0;
-            const operationBasePath = operationServerMap['ProductApi.updateProductWithAI']?.[index]?.url;
-            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, operationBasePath || basePath);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['ProductApi.updateProductWithAI']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
     }
 };
@@ -6054,7 +6054,7 @@ export const ProductApiFactory = function (configuration?: Configuration, basePa
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        addMediaGalleryEntry(body: ProductAddMediaGalleryEntryRequest, options?: any): AxiosPromise<ProductAddMediaGalleryEntryResponse> {
+        addMediaGalleryEntry(body: ProductAddMediaGalleryEntryRequest, options?: RawAxiosRequestConfig): AxiosPromise<ProductAddMediaGalleryEntryResponse> {
             return localVarFp.addMediaGalleryEntry(body, options).then((request) => request(axios, basePath));
         },
         /**
@@ -6064,7 +6064,7 @@ export const ProductApiFactory = function (configuration?: Configuration, basePa
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        bulkAddAssetsEntries(body: ProductBulkAddAssetsEntriesRequest, options?: any): AxiosPromise<ProductBulkAddAssetsEntriesResponse> {
+        bulkAddAssetsEntries(body: ProductBulkAddAssetsEntriesRequest, options?: RawAxiosRequestConfig): AxiosPromise<ProductBulkAddAssetsEntriesResponse> {
             return localVarFp.bulkAddAssetsEntries(body, options).then((request) => request(axios, basePath));
         },
         /**
@@ -6074,7 +6074,7 @@ export const ProductApiFactory = function (configuration?: Configuration, basePa
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        bulkDeleteProducts(body: ProductBulkDeleteProductsRequest, options?: any): AxiosPromise<object> {
+        bulkDeleteProducts(body: ProductBulkDeleteProductsRequest, options?: RawAxiosRequestConfig): AxiosPromise<object> {
             return localVarFp.bulkDeleteProducts(body, options).then((request) => request(axios, basePath));
         },
         /**
@@ -6084,7 +6084,7 @@ export const ProductApiFactory = function (configuration?: Configuration, basePa
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        bulkEnhanceProductDataWithAI(body: ProductBulkEnhanceProductDataWithAIRequest, options?: any): AxiosPromise<object> {
+        bulkEnhanceProductDataWithAI(body: ProductBulkEnhanceProductDataWithAIRequest, options?: RawAxiosRequestConfig): AxiosPromise<object> {
             return localVarFp.bulkEnhanceProductDataWithAI(body, options).then((request) => request(axios, basePath));
         },
         /**
@@ -6094,7 +6094,7 @@ export const ProductApiFactory = function (configuration?: Configuration, basePa
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        bulkRemoveAssetsEntries(body: ProductBulkRemoveAssetsEntriesRequest, options?: any): AxiosPromise<object> {
+        bulkRemoveAssetsEntries(body: ProductBulkRemoveAssetsEntriesRequest, options?: RawAxiosRequestConfig): AxiosPromise<object> {
             return localVarFp.bulkRemoveAssetsEntries(body, options).then((request) => request(axios, basePath));
         },
         /**
@@ -6104,7 +6104,7 @@ export const ProductApiFactory = function (configuration?: Configuration, basePa
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        bulkUpdateAssetsEntries(body: ProductBulkUpdateAssetsEntriesRequest, options?: any): AxiosPromise<ProductBulkUpdateAssetsEntriesResponse> {
+        bulkUpdateAssetsEntries(body: ProductBulkUpdateAssetsEntriesRequest, options?: RawAxiosRequestConfig): AxiosPromise<ProductBulkUpdateAssetsEntriesResponse> {
             return localVarFp.bulkUpdateAssetsEntries(body, options).then((request) => request(axios, basePath));
         },
         /**
@@ -6114,7 +6114,7 @@ export const ProductApiFactory = function (configuration?: Configuration, basePa
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        bulkUpdateV2(body: ProductBulkUpdateRequestV2, options?: any): AxiosPromise<ProductBulkUpdateResponse> {
+        bulkUpdateV2(body: ProductBulkUpdateRequestV2, options?: RawAxiosRequestConfig): AxiosPromise<ProductBulkUpdateResponse> {
             return localVarFp.bulkUpdateV2(body, options).then((request) => request(axios, basePath));
         },
         /**
@@ -6124,7 +6124,7 @@ export const ProductApiFactory = function (configuration?: Configuration, basePa
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        createAttributeOptions(body: EntitymanagerCreateAttributeOptionsRequest, options?: any): AxiosPromise<EntitymanagerCreateAttributeOptionsResponse> {
+        createAttributeOptions(body: EntitymanagerCreateAttributeOptionsRequest, options?: RawAxiosRequestConfig): AxiosPromise<EntitymanagerCreateAttributeOptionsResponse> {
             return localVarFp.createAttributeOptions(body, options).then((request) => request(axios, basePath));
         },
         /**
@@ -6134,7 +6134,7 @@ export const ProductApiFactory = function (configuration?: Configuration, basePa
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        createEntity(body: EntitymanagerEntity, options?: any): AxiosPromise<EntitymanagerCreateEntityResponse> {
+        createEntity(body: EntitymanagerEntity, options?: RawAxiosRequestConfig): AxiosPromise<EntitymanagerCreateEntityResponse> {
             return localVarFp.createEntity(body, options).then((request) => request(axios, basePath));
         },
         /**
@@ -6144,7 +6144,7 @@ export const ProductApiFactory = function (configuration?: Configuration, basePa
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        createOptionsList(body: EntitymanagerCreateOptionsListRequest, options?: any): AxiosPromise<EntitymanagerCreateOptionsListResponse> {
+        createOptionsList(body: EntitymanagerCreateOptionsListRequest, options?: RawAxiosRequestConfig): AxiosPromise<EntitymanagerCreateOptionsListResponse> {
             return localVarFp.createOptionsList(body, options).then((request) => request(axios, basePath));
         },
         /**
@@ -6154,7 +6154,7 @@ export const ProductApiFactory = function (configuration?: Configuration, basePa
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        createProductWithAI(body: ProductCreateProductWithAIRequest, options?: any): AxiosPromise<ProductCreateProductWithAIResponse> {
+        createProductWithAI(body: ProductCreateProductWithAIRequest, options?: RawAxiosRequestConfig): AxiosPromise<ProductCreateProductWithAIResponse> {
             return localVarFp.createProductWithAI(body, options).then((request) => request(axios, basePath));
         },
         /**
@@ -6164,7 +6164,7 @@ export const ProductApiFactory = function (configuration?: Configuration, basePa
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getAttributeOption(body: EntitymanagerGetAttributeOptionRequest, options?: any): AxiosPromise<EntitymanagerGetAttributeOptionResponse> {
+        getAttributeOption(body: EntitymanagerGetAttributeOptionRequest, options?: RawAxiosRequestConfig): AxiosPromise<EntitymanagerGetAttributeOptionResponse> {
             return localVarFp.getAttributeOption(body, options).then((request) => request(axios, basePath));
         },
         /**
@@ -6174,7 +6174,7 @@ export const ProductApiFactory = function (configuration?: Configuration, basePa
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getAttributeOptions(body: EntitymanagerGetAttributeOptionsRequest, options?: any): AxiosPromise<EntitymanagerGetAttributeOptionsResponse> {
+        getAttributeOptions(body: EntitymanagerGetAttributeOptionsRequest, options?: RawAxiosRequestConfig): AxiosPromise<EntitymanagerGetAttributeOptionsResponse> {
             return localVarFp.getAttributeOptions(body, options).then((request) => request(axios, basePath));
         },
         /**
@@ -6184,7 +6184,7 @@ export const ProductApiFactory = function (configuration?: Configuration, basePa
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getEntity(body: EntitymanagerEntityRequest, options?: any): AxiosPromise<EntitymanagerEntity> {
+        getEntity(body: EntitymanagerEntityRequest, options?: RawAxiosRequestConfig): AxiosPromise<EntitymanagerEntity> {
             return localVarFp.getEntity(body, options).then((request) => request(axios, basePath));
         },
         /**
@@ -6194,7 +6194,7 @@ export const ProductApiFactory = function (configuration?: Configuration, basePa
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getOptionsList(body: EntitymanagerGetOptionsListRequest, options?: any): AxiosPromise<EntitymanagerGetOptionsListResponse> {
+        getOptionsList(body: EntitymanagerGetOptionsListRequest, options?: RawAxiosRequestConfig): AxiosPromise<EntitymanagerGetOptionsListResponse> {
             return localVarFp.getOptionsList(body, options).then((request) => request(axios, basePath));
         },
         /**
@@ -6204,7 +6204,7 @@ export const ProductApiFactory = function (configuration?: Configuration, basePa
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getProduct(body: ProductGetProductRequest, options?: any): AxiosPromise<ProductGetProductResponse> {
+        getProduct(body: ProductGetProductRequest, options?: RawAxiosRequestConfig): AxiosPromise<ProductGetProductResponse> {
             return localVarFp.getProduct(body, options).then((request) => request(axios, basePath));
         },
         /**
@@ -6214,7 +6214,7 @@ export const ProductApiFactory = function (configuration?: Configuration, basePa
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getProductByCode(body: ProductGetProductByCodeRequest, options?: any): AxiosPromise<ProductGetProductByCodeResponse> {
+        getProductByCode(body: ProductGetProductByCodeRequest, options?: RawAxiosRequestConfig): AxiosPromise<ProductGetProductByCodeResponse> {
             return localVarFp.getProductByCode(body, options).then((request) => request(axios, basePath));
         },
         /**
@@ -6224,7 +6224,7 @@ export const ProductApiFactory = function (configuration?: Configuration, basePa
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getProductByUrlKey(body: ProductGetProductByUrlKeyRequest, options?: any): AxiosPromise<ProductGetProductByUrlKeyResponse> {
+        getProductByUrlKey(body: ProductGetProductByUrlKeyRequest, options?: RawAxiosRequestConfig): AxiosPromise<ProductGetProductByUrlKeyResponse> {
             return localVarFp.getProductByUrlKey(body, options).then((request) => request(axios, basePath));
         },
         /**
@@ -6234,7 +6234,7 @@ export const ProductApiFactory = function (configuration?: Configuration, basePa
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getProductDataInReview(body: ProductGetProductDataInReviewRequest, options?: any): AxiosPromise<ProductGetProductDataInReviewResponse> {
+        getProductDataInReview(body: ProductGetProductDataInReviewRequest, options?: RawAxiosRequestConfig): AxiosPromise<ProductGetProductDataInReviewResponse> {
             return localVarFp.getProductDataInReview(body, options).then((request) => request(axios, basePath));
         },
         /**
@@ -6244,7 +6244,7 @@ export const ProductApiFactory = function (configuration?: Configuration, basePa
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        listAttributeOptions(body: EntitymanagerListAttributeOptionsRequest, options?: any): AxiosPromise<EntitymanagerListAttributeOptionsResponse> {
+        listAttributeOptions(body: EntitymanagerListAttributeOptionsRequest, options?: RawAxiosRequestConfig): AxiosPromise<EntitymanagerListAttributeOptionsResponse> {
             return localVarFp.listAttributeOptions(body, options).then((request) => request(axios, basePath));
         },
         /**
@@ -6254,7 +6254,7 @@ export const ProductApiFactory = function (configuration?: Configuration, basePa
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        listEntities(body: EntitymanagerListEntitiesRequest, options?: any): AxiosPromise<EntitymanagerListEntitiesResponse> {
+        listEntities(body: EntitymanagerListEntitiesRequest, options?: RawAxiosRequestConfig): AxiosPromise<EntitymanagerListEntitiesResponse> {
             return localVarFp.listEntities(body, options).then((request) => request(axios, basePath));
         },
         /**
@@ -6264,7 +6264,7 @@ export const ProductApiFactory = function (configuration?: Configuration, basePa
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        listOptionsLists(body: EntitymanagerListOptionsListsRequest, options?: any): AxiosPromise<EntitymanagerListOptionsListsResponse> {
+        listOptionsLists(body: EntitymanagerListOptionsListsRequest, options?: RawAxiosRequestConfig): AxiosPromise<EntitymanagerListOptionsListsResponse> {
             return localVarFp.listOptionsLists(body, options).then((request) => request(axios, basePath));
         },
         /**
@@ -6274,7 +6274,7 @@ export const ProductApiFactory = function (configuration?: Configuration, basePa
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        listProducts(body: ProductListProductsRequest, options?: any): AxiosPromise<ProductListProductsResponse> {
+        listProducts(body: ProductListProductsRequest, options?: RawAxiosRequestConfig): AxiosPromise<ProductListProductsResponse> {
             return localVarFp.listProducts(body, options).then((request) => request(axios, basePath));
         },
         /**
@@ -6284,7 +6284,7 @@ export const ProductApiFactory = function (configuration?: Configuration, basePa
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        listProductsByIds(body: ProductListProductsByIdsRequest, options?: any): AxiosPromise<ProductListProductsByIdsResponse> {
+        listProductsByIds(body: ProductListProductsByIdsRequest, options?: RawAxiosRequestConfig): AxiosPromise<ProductListProductsByIdsResponse> {
             return localVarFp.listProductsByIds(body, options).then((request) => request(axios, basePath));
         },
         /**
@@ -6294,7 +6294,7 @@ export const ProductApiFactory = function (configuration?: Configuration, basePa
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        listProductsBySku(body: ProductListProductsBySkuRequest, options?: any): AxiosPromise<ProductListProductsBySkuResponse> {
+        listProductsBySku(body: ProductListProductsBySkuRequest, options?: RawAxiosRequestConfig): AxiosPromise<ProductListProductsBySkuResponse> {
             return localVarFp.listProductsBySku(body, options).then((request) => request(axios, basePath));
         },
         /**
@@ -6304,7 +6304,7 @@ export const ProductApiFactory = function (configuration?: Configuration, basePa
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        listVariantsBySku(body: ProductListVariantsBySkuRequest, options?: any): AxiosPromise<ProductListVariantsBySkuResponse> {
+        listVariantsBySku(body: ProductListVariantsBySkuRequest, options?: RawAxiosRequestConfig): AxiosPromise<ProductListVariantsBySkuResponse> {
             return localVarFp.listVariantsBySku(body, options).then((request) => request(axios, basePath));
         },
         /**
@@ -6313,7 +6313,7 @@ export const ProductApiFactory = function (configuration?: Configuration, basePa
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        productBulkCreateAttribute(body: EntitymanagerBulkCreateAttributeRequest, options?: any): AxiosPromise<EntitymanagerBulkCreateAttributeResponse> {
+        productBulkCreateAttribute(body: EntitymanagerBulkCreateAttributeRequest, options?: RawAxiosRequestConfig): AxiosPromise<EntitymanagerBulkCreateAttributeResponse> {
             return localVarFp.productBulkCreateAttribute(body, options).then((request) => request(axios, basePath));
         },
         /**
@@ -6323,7 +6323,7 @@ export const ProductApiFactory = function (configuration?: Configuration, basePa
          * @deprecated
          * @throws {RequiredError}
          */
-        productBulkUpdate(body: ProductBulkUpdateRequest, options?: any): AxiosPromise<ProductBulkUpdateResponse> {
+        productBulkUpdate(body: ProductBulkUpdateRequest, options?: RawAxiosRequestConfig): AxiosPromise<ProductBulkUpdateResponse> {
             return localVarFp.productBulkUpdate(body, options).then((request) => request(axios, basePath));
         },
         /**
@@ -6332,7 +6332,7 @@ export const ProductApiFactory = function (configuration?: Configuration, basePa
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        productCreateAttributeGroup(body: EntitymanagerCreateAttributeGroupRequest, options?: any): AxiosPromise<EntitymanagerAttributeGroup> {
+        productCreateAttributeGroup(body: EntitymanagerCreateAttributeGroupRequest, options?: RawAxiosRequestConfig): AxiosPromise<EntitymanagerAttributeGroup> {
             return localVarFp.productCreateAttributeGroup(body, options).then((request) => request(axios, basePath));
         },
         /**
@@ -6342,7 +6342,7 @@ export const ProductApiFactory = function (configuration?: Configuration, basePa
          * @deprecated
          * @throws {RequiredError}
          */
-        productCreateProduct(body: ProductCreateProductRequest, options?: any): AxiosPromise<ProductCreateProductResponse> {
+        productCreateProduct(body: ProductCreateProductRequest, options?: RawAxiosRequestConfig): AxiosPromise<ProductCreateProductResponse> {
             return localVarFp.productCreateProduct(body, options).then((request) => request(axios, basePath));
         },
         /**
@@ -6351,7 +6351,7 @@ export const ProductApiFactory = function (configuration?: Configuration, basePa
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        productCreateProductV2(body: ProductCreateProductRequestV2, options?: any): AxiosPromise<ProductCreateProductResponseV2> {
+        productCreateProductV2(body: ProductCreateProductRequestV2, options?: RawAxiosRequestConfig): AxiosPromise<ProductCreateProductResponseV2> {
             return localVarFp.productCreateProductV2(body, options).then((request) => request(axios, basePath));
         },
         /**
@@ -6361,7 +6361,7 @@ export const ProductApiFactory = function (configuration?: Configuration, basePa
          * @deprecated
          * @throws {RequiredError}
          */
-        productDelete(body: ProductDeleteRequest, options?: any): AxiosPromise<ProductDeleteResponse> {
+        productDelete(body: ProductDeleteRequest, options?: RawAxiosRequestConfig): AxiosPromise<ProductDeleteResponse> {
             return localVarFp.productDelete(body, options).then((request) => request(axios, basePath));
         },
         /**
@@ -6370,7 +6370,7 @@ export const ProductApiFactory = function (configuration?: Configuration, basePa
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        productDeleteAttribute(body: EntitymanagerDeleteAttributeRequest, options?: any): AxiosPromise<object> {
+        productDeleteAttribute(body: EntitymanagerDeleteAttributeRequest, options?: RawAxiosRequestConfig): AxiosPromise<object> {
             return localVarFp.productDeleteAttribute(body, options).then((request) => request(axios, basePath));
         },
         /**
@@ -6379,7 +6379,7 @@ export const ProductApiFactory = function (configuration?: Configuration, basePa
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        productDeleteProduct(body: ProductDeleteProductRequest, options?: any): AxiosPromise<object> {
+        productDeleteProduct(body: ProductDeleteProductRequest, options?: RawAxiosRequestConfig): AxiosPromise<object> {
             return localVarFp.productDeleteProduct(body, options).then((request) => request(axios, basePath));
         },
         /**
@@ -6388,7 +6388,7 @@ export const ProductApiFactory = function (configuration?: Configuration, basePa
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        productGetAttributeGroup(body: EntitymanagerGetAttributeGroupRequest, options?: any): AxiosPromise<EntitymanagerAttributeGroup> {
+        productGetAttributeGroup(body: EntitymanagerGetAttributeGroupRequest, options?: RawAxiosRequestConfig): AxiosPromise<EntitymanagerAttributeGroup> {
             return localVarFp.productGetAttributeGroup(body, options).then((request) => request(axios, basePath));
         },
         /**
@@ -6397,7 +6397,7 @@ export const ProductApiFactory = function (configuration?: Configuration, basePa
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        productListAttributeGroups(body: EntitymanagerListAttributeGroupsRequest, options?: any): AxiosPromise<EntitymanagerListAttributeGroupsResponse> {
+        productListAttributeGroups(body: EntitymanagerListAttributeGroupsRequest, options?: RawAxiosRequestConfig): AxiosPromise<EntitymanagerListAttributeGroupsResponse> {
             return localVarFp.productListAttributeGroups(body, options).then((request) => request(axios, basePath));
         },
         /**
@@ -6406,7 +6406,7 @@ export const ProductApiFactory = function (configuration?: Configuration, basePa
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        productUpdateAttribute(body: EntitymanagerUpdateAttributeRequest, options?: any): AxiosPromise<EntitymanagerAttribute> {
+        productUpdateAttribute(body: EntitymanagerUpdateAttributeRequest, options?: RawAxiosRequestConfig): AxiosPromise<EntitymanagerAttribute> {
             return localVarFp.productUpdateAttribute(body, options).then((request) => request(axios, basePath));
         },
         /**
@@ -6415,7 +6415,7 @@ export const ProductApiFactory = function (configuration?: Configuration, basePa
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        productUpdateAttributeGroup(body: EntitymanagerUpdateAttributeGroupRequest, options?: any): AxiosPromise<EntitymanagerAttributeGroup> {
+        productUpdateAttributeGroup(body: EntitymanagerUpdateAttributeGroupRequest, options?: RawAxiosRequestConfig): AxiosPromise<EntitymanagerAttributeGroup> {
             return localVarFp.productUpdateAttributeGroup(body, options).then((request) => request(axios, basePath));
         },
         /**
@@ -6425,7 +6425,7 @@ export const ProductApiFactory = function (configuration?: Configuration, basePa
          * @deprecated
          * @throws {RequiredError}
          */
-        productUpdateProduct(body: ProductUpdateProductRequest, options?: any): AxiosPromise<ProductUpdateProductResponse> {
+        productUpdateProduct(body: ProductUpdateProductRequest, options?: RawAxiosRequestConfig): AxiosPromise<ProductUpdateProductResponse> {
             return localVarFp.productUpdateProduct(body, options).then((request) => request(axios, basePath));
         },
         /**
@@ -6434,7 +6434,7 @@ export const ProductApiFactory = function (configuration?: Configuration, basePa
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        productUpdateProductV2(body: ProductUpdateProductRequestV2, options?: any): AxiosPromise<object> {
+        productUpdateProductV2(body: ProductUpdateProductRequestV2, options?: RawAxiosRequestConfig): AxiosPromise<object> {
             return localVarFp.productUpdateProductV2(body, options).then((request) => request(axios, basePath));
         },
         /**
@@ -6444,7 +6444,7 @@ export const ProductApiFactory = function (configuration?: Configuration, basePa
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        removeMediaGalleryEntry(body: ProductRemoveMediaGalleryEntryRequest, options?: any): AxiosPromise<object> {
+        removeMediaGalleryEntry(body: ProductRemoveMediaGalleryEntryRequest, options?: RawAxiosRequestConfig): AxiosPromise<object> {
             return localVarFp.removeMediaGalleryEntry(body, options).then((request) => request(axios, basePath));
         },
         /**
@@ -6454,7 +6454,7 @@ export const ProductApiFactory = function (configuration?: Configuration, basePa
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        updateAttributeOptions(body: EntitymanagerUpdateAttributeOptionsRequest, options?: any): AxiosPromise<EntitymanagerUpdateAttributeOptionsResponse> {
+        updateAttributeOptions(body: EntitymanagerUpdateAttributeOptionsRequest, options?: RawAxiosRequestConfig): AxiosPromise<EntitymanagerUpdateAttributeOptionsResponse> {
             return localVarFp.updateAttributeOptions(body, options).then((request) => request(axios, basePath));
         },
         /**
@@ -6464,7 +6464,7 @@ export const ProductApiFactory = function (configuration?: Configuration, basePa
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        updateDataToBeReviewed(body: ProductGetEnhanceProductDataWithAIStatusRequest, options?: any): AxiosPromise<ProductGetEnhanceProductDataWithAIStatusResponse> {
+        updateDataToBeReviewed(body: ProductGetEnhanceProductDataWithAIStatusRequest, options?: RawAxiosRequestConfig): AxiosPromise<ProductGetEnhanceProductDataWithAIStatusResponse> {
             return localVarFp.updateDataToBeReviewed(body, options).then((request) => request(axios, basePath));
         },
         /**
@@ -6474,7 +6474,7 @@ export const ProductApiFactory = function (configuration?: Configuration, basePa
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        updateDataToBeReviewed_1(body: ProductUpdateDataToBeReviewedRequest, options?: any): AxiosPromise<object> {
+        updateDataToBeReviewed_1(body: ProductUpdateDataToBeReviewedRequest, options?: RawAxiosRequestConfig): AxiosPromise<object> {
             return localVarFp.updateDataToBeReviewed_1(body, options).then((request) => request(axios, basePath));
         },
         /**
@@ -6484,7 +6484,7 @@ export const ProductApiFactory = function (configuration?: Configuration, basePa
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        updateMediaGalleryEntry(body: ProductUpdateMediaGalleryEntryRequest, options?: any): AxiosPromise<object> {
+        updateMediaGalleryEntry(body: ProductUpdateMediaGalleryEntryRequest, options?: RawAxiosRequestConfig): AxiosPromise<object> {
             return localVarFp.updateMediaGalleryEntry(body, options).then((request) => request(axios, basePath));
         },
         /**
@@ -6494,7 +6494,7 @@ export const ProductApiFactory = function (configuration?: Configuration, basePa
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        updateOptionsList(body: EntitymanagerUpdateOptionsListRequest, options?: any): AxiosPromise<EntitymanagerUpdateOptionsListResponse> {
+        updateOptionsList(body: EntitymanagerUpdateOptionsListRequest, options?: RawAxiosRequestConfig): AxiosPromise<EntitymanagerUpdateOptionsListResponse> {
             return localVarFp.updateOptionsList(body, options).then((request) => request(axios, basePath));
         },
         /**
@@ -6504,7 +6504,7 @@ export const ProductApiFactory = function (configuration?: Configuration, basePa
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        updateProductWithAI(body: ProductUpdateProductWithAIRequest, options?: any): AxiosPromise<ProductUpdateProductWithAIResponse> {
+        updateProductWithAI(body: ProductUpdateProductWithAIRequest, options?: RawAxiosRequestConfig): AxiosPromise<ProductUpdateProductWithAIResponse> {
             return localVarFp.updateProductWithAI(body, options).then((request) => request(axios, basePath));
         },
     };
